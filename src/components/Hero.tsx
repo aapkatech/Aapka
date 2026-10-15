@@ -17,6 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const floatingCare = t?.floatingCare || "24/7 Care Coordination";
   const floatingCareSub = t?.floatingCareSub || "Verified Swasthya-Mitras On Call";
   const floatingVetted = t?.floatingVetted || "100% Vetted Medical Partners";
+  const downloadApp = t?.downloadApp || "Download the App";
 
   return (
     <section className="relative bg-white pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-32 overflow-hidden">
@@ -44,6 +45,25 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             <p className="text-base sm:text-lg lg:text-xl text-slate-800 font-normal leading-relaxed max-w-2xl">
               {subheadline}
             </p>
+
+            {/* Small 'Download the App' Action */}
+            <div className="pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.kapp.smartgram&pli=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight shadow-xs hover:shadow transition-all group"
+              >
+                <svg 
+                  className="w-4 h-4 fill-current text-teal-400 group-hover:scale-110 transition-transform shrink-0" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M3.609 1.814L13.793 12 3.61 22.186c-.195-.195-.31-.476-.31-.786V2.6c0-.31.115-.591.31-.786zm11.238 11.24l2.585 2.586-11.45 6.47 8.865-9.056zm0-2.108L5.982 1.89l11.45 6.47-2.585 2.586zm1.485 1.054l3.52-1.987c.666-.376.666-.99 0-1.366l-3.52-1.987-2.109 2.109 2.109 2.231z"/>
+                </svg>
+                <span>{downloadApp}</span>
+              </a>
+            </div>
 
             {/* Micro-Trust Signals */}
             <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">

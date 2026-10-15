@@ -21,6 +21,7 @@ export interface Translations {
     floatingCare: string;
     floatingCareSub: string;
     floatingVetted: string;
+    downloadApp?: string;
   };
   pillars: {
     tag: string;
@@ -131,7 +132,8 @@ export const translations: Record<Language, Translations> = {
       hospitalPartners: "46+ Vetted Hospital Partners",
       floatingCare: "24/7 Care Coordination",
       floatingCareSub: "Verified Swasthya-Mitras On Call",
-      floatingVetted: "100% Vetted Medical Partners"
+      floatingVetted: "100% Vetted Medical Partners",
+      downloadApp: "Download the App"
     },
     pillars: {
       tag: "Our Foundation",
@@ -329,7 +331,8 @@ export const translations: Record<Language, Translations> = {
       hospitalPartners: "46+ सत्यापित अस्पताल भागीदार",
       floatingCare: "24/7 स्वास्थ्य मार्गदर्शन",
       floatingCareSub: "सत्यापित स्वास्थ्य-मित्र सदैव उपलब्ध",
-      floatingVetted: "100% सत्यापित चिकित्सा भागीदार"
+      floatingVetted: "100% सत्यापित चिकित्सा भागीदार",
+      downloadApp: "ऐप डाउनलोड करें"
     },
     pillars: {
       tag: "हमारी प्रतिबद्धता",
