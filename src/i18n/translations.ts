@@ -79,6 +79,8 @@ export interface Translations {
     tagline: string;
     company: string;
     location: string;
+    phone?: string;
+    email?: string;
     carePathwaysTitle: string;
     platformReachTitle: string;
     globalSupportTitle: string;
@@ -255,9 +257,11 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "Healthcare, simplified for everyone, everywhere. Bridging patient households with accredited hospital infrastructure and digital care navigation.",
+      tagline: "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.",
       company: "SP Rural India Services Private Limited",
-      location: "Supported at Atal Incubation Centre, Jawaharlal Nehru University (JNU), New Delhi - 110067, India.",
+      location: "201 Convention Centre, JNU New Delhi, 110067",
+      phone: "+91 9667033044",
+      email: "Info@Aapka.co.in",
       carePathwaysTitle: "Care Pathways",
       platformReachTitle: "Platform & Reach",
       globalSupportTitle: "Global Support",
@@ -451,9 +455,11 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "स्वास्थ्य सेवा, हर किसी के लिए, हर जगह। मरीजों और परिवारों को गुणवत्तापूर्ण अस्पतालों और डिजिटल स्वास्थ्य सेवाओं से जोड़ना।",
+      tagline: "आपका (Aapka) एक सहज ऐप और समर्पित स्थानीय प्रतिनिधियों के माध्यम से ग्रामीण भारत की स्वास्थ्य एवं स्वच्छता संबंधी चुनौतियों का एक परिवर्तनकारी समाधान प्रदान करता है। हमारा मंच ग्रामीणों को स्वास्थ्य पेशेवरों और आवश्यक उत्पादों से सीधे जोड़ता है, जिससे सुविधा, वहनीयता और गुणवत्ता में सुधार होता है।",
       company: "एसपी रूरल इंडिया सर्विसेज प्राइवेट लिमिटेड",
-      location: "अटल इनक्यूबेशन सेंटर, जवाहरलाल नेहरू विश्वविद्यालय (JNU), नई दिल्ली - 110067, भारत।",
+      location: "201 कन्वेंशन सेंटर, जेएनयू, नई दिल्ली - 110067",
+      phone: "+91 9667033044",
+      email: "Info@Aapka.co.in",
       carePathwaysTitle: "स्वास्थ्य सेवाएं",
       platformReachTitle: "मंच व पहुंच",
       globalSupportTitle: "सहायता व संपर्क",

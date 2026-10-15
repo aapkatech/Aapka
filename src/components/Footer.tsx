@@ -12,9 +12,11 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const tagline = t?.tagline || "Healthcare, simplified for everyone, everywhere. Bridging patient households with accredited hospital infrastructure and digital care navigation.";
+  const tagline = t?.tagline || "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.";
   const company = t?.company || "SP Rural India Services Private Limited";
-  const location = t?.location || "Supported at Atal Incubation Centre, Jawaharlal Nehru University (JNU), New Delhi - 110067, India.";
+  const location = t?.location || "201 Convention Centre, JNU New Delhi, 110067";
+  const phone = t?.phone || "+91 9667033044";
+  const email = t?.email || "Info@Aapka.co.in";
   const carePathwaysTitle = t?.carePathwaysTitle || "Care Pathways";
   const platformReachTitle = t?.platformReachTitle || "Platform & Reach";
   const globalSupportTitle = t?.globalSupportTitle || "Global Support";
@@ -49,16 +51,19 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           {/* Brand & Corporate entity */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center">
-              <AapkaLogo variant="full" className="h-9 w-auto" />
+              <AapkaLogo variant="full" className="h-10 w-auto" />
             </div>
 
-            <p className="text-xs text-zinc-500 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed max-w-md">
               {tagline}
             </p>
 
-            <div className="pt-2 text-[11px] text-zinc-400 space-y-1">
+            <div className="pt-2 text-[11px] text-zinc-400 space-y-1 border-t border-zinc-100">
               <p className="font-semibold text-zinc-700">{company}</p>
-              <p>{location}</p>
+              <p className="flex items-center gap-1.5 text-zinc-500">
+                <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                <span>{location}</span>
+              </p>
             </div>
           </div>
 
@@ -102,19 +107,19 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
             <ul className="space-y-2.5 text-zinc-500">
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                <a href="tel:+919667033044" className="hover:text-zinc-950 font-medium text-zinc-700">
-                  +91 9667033044
+                <a href={`tel:${phone.replace(/\s+/g, '')}`} className="hover:text-zinc-950 font-medium text-zinc-700">
+                  {phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                <a href="mailto:info@aapka.co.in" className="hover:text-zinc-950">
-                  info@aapka.co.in
+                <a href={`mailto:${email.toLowerCase()}`} className="hover:text-zinc-950">
+                  {email}
                 </a>
               </li>
-              <li className="flex items-start gap-2 pt-1 text-[11px] text-zinc-400">
+              <li className="flex items-start gap-2 pt-1 text-[11px] text-zinc-500">
                 <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0 mt-0.5" />
-                <span>JNU Innovation Hub, New Delhi</span>
+                <span>{location}</span>
               </li>
             </ul>
           </div>
