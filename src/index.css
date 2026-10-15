@@ -3,68 +3,43 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.011em;
   }
 
   body {
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #ffffff;
+    color: #09090b;
     overflow-x: hidden;
   }
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(1deg);
-  }
+/* Subtle micro-interactions */
+.subtle-ring {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(8px) rotate(-1deg);
-  }
+.subtle-ring:hover {
+  box-shadow: 0 0 0 1px rgba(9, 9, 11, 0.08), 0 2px 8px -2px rgba(9, 9, 11, 0.05);
 }
 
-@keyframes pulse-subtle {
+/* Precision hairline borders */
+.hairline-border {
+  border: 1px solid rgba(228, 228, 231, 0.65);
+}
+
+/* Pulse indicator for live clinical coordination */
+@keyframes calm-pulse {
   0%, 100% {
-    opacity: 1;
     transform: scale(1);
+    opacity: 1;
   }
   50% {
-    opacity: 0.85;
-    transform: scale(1.03);
+    transform: scale(1.15);
+    opacity: 0.7;
   }
 }
 
-.animate-float-slow {
-  animation: float-slow 4s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 5s ease-in-out infinite;
-}
-
-.animate-pulse-subtle {
-  animation: pulse-subtle 3s ease-in-out infinite;
-}
-
-/* Glassmorphism helpers */
-.glass-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.glass-badge {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+.animate-calm-pulse {
+  animation: calm-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
