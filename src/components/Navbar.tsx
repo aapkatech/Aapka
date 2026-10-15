@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Globe, Menu, X } from 'lucide-react';
 import { AapkaLogo } from './AapkaLogo';
+import type { Language, Translations } from '../i18n/translations';
 
 interface NavbarProps {
   onOpenPortal?: () => void;
-  lang: 'en' | 'global';
-  setLang: (lang: 'en' | 'global') => void;
+  lang: Language;
+  setLang: (lang: Language) => void;
+  t?: Translations['nav'];
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) => {
+export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -30,36 +32,55 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Left: Official Aapka Logo Lockup */}
-        <a href="#" className="flex items-center group py-0.5">
+        <a href="#" className="flex items-center group py-0.5" aria-label="Aapka Home">
           <AapkaLogo variant="full" className="h-12 sm:h-14 lg:h-16 w-auto transition-transform group-hover:scale-[1.02]" />
         </a>
 
         {/* Center / Navigation Links: Services, Global Network, About, Contact */}
         <nav className="hidden md:flex items-center gap-9 text-sm font-medium text-slate-600">
           <a href="#services" className="hover:text-slate-950 transition-colors">
-            Services
+            {t?.services || "Services"}
           </a>
           <a href="#network" className="hover:text-slate-950 transition-colors">
-            Global Network
+            {t?.network || "Global Network"}
           </a>
           <a href="#pillars" className="hover:text-slate-950 transition-colors">
-            About
+            {t?.about || "About"}
           </a>
           <a href="#contact" className="hover:text-slate-950 transition-colors">
-            Contact
+            {t?.contact || "Contact"}
           </a>
         </nav>
 
-        {/* Far Right: Language Selector */}
+        {/* Far Right: Language Switcher Pill */}
         <div className="hidden sm:flex items-center gap-3">
-          <button
-            onClick={() => setLang(lang === 'en' ? 'global' : 'en')}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 px-2.5 py-1.5 rounded-lg border border-transparent hover:border-slate-200 transition-colors cursor-pointer"
-            aria-label="Toggle Regional Language Setting"
-          >
-            <Globe className="w-3.5 h-3.5 text-slate-400" />
-            <span>{lang === 'en' ? 'English (EN / Global)' : 'हिन्दी (IN / Global)'}</span>
-          </button>
+          <div className="flex items-center bg-slate-100 p-0.5 rounded-full border border-slate-200/80 text-xs font-medium">
+            <button
+              type="button"
+              onClick={() => setLang('en')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                lang === 'en'
+                  ? 'bg-white text-slate-900 shadow-xs font-semibold'
+                  : 'text-slate-500 hover:text-slate-800'
+              }`}
+              aria-label="Switch to English"
+            >
+              <Globe className="w-3.5 h-3.5 text-slate-400" />
+              <span>English</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang('hi')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                lang === 'hi'
+                  ? 'bg-white text-slate-900 shadow-xs font-semibold'
+                  : 'text-slate-500 hover:text-slate-800'
+              }`}
+              aria-label="हिन्दी में बदलें"
+            >
+              <span>हिन्दी</span>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu trigger */}
@@ -77,40 +98,69 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
       {/* Minimal Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-zinc-100 bg-white/98 backdrop-blur-xl px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2">
+          {/* Mobile Language Toggle */}
+          <div className="flex items-center justify-between pb-3 border-b border-zinc-100">
+            <span className="text-xs font-medium text-slate-500">Language / भाषा:</span>
+            <div className="flex items-center bg-slate-100 p-0.5 rounded-full border border-slate-200/80 text-xs font-medium">
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`px-3 py-1 rounded-full transition-all cursor-pointer ${
+                  lang === 'en'
+                    ? 'bg-white text-slate-900 shadow-xs font-semibold'
+                    : 'text-slate-500'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('hi')}
+                className={`px-3 py-1 rounded-full transition-all cursor-pointer ${
+                  lang === 'hi'
+                    ? 'bg-white text-slate-900 shadow-xs font-semibold'
+                    : 'text-slate-500'
+                }`}
+              >
+                हिन्दी
+              </button>
+            </div>
+          </div>
+
           <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-700">
             <a 
               href="#services" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-slate-950"
             >
-              Services
+              {t?.services || "Services"}
             </a>
             <a 
               href="#network" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-slate-950"
             >
-              Global Network
+              {t?.network || "Global Network"}
             </a>
             <a 
               href="#pillars" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-slate-950"
             >
-              About
+              {t?.about || "About"}
             </a>
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-slate-950"
             >
-              Contact
+              {t?.contact || "Contact"}
             </a>
           </nav>
 
           <div className="pt-4 border-t border-zinc-100 flex flex-col gap-2.5">
             <div className="flex justify-between items-center text-xs text-slate-500 pt-1">
-              <span>Direct Support</span>
+              <span>{t?.directSupport || "Direct Support"}</span>
               <a href="tel:+919667033044" className="font-semibold text-slate-900">+91 9667033044</a>
             </div>
           </div>

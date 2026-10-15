@@ -1,12 +1,14 @@
 import React from 'react';
-import { Building2, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Building2, CheckCircle2, ArrowRight } from 'lucide-react';
+import type { Translations } from '../i18n/translations';
 
 interface GlobalNetworkProps {
   onOpenBooking: () => void;
+  t?: Translations['network'];
 }
 
-export const GlobalNetwork: React.FC<GlobalNetworkProps> = ({ onOpenBooking }) => {
-  const hubs = [
+export const GlobalNetwork: React.FC<GlobalNetworkProps> = ({ onOpenBooking, t }) => {
+  const defaultHubs = [
     {
       region: "North Region Network",
       specialties: "Oncology, Cardiology & Orthopedic Hubs",
@@ -30,19 +32,25 @@ export const GlobalNetwork: React.FC<GlobalNetworkProps> = ({ onOpenBooking }) =
     }
   ];
 
+  const hubs = t?.hubs || defaultHubs;
+  const tag = t?.tag || "Network Infrastructure";
+  const title = t?.title || "46+ Vetted hospital systems and accredited diagnostic laboratories.";
+  const description = t?.description || "Every center in our network is contractually bound to transparent fee schedules, zero administrative gouging, and expedited patient intake.";
+  const requestDirectory = t?.requestDirectory || "Request bed or specialist check";
+
   return (
     <section id="network" className="py-24 sm:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
         
         <div className="max-w-xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-            Network Infrastructure
+            {tag}
           </p>
           <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-zinc-950">
-            46+ Vetted hospital systems and accredited diagnostic laboratories.
+            {title}
           </h2>
           <p className="text-sm text-zinc-500 font-normal leading-relaxed pt-1">
-            Every center in our network is contractually bound to transparent fee schedules, zero administrative gouging, and expedited patient intake.
+            {description}
           </p>
         </div>
 
@@ -86,7 +94,7 @@ export const GlobalNetwork: React.FC<GlobalNetworkProps> = ({ onOpenBooking }) =
                   onClick={onOpenBooking}
                   className="text-xs font-semibold text-zinc-900 hover:text-teal-700 flex items-center gap-1.5 cursor-pointer transition-colors"
                 >
-                  <span>Request bed or specialist check</span>
+                  <span>{requestDirectory}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
