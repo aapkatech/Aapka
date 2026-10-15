@@ -1,19 +1,17 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Shield, Globe2, Sparkles } from 'lucide-react';
+import { CheckCircle2, Shield, Sparkles } from 'lucide-react';
 import type { Translations } from '../i18n/translations';
 
 interface HeroProps {
   onSearch?: (query: string) => void;
-  onOpenBooking: (serviceType?: string) => void;
+  onOpenBooking?: (serviceType?: string) => void;
   t?: Translations['hero'];
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenBooking, t }) => {
+export const Hero: React.FC<HeroProps> = ({ t }) => {
   const preHeadline = t?.preHeadline || "let us take care of you.";
   const headline = t?.headline || "Your Family’s Health, Seamlessly Coordinated.";
   const subheadline = t?.subheadline || "Connecting every corner of Bharat with direct access to top-tier verified medical partners and compassionate community care.";
-  const primaryCta = t?.primaryCta || "Explore Our Global Network";
-  const secondaryCta = t?.secondaryCta || "How It Works →";
   const communitiesSupported = t?.communitiesSupported || "500+ Communities Supported";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
   const floatingCare = t?.floatingCare || "24/7 Care Coordination";
@@ -47,30 +45,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, t }) => {
               {subheadline}
             </p>
 
-            {/* Action Elements: Dual CTAs */}
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              {/* Primary CTA (Vibrant Emerald / Dark Navy button style) */}
-              <button
-                type="button"
-                onClick={() => onOpenBooking('hospitalization')}
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-slate-950 hover:bg-teal-700 text-white font-semibold text-sm tracking-tight shadow-lg shadow-slate-950/15 hover:shadow-teal-700/25 transition-all cursor-pointer active:scale-[0.99] group"
-              >
-                <Globe2 className="w-4 h-4 text-teal-400 group-hover:text-white transition-colors" />
-                <span>{primaryCta}</span>
-                <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-              </button>
-
-              {/* Secondary CTA (Outlined minimalist button) */}
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-semibold text-sm border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center"
-              >
-                <span>{secondaryCta}</span>
-              </a>
-            </div>
-
-            {/* Micro-Trust Signals Below CTAs */}
-            <div className="pt-4 sm:pt-6 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
+            {/* Micro-Trust Signals */}
+            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{communitiesSupported}</span>
