@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Shield, Sparkles } from 'lucide-react';
+import { CheckCircle2, Shield } from 'lucide-react';
 import type { Translations } from '../i18n/translations';
 
 interface HeroProps {
@@ -14,9 +14,6 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const subheadline = t?.subheadline || "Connecting every corner of Bharat with direct access to top-tier verified medical partners and compassionate community care.";
   const communitiesSupported = t?.communitiesSupported || "500+ Communities Supported";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
-  const floatingCare = t?.floatingCare || "24/7 Care Coordination";
-  const floatingCareSub = t?.floatingCareSub || "Verified Swasthya-Mitras On Call";
-  const floatingVetted = t?.floatingVetted || "100% Vetted Medical Partners";
   const downloadApp = t?.downloadApp || "Download the App";
 
   return (
@@ -109,32 +106,6 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
                     <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white/85 via-white/30 to-transparent pointer-events-none rounded-b-[1.5rem]" />
                   </div>
 
-                </div>
-
-                {/* Floating Reassurance Badge 1 (Bottom Left) */}
-                <div className="absolute -bottom-2 left-6 sm:left-8 z-20">
-                  <div className="bg-white/95 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 border border-slate-200/80 shadow-lg shadow-slate-900/8 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-700 shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-teal-600" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-xs sm:text-sm font-bold text-slate-900 tracking-tight">
-                          {floatingCare}
-                        </span>
-                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      </div>
-                      <p className="text-[11px] text-slate-500 font-normal">
-                        {floatingCareSub}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Badge 2 (Top Right) */}
-                <div className="hidden sm:flex absolute -top-3 -right-3 z-20 bg-white/95 backdrop-blur-md rounded-xl px-3.5 py-2 border border-slate-200 shadow-md items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  <span className="text-xs font-semibold text-slate-800">{floatingVetted}</span>
                 </div>
 
               </div>
