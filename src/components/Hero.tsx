@@ -9,9 +9,9 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ t }) => {
-  const preHeadline = t?.preHeadline || "let us take care of you.";
+  const preHeadline = t?.preHeadline;
   const headline = t?.headline || "India's Trusted Healthcare Platform.";
-  const subheadline = t?.subheadline || "Connecting every corner of Bharat with direct access to top-tier verified medical partners and compassionate community care.";
+  const subheadline = t?.subheadline || "Let us take care of you.";
   const communitiesSupported = t?.communitiesSupported || "500+ Communities Supported";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
   const downloadApp = t?.downloadApp || "Download the App";
@@ -27,19 +27,21 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
           {/* Left Column: Classic, High-Trust Editorial Narrative */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-left">
             
-            {/* Pre-headline (Small, crisp, deep navy #0f172a) */}
-            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-900/90 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-              <span>{preHeadline}</span>
-            </p>
+            {/* Pre-headline (Optional) */}
+            {preHeadline && (
+              <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-900/90 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+                <span>{preHeadline}</span>
+              </p>
+            )}
 
             {/* Main Headline: Classic, prestigious professional typography */}
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.2rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
               {headline}
             </h1>
 
-            {/* Sub-headline: Crisp, deep navy #0f172a */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-800 font-normal leading-relaxed max-w-2xl">
+            {/* Sub-headline: Warm & Reassuring */}
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-normal leading-relaxed max-w-2xl">
               {subheadline}
             </p>
 
