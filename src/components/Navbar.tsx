@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, ArrowRight, Menu, X } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 import { AapkaLogo } from './AapkaLogo';
 
 interface NavbarProps {
-  onOpenPortal: () => void;
+  onOpenPortal?: () => void;
   lang: 'en' | 'global';
   setLang: (lang: 'en' | 'global') => void;
 }
@@ -50,8 +50,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
           </a>
         </nav>
 
-        {/* Far Right: Language Selector & "Sign In / Get Started" Button */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* Far Right: Language Selector */}
+        <div className="hidden sm:flex items-center gap-3">
           <button
             onClick={() => setLang(lang === 'en' ? 'global' : 'en')}
             className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 px-2.5 py-1.5 rounded-lg border border-transparent hover:border-slate-200 transition-colors cursor-pointer"
@@ -59,14 +59,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
           >
             <Globe className="w-3.5 h-3.5 text-slate-400" />
             <span>{lang === 'en' ? 'English (EN / Global)' : 'हिन्दी (IN / Global)'}</span>
-          </button>
-
-          <button
-            onClick={onOpenPortal}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white text-xs font-semibold tracking-tight transition-all active:scale-[0.98] cursor-pointer shadow-sm"
-          >
-            <span>Sign In / Get Started</span>
-            <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           </button>
         </div>
 
@@ -117,15 +109,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
           </nav>
 
           <div className="pt-4 border-t border-zinc-100 flex flex-col gap-2.5">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenPortal();
-              }}
-              className="w-full py-3 rounded-xl bg-slate-950 text-white text-xs font-semibold text-center"
-            >
-              Sign In / Get Started
-            </button>
             <div className="flex justify-between items-center text-xs text-slate-500 pt-1">
               <span>Direct Support</span>
               <a href="tel:+919667033044" className="font-semibold text-slate-900">+91 9667033044</a>
