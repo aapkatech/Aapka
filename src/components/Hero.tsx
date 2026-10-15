@@ -10,7 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ t }) => {
   const preHeadline = t?.preHeadline || "let us take care of you.";
-  const headline = t?.headline || "Your Family’s Health, Seamlessly Coordinated.";
+  const headline = t?.headline || "India's Trusted Healthcare Platform.";
   const subheadline = t?.subheadline || "Connecting every corner of Bharat with direct access to top-tier verified medical partners and compassionate community care.";
   const communitiesSupported = t?.communitiesSupported || "500+ Communities Supported";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          {/* Left Column: Bold, Modern Typography & High-Trust Narrative */}
+          {/* Left Column: Classic, High-Trust Editorial Narrative */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-left">
             
             {/* Pre-headline (Small, crisp, deep navy #0f172a) */}
@@ -33,8 +33,8 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               <span>{preHeadline}</span>
             </p>
 
-            {/* Main Headline: Very large, bold, tracking-tight geometric sans */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.4rem] font-extrabold text-slate-900 tracking-tight leading-[1.06] sm:leading-[1.08]">
+            {/* Main Headline: Classic, prestigious professional typography */}
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.2rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
               {headline}
             </h1>
 

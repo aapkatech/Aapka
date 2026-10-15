@@ -134,7 +134,7 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       preHeadline: "let us take care of you.",
-      headline: "Your Family’s Health, Seamlessly Coordinated.",
+      headline: "India's Trusted Healthcare Platform.",
       subheadline: "Connecting every corner of Bharat with direct access to top-tier verified medical partners and compassionate community care.",
       primaryCta: "Explore Our Global Network",
       secondaryCta: "How It Works →",
@@ -349,7 +349,7 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       preHeadline: "आपकी देखभाल, हमारी ज़िम्मेदारी।",
-      headline: "आपके परिवार का स्वास्थ्य, अब पूरी तरह सुरक्षित व व्यवस्थित।",
+      headline: "भारत का सबसे विश्वसनीय स्वास्थ्य सेवा मंच।",
       subheadline: "भारत के हर कोने को शीर्ष सत्यापित चिकित्सा संस्थानों, विशेषज्ञ डॉक्टरों और विश्वसनीय सामुदायिक स्वास्थ्य सेवाओं से सीधे जोड़ते हुए।",
       primaryCta: "हमारा हेल्थकेयर नेटवर्क देखें",
       secondaryCta: "यह कैसे काम करता है →",

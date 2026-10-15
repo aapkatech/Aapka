@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: 'Lora', 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
