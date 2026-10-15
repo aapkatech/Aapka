@@ -65,15 +65,25 @@ export interface Translations {
   };
   proof: {
     tag: string;
-    metrics: Array<{
+    recognitionTag: string;
+    sectionTitle?: string;
+    sectionSubtitle?: string;
+    metrics?: Array<{
       value: string;
       label: string;
       sub: string;
     }>;
-    recognitionTag: string;
-    recognitions: Array<{
+    recognitions?: Array<{
       title: string;
       detail: string;
+    }>;
+    awards?: Array<{
+      id: string;
+      title: string;
+      badge: string;
+      organization: string;
+      description: string;
+      image: string;
     }>;
   };
   footer: {
@@ -243,19 +253,35 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     proof: {
-      tag: "Quiet Scale",
-      metrics: [
-        { value: "500+", label: "Communities Served", sub: "Grassroots village clusters" },
-        { value: "40k+", label: "Pin Codes Covered", sub: "Nationwide care reach" },
-        { value: "46+", label: "Accredited Hospitals", sub: "Tier-1 network partners" },
-        { value: "₹4.2Cr", label: "Patient Capital Preserved", sub: "Direct surgical & drug savings" }
-      ],
-      recognitionTag: "Institutional Recognition & Grants",
-      recognitions: [
-        { title: "FICCI Healthcare Awards", detail: "Excellence Finalist" },
-        { title: "Sankalp Bharat Summit", detail: "Top Social Enterprise" },
-        { title: "Swati Rai Innovation", detail: "₹10 Lakh Winner" },
-        { title: "IIM Kashipur Uththistha", detail: "1st Runner-Up" }
+      tag: "Recognition",
+      recognitionTag: "Institutional Recognition & Awards",
+      sectionTitle: "Validated by India’s leading healthcare and entrepreneurial institutions.",
+      sectionSubtitle: "Recognized for driving accessible, dignified patient navigation and clinical quality across Bharat.",
+      awards: [
+        {
+          id: "swati-rai",
+          title: "Swati Rai Award for Excellence in Entrepreneurship",
+          badge: "1st Prize Winner (₹10 Lakh)",
+          organization: "Sankalp Bharat Summit",
+          description: "Winners of the Swati Rai Award (1st prize of 10 lakh rupees) for Excellence in Entrepreneurship at the Sankalp Bharat Summit.",
+          image: "/awards/swati-rai-sankalp-photo.png"
+        },
+        {
+          id: "ficci",
+          title: "FICCI Healthcare India Excellence Awards",
+          badge: "Top 3 Finalist",
+          organization: "FICCI New Delhi",
+          description: "Finalist in FICCI Healthcare India Excellence Award (Top 3) organized by Federation of Indian Chambers of Commerce & Industry, New Delhi.",
+          image: "/awards/ficci-healthcare-photo.png"
+        },
+        {
+          id: "iim-kashipur",
+          title: "Scale UP Pitchathon — Uththistha 2024",
+          badge: "1st Runner-Up",
+          organization: "IIM Kashipur",
+          description: "Became first runner up among 70 startups at Scale UP pitchathon at Uththistha 2024, organized by IIM Kashipur.",
+          image: "/awards/iim-kashipur-photo.png"
+        }
       ]
     },
     footer: {
@@ -442,19 +468,35 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     proof: {
-      tag: "विश्वसनीयता और प्रभाव",
-      metrics: [
-        { value: "500+", label: "समुदाय जुड़े", sub: "ग्रामीण एवं अर्ध-शहरी क्लस्टर" },
-        { value: "40k+", label: "पिनकोड में पहुंच", sub: "देशव्यापी सेवा उपलब्धता" },
-        { value: "46+", label: "मान्यता प्राप्त अस्पताल", sub: "शीर्ष टियर-1 नेटवर्क पार्टनर" },
-        { value: "₹4.2Cr+", label: "मरीजों की बचत", sub: "सर्जरी और दवाओं पर सीधी राहत" }
-      ],
-      recognitionTag: "राष्ट्रीय सम्मान एवं अनुदान",
-      recognitions: [
-        { title: "फिक्की हेल्थकेयर अवार्ड्स (FICCI)", detail: "उत्कृष्टता फाइनलिस्ट" },
-        { title: "संकल्प भारत सम्मेलन", detail: "शीर्ष सामाजिक उद्यम विजेता" },
-        { title: "स्वाति राय इनोवेशन ग्रांट", detail: "₹10 लाख विजेता" },
-        { title: "आईआईएम काशीपुर उत्तिष्ठ", detail: "प्रथम उपविजेता (1st Runner-Up)" }
+      tag: "मान्यता एवं सम्मान",
+      recognitionTag: "राष्ट्रीय सम्मान एवं उपलब्धियां",
+      sectionTitle: "भारत के प्रमुख स्वास्थ्य एवं नवाचार संस्थानों द्वारा सम्मानित।",
+      sectionSubtitle: "ग्रामीण व अर्ध-शहरी क्षेत्रों में सुलभ एवं गुणवत्तापूर्ण स्वास्थ्य सेवाओं के लिए प्रतिष्ठित पुरस्कार।",
+      awards: [
+        {
+          id: "swati-rai",
+          title: "स्वाति राय अवार्ड फॉर एक्सीलेंस इन एंटरप्रेन्योरशिप",
+          badge: "प्रथम पुरस्कार (₹10 लाख विजेता)",
+          organization: "संकल्प भारत सम्मेलन",
+          description: "संकल्प भारत समिट में उद्यमिता में उत्कृष्टता के लिए स्वाति राय पुरस्कार (10 लाख रुपये का प्रथम पुरस्कार) विजेता।",
+          image: "/awards/swati-rai-sankalp-photo.png"
+        },
+        {
+          id: "ficci",
+          title: "फिक्की हेल्थकेयर इंडिया एक्सीलेंस अवार्ड्स",
+          badge: "फाइनलिस्ट (शीर्ष 3)",
+          organization: "फिक्की (FICCI) नई दिल्ली",
+          description: "फेडरेशन ऑफ इंडियन चैंबर्स ऑफ कॉमर्स एंड इंडस्ट्री (FICCI), नई दिल्ली द्वारा आयोजित हेल्थकेयर एक्सीलेंस अवार्ड्स में शीर्ष 3 फाइनलिस्ट।",
+          image: "/awards/ficci-healthcare-photo.png"
+        },
+        {
+          id: "iim-kashipur",
+          title: "स्केल-अप पिचथॉन — उत्तिष्ठ 2024",
+          badge: "प्रथम उपविजेता (1st Runner-Up)",
+          organization: "आईआईएम काशीपुर",
+          description: "आईआईएम काशीपुर द्वारा आयोजित उत्तिष्ठ 2024 के स्केल-अप पिचथॉन में 70 स्टार्टअप्स के बीच प्रथम उपविजेता।",
+          image: "/awards/iim-kashipur-photo.png"
+        }
       ]
     },
     footer: {
