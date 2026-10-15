@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Shield, HeartHandshake, PhoneCall } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield } from 'lucide-react';
 
 interface HeroProps {
   onSearch?: (query: string) => void;
@@ -14,13 +14,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           
           {/* Left Column: Value Proposition & High-Trust Copy */}
           <div className="lg:col-span-7 space-y-8 text-left">
-            
-            {/* Subtle Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-600 tracking-tight shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
-              <span>Trusted Global Healthcare Network</span>
-            </div>
-
             {/* Main Headline: Large, Bold, Commanding (#0f172a) */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold text-slate-900 tracking-tight leading-[1.08] sm:leading-[1.1]">
               Your Family’s Health, Managed With{' '}
@@ -108,12 +101,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     </p>
                   </div>
                 </div>
-              </div>
-
-              {/* Secondary Floating Mini-Badge (Top Right) */}
-              <div className="hidden sm:flex absolute -top-4 -right-4 z-20 bg-white/95 backdrop-blur-md rounded-xl px-3.5 py-2 border border-slate-200 shadow-lg items-center gap-2">
-                <HeartHandshake className="w-4 h-4 text-teal-600" />
-                <span className="text-xs font-semibold text-slate-800">Direct Doctor Access</span>
               </div>
 
             </div>
