@@ -16,13 +16,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand & Corporate entity */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7">
-                <AapkaLogo className="w-full h-full" />
-              </div>
-              <span className="text-base font-bold tracking-tight text-zinc-950">
-                Aapka
-              </span>
+            <div className="flex items-center">
+              <AapkaLogo variant="full" className="h-8 w-auto" />
             </div>
 
             <p className="text-xs text-zinc-500 leading-relaxed max-w-sm">

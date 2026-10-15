@@ -53,8 +53,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {!submitted ? (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <div className="w-8 h-8 rounded-lg mb-3">
-                <AapkaLogo className="w-full h-full" />
+              <div className="mb-3">
+                <AapkaLogo variant="full" className="h-8 w-auto" />
               </div>
               <h3 className="text-2xl font-medium tracking-tight text-zinc-950">
                 Access Clinical Coordination

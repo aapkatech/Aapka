@@ -2,19 +2,30 @@ import React from 'react';
 
 interface AapkaLogoProps {
   className?: string;
-  size?: number | string;
-  variant?: 'image' | 'svg';
+  variant?: 'full' | 'icon' | 'svg';
+  alt?: string;
 }
 
 export const AapkaLogo: React.FC<AapkaLogoProps> = ({ 
-  className = "w-9 h-9", 
-  variant = 'svg' 
+  className = "h-9 w-auto", 
+  variant = 'full',
+  alt = "Aapka - The Health Hub"
 }) => {
-  if (variant === 'image') {
+  if (variant === 'full') {
+    return (
+      <img 
+        src="/aapka-full-logo.png" 
+        alt={alt} 
+        className={`object-contain ${className}`} 
+      />
+    );
+  }
+
+  if (variant === 'icon') {
     return (
       <img 
         src="/aapka-logo.png" 
-        alt="Aapka Official Logo" 
+        alt={alt} 
         className={`object-contain ${className}`} 
       />
     );
