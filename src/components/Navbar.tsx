@@ -34,13 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
           <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
             <AapkaLogo className="w-full h-full" />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <span className="text-xl font-bold tracking-tight text-zinc-950">
               Aapka
-            </span>
-            <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-zinc-100 text-[11px] font-medium text-zinc-600 border border-zinc-200/60">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-calm-pulse" />
-              <span>Care Active</span>
             </span>
           </div>
         </a>
