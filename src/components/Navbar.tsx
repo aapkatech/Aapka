@@ -29,20 +29,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPortal, lang, setLang }) =
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
-        {/* Left: Typographic Logo "Aapka" with Subtle Modern Pulse Indicator */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-            <AapkaLogo variant="icon" className="w-full h-full" />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tight text-slate-900 group-hover:text-teal-700 transition-colors">
-              Aapka
-            </span>
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-600"></span>
-            </span>
-          </div>
+        {/* Left: Official Aapka Logo Lockup */}
+        <a href="#" className="flex items-center group">
+          <AapkaLogo variant="full" className="h-10 sm:h-11 w-auto transition-transform group-hover:scale-[1.02]" />
         </a>
 
         {/* Center / Navigation Links: Services, Global Network, About, Contact */}

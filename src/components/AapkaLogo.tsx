@@ -7,14 +7,14 @@ interface AapkaLogoProps {
 }
 
 export const AapkaLogo: React.FC<AapkaLogoProps> = ({ 
-  className = "h-9 w-auto", 
+  className = "h-10 w-auto", 
   variant = 'full',
   alt = "Aapka - The Health Hub"
 }) => {
   if (variant === 'full') {
     return (
       <img 
-        src="/aapka-full-logo.png" 
+        src="/aapka-brand-logo.png" 
         alt={alt} 
         className={`object-contain ${className}`} 
       />
