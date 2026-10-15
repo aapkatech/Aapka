@@ -1,15 +1,12 @@
 import React from 'react';
 import { 
-  HeartHandshake, 
   Phone, 
   Mail, 
   MapPin, 
   ShieldCheck, 
-  Activity, 
-  Award,
-  ArrowUp,
-  ExternalLink
+  ArrowUp
 } from 'lucide-react';
+import { AapkaLogo } from './AapkaLogo';
 import type { Language } from '../data/translations';
 import { content } from '../data/translations';
 
@@ -35,8 +32,8 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking }) => {
           {/* Brand Info & Mission */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-md">
-                <Activity className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center w-11 h-11 rounded-2xl bg-white p-1.5 shadow-md">
+                <AapkaLogo className="w-full h-full" />
               </div>
               <div>
                 <span className="text-2xl font-black tracking-tight text-white">

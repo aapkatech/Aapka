@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  HeartHandshake, 
   Phone, 
   Menu, 
   X, 
   Globe, 
   Sparkles, 
-  ShieldCheck, 
-  ChevronRight,
-  Activity
+  ChevronRight
 } from 'lucide-react';
+import { AapkaLogo } from './AapkaLogo';
 import type { Language } from '../data/translations';
 import { content } from '../data/translations';
 
@@ -58,13 +56,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenBooking }) 
       {/* Main Sticky Navbar */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Logo */}
+          {/* Official Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-600 to-sky-700 text-white shadow-md shadow-sky-600/20 group-hover:scale-105 transition-transform">
-              <Activity className="w-6 h-6 text-white" />
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white">
-                <HeartHandshake className="w-3 h-3" />
-              </div>
+            <div className="flex items-center justify-center w-11 h-11 rounded-2xl bg-white border border-slate-200/90 shadow-xs p-1 group-hover:scale-105 group-hover:border-sky-300 transition-all">
+              <AapkaLogo className="w-full h-full" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">

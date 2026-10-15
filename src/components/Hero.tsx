@@ -1,19 +1,17 @@
 import React from 'react';
 import { 
   ShieldCheck, 
-  Sparkles, 
   ArrowRight, 
   PhoneCall, 
   CheckCircle2, 
   CreditCard, 
   Wifi, 
   Users, 
-  Hospital, 
   QrCode,
   Award,
-  Zap,
-  Clock
+  Zap
 } from 'lucide-react';
+import { AapkaLogo } from './AapkaLogo';
 import type { Language } from '../data/translations';
 import { content } from '../data/translations';
 
@@ -149,9 +147,9 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenBooking }) => {
 
                 {/* Card Top: Brand & Contactless */}
                 <div className="flex items-center justify-between mb-8 relative z-10">
-                  <div className="flex items-center gap-2">
-                    <div className="w-9 h-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                      <CreditCard className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-white p-1 shadow-sm flex items-center justify-center">
+                      <AapkaLogo className="w-full h-full" />
                     </div>
                     <div>
                       <span className="text-xl font-black tracking-tight">Aapka<span className="text-emerald-400">.</span></span>
