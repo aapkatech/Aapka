@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { CheckCircle2, Shield } from 'lucide-react';
 import type { Translations } from '../i18n/translations';
 
@@ -22,10 +23,10 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Classic, High-Trust Editorial Narrative */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-left">
+          {/* Left Column: Classic, High-Trust Editorial Narrative (45% - 50% width on desktop) */}
+          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -36,12 +37,12 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             )}
 
             {/* Main Headline: Classic, prestigious professional typography */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.2rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.6rem] xl:text-[4rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
               {headline}
             </h1>
 
             {/* Sub-headline: Warm & Reassuring */}
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-normal leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-normal leading-relaxed max-w-xl">
               {subheadline}
             </p>
 
@@ -79,41 +80,31 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
           </div>
 
-          {/* Right Column: Fused Custom Visual (Cut-out Figures on Defined Geometric Backdrop) */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            
-            {/* Visual Fusion Composition Container */}
-            <div className="relative w-full max-w-lg lg:max-w-none">
-              
-              {/* Custom Defined Geometric & Organic Background Panel */}
-              <div className="relative rounded-[2.5rem] bg-gradient-to-tr from-amber-50 via-teal-50/40 to-sky-50/60 border border-slate-200/70 p-4 sm:p-6 shadow-xl shadow-slate-200/50 overflow-hidden">
-                
-                {/* Internal Decorative Layered Aura Shapes */}
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-amber-200/40 to-teal-200/30 rounded-full blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-10 -left-10 w-44 h-44 bg-gradient-to-tr from-teal-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+          {/* Right Column: Hero Visual (50% - 55% width, 550px - 620px height, slide-in from left, strictly clipped) */}
+          <div className="lg:col-span-6 xl:col-span-7 relative flex items-center justify-center lg:justify-end w-full">
+            <motion.div
+              initial={{ x: -80, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] xl:h-[620px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-5 bg-gradient-to-tr from-amber-50/70 via-teal-50/30 to-sky-50/50 border border-slate-200/80 shadow-xl shadow-slate-200/50"
+            >
+              {/* Internal Decorative Layered Aura Shapes */}
+              <div className="absolute -top-12 -right-12 w-56 h-56 bg-gradient-to-br from-amber-200/40 to-teal-200/30 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-tr from-teal-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
 
-                {/* Subtle Geometric Framing Card */}
-                <div className="relative rounded-[2rem] bg-gradient-to-b from-white/90 via-white/70 to-white/40 backdrop-blur-xs border border-white/80 p-2 sm:p-4">
-                  
-                  {/* The Cutout Figures: Mother, Daughter, Nurse & Grandfather in Bed */}
-                  <div className="relative flex items-center justify-center">
-                    <img
-                      src="/hero-family-cutout.png"
-                      alt="Dedicated healthcare nurse assisting mother, child, and grandfather"
-                      className="w-full h-auto max-h-[380px] sm:max-h-[440px] lg:max-h-[460px] object-contain drop-shadow-[0_12px_24px_rgba(15,23,42,0.12)] transition-transform duration-500 hover:scale-[1.02]"
-                      loading="eager"
-                    />
+              {/* Strict Inner Clipped Container with overflow-hidden */}
+              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/50 backdrop-blur-xs border border-white/80">
+                <img
+                  src="/hero-family-cutout.png"
+                  alt="Aapka Family Healthcare - Compassionate care for rural families"
+                  className="w-full h-full max-h-[580px] object-contain transition-transform duration-500 ease-out hover:scale-105 drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]"
+                  loading="eager"
+                />
 
-                    {/* Gentle bottom grounding fade to melt bed into container */}
-                    <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white/85 via-white/30 to-transparent pointer-events-none rounded-b-[1.5rem]" />
-                  </div>
-
-                </div>
-
+                {/* Seamless bottom grounding gradient overlay - eliminates any cut-out leakage */}
+                <div className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-white/95 via-white/40 to-transparent pointer-events-none" />
               </div>
-
-            </div>
-
+            </motion.div>
           </div>
 
         </div>
@@ -121,3 +112,4 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
     </section>
   );
 };
+
