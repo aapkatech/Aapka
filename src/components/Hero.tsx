@@ -18,15 +18,15 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const downloadApp = t?.downloadApp || "Download the App";
 
   return (
-    <section className="relative bg-white pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-32 overflow-hidden">
+    <section className="relative bg-white pt-2 pb-14 sm:pt-3 sm:pb-20 lg:pt-3 lg:pb-24 overflow-hidden">
       {/* Subtle architectural ambient background glow */}
-      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Classic, High-Trust Editorial Narrative (45% - 50% width on desktop) */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left">
+          {/* Left Column: Classic, High-Trust Editorial Narrative (Aligned crisp with hero photo) */}
+          <div className="lg:col-span-6 xl:col-span-5 space-y-5 sm:space-y-6 text-left pt-2 lg:pt-4">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (

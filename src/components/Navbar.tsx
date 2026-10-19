@@ -26,14 +26,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-xl border-b border-zinc-100 shadow-xs py-3.5' 
-          : 'bg-white/95 backdrop-blur-sm border-b border-transparent py-4 sm:py-5'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-zinc-100 shadow-xs py-2.5' 
+          : 'bg-white/95 backdrop-blur-sm border-b border-transparent py-2.5 sm:py-3'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Left: Official Aapka Logo Lockup */}
         <a href="#" className="flex items-center group py-0.5" aria-label="Aapka Home">
-          <AapkaLogo variant="full" className="h-12 sm:h-14 lg:h-16 w-auto transition-transform group-hover:scale-[1.02]" />
+          <AapkaLogo variant="full" className="h-10 sm:h-11 lg:h-12 w-auto transition-transform group-hover:scale-[1.02]" />
         </a>
 
         {/* Center / Navigation Links: Services, Global Network, About, Contact */}
