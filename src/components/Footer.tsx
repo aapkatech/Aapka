@@ -121,15 +121,25 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
             <ul className="space-y-2.5 text-zinc-500">
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                <a href={`tel:${phone.replace(/\s+/g, '')}`} className="hover:text-zinc-950 font-medium text-zinc-700">
-                  {phone}
-                </a>
+                <div className="flex flex-col text-xs">
+                  <a href="tel:+919716332976" className="hover:text-zinc-950 font-medium text-zinc-700">
+                    +91 9716332976
+                  </a>
+                  <a href="tel:+919667033044" className="hover:text-zinc-950 text-zinc-500">
+                    +91 9667033044
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                <a href={`mailto:${email.toLowerCase()}`} className="hover:text-zinc-950">
-                  {email}
-                </a>
+                <div className="flex flex-col text-xs">
+                  <a href="mailto:prabal@aapka.co.in" className="hover:text-zinc-950 font-medium text-zinc-700">
+                    prabal@aapka.co.in
+                  </a>
+                  <a href="mailto:info@aapka.co.in" className="hover:text-zinc-950 text-zinc-500">
+                    info@aapka.co.in
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2 pt-1 text-[11px] text-zinc-500">
                 <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0 mt-0.5" />

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { TrustPillars } from './components/TrustPillars';
+import { ExecutionStrengths } from './components/ExecutionStrengths';
+import { TribalHealthGap } from './components/TribalHealthGap';
+import { AapkaWorkflow } from './components/AapkaWorkflow';
+import { GramMitraSection } from './components/GramMitraSection';
 import { ServicesShowcase } from './components/ServicesShowcase';
-import { GlobalNetwork } from './components/GlobalNetwork';
+import { LeadershipTeam } from './components/LeadershipTeam';
 import { QuietProof } from './components/QuietProof';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -28,7 +31,7 @@ export function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-zinc-900 selection:text-white">
-      {/* 1. Floating Minimalist Navigation Bar with Interactive Language Switcher */}
+      {/* 1. Floating Minimalist Navigation Bar with Interactive Language Switcher (LOCKED) */}
       <Navbar 
         onOpenPortal={() => handleOpenBooking('consultation')} 
         lang={lang} 
@@ -37,29 +40,35 @@ export function App() {
       />
 
       <main className="flex-grow">
-        {/* 2. Hero Section: Direct, Breathable, Immense Whitespace & Visual Fusion */}
+        {/* 2. Hero Section (LOCKED - Untouched) */}
         <Hero 
           onSearch={handleSearch} 
           onOpenBooking={handleOpenBooking}
           t={t.hero}
         />
 
-        {/* 3. The Three Trust Pillars: Massive Padding & Subtle Borders */}
-        <TrustPillars t={t.pillars} />
+        {/* 3. Verified Execution Strengths & Scale Metrics (Page 6 of Deck) */}
+        <ExecutionStrengths />
 
-        {/* 4. Core Services Showcase: Minimalist Grid & One-Sentence Descriptions */}
+        {/* 4. The Tribal & Rural Healthcare Reality & The Golden Hour Dilemma (Pages 2 & 3 of Deck) */}
+        <TribalHealthGap />
+
+        {/* 5. From 'Where Should We Go?' to 'Care Starts Faster' — 5-Step Clinical Workflow (Page 4 of Deck) */}
+        <AapkaWorkflow />
+
+        {/* 6. Gram Mitra: Aapka's Strength on the Ground & BLS Training (Pages 5 & 10 of Deck) */}
+        <GramMitraSection />
+
+        {/* 7. Comprehensive Clinical Pathways & Sustainable Model (Page 7 of Deck) */}
         <ServicesShowcase 
           onSelectService={handleOpenBooking}
           t={t.services}
         />
 
-        {/* 5. Global Healthcare Network: 46+ Verified Hospitals */}
-        <GlobalNetwork 
-          onOpenBooking={() => handleOpenBooking('hospitalization')}
-          t={t.network}
-        />
+        {/* 8. Our Leadership Team — Co-Founders & Pedigree (Page 6 of Deck) */}
+        <LeadershipTeam />
 
-        {/* 6. Global Impact & Quiet Proof Section: Understated Numbers & Accolades */}
+        {/* 9. Comprehensive Awards & Recognition (Page 8 of Deck) */}
         <QuietProof t={t.proof} />
       </main>
 
