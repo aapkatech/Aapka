@@ -25,8 +25,8 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Classic, High-Trust Editorial Narrative (Aligned crisp with hero photo) */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-5 sm:space-y-6 text-left pt-2 lg:pt-4">
+          {/* Left Column: Classic, High-Trust Editorial Narrative (Gracefully positioned for top/bottom balance) */}
+          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left pt-4 sm:pt-6 lg:pt-12 xl:pt-16 pb-2 lg:pb-6">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             </p>
 
             {/* Small 'Download the App' Action */}
-            <div className="pt-1">
+            <div className="pt-2">
               <a
                 href="https://play.google.com/store/apps/details?id=com.kapp.smartgram&pli=1"
                 target="_blank"
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             </div>
 
             {/* Micro-Trust Signals */}
-            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
+            <div className="pt-3 sm:pt-5 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{communitiesSupported}</span>
