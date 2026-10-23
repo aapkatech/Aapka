@@ -81,7 +81,7 @@ export const ContactSection: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>24/7 Care Coordination & Inquiries</span>
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
             Connect With Our Clinical Team
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
@@ -92,74 +92,74 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Left: Contact Info & Leadership Linkages */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6">
             
-            <div className="p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
-              <div className="space-y-2">
-                <span className="text-xs uppercase font-bold tracking-wider text-teal-400">Direct Coordination Lines</span>
-                <h3 className="text-xl font-bold font-serif text-white">Emergency &amp; Support Hub</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Our coordination desk is connected directly to hospital casualty counters and on-ground Gram Mitras.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-6 text-slate-900">
+              <div className="space-y-1.5">
+                <span className="text-xs uppercase font-bold tracking-wider text-teal-700">Direct Coordination Lines</span>
+                <h3 className="text-xl font-bold text-slate-900">Emergency &amp; Support Hub</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Our coordination desk is connected directly to partner hospital casualty departments and on-ground Gram Mitras.
                 </p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Helpline Numbers</p>
-                    <a href="tel:+919716332976" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
+                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Helpline Numbers</p>
+                    <a href="tel:+919716332976" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
                       +91 9716332976
                     </a>
-                    <a href="tel:+919667033044" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
+                    <a href="tel:+919667033044" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
                       +91 9667033044
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Executive Inquiries</p>
-                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
+                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Executive Inquiries</p>
+                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
                       prabal@aapka.co.in
                     </a>
-                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
+                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
                       info@aapka.co.in
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Registered Office</p>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Registered Office</p>
+                    <p className="text-xs text-slate-700 leading-relaxed font-medium">
                       201 Convention Centre, JNU New Delhi, 110067
                     </p>
-                    <p className="text-[11px] text-slate-500">SP Rural India Services Private Limited</p>
+                    <p className="text-[11px] text-slate-400">SP Rural India Services Private Limited</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-teal-400">
-                <Clock className="w-4 h-4 shrink-0" />
-                <span>Active 24/7 coordination desks</span>
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-teal-800 bg-teal-50/60 p-3 rounded-xl border border-teal-100">
+                <Clock className="w-4 h-4 shrink-0 text-teal-700" />
+                <span className="font-medium">Average coordinator response time: &lt; 15 minutes</span>
               </div>
             </div>
 
-            {/* Privacy Safeguard Note */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-2xs">
+            {/* Micro Guarantee */}
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/90 flex items-center gap-3.5 shadow-2xs">
               <ShieldCheck className="w-8 h-8 text-teal-700 shrink-0" />
               <div className="space-y-0.5">
-                <p className="text-xs font-semibold text-slate-900">Confidential Patient Data Handling</p>
-                <p className="text-[11px] text-slate-500">Data is maintained under the DPDP Act 2023 principles and shared only with attending medical providers.</p>
+                <p className="text-xs font-bold text-slate-900">100% Patient Confidentiality</p>
+                <p className="text-[11px] text-slate-500">Your health details are encrypted and shared only with verified hospital clinicians under the DPDP Act 2023.</p>
               </div>
             </div>
 
@@ -172,8 +172,8 @@ export const ContactSection: React.FC = () => {
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-slate-900 font-serif">Send a Care Coordination Request</h3>
-                    <p className="text-xs text-slate-500">Enter your contact details to connect directly with an Aapka coordinator.</p>
+                    <h3 className="text-xl font-bold text-slate-900">Send a Care Coordination Request</h3>
+                    <p className="text-xs text-slate-500">Fill in the patient or case details below to activate immediate assistance.</p>
                   </div>
 
                   {error && (
@@ -294,8 +294,8 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div className="space-y-2 max-w-md mx-auto">
-                    <h3 className="text-2xl font-bold font-serif text-slate-900">
-                      Inquiry Prepared for Direct Dispatch
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Request Dispatched Successfully!
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
                       Thank you, <strong>{formData.name.trim()}</strong>. Your coordination details for <strong>{formData.inquiryType}</strong> have been prepared. Tap below to connect directly with the Aapka Care Desk.

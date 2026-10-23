@@ -88,8 +88,8 @@ export const AapkaWorkflow: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>The Proactive Solution</span>
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-            From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-medium">"Care Starts Faster."</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+            From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-semibold">"Care Starts Faster."</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
             Aapka helps rural and tribal communities find the right hospital, coordinate before arrival, and navigate care — so that critical time is never lost.
@@ -141,7 +141,7 @@ export const AapkaWorkflow: React.FC = () => {
         {/* The Execution Equation (Technology + Community = Impact) */}
         <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-serif">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
               The Healthcare Access Equation
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">

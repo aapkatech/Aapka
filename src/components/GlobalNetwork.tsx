@@ -10,32 +10,32 @@ interface GlobalNetworkProps {
 export const GlobalNetwork: React.FC<GlobalNetworkProps> = ({ onOpenBooking, t }) => {
   const defaultHubs = [
     {
-      region: "North Region Network",
-      specialties: "Oncology, Cardiology & Orthopedic Hubs",
-      centers: "18 Tier-1 Partner Hospitals",
-      coverage: "NCR, Western UP, Haryana & Punjab",
+      region: "Central & Tribal Hub Network",
+      specialties: "Emergency ICU, General Surgery & Maternal Health",
+      centers: "95+ District & Sub-District Hospitals",
+      coverage: "Madhya Pradesh, Rajasthan & Tribal Districts",
+      status: "Bed Reservation Active"
+    },
+    {
+      region: "North & Tertiary Care Network",
+      specialties: "Super-Specialty, Cardiology & Oncology Centers",
+      centers: "85+ Premier Tier-1 Partner Hospitals",
+      coverage: "Delhi NCR, Western UP & Regional Cities",
       status: "Direct Bed Allocation Active"
     },
     {
-      region: "Central & Rural Network",
-      specialties: "General Surgery, Maternal Health & Nephrology",
-      centers: "16 District Referral Centers",
-      coverage: "Bulandshahr, Meerut, Aligarh & Mathura",
-      status: "Swasthya-Mitra On-Duty"
-    },
-    {
-      region: "Diagnostic & Telehealth Grid",
-      specialties: "NABL Pathology, MRI/CT & 24/7 Virtual Specialists",
-      centers: "12 Accredited Regional Laboratories",
-      coverage: "Pan-Bharat 40,000+ Pincodes",
-      status: "Home Collection Active"
+      region: "Diagnostic & Mobile Health Grid",
+      specialties: "NABL Pathology, Digital Radiology & Telemedicine",
+      centers: "60+ Accredited Diagnostic Laboratories",
+      coverage: "1,050+ Villages Across 48+ District Hubs",
+      status: "Doorstep Sample Collection"
     }
   ];
 
   const hubs = t?.hubs || defaultHubs;
-  const tag = t?.tag || "Network Infrastructure";
-  const title = t?.title || "46+ Vetted hospital systems and accredited diagnostic laboratories.";
-  const description = t?.description || "Every center in our network is contractually bound to transparent fee schedules, zero administrative gouging, and expedited patient intake.";
+  const tag = t?.tag || "Care Network Infrastructure";
+  const title = t?.title || "240+ Vetted partner hospitals and accredited diagnostic centers.";
+  const description = t?.description || "Every hospital in our network commits to pre-negotiated tariff transparency, guaranteed bed reservations, and dedicated patient care facilitators.";
   const requestDirectory = t?.requestDirectory || "Request bed or specialist check";
 
   return (

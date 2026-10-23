@@ -54,7 +54,7 @@ export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => 
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
             {tag}
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 font-serif">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
             {title}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
@@ -80,7 +80,7 @@ export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => 
                   </div>
 
                   <div className="space-y-1">
-                    <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 font-serif">
+                    <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950">
                       {item.value}
                     </p>
                     <h3 className="text-base font-semibold text-slate-900">

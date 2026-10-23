@@ -48,23 +48,20 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
         </Link>
 
         {/* Center / Navigation Links: Services, Global Network, Founders, About, Contact */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/60 p-1 rounded-full border border-slate-200/70">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
               <Link 
                 key={link.to} 
                 to={link.to} 
-                className={`transition-colors relative py-1 ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-150 ${
                   isActive 
-                    ? 'text-slate-950 font-semibold' 
-                    : 'text-slate-600 hover:text-slate-950'
+                    ? 'bg-white text-slate-950 font-semibold shadow-xs' 
+                    : 'text-slate-600 hover:text-slate-950 hover:bg-white/50'
                 }`}
               >
-                <span>{link.label}</span>
-                {isActive && (
-                  <span className="absolute bottom-0 inset-x-0 h-0.5 bg-teal-600 rounded-full" />
-                )}
+                {link.label}
               </Link>
             );
           })}
@@ -145,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             </div>
           </div>
 
-          <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-700">
+          <nav className="flex flex-col space-y-1.5 text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to;
               return (
@@ -153,10 +150,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
                   key={link.to} 
                   to={link.to} 
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`py-1 transition-colors ${
+                  className={`px-3.5 py-2 rounded-xl text-sm transition-all ${
                     isActive 
-                      ? 'text-teal-700 font-semibold' 
-                      : 'hover:text-slate-950'
+                      ? 'bg-teal-50 text-teal-800 font-semibold border border-teal-100' 
+                      : 'text-slate-700 hover:text-slate-950 hover:bg-slate-50'
                   }`}
                 >
                   {link.label}

@@ -4,7 +4,7 @@ import { Home, ShieldAlert } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-6 py-20 bg-white">
+    <div className="min-h-[70vh] flex items-center justify-center px-6 py-20 bg-[#FAFAFA]">
       <div className="max-w-md w-full text-center space-y-6">
         <div className="w-16 h-16 rounded-2xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center mx-auto shadow-sm">
           <ShieldAlert className="w-8 h-8" />
@@ -12,7 +12,7 @@ export const NotFoundPage: React.FC = () => {
 
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-teal-700">Error 404 • Page Not Found</span>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Lost Your Way?
           </h1>
           <p className="text-sm text-slate-600 leading-relaxed">

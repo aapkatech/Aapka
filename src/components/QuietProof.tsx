@@ -105,8 +105,8 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>Validation of Our Impact & Commitment</span>
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-            Awards & Recognition
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+            Awards &amp; Recognition
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
             Recognized by India's and the world's leading healthcare bodies, academic institutions, and global corporations for driving accessible, timely healthcare to tribal communities.
@@ -154,7 +154,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
                   <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
                     {award.organization}
                   </p>
-                  <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug font-serif">
+                  <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug">
                     {award.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -178,8 +178,8 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
 
         {/* 6 Grid of Prestigious Institutional Accolades */}
         <div className="space-y-6">
-          <h3 className="text-xl font-bold text-slate-900 font-serif">
-            Institutional Honors & Industry Grants
+          <h3 className="text-xl font-bold text-slate-900">
+            Institutional Honors &amp; Industry Grants
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {institutionalAccolades.map((item, idx) => (
@@ -195,7 +195,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
                     <span className="text-xs font-mono font-bold text-slate-400">0{idx + 1}</span>
                   </div>
 
-                  <h4 className="text-base font-bold text-slate-900 font-serif leading-snug">
+                  <h4 className="text-base font-bold text-slate-900 leading-snug">
                     {item.title}
                   </h4>
 
@@ -219,7 +219,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
               <Newspaper className="w-5 h-5 text-teal-700" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-900 font-serif">Featured in Leading National Media</h4>
+              <h4 className="text-sm font-bold text-slate-900">Featured in Leading National Media</h4>
               <p className="text-xs text-slate-500">Documenting our journey to transform tribal healthcare access</p>
             </div>
           </div>

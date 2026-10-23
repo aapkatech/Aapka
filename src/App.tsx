@@ -34,7 +34,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-zinc-900 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-slate-900 font-sans selection:bg-teal-900 selection:text-white">
       {/* Scroll to top automatically on route changes */}
       <ScrollToTop />
 
