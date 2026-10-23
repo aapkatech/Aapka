@@ -35,10 +35,51 @@
 
 ---
 
+## 📹 Directly Hosted Video Testimonials Architecture
+
+Aapka uses a self-contained, native HTML5 video pipeline for real patient and Gram Mitra case recordings without relying on external third-party embeds (YouTube, Vimeo, etc.).
+
+### Why Native Hosting?
+- **Ad-Free & Respectful**: Rural patient families are not subjected to distracting third-party advertisements or trackers.
+- **Data Privacy (DPDP Act 2023)**: Complete confidentiality without external video platform profiling.
+- **Fast Progressive Streaming**: Immediate playback on rural 3G/4G connections with preloaded metadata and `faststart` MP4 headers.
+- **Bilingual Subtitles**: Direct WebVTT (`.vtt`) subtitle integration for multi-dialect accessibility (Hindi & English).
+
+### Directory & File Structure
+```text
+Aapka/
+├── public/
+│   ├── videos/                    # Raw .mp4 video files (H.264 + AAC)
+│   │   ├── .gitkeep
+│   │   └── README.md              # Video encoding & compression specifications
+│   ├── video-posters/             # Thumbnail preview posters (.webp / .jpg)
+│   │   └── .gitkeep
+│   └── captions/                  # WebVTT subtitle files (.vtt)
+│       └── .gitkeep
+│
+└── src/
+    ├── components/
+    │   └── testimonials/
+    │       ├── VideoTestimonials.tsx      # Main section with category filters & grid
+    │       ├── VideoTestimonialCard.tsx   # Native HTML5 <video> player with controls
+    │       └── testimonialsData.ts        # Typed patient stories registry
+    └── pages/
+        └── HomePage.tsx                   # Section integration on Home
+```
+
+### Adding New Video Testimonials
+1. Place compressed `.mp4` into `public/videos/<slug>.mp4` (recommended: 720p/1080p, H.264, AAC).
+2. Save preview poster to `public/video-posters/<slug>.webp`.
+3. (Optional) Add WebVTT subtitles in `public/captions/<slug>.en.vtt` and `<slug>.hi.vtt`.
+4. Register the new record in `src/components/testimonials/testimonialsData.ts`.
+
+---
+
 ## 💻 Tech Stack & Architecture
 
 - **Frontend**: React 19 + TypeScript + Vite
-- **Styling**: Tailwind CSS v4 (Modern cleanism, glassmorphic floating stickers, high color contrast compliance)
+- **Styling**: Tailwind CSS v4 (Modern cleanism, high color contrast compliance)
+- **Media Engine**: Native HTML5 Video + WebVTT Closed Captions
 - **Icons**: Lucide React
 - **Bilingual Engine**: Real-time seamless toggle between English & हिन्दी
 - **Accessibility**: ARIA labels, responsive touch targets, mobile-first design for rural smartphone users

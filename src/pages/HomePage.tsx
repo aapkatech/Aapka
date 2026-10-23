@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { ExecutionStrengths } from '../components/ExecutionStrengths';
 import { WhyAapka } from '../components/WhyAapka';
+import { VideoTestimonials } from '../components/testimonials/VideoTestimonials';
 import { QuietProof } from '../components/QuietProof';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -33,7 +34,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', 
         onOpenBooking={onOpenBooking} 
       />
 
-      {/* 4. Awards & National Recognition (Ceremony photos & Light Modal) */}
+      {/* 4. Directly Hosted Video Testimonials (Native HTML5) */}
+      <VideoTestimonials 
+        lang={lang} 
+        onOpenBooking={onOpenBooking} 
+      />
+
+      {/* 5. Awards & National Recognition (Ceremony photos & Light Modal) */}
       <QuietProof t={t?.proof} />
     </div>
   );
