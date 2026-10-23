@@ -4,9 +4,6 @@ import {
   Building2, 
   FlaskConical, 
   CreditCard, 
-  ShieldCheck, 
-  Clock, 
-  IndianRupee, 
   CheckCircle2, 
   PhoneCall, 
   ArrowRight 
@@ -62,36 +59,34 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
   return (
     <div className="py-12 sm:py-16 space-y-20 bg-white">
       
-      {/* Page Header */}
+      {/* Page Header (Clean White Background, Human & Clear) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border border-slate-800 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-          
+        <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
           <div className="relative max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold border border-teal-500/30">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Dedicated Webpage • Clinical Pathways</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span>Compassionate Care Services</span>
+            </p>
             
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Healthcare Services, Simplified for Everyone, Everywhere.
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               Transparent, end-to-end surgical coordination, diagnostic testing, emergency transfer, and family health cards built to eliminate confusion and delays.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300">
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> Zero Hidden Charges
+            <div className="pt-3 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-medium text-slate-700">
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> Zero Hidden Charges
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> 24/7 Clinical Coordination
+              <span className="text-slate-300">•</span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 24/7 Clinical Coordination
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> Pre-Negotiated Hospital Rates
+              <span className="text-slate-300">•</span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> Pre-Negotiated Hospital Rates
               </span>
             </div>
           </div>
@@ -169,26 +164,26 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
         </div>
       </section>
 
-      {/* Bottom Emergency / Coordination Bar */}
+      {/* Bottom Emergency / Coordination Bar (Clean White Background) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 rounded-2xl bg-teal-900 text-white flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-1 max-w-xl">
-            <h3 className="text-xl font-bold font-serif text-white">Need immediate care navigation or surgery check?</h3>
-            <p className="text-xs text-teal-200">Our clinical coordinators stage beds and alert emergency doctors within 15 minutes.</p>
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+          <div className="space-y-1.5 max-w-xl">
+            <h3 className="text-xl sm:text-2xl font-semibold font-serif text-slate-900">Need immediate care navigation or surgery check?</h3>
+            <p className="text-xs sm:text-sm text-slate-600 font-normal">Our clinical coordinators stage beds and alert emergency doctors within 15 minutes.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="px-5 py-2.5 rounded-xl bg-white text-slate-950 font-semibold text-xs hover:bg-slate-100 transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-medium text-xs sm:text-sm hover:bg-slate-800 transition-colors shadow-xs"
             >
               Contact Care Desk
             </Link>
             <a
               href="tel:+919716332976"
-              className="px-5 py-2.5 rounded-xl bg-teal-800 text-white font-semibold text-xs hover:bg-teal-700 transition-colors flex items-center gap-2 border border-teal-700"
+              className="px-5 py-2.5 rounded-xl bg-teal-50 text-teal-800 font-medium text-xs sm:text-sm hover:bg-teal-100 transition-colors flex items-center gap-2 border border-teal-200/80"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-teal-300" />
+              <PhoneCall className="w-3.5 h-3.5 text-teal-700" />
               <span>Call +91 9716332976</span>
             </a>
           </div>

@@ -2,17 +2,14 @@ import React from 'react';
 import { 
   Building2, 
   Target, 
-  Compass, 
   MapPin, 
   Users, 
   ShieldCheck, 
   CheckCircle2, 
   Award, 
-  HeartHandshake, 
   TrendingUp, 
   Calendar, 
-  Activity, 
-  ArrowRight 
+  Activity 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -109,36 +106,34 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 space-y-20 bg-white">
       
-      {/* Page Header */}
+      {/* Page Header (Clean White Background, Human & Clear) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border border-slate-800 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-          
+        <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
           <div className="relative max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold border border-teal-500/30">
-              <Compass className="w-3.5 h-3.5" />
-              <span>Dedicated Webpage • Our Mission &amp; Roadmap</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span>Our Mission &amp; Healthcare Roadmap</span>
+            </p>
             
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Reimagining Rural &amp; Tribal Healthcare in India
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               SP Rural India Services Private Limited (operating as Aapka) is building India's most dependable grassroots-to-tertiary healthcare navigation ecosystem.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300">
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> 1,270+ Village Gram Mitras
+            <div className="pt-3 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-medium text-slate-700">
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 1,270+ Village Gram Mitras
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> 1,050+ Villages Covered
+              <span className="text-slate-300">•</span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 1,050+ Villages Covered
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-teal-400">
-                <CheckCircle2 className="w-4 h-4" /> 240+ Vetted Hospitals
+              <span className="text-slate-300">•</span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 240+ Vetted Hospitals
               </span>
             </div>
           </div>
@@ -316,17 +311,18 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Recognition & Accolades */}
-      <section className="py-16 sm:py-20 bg-slate-900 text-white">
+      {/* Recognition & Accolades (Clean Light Background) */}
+      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80 text-slate-900">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-400">
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
               National Honors &amp; Validation
             </p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
               Endorsed by Healthcare &amp; Innovation Leaders
             </h2>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               Recognized at prestigious national forums for our measurable impact on rural healthcare accessibility.
             </p>
           </div>
@@ -335,17 +331,17 @@ export const AboutPage: React.FC = () => {
             {recognitionList.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700 space-y-4 hover:border-teal-500/50 transition-colors"
+                className="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-500/20 text-teal-300 px-2.5 py-1 rounded border border-teal-500/30">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 px-2.5 py-1 rounded border border-teal-200/70">
                     {item.badge}
                   </span>
-                  <Award className="w-5 h-5 text-amber-400" />
+                  <Award className="w-5 h-5 text-amber-500" />
                 </div>
-                <h3 className="text-lg font-bold text-white font-serif">{item.title}</h3>
-                <p className="text-xs text-teal-300 font-medium">{item.org}</p>
-                <p className="text-xs text-slate-400 leading-relaxed">{item.summary}</p>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">{item.title}</h3>
+                <p className="text-xs text-teal-700 font-medium">{item.org}</p>
+                <p className="text-xs text-slate-600 leading-relaxed">{item.summary}</p>
               </div>
             ))}
           </div>

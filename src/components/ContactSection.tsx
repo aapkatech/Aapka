@@ -8,7 +8,6 @@ import {
   Clock, 
   MessageSquare, 
   ShieldCheck, 
-  Building2, 
   AlertCircle 
 } from 'lucide-react';
 
@@ -91,53 +90,53 @@ export const ContactSection: React.FC = () => {
           {/* Left: Contact Info & Leadership Linkages */}
           <div className="lg:col-span-5 space-y-8">
             
-            <div className="p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
+            <div className="p-8 rounded-3xl bg-white text-slate-900 space-y-6 shadow-sm border border-slate-200/90">
               <div className="space-y-2">
-                <span className="text-xs uppercase font-bold tracking-wider text-teal-400">Direct Coordination Lines</span>
-                <h3 className="text-xl font-bold font-serif text-white">Emergency &amp; Support Hub</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Our coordination desk is connected directly to hospital casualty counters and on-ground Gram Mitras.
+                <span className="text-xs uppercase font-semibold tracking-wider text-teal-700">Direct Coordination Lines</span>
+                <h3 className="text-xl font-bold font-serif text-slate-900">Emergency &amp; Support Hub</h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  Our coordination desk is connected directly to hospital casualty counters and on-ground coordinators.
                 </p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Helpline Numbers</p>
-                    <a href="tel:+919716332976" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Helpline Numbers</p>
+                    <a href="tel:+919716332976" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
                       +91 9716332976
                     </a>
-                    <a href="tel:+919667033044" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
+                    <a href="tel:+919667033044" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
                       +91 9667033044
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Executive Inquiries</p>
-                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Executive Inquiries</p>
+                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
                       prabal@aapka.co.in
                     </a>
-                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
+                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
                       info@aapka.co.in
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
+                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Registered Office</p>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Registered Office</p>
+                    <p className="text-xs text-slate-700 leading-relaxed font-medium">
                       201 Convention Centre, JNU New Delhi, 110067
                     </p>
                     <p className="text-[11px] text-slate-500">SP Rural India Services Private Limited</p>
@@ -145,7 +144,7 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-teal-400">
+              <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-teal-700 font-medium">
                 <Clock className="w-4 h-4 shrink-0" />
                 <span>Average coordinator response time: &lt; 15 minutes</span>
               </div>

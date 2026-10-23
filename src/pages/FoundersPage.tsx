@@ -1,14 +1,9 @@
 import React from 'react';
 import { 
-  Users, 
-  Award, 
   CheckCircle2, 
   GraduationCap, 
   Briefcase, 
-  Building2, 
-  HeartHandshake, 
   Mail, 
-  ArrowRight,
   ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -90,31 +85,29 @@ export const FoundersPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 space-y-20 bg-white">
       
-      {/* Page Header */}
+      {/* Page Header (Clean White Background, Human & Clear) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border border-slate-800 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-          
+        <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
           <div className="relative max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold border border-amber-500/30">
-              <Users className="w-3.5 h-3.5" />
-              <span>Dedicated Webpage • Executive Leadership</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span>Leadership &amp; Grassroots Advocacy</span>
+            </p>
             
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Meet the Founders Behind Aapka
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               A multidisciplinary leadership team combining tier-one corporate engineering, grassroots operational mastery, and rural healthcare access advocacy.
             </p>
 
-            <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800">
+            <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-100">
               {milestones.map((m, idx) => (
                 <div key={idx} className="space-y-0.5">
-                  <p className="text-2xl sm:text-3xl font-bold font-serif text-teal-400">{m.num}</p>
-                  <p className="text-xs font-semibold text-white">{m.label}</p>
-                  <p className="text-[11px] text-slate-400">{m.desc}</p>
+                  <p className="text-2xl sm:text-3xl font-bold font-serif text-teal-700">{m.num}</p>
+                  <p className="text-xs font-semibold text-slate-900">{m.label}</p>
+                  <p className="text-[11px] text-slate-500 font-normal">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -262,12 +255,13 @@ export const FoundersPage: React.FC = () => {
       </section>
 
       {/* Bottom Connect with Leadership Card */}
+      {/* Connect with Founders Banner (Clean White Background) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-xl border border-slate-800">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm border border-slate-200/90">
           <div className="space-y-2 max-w-xl">
-            <span className="text-xs uppercase font-bold tracking-wider text-amber-400">Institutional &amp; Impact Dialogue</span>
-            <h3 className="text-xl sm:text-2xl font-bold font-serif text-white">Connect directly with the Founders</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <span className="text-xs uppercase font-semibold tracking-wider text-teal-700">Institutional &amp; Impact Dialogue</span>
+            <h3 className="text-xl sm:text-2xl font-semibold font-serif text-slate-900">Connect directly with the Founders</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Interested in CSR collaboration, district-wide healthcare pilots, hospital network empanelment, or investing in rural health equity?
             </p>
           </div>
@@ -275,15 +269,15 @@ export const FoundersPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs tracking-tight transition-colors shadow-md"
+              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
             >
               Get in Touch with Founders
             </Link>
             <a
               href="mailto:prabal@aapka.co.in"
-              className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs tracking-tight transition-colors border border-slate-700 flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium text-xs sm:text-sm tracking-tight transition-colors border border-slate-200 flex items-center gap-2"
             >
-              <Mail className="w-3.5 h-3.5 text-slate-400" />
+              <Mail className="w-3.5 h-3.5 text-slate-500" />
               <span>prabal@aapka.co.in</span>
             </a>
           </div>
