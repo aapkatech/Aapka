@@ -64,11 +64,6 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ onOpenBooking, lang = 'en' }
         
         {/* Section Heading - Warm, empathetic & human */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-semibold tracking-wide">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>{isHindi ? "आपका स्वास्थ्य, हमारी जिम्मेदारी" : "Simple, Compassionate Healthcare"}</span>
-          </div>
-
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-950 tracking-[-0.02em] leading-[1.18]">
             {isHindi ? "AAPKA क्यों चुनें?" : "Why Choose AAPKA?"}
           </h2>
