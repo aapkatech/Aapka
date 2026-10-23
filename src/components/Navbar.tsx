@@ -25,7 +25,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   }, []);
 
   const navLinks = [
-    { to: "/", label: t?.home || (lang === 'hi' ? 'होम' : 'Home') },
     { to: "/services", label: t?.services || (lang === 'hi' ? 'सेवाएं' : 'Services') },
     { to: "/network", label: t?.network || (lang === 'hi' ? 'अस्पताल नेटवर्क' : 'Global Network') },
     { to: "/founders", label: t?.founders || (lang === 'hi' ? 'संस्थापक' : 'Founders') },
@@ -48,20 +47,23 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
         </Link>
 
         {/* Center / Navigation Links: Services, Global Network, Founders, About, Contact */}
-        <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/60 p-1 rounded-full border border-slate-200/70">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
               <Link 
                 key={link.to} 
                 to={link.to} 
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-150 ${
+                className={`transition-colors relative py-1 ${
                   isActive 
-                    ? 'bg-white text-slate-950 font-semibold shadow-xs' 
-                    : 'text-slate-600 hover:text-slate-950 hover:bg-white/50'
+                    ? 'text-slate-950 font-semibold' 
+                    : 'text-slate-600 hover:text-slate-950'
                 }`}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 inset-x-0 h-0.5 bg-teal-600 rounded-full" />
+                )}
               </Link>
             );
           })}
@@ -142,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
             </div>
           </div>
 
-          <nav className="flex flex-col space-y-1.5 text-sm font-medium">
+          <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-700">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to;
               return (
@@ -150,10 +152,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
                   key={link.to} 
                   to={link.to} 
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3.5 py-2 rounded-xl text-sm transition-all ${
+                  className={`py-1 transition-colors ${
                     isActive 
-                      ? 'bg-teal-50 text-teal-800 font-semibold border border-teal-100' 
-                      : 'text-slate-700 hover:text-slate-950 hover:bg-slate-50'
+                      ? 'text-teal-700 font-semibold' 
+                      : 'hover:text-slate-950'
                   }`}
                 >
                   {link.label}
