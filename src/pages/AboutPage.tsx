@@ -361,10 +361,10 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              to="/founders"
+              to="/team"
               className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-tight transition-colors shadow-sm"
             >
-              Meet the Founders
+              Meet the Team
             </Link>
             <Link
               to="/contact"

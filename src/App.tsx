@@ -8,7 +8,7 @@ import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { NetworkPage } from './pages/NetworkPage';
-import { FoundersPage } from './pages/FoundersPage';
+import { TeamPage } from './pages/TeamPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -78,8 +78,12 @@ export function App() {
             } 
           />
           <Route 
+            path="/team" 
+            element={<TeamPage />} 
+          />
+          <Route 
             path="/founders" 
-            element={<FoundersPage />} 
+            element={<TeamPage />} 
           />
           <Route 
             path="/about" 
