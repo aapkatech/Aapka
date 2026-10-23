@@ -18,15 +18,15 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const downloadApp = t?.downloadApp || "Download the App";
 
   return (
-    <section id="home" className="relative bg-white pt-2 pb-12 sm:pt-4 sm:pb-16 lg:pt-4 lg:pb-20 overflow-hidden scroll-mt-24">
+    <section id="home" className="relative bg-white pt-2 pb-4 sm:pt-3 sm:pb-6 lg:pt-3 lg:pb-6 overflow-hidden scroll-mt-24">
       {/* Subtle architectural ambient background glow */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center lg:items-start">
           
           {/* Left Column: Classic, High-Trust Editorial Narrative */}
-          <div className="lg:col-span-6 xl:col-span-6 space-y-6 sm:space-y-7 text-left pt-2 sm:pt-3 lg:pt-3 pb-2">
+          <div className="lg:col-span-6 xl:col-span-6 space-y-4 sm:space-y-5 lg:space-y-6 text-left pt-1 sm:pt-2 pb-1">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -37,22 +37,22 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             )}
 
             {/* Main Headline: Classic, prestigious professional typography */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.8rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.12]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[3.5rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14]">
               {headline}
             </h1>
 
             {/* Sub-headline: Warm & Reassuring */}
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-normal leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 font-normal leading-relaxed max-w-xl">
               {subheadline}
             </p>
 
             {/* Small 'Download the App' Action */}
-            <div className="pt-1">
+            <div className="pt-0.5 sm:pt-1">
               <a
                 href="https://play.google.com/store/apps/details?id=com.kapp.smartgram&pli=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight shadow-xs hover:shadow transition-all group"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight shadow-xs hover:shadow transition-all group"
               >
                 <svg 
                   className="w-4 h-4 fill-current text-teal-400 group-hover:scale-110 transition-transform shrink-0" 
@@ -66,13 +66,13 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             </div>
 
             {/* Micro-Trust Signals */}
-            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
-              <div className="flex items-center gap-2">
+            <div className="pt-1.5 sm:pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{communitiesSupported}</span>
               </div>
-              <span className="hidden sm:inline text-slate-300">•</span>
-              <div className="flex items-center gap-2">
+              <span className="text-slate-300">•</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <Shield className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{hospitalPartners}</span>
               </div>
@@ -81,24 +81,24 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
           </div>
 
           {/* Right Column: Hero Visual - Perfectly aligned UP with headline text and navbar level */}
-          <div className="lg:col-span-6 xl:col-span-6 relative flex items-start justify-center lg:justify-end w-full pt-0 lg:-mt-2 xl:-mt-3">
+          <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end w-full pt-1 sm:pt-2 lg:-mt-2 xl:-mt-3">
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative w-full max-w-lg lg:max-w-xl flex items-start justify-center lg:justify-end"
+              className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl flex items-center justify-center lg:justify-end"
             >
               {/* Soft, borderless atmospheric radial ambient aura that merges into page */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-tr from-teal-100/35 via-amber-100/20 to-sky-100/25 rounded-full blur-3xl pointer-events-none -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] bg-gradient-to-tr from-teal-100/35 via-amber-100/20 to-sky-100/25 rounded-full blur-3xl pointer-events-none -z-10" />
 
               {/* Large, borderless visual seamlessly blended into the background without harsh overlay */}
-              <div className="relative w-full flex items-start justify-center lg:justify-end">
-                <picture className="w-full flex items-start justify-center lg:justify-end">
+              <div className="relative w-full flex items-center justify-center lg:justify-end">
+                <picture className="w-full flex items-center justify-center lg:justify-end">
                   <source srcSet="/hero-family-cutout.webp" type="image/webp" />
                   <img
                     src="/hero-family-cutout.png"
                     alt="Aapka Family Healthcare - Compassionate care for families"
-                    className="w-full h-auto max-h-[400px] sm:max-h-[440px] lg:max-h-[460px] object-contain drop-shadow-[0_12px_28px_rgba(15,23,42,0.07)]"
+                    className="w-full h-auto max-h-[280px] sm:max-h-[340px] lg:max-h-[420px] object-contain drop-shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
                     loading="eager"
                     decoding="async"
                   />

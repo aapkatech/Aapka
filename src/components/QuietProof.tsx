@@ -96,29 +96,29 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
   ];
 
   return (
-    <section id="recognition" className="py-20 sm:py-28 bg-slate-50/70 border-t border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+    <section id="recognition" className="py-8 sm:py-10 lg:py-12 bg-slate-50/70 border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2">
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>Validation of Our Impact & Commitment</span>
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-semibold tracking-tight text-slate-900 leading-[1.2]">
             Awards &amp; Recognition
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Recognized by India's and the world's leading healthcare bodies, academic institutions, and global corporations for driving accessible, timely healthcare to tribal communities.
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
+            Recognized by India's and the world's leading healthcare bodies, academic institutions, and global corporations for driving accessible, timely healthcare to communities.
           </p>
         </div>
 
         {/* 3 Real Ceremony Photo Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {photoAwards.map((award) => (
             <div 
               key={award.id}
-              className="group flex flex-col justify-between bg-white rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300 overflow-hidden"
+              className="group flex flex-col justify-between bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 overflow-hidden"
             >
               <div>
                 {/* Image Container with Zoom hint */}
@@ -150,11 +150,11 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
                 </div>
 
                 {/* Card Details */}
-                <div className="p-6 sm:p-7 space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+                <div className="p-4 sm:p-5 space-y-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-teal-700">
                     {award.organization}
                   </p>
-                  <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug">
+                  <h3 className="text-base sm:text-lg font-serif font-semibold text-slate-900 tracking-tight leading-snug">
                     {award.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -163,8 +163,8 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
                 </div>
               </div>
 
-              <div className="p-6 pt-0 mt-2">
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <div className="p-4 sm:p-5 pt-0 mt-1">
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span className="text-teal-800 font-semibold flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
                     <span>Verified Ceremony Event</span>
@@ -177,29 +177,29 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
         </div>
 
         {/* 6 Grid of Prestigious Institutional Accolades */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-bold text-slate-900">
+        <div className="space-y-4">
+          <h3 className="text-base sm:text-lg font-serif font-semibold text-slate-900">
             Institutional Honors &amp; Industry Grants
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
             {institutionalAccolades.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs transition-all flex flex-col justify-between space-y-3"
               >
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-md border border-teal-200/50">
+                    <span className="text-[10px] font-semibold text-teal-800 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200/50">
                       {item.tag}
                     </span>
-                    <span className="text-xs font-mono font-bold text-slate-400">0{idx + 1}</span>
+                    <span className="text-[11px] font-mono font-bold text-slate-400">0{idx + 1}</span>
                   </div>
 
-                  <h4 className="text-base font-bold text-slate-900 leading-snug">
+                  <h4 className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
                     {item.title}
                   </h4>
 
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-teal-700">
                     {item.recognition}
                   </p>
 
@@ -213,22 +213,22 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
         </div>
 
         {/* Media Coverage Strip */}
-        <div className="p-8 rounded-2xl bg-white border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xs">
+        <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-2xs">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 shrink-0">
-              <Newspaper className="w-5 h-5 text-teal-700" />
+            <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 shrink-0">
+              <Newspaper className="w-4 h-4 text-teal-700" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-900">Featured in Leading National Media</h4>
-              <p className="text-xs text-slate-500">Documenting our journey to transform tribal healthcare access</p>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900">Featured in Leading National Media</h4>
+              <p className="text-[11px] sm:text-xs text-slate-500">Documenting our journey to transform healthcare access</p>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {mediaOutlets.map((outlet, mIdx) => (
               <span 
                 key={mIdx}
-                className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 text-xs font-medium border border-slate-200/80"
+                className="px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 text-[11px] font-medium border border-slate-200/80"
               >
                 {outlet}
               </span>
