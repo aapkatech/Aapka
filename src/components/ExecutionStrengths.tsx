@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, MapPin, Activity } from 'lucide-react';
+import { Users, Building2, MapPin, Activity } from 'lucide-react';
 
 interface ExecutionStrengthsProps {
   t?: {
@@ -12,10 +12,10 @@ interface ExecutionStrengthsProps {
 export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => {
   const defaultMetrics = [
     {
-      value: "20+",
-      label: "Active Cities",
-      sub: "Currently operational and supporting families across 20+ cities.",
-      icon: MapPin,
+      value: "1,270+",
+      label: "Gram Mitras",
+      sub: "Working at the community level across rural and tribal areas.",
+      icon: Users,
       accent: "text-teal-700 bg-teal-50 border-teal-200/60"
     },
     {
@@ -43,57 +43,57 @@ export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => 
 
   const tag = t?.tag || "Proven Ground Execution";
   const title = t?.title || "Our Strengths for Execution";
-  const subtitle = t?.subtitle || "An established platform and a shared purpose to build healthier, stronger communities.";
+  const subtitle = t?.subtitle || "An established platform and a shared purpose to build healthier, stronger tribal communities.";
 
   return (
-    <section id="network" className="py-7 sm:py-10 lg:py-12 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
+    <section id="network" className="py-14 sm:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100 scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
         
         {/* Header */}
-        <div className="max-w-3xl space-y-2">
+        <div className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
             {tag}
           </p>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 font-serif">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
             {subtitle}
           </p>
         </div>
 
-        {/* 4 Execution Metrics Grid - Highly Responsive (2 cols on phone, 4 on desktop) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        {/* 4 Execution Metrics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {defaultMetrics.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="relative p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+                className="relative p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border ${item.accent}`}>
-                      <Icon className="w-4 h-4" />
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${item.accent}`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-mono font-medium text-slate-400">0{idx + 1}</span>
+                    <span className="text-xs font-mono font-medium text-slate-400">0{idx + 1}</span>
                   </div>
 
-                  <div className="space-y-0.5">
-                    <p className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950">
+                  <div className="space-y-1">
+                    <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 font-serif">
                       {item.value}
                     </p>
-                    <h3 className="text-xs sm:text-sm font-semibold text-slate-900">
+                    <h3 className="text-base font-semibold text-slate-900">
                       {item.label}
                     </h3>
                   </div>
 
-                  <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {item.sub}
                   </p>
                 </div>
 
-                <div className="pt-3 mt-3 border-t border-slate-100 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-teal-700">
+                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-medium text-teal-700">
                   <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
                   <span>Verified Operational Data</span>
                 </div>

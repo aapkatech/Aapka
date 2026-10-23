@@ -25,11 +25,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   }, []);
 
   const navLinks = [
-    { to: "/services", label: t?.services || (lang === 'hi' ? 'सेवाएं' : 'Services') },
-    { to: "/network", label: t?.network || (lang === 'hi' ? 'अस्पताल नेटवर्क' : 'Global Network') },
-    { to: "/founders", label: t?.founders || (lang === 'hi' ? 'संस्थापक' : 'Founders') },
-    { to: "/about", label: t?.about || (lang === 'hi' ? 'हमारे बारे में' : 'About') },
-    { to: "/contact", label: t?.contact || (lang === 'hi' ? 'संपर्क' : 'Contact') }
+    { to: "/services", label: t?.services || "Services" },
+    { to: "/network", label: t?.network || "Global Network" },
+    { to: "/founders", label: lang === 'hi' ? 'संस्थापक' : 'Founders' },
+    { to: "/about", label: t?.about || "About" },
+    { to: "/contact", label: t?.contact || "Contact" }
   ];
 
   return (
@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Left: Official Aapka Logo Lockup */}
         <Link to="/" className="flex items-center group py-0.5" aria-label="Aapka Home">
-          <AapkaLogo variant="full" className="h-9 sm:h-9.5 lg:h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+          <AapkaLogo variant="full" className="h-10 sm:h-11 lg:h-12 w-auto transition-transform group-hover:scale-[1.02]" />
         </Link>
 
         {/* Center / Navigation Links: Services, Global Network, Founders, About, Contact */}

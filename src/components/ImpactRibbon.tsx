@@ -8,7 +8,8 @@ import {
   Users2, 
   IndianRupee, 
   Sparkles,
-  CheckCircle
+  CheckCircle,
+  ExternalLink
 } from 'lucide-react';
 import type { Language } from '../data/translations';
 import { content } from '../data/translations';

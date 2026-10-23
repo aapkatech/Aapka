@@ -2,80 +2,75 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { 
   PhoneCall, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  ShieldCheck, 
+  Building2, 
+  CheckCircle2, 
   MessageSquare,
   Sparkles
 } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
-  const contactStats = [
-    { value: "< 15 Mins", label: "Response Time", desc: "Swift clinical dispatch" },
-    { value: "24/7 Active", label: "Care Coordination", desc: "Casualty and bed reservation" },
-    { value: "100% Protected", label: "Patient Privacy", desc: "DPDP Act 2023 compliant" },
-    { value: "Zero Extra Fees", label: "Tariff Guarantee", desc: "Pre-negotiated hospital rates" }
-  ];
-
   return (
-    <div className="bg-[#FAFAFA] min-h-screen text-slate-900">
+    <div className="py-12 sm:py-16 space-y-12 bg-white">
       
-      {/* 1. Seamless Hero Section Header (Full-Width Canvas, No Dark Floating Box) */}
-      <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 border-b border-slate-200/80 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
+      {/* Header Banner */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border border-slate-800 shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-              Connect With Our Clinical Care Desk
+          <div className="relative max-w-3xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30">
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>Dedicated Webpage • 24/7 Care Coordination</span>
+            </div>
+            
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Get in Touch With Our Care Coordination Desk
             </h1>
-
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Whether you need urgent emergency bed reservation, diagnostic testing, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — our team is here to assist you.
+            
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+              Immediate hospital admission triage, emergency ambulance coordination, Gram Mitra registration, and institutional hospital empanelment.
             </p>
-          </div>
 
-          {/* Clean Borderless Horizontal Stat Bar */}
-          <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 border-t border-slate-100">
-            {contactStats.map((stat, idx) => (
-              <div key={idx} className="space-y-1">
-                <p className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-                  {stat.value}
-                </p>
-                <p className="text-xs font-bold uppercase tracking-wide text-teal-800">
-                  {stat.label}
-                </p>
-                <p className="text-xs text-slate-500">
-                  {stat.desc}
-                </p>
-              </div>
-            ))}
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300">
+              <span className="flex items-center gap-1.5 text-emerald-400">
+                <CheckCircle2 className="w-4 h-4" /> Response Time &lt; 15 Minutes
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 text-emerald-400">
+                <CheckCircle2 className="w-4 h-4" /> 24/7 Doctor &amp; Bed Staging
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 text-emerald-400">
+                <CheckCircle2 className="w-4 h-4" /> DPDP Act 2023 Compliant
+              </span>
+            </div>
           </div>
-
         </div>
-      </section>
-
-      {/* 2. Interactive Care Coordination Desk Component */}
-      <div className="py-6">
-        <ContactSection />
       </div>
 
-      {/* 3. Full-Width Emergency Dispatch Callout (Seamless Full-Bleed) */}
-      <section className="w-full bg-[#0B132B] text-white py-16 sm:py-20 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-400 flex items-center gap-1.5">
+      {/* Main Interactive Contact Section Component */}
+      <ContactSection />
+
+      {/* Emergency Hotline Callout Strip */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-8">
+        <div className="p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-1 max-w-xl">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Immediate Medical Emergency?</span>
+              <span>Immediate Clinical Attention Needed?</span>
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Direct Access to Emergency Dispatch
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Available 24 hours a day, 7 days a week for immediate hospital pre-notification, ambulance staging, and doctor coordination.
-            </p>
+            <h3 className="text-xl sm:text-2xl font-bold font-serif text-white">Direct Line to Emergency Dispatch</h3>
+            <p className="text-xs text-slate-300">Available 24 hours a day, 7 days a week for critical patient referrals.</p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3">
             <a
               href="tel:+919716332976"
-              className="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs tracking-tight transition-colors flex items-center gap-2 shadow-sm"
+              className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-tight transition-colors flex items-center gap-2 shadow-md"
             >
               <PhoneCall className="w-3.5 h-3.5" />
               <span>Call +91 9716332976</span>
@@ -84,14 +79,14 @@ export const ContactPage: React.FC = () => {
               href="https://wa.me/919716332976"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-xs tracking-tight transition-colors flex items-center gap-2 border border-slate-700"
+              className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs tracking-tight transition-colors flex items-center gap-2 border border-slate-700"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-teal-400" />
+              <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
               <span>WhatsApp Emergency</span>
             </a>
           </div>
         </div>
-      </section>
+      </div>
 
     </div>
   );

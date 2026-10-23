@@ -53,7 +53,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index"
+      "destination": "/index.html"
     }
   ]
 }

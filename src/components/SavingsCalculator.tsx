@@ -3,8 +3,10 @@ import {
   CreditCard, 
   CheckCircle2, 
   TrendingDown, 
+  ShieldCheck, 
   Sparkles, 
   ArrowRight,
+  Heart,
   Pill,
   Stethoscope,
   Activity

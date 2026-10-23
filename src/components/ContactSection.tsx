@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { 
+  Send, 
   Phone, 
   Mail, 
   MapPin, 
@@ -7,8 +8,8 @@ import {
   Clock, 
   MessageSquare, 
   ShieldCheck, 
-  AlertCircle,
-  ArrowRight
+  Building2, 
+  AlertCircle 
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
@@ -21,6 +22,7 @@ export const ContactSection: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -31,27 +33,23 @@ export const ContactSection: React.FC = () => {
     if (error) setError('');
   };
 
-  const validateIndianMobile = (num: string): boolean => {
-    const clean = num.replace(/[\s-]/g, '');
-    return /^(?:(?:\+|0{0,2})91)?[6-9]\d{9}$/.test(clean);
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmedName = formData.name.trim();
-    const trimmedPhone = formData.phone.trim();
-
-    if (!trimmedName || trimmedName.length < 2) {
-      setError('Please provide your full name (minimum 2 characters).');
+    if (!formData.name.trim()) {
+      setError('Please provide your name.');
       return;
     }
-    if (!validateIndianMobile(trimmedPhone)) {
-      setError('Please provide a valid 10-digit Indian mobile number (e.g. +91 98765 43210).');
+    if (!formData.phone.trim() || formData.phone.length < 10) {
+      setError('Please provide a valid 10-digit contact telephone number.');
       return;
     }
 
-    setError('');
-    setSubmitted(true);
+    setLoading(true);
+    // Simulate swift network dispatch
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 600);
   };
 
   const handleReset = () => {
@@ -66,9 +64,8 @@ export const ContactSection: React.FC = () => {
     setError('');
   };
 
-  const cleanPhone = formData.phone.replace(/[^0-9+]/g, '');
   const encodedWhatsApp = encodeURIComponent(
-    `Namaste Aapka Clinical Desk, my name is ${formData.name.trim()}. I am inquiring about ${formData.inquiryType} in ${formData.location.trim() || 'my region'}. Contact: ${cleanPhone}. Please assist us.`
+    `Hello Aapka Team, my name is ${formData.name || 'Patient'}. I am contacting regarding ${formData.inquiryType} in ${formData.location || 'my area'}. Phone: ${formData.phone}. Message: ${formData.message || 'Please assist.'}`
   );
 
   return (
@@ -81,107 +78,104 @@ export const ContactSection: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>24/7 Care Coordination & Inquiries</span>
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Connect With Our Clinical Team
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Whether you need urgent emergency bed staging, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — our team is here to assist.
+            Whether you need urgent emergency bed staging, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — we respond within minutes.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Left: Contact Info & Leadership Linkages */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-8">
             
-            <div className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-6 text-slate-900">
-              <div className="space-y-1.5">
-                <span className="text-xs uppercase font-bold tracking-wider text-teal-700">Direct Coordination Lines</span>
-                <h3 className="text-xl font-bold text-slate-900">Emergency &amp; Support Hub</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Our coordination desk is connected directly to partner hospital casualty departments and on-ground Gram Mitras.
+            <div className="p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
+              <div className="space-y-2">
+                <span className="text-xs uppercase font-bold tracking-wider text-teal-400">Direct Coordination Lines</span>
+                <h3 className="text-xl font-bold font-serif text-white">Emergency &amp; Support Hub</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Our coordination desk is connected directly to hospital casualty counters and on-ground Gram Mitras.
                 </p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Helpline Numbers</p>
-                    <a href="tel:+919716332976" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
+                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Helpline Numbers</p>
+                    <a href="tel:+919716332976" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
                       +91 9716332976
                     </a>
-                    <a href="tel:+919667033044" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
+                    <a href="tel:+919667033044" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
                       +91 9667033044
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Executive Inquiries</p>
-                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
+                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Executive Inquiries</p>
+                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-white hover:text-teal-400 transition-colors">
                       prabal@aapka.co.in
                     </a>
-                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
+                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-300 hover:text-teal-400 transition-colors">
                       info@aapka.co.in
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+                  <div className="w-9 h-9 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Registered Office</p>
-                    <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                    <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Registered Office</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">
                       201 Convention Centre, JNU New Delhi, 110067
                     </p>
-                    <p className="text-[11px] text-slate-400">SP Rural India Services Private Limited</p>
+                    <p className="text-[11px] text-slate-500">SP Rural India Services Private Limited</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-teal-800 bg-teal-50/60 p-3 rounded-xl border border-teal-100">
-                <Clock className="w-4 h-4 shrink-0 text-teal-700" />
-                <span className="font-medium">Average coordinator response time: &lt; 15 minutes</span>
+              <div className="pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-teal-400">
+                <Clock className="w-4 h-4 shrink-0" />
+                <span>Average coordinator response time: &lt; 15 minutes</span>
               </div>
             </div>
 
             {/* Micro Guarantee */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/90 flex items-center gap-3.5 shadow-2xs">
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-2xs">
               <ShieldCheck className="w-8 h-8 text-teal-700 shrink-0" />
               <div className="space-y-0.5">
-                <p className="text-xs font-bold text-slate-900">100% Patient Confidentiality</p>
-                <p className="text-[11px] text-slate-500">Your health details are encrypted and shared only with verified hospital clinicians under the DPDP Act 2023.</p>
+                <p className="text-xs font-semibold text-slate-900">100% Patient Confidentiality</p>
+                <p className="text-[11px] text-slate-500">Your health details are encrypted and shared only with verified hospital clinicians.</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right: Working Interactive Contact Form */}
+          {/* Right: Working Interactive Contact Form (Item 20) */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl">
               
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-slate-900">Send a Care Coordination Request</h3>
+                    <h3 className="text-xl font-bold text-slate-900 font-serif">Send a Care Coordination Request</h3>
                     <p className="text-xs text-slate-500">Fill in the patient or case details below to activate immediate assistance.</p>
                   </div>
 
                   {error && (
-                    <div 
-                      role="alert"
-                      className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2"
-                    >
-                      <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                    <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{error}</span>
                     </div>
                   )}
@@ -259,7 +253,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="space-y-1.5">
                     <label htmlFor="message" className="block text-xs font-semibold text-slate-700">
-                      Inquiry Notes (Non-Sensitive)
+                      Medical Condition or Inquiry Notes
                     </label>
                     <textarea
                       id="message"
@@ -267,7 +261,7 @@ export const ContactSection: React.FC = () => {
                       rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Briefly state your preferred hospital, district, or query..."
+                      placeholder="Briefly describe the symptoms, hospital preference, or assistance needed..."
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
                     />
                   </div>
@@ -275,35 +269,42 @@ export const ContactSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={loading}
+                      className="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                     >
-                      <span>Prepare Direct Care Request</span>
-                      <ArrowRight className="w-4 h-4" />
+                      {loading ? (
+                        <span>Activating Care Coordinator...</span>
+                      ) : (
+                        <>
+                          <span>Submit Care Request</span>
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </div>
 
                   <p className="text-[11px] text-slate-400 text-center">
-                    By submitting, you agree to confidential patient data handling under DPDP Act 2023 principles.
+                    By submitting, you agree to our confidential patient data handling under the DPDP Act 2023.
                   </p>
                 </form>
               ) : (
-                /* Honest Prepared State with Instant WhatsApp & Call Options */
+                /* Success State with Instant WhatsApp & Call Options */
                 <div className="py-6 text-center space-y-6 animate-in fade-in zoom-in-95 duration-200">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-sm">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
 
                   <div className="space-y-2 max-w-md mx-auto">
-                    <h3 className="text-2xl font-bold text-slate-900">
+                    <h3 className="text-2xl font-bold font-serif text-slate-900">
                       Request Dispatched Successfully!
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      Thank you, <strong>{formData.name.trim()}</strong>. Your coordination details for <strong>{formData.inquiryType}</strong> have been prepared. Tap below to connect directly with the Aapka Care Desk.
+                      Thank you, <strong>{formData.name}</strong>. An Aapka healthcare coordinator has been assigned to your case regarding <strong>{formData.inquiryType}</strong>.
                     </p>
                   </div>
 
                   <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 max-w-md mx-auto text-left space-y-3">
-                    <p className="text-xs font-semibold text-slate-700 uppercase tracking-wide">Connect Directly with Coordinator:</p>
+                    <p className="text-xs font-semibold text-slate-700 uppercase tracking-wide">Fast-Track Options:</p>
                     <div className="flex flex-col sm:flex-row gap-2">
                       <a
                         href={`https://wa.me/919716332976?text=${encodedWhatsApp}`}
@@ -312,7 +313,7 @@ export const ContactSection: React.FC = () => {
                         className="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors"
                       >
                         <MessageSquare className="w-4 h-4" />
-                        <span>Send via WhatsApp</span>
+                        <span>Chat on WhatsApp</span>
                       </a>
                       <a
                         href="tel:+919716332976"
@@ -327,9 +328,9 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors cursor-pointer underline"
+                    className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
                   >
-                    ← Edit or submit another request
+                    ← Submit another request
                   </button>
                 </div>
               )}

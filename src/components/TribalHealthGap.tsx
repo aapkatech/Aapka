@@ -9,7 +9,7 @@ interface TribalHealthGapProps {
   };
 }
 
-export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t: _t }) => {
+export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t }) => {
   const questions = [
     {
       q: "Is a bed available?",
@@ -86,7 +86,7 @@ export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t: _t }) => {
             <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse" />
             <span>The Reality of Rural & Tribal Healthcare</span>
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             For Tribal Communities, Healthcare Is Far Away.
             <span className="block text-slate-600 font-normal mt-1">Lack of the right information makes it even farther.</span>
           </h2>
@@ -137,7 +137,7 @@ export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t: _t }) => {
                   <AlertTriangle className="w-3.5 h-3.5" />
                   <span>The Golden Hour Dilemma</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-white">
                   When healthcare is already far away, every lost minute matters.
                 </h3>
                 <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
@@ -147,7 +147,7 @@ export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t: _t }) => {
 
               {/* Red Callout Pill */}
               <div className="p-4 sm:p-5 rounded-2xl bg-rose-950/60 border border-rose-600/40 text-center shrink-0">
-                <span className="block text-2xl sm:text-3xl font-extrabold text-rose-400">
+                <span className="block text-2xl sm:text-3xl font-extrabold text-rose-400 font-serif">
                   ~60–75 MIN
                 </span>
                 <span className="text-xs uppercase tracking-wider font-semibold text-rose-200">

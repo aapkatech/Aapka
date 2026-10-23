@@ -8,7 +8,8 @@ import {
   Cpu, 
   Users, 
   HeartHandshake, 
-  CheckCircle2
+  CheckCircle2, 
+  ArrowRight 
 } from 'lucide-react';
 
 export const AapkaWorkflow: React.FC = () => {
@@ -16,12 +17,12 @@ export const AapkaWorkflow: React.FC = () => {
     {
       step: 1,
       title: "Patient Needs Care",
-      subtitle: "Family seeks immediate help during a medical emergency or illness.",
+      subtitle: "Family seeks immediate help during a medical emergency in the village.",
       icon: AlertCircle,
       accent: "bg-amber-50 text-amber-700 border-amber-200",
       points: [
-        "Direct call or request by family member",
-        "Immediate support via Aapka platform"
+        "Identified by family or local Gram Mitra",
+        "Immediate triage via Aapka platform"
       ]
     },
     {
@@ -79,51 +80,55 @@ export const AapkaWorkflow: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-8 sm:py-10 lg:py-12 bg-slate-50/60 border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
+    <section id="how-it-works" className="py-20 sm:py-28 bg-slate-50/60 border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-2">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-semibold tracking-tight text-slate-900 leading-[1.2]">
-            From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-semibold">"Care Starts Faster."</span>
+        <div className="max-w-3xl space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+            <span>The Proactive Solution</span>
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+            From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-medium">"Care Starts Faster."</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-            Aapka helps families find the right hospital, coordinate before arrival, and navigate care — so that critical time is never lost.
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Aapka helps rural and tribal communities find the right hospital, coordinate before arrival, and navigate care — so that critical time is never lost.
           </p>
         </div>
 
         {/* 5-Step Process Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 lg:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
           {steps.map((s) => {
             const Icon = s.icon;
             return (
               <div
                 key={s.step}
-                className="relative p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+                className="relative p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="w-6 h-6 rounded-full bg-slate-950 text-white font-mono text-[11px] font-bold flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-full bg-slate-950 text-white font-mono text-xs font-bold flex items-center justify-center">
                       {s.step}
                     </span>
-                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center border ${s.accent}`}>
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${s.accent}`}>
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <h3 className="text-sm sm:text-base font-semibold text-slate-900 leading-tight">
+                  <div className="space-y-1.5">
+                    <h3 className="text-base font-semibold text-slate-900 leading-tight">
                       {s.title}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                    <p className="text-xs text-slate-500 leading-relaxed">
                       {s.subtitle}
                     </p>
                   </div>
 
-                  <ul className="space-y-1 pt-2 border-t border-slate-100">
+                  <ul className="space-y-1.5 pt-2 border-t border-slate-100">
                     {s.points.map((pt, pIdx) => (
-                      <li key={pIdx} className="flex items-start gap-1.5 text-[11px] sm:text-xs text-slate-600">
-                        <CheckCircle2 className="w-3 h-3 text-teal-600 shrink-0 mt-0.5" />
+                      <li key={pIdx} className="flex items-start gap-1.5 text-xs text-slate-600">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -135,64 +140,64 @@ export const AapkaWorkflow: React.FC = () => {
         </div>
 
         {/* The Execution Equation (Technology + Community = Impact) */}
-        <div className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-6">
-          <div className="text-center max-w-2xl mx-auto space-y-1.5">
-            <h3 className="text-lg sm:text-xl font-serif font-semibold text-slate-900">
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-serif">
               The Healthcare Access Equation
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Technology alone cannot navigate complex hospital systems. People alone cannot track 240+ hospital bed availability. Aapka fuses both.
+              Technology alone cannot navigate tribal terrain. People alone cannot track 240+ hospital bed availability. Aapka fuses both.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             
             {/* 1. Technology */}
-            <div className="p-4 sm:p-5 rounded-xl bg-teal-50/50 border border-teal-100 flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-teal-700 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <Cpu className="w-5 h-5" />
+            <div className="p-6 rounded-2xl bg-teal-50/50 border border-teal-100 flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-teal-700 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <Cpu className="w-6 h-6" />
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-teal-800">Hospital Intelligence</p>
-                <h4 className="text-sm sm:text-base font-semibold text-slate-900">Real-Time Bed & Doctor Network</h4>
+                <p className="text-xs font-bold uppercase tracking-wider text-teal-800">Powered by Technology</p>
+                <h4 className="text-base font-semibold text-slate-900">AI-Enabled Hospital Matching</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Live bed availability tracking, distance calculation, department readiness, and transparent pricing.
+                  Real-time bed availability, distance calculation, department readiness, and transparent pricing.
                 </p>
               </div>
             </div>
 
-            {/* 2. Care Coordinators */}
-            <div className="p-4 sm:p-5 rounded-xl bg-amber-50/50 border border-amber-100 flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <Users className="w-5 h-5" />
+            {/* 2. Gram Mitras */}
+            <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-100 flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <Users className="w-6 h-6" />
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-amber-800">Ground Presence</p>
-                <h4 className="text-sm sm:text-base font-semibold text-slate-900">Dedicated Care Coordinators</h4>
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-800">Enabled by Gram Mitras</p>
+                <h4 className="text-base font-semibold text-slate-900">1,270+ On-Ground Facilitators</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Support teams active across 20+ cities who assist with registration, paperwork, queues, and bedside care.
+                  Trusted community members who arrange transport, overcome paperwork anxiety, and guide patients.
                 </p>
               </div>
             </div>
 
             {/* 3. Outcome */}
-            <div className="p-4 sm:p-5 rounded-xl bg-emerald-50/50 border border-emerald-100 flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-xs">
-                <HeartHandshake className="w-5 h-5" />
+            <div className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-100 flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <HeartHandshake className="w-6 h-6" />
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Faster Care</p>
-                <h4 className="text-sm sm:text-base font-semibold text-slate-900">Prepared Admissions</h4>
+                <p className="text-xs font-bold uppercase tracking-wider text-emerald-800">Faster Access to Care</p>
+                <h4 className="text-base font-semibold text-slate-900">Timely, Life-Saving Outcomes</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Hospital knows you are arriving. Beds and medical specialists are ready without delay.
+                  Hospital knows you are coming. Beds and surgeons are ready upon arrival.
                 </p>
               </div>
             </div>
 
           </div>
 
-          <div className="pt-3 border-t border-slate-100 text-center">
-            <p className="text-xs sm:text-sm font-medium text-slate-700 italic">
+          <div className="pt-4 border-t border-slate-100 text-center">
+            <p className="text-sm font-medium text-slate-700 italic">
               "When the hospital knows you are coming, care doesn't have to wait."
             </p>
           </div>

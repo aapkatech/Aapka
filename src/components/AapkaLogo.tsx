@@ -7,23 +7,17 @@ interface AapkaLogoProps {
 }
 
 export const AapkaLogo: React.FC<AapkaLogoProps> = ({ 
-  className = "h-9 sm:h-9.5 lg:h-10 w-auto", 
+  className = "h-10 w-auto", 
   variant = 'full',
   alt = "Aapka - The Health Hub"
 }) => {
   if (variant === 'full') {
     return (
-      <picture className="inline-flex items-center">
-        <source srcSet="/aapka-brand-logo.webp" type="image/webp" />
-        <img 
-          src="/aapka-brand-logo.png" 
-          srcSet="/aapka-brand-logo.png 1x, /aapka-brand-logo@2x.png 2x"
-          alt={alt} 
-          className={`object-contain block ${className}`} 
-          loading="eager"
-          decoding="async"
-        />
-      </picture>
+      <img 
+        src="/aapka-brand-logo.png" 
+        alt={alt} 
+        className={`object-contain ${className}`} 
+      />
     );
   }
 
@@ -33,7 +27,6 @@ export const AapkaLogo: React.FC<AapkaLogoProps> = ({
         src="/aapka-logo.png" 
         alt={alt} 
         className={`object-contain ${className}`} 
-        loading="eager"
       />
     );
   }
@@ -46,9 +39,14 @@ export const AapkaLogo: React.FC<AapkaLogoProps> = ({
       className={className}
       aria-label="Aapka Logo"
     >
+      {/* Top Dot (Light Blue) */}
       <circle cx="50" cy="27" r="8.5" fill="#5D85EB" />
+
+      {/* Middle Row (Medium Blue) */}
       <circle cx="37.5" cy="48.5" r="8.5" fill="#265FF4" />
       <circle cx="62.5" cy="48.5" r="8.5" fill="#265FF4" />
+
+      {/* Bottom Row (Deep Navy Blue) */}
       <circle cx="25" cy="70" r="8.5" fill="#0332AB" />
       <circle cx="50" cy="70" r="8.5" fill="#0332AB" />
       <circle cx="75" cy="70" r="8.5" fill="#0332AB" />

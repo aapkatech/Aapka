@@ -1,23 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Lora', 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
-  --font-display: 'Lora', Georgia, serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.015em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.011em;
   }
 
   body {
-    background-color: #FAFAFA;
-    color: #0F172A;
+    background-color: #ffffff;
+    color: #09090b;
     overflow-x: hidden;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { Award, Briefcase, Building2, CheckCircle2 } from 'lucide-react';
 
 export const LeadershipTeam: React.FC = () => {
   const leaders = [
@@ -61,7 +61,7 @@ export const LeadershipTeam: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>Co-Founders &amp; Leadership</span>
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Founders
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
@@ -74,7 +74,7 @@ export const LeadershipTeam: React.FC = () => {
           {leaders.map((leader, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+              className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-6">
                 
@@ -98,7 +98,7 @@ export const LeadershipTeam: React.FC = () => {
                     <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200/60 inline-block">
                       {leader.badge}
                     </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight pt-0.5">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-serif leading-tight pt-0.5">
                       {leader.name}
                     </h3>
                     <p className="text-xs sm:text-sm font-semibold text-slate-600">

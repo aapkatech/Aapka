@@ -83,8 +83,8 @@ export const GramMitraSection: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>Human-Centric Healthcare Infrastructure</span>
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
-            Gram Mitra: <span className="text-teal-700 font-semibold">Aapka's Strength on the Ground</span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+            Gram Mitra: <span className="text-teal-700 font-medium">Aapka's Strength on the Ground</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
             Local community members trained and empowered to connect remote villages with verified hospitals, building healthier and more resilient communities.
@@ -136,7 +136,7 @@ export const GramMitraSection: React.FC = () => {
                 <Award className="w-3.5 h-3.5" />
                 <span>Life-Saving First Responder Skills</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold text-white">
                 BLS (Basic Life Support) Training for Gram Mitras
               </h3>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
@@ -146,7 +146,7 @@ export const GramMitraSection: React.FC = () => {
 
             <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-center shrink-0">
               <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block">Sankalp Bharat Grant</span>
-              <span className="text-xl font-bold text-teal-400">₹10 Lakh Innovation Focus</span>
+              <span className="text-xl font-bold text-teal-400 font-serif">₹10 Lakh Innovation Focus</span>
             </div>
           </div>
 
