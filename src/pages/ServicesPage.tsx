@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import type { Translations } from '../i18n/translations';
 
 interface ServicesPageProps {
-  onSelectService: (serviceId: string) => void;
+  onSelectService?: (serviceId: string) => void;
   t?: Translations['services'];
 }
 
@@ -148,13 +148,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
                   </div>
 
                   <div className="pt-6 mt-6 border-t border-slate-100">
-                    <button
-                      onClick={() => onSelectService('hospitalization')}
+                    <Link
+                      to="/contact"
                       className="text-xs font-semibold text-teal-700 hover:text-teal-900 flex items-center gap-1 cursor-pointer transition-colors"
                     >
                       <span>Inquire about this pathway</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );

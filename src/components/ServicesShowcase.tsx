@@ -5,17 +5,16 @@ import {
   FlaskConical, 
   CreditCard, 
   HeartHandshake, 
-  Ambulance, 
-  ArrowUpRight 
+  Ambulance 
 } from 'lucide-react';
 import type { Translations } from '../i18n/translations';
 
 interface ServicesShowcaseProps {
-  onSelectService: (serviceId: string) => void;
+  onSelectService?: (serviceId: string) => void;
   t?: Translations['services'];
 }
 
-export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectService, t }) => {
+export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ t }) => {
   const [activeCategory, setActiveCategory] = useState<'all' | 'hospital' | 'home'>('all');
 
   const iconMap: Record<string, React.ElementType> = {
@@ -80,7 +79,6 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
     hospital: "Hospital & Surgery",
     home: "Remote & Diagnostics"
   };
-  const learnMore = t?.learnMore || "Learn more";
 
   const filteredServices = services.filter(s => {
     if (activeCategory === 'hospital') return s.category === 'hospital';
@@ -145,19 +143,15 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
             return (
               <div
                 key={service.id}
-                onClick={() => onSelectService(service.id)}
-                className="group relative p-8 rounded-2xl bg-white border border-zinc-200/70 hover:border-zinc-900 transition-all duration-200 flex flex-col justify-between cursor-pointer"
+                className="group relative p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all duration-200 flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-zinc-800 group-hover:bg-zinc-950 group-hover:text-white transition-colors">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-zinc-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700">
+                    <Icon className="w-5 h-5" />
                   </div>
 
                   <div className="space-y-1.5">
-                    <h3 className="text-lg font-medium text-zinc-950 tracking-tight">
+                    <h3 className="text-lg font-semibold text-slate-900 tracking-tight font-serif">
                       {service.title}
                     </h3>
                     <p className="text-xs font-medium text-teal-700">
@@ -165,14 +159,9 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                     </p>
                   </div>
 
-                  <p className="text-sm text-zinc-500 font-normal leading-relaxed pt-1">
+                  <p className="text-sm text-slate-600 font-normal leading-relaxed pt-1">
                     {service.description}
                   </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-950">
-                  <span>{learnMore}</span>
-                  <span className="text-zinc-400 font-normal group-hover:text-zinc-900 transition-colors">→</span>
                 </div>
               </div>
             );
