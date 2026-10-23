@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AapkaLogo } from './AapkaLogo';
 import type { Translations } from '../i18n/translations';
 
@@ -26,20 +27,20 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   const governance = t?.governance || "Clinical Governance";
   const copyright = t?.copyright || "© 2026 SP Rural India Services Private Limited. All rights reserved.";
 
-  const pathways = t?.pathways || [
-    "Hospitalization Assistance",
-    "Teleconsultations",
-    "Pathology Routing",
-    "Smart Health Card",
-    "Emergency Transport"
+  const pathways = [
+    { label: "Hospitalization Assistance", to: "/services" },
+    { label: "Teleconsultations", to: "/services" },
+    { label: "Pathology Routing", to: "/services" },
+    { label: "Smart Health Card", to: "/services" },
+    { label: "Emergency Transport", to: "/services" }
   ];
 
-  const platformLinks = t?.platformLinks || [
-    "The Three Pillars",
-    "Quiet Scale & Proof",
-    "Network Hospitals (46+)",
-    "Clinical Quality Vetting",
-    "Institutional Grants"
+  const platformLinks = [
+    { label: "Global Network (240+)", to: "/network" },
+    { label: "Our Co-Founders", to: "/founders" },
+    { label: "Scaling Tribal Impact", to: "/about" },
+    { label: "Clinical Quality Vetting", to: "/network" },
+    { label: "Tribal Healthcare Pilot", to: "/about" }
   ];
 
   return (
@@ -52,7 +53,9 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
           {/* Brand & Corporate entity */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center">
-              <AapkaLogo variant="full" className="h-10 w-auto" />
+              <Link to="/" aria-label="Aapka Home">
+                <AapkaLogo variant="full" className="h-10 w-auto hover:opacity-90 transition-opacity" />
+              </Link>
             </div>
 
             <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed max-w-md">
@@ -90,9 +93,9 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
             <ul className="space-y-2 text-zinc-500">
               {pathways.map((item, idx) => (
                 <li key={idx}>
-                  <a href="#services" className="hover:text-zinc-950 transition-colors">
-                    {item}
-                  </a>
+                  <Link to={item.to} className="hover:text-zinc-950 transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -106,9 +109,9 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
             <ul className="space-y-2 text-zinc-500">
               {platformLinks.map((item, idx) => (
                 <li key={idx}>
-                  <a href="#pillars" className="hover:text-zinc-950 transition-colors">
-                    {item}
-                  </a>
+                  <Link to={item.to} className="hover:text-zinc-950 transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

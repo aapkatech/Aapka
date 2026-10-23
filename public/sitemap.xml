@@ -3,40 +3,40 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aapka.co.in/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://aapka.co.in/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://aapka.co.in/?lang=hi" />
   </url>
   <url>
-    <loc>https://aapka.co.in/#services</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://aapka.co.in/services</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aapka.co.in/#gram-mitra</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://aapka.co.in/network</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aapka.co.in/#about</loc>
-    <lastmod>2026-10-23</lastmod>
+    <loc>https://aapka.co.in/founders</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://aapka.co.in/#recognition</loc>
-    <lastmod>2026-10-23</lastmod>
+    <loc>https://aapka.co.in/about</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://aapka.co.in/#contact</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://aapka.co.in/contact</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 </urlset>

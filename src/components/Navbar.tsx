@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Globe, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { AapkaLogo } from './AapkaLogo';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -13,6 +14,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navLinks = [
+    { to: "/services", label: t?.services || "Services" },
+    { to: "/network", label: t?.network || "Global Network" },
+    { to: "/founders", label: lang === 'hi' ? 'संस्थापक' : 'Founders' },
+    { to: "/about", label: t?.about || "About" },
+    { to: "/contact", label: t?.contact || "Contact" }
+  ];
 
   return (
     <header 
@@ -32,27 +42,31 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Left: Official Aapka Logo Lockup */}
-        <a href="#" className="flex items-center group py-0.5" aria-label="Aapka Home">
+        <Link to="/" className="flex items-center group py-0.5" aria-label="Aapka Home">
           <AapkaLogo variant="full" className="h-10 sm:h-11 lg:h-12 w-auto transition-transform group-hover:scale-[1.02]" />
-        </a>
+        </Link>
 
         {/* Center / Navigation Links: Services, Global Network, Founders, About, Contact */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-slate-600">
-          <a href="#services" className="hover:text-slate-950 transition-colors">
-            {t?.services || "Services"}
-          </a>
-          <a href="#network" className="hover:text-slate-950 transition-colors">
-            {t?.network || "Global Network"}
-          </a>
-          <a href="#founders" className="hover:text-slate-950 transition-colors">
-            {lang === 'hi' ? 'संस्थापक' : 'Founders'}
-          </a>
-          <a href="#recognition" className="hover:text-slate-950 transition-colors">
-            {t?.about || "About"}
-          </a>
-          <a href="#contact" className="hover:text-slate-950 transition-colors">
-            {t?.contact || "Contact"}
-          </a>
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link 
+                key={link.to} 
+                to={link.to} 
+                className={`transition-colors relative py-1 ${
+                  isActive 
+                    ? 'text-slate-950 font-semibold' 
+                    : 'text-slate-600 hover:text-slate-950'
+                }`}
+              >
+                <span>{link.label}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 inset-x-0 h-0.5 bg-teal-600 rounded-full" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Far Right: Language Switcher Pill */}
@@ -131,41 +145,23 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           </div>
 
           <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-700">
-            <a 
-              href="#services" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-slate-950"
-            >
-              {t?.services || "Services"}
-            </a>
-            <a 
-              href="#network" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-slate-950"
-            >
-              {t?.network || "Global Network"}
-            </a>
-            <a 
-              href="#founders" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-slate-950 font-medium text-teal-700"
-            >
-              {lang === 'hi' ? 'संस्थापक' : 'Founders'}
-            </a>
-            <a 
-              href="#recognition" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-slate-950"
-            >
-              {t?.about || "About"}
-            </a>
-            <a 
-              href="#contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-slate-950"
-            >
-              {t?.contact || "Contact"}
-            </a>
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.to;
+              return (
+                <Link 
+                  key={link.to} 
+                  to={link.to} 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-1 transition-colors ${
+                    isActive 
+                      ? 'text-teal-700 font-semibold' 
+                      : 'hover:text-slate-950'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="pt-4 border-t border-zinc-100 flex flex-col gap-2.5">

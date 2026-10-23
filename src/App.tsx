@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ExecutionStrengths } from './components/ExecutionStrengths';
-import { TribalHealthGap } from './components/TribalHealthGap';
-import { AapkaWorkflow } from './components/AapkaWorkflow';
-import { GramMitraSection } from './components/GramMitraSection';
-import { ServicesShowcase } from './components/ServicesShowcase';
-import { LeadershipTeam } from './components/LeadershipTeam';
-import { QuietProof } from './components/QuietProof';
-import { ContactSection } from './components/ContactSection';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
+import { HomePage } from './pages/HomePage';
+import { ServicesPage } from './pages/ServicesPage';
+import { NetworkPage } from './pages/NetworkPage';
+import { FoundersPage } from './pages/FoundersPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 import { translations, type Language } from './i18n/translations';
 
 export function App() {
@@ -33,14 +33,12 @@ export function App() {
     setIsPrivacyOpen(true);
   };
 
-  const handleSearch = (_query: string) => {
-    setSelectedService('hospitalization');
-    setIsBookingOpen(true);
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-zinc-900 selection:text-white">
-      {/* 1. Floating Minimalist Navigation Bar with Interactive Language Switcher (LOCKED) */}
+      {/* Scroll to top automatically on route changes */}
+      <ScrollToTop />
+
+      {/* 1. Global Navigation Bar with Multi-Page Links & Language Switcher (LOCKED STYLING) */}
       <Navbar 
         onOpenPortal={() => handleOpenBooking('consultation')} 
         lang={lang} 
@@ -48,43 +46,56 @@ export function App() {
         t={t.nav}
       />
 
+      {/* Main Multi-Page Routed Content */}
       <main className="flex-grow">
-        {/* 2. Hero Section (LOCKED - Untouched) */}
-        <Hero 
-          onSearch={handleSearch} 
-          onOpenBooking={handleOpenBooking}
-          t={t.hero}
-        />
-
-        {/* 3. Verified Execution Strengths & Scale Metrics (Page 6 of Deck) */}
-        <ExecutionStrengths />
-
-        {/* 4. The Tribal & Rural Healthcare Reality & The Golden Hour Dilemma (Pages 2 & 3 of Deck) */}
-        <TribalHealthGap />
-
-        {/* 5. From 'Where Should We Go?' to 'Care Starts Faster' — 5-Step Clinical Workflow (Page 4 of Deck) */}
-        <AapkaWorkflow />
-
-        {/* 6. Gram Mitra: Aapka's Strength on the Ground & BLS Training (Pages 5 & 10 of Deck) */}
-        <GramMitraSection />
-
-        {/* 7. Comprehensive Clinical Pathways & Sustainable Model (Page 7 of Deck) */}
-        <ServicesShowcase 
-          onSelectService={handleOpenBooking}
-          t={t.services}
-        />
-
-        {/* 8. Our Leadership Team — Co-Founders & Pedigree (Page 6 of Deck) */}
-        <LeadershipTeam />
-
-        {/* 9. Comprehensive Awards & Recognition (Page 8 of Deck) */}
-        <QuietProof t={t.proof} />
-
-        {/* 10. Working Care Coordination & Contact Desk (Item 20) */}
-        <ContactSection />
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                onOpenBooking={handleOpenBooking} 
+                t={{ hero: t.hero, proof: t.proof }} 
+              />
+            } 
+          />
+          <Route 
+            path="/services" 
+            element={
+              <ServicesPage 
+                onSelectService={handleOpenBooking} 
+                t={t.services} 
+              />
+            } 
+          />
+          <Route 
+            path="/network" 
+            element={
+              <NetworkPage 
+                onOpenBooking={() => handleOpenBooking('hospitalization')} 
+                t={t.network} 
+              />
+            } 
+          />
+          <Route 
+            path="/founders" 
+            element={<FoundersPage />} 
+          />
+          <Route 
+            path="/about" 
+            element={<AboutPage />} 
+          />
+          <Route 
+            path="/contact" 
+            element={<ContactPage />} 
+          />
+          <Route 
+            path="*" 
+            element={<NotFoundPage />} 
+          />
+        </Routes>
       </main>
 
-      {/* 11. High-End Minimalist Multi-Column Footer with Legal Linkages */}
+      {/* High-End Minimalist Multi-Column Footer with Deep Linkages */}
       <Footer t={t.footer} onOpenPrivacy={handleOpenPrivacy} />
 
       {/* Modern Clinical Coordination Modal */}
@@ -95,7 +106,7 @@ export function App() {
         t={t.booking}
       />
 
-      {/* 19. Privacy & Patient Data Safeguards Modal (DPDP Act 2023) */}
+      {/* Privacy & Patient Data Safeguards Modal (DPDP Act 2023) */}
       <PrivacyPolicyModal
         isOpen={isPrivacyOpen}
         onClose={() => setIsPrivacyOpen(false)}
@@ -106,4 +117,3 @@ export function App() {
 }
 
 export default App;
-
