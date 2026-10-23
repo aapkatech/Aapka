@@ -36,15 +36,18 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           <AapkaLogo variant="full" className="h-10 sm:h-11 lg:h-12 w-auto transition-transform group-hover:scale-[1.02]" />
         </a>
 
-        {/* Center / Navigation Links: Services, Global Network, About, Contact */}
-        <nav className="hidden md:flex items-center gap-9 text-sm font-medium text-slate-600">
+        {/* Center / Navigation Links: Services, Global Network, Founders, About, Contact */}
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-slate-600">
           <a href="#services" className="hover:text-slate-950 transition-colors">
             {t?.services || "Services"}
           </a>
           <a href="#network" className="hover:text-slate-950 transition-colors">
             {t?.network || "Global Network"}
           </a>
-          <a href="#pillars" className="hover:text-slate-950 transition-colors">
+          <a href="#founders" className="hover:text-slate-950 transition-colors">
+            {lang === 'hi' ? 'संस्थापक' : 'Founders'}
+          </a>
+          <a href="#recognition" className="hover:text-slate-950 transition-colors">
             {t?.about || "About"}
           </a>
           <a href="#contact" className="hover:text-slate-950 transition-colors">
@@ -143,7 +146,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
               {t?.network || "Global Network"}
             </a>
             <a 
-              href="#pillars" 
+              href="#founders" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-slate-950 font-medium text-teal-700"
+            >
+              {lang === 'hi' ? 'संस्थापक' : 'Founders'}
+            </a>
+            <a 
+              href="#recognition" 
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-slate-950"
             >
