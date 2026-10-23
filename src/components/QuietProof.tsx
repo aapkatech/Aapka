@@ -136,16 +136,16 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
 
                   {/* Top Badge Overlay */}
                   <div className="absolute top-3.5 left-3.5">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md text-white text-[11px] font-semibold tracking-tight border border-white/10 shadow-sm">
-                      <Trophy className="w-3 h-3 text-teal-400" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-semibold tracking-tight border border-slate-200/80 shadow-xs">
+                      <Trophy className="w-3 h-3 text-teal-600" />
                       <span>{award.badge}</span>
                     </span>
                   </div>
 
                   {/* Hover Hint */}
-                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-[11px] font-medium text-white/90 flex items-center gap-1 bg-black/60 px-2.5 py-1 rounded-md backdrop-blur-xs">
-                    <span>Click to view ceremony photo</span>
-                    <ExternalLink className="w-3 h-3" />
+                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-[11px] font-medium text-slate-800 flex items-center gap-1.5 bg-white/95 px-2.5 py-1 rounded-lg border border-slate-200/80 shadow-xs backdrop-blur-xs">
+                    <span>View photo</span>
+                    <ExternalLink className="w-3 h-3 text-slate-600" />
                   </div>
                 </div>
 
@@ -237,47 +237,72 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
         </div>
 
         {/* Bottom Banner */}
-        <div className="p-5 rounded-2xl bg-slate-900 text-white text-center text-xs sm:text-sm font-medium">
-          Recognised for our journey to make healthcare more accessible in tribal communities through innovation, partnerships and impact.
+        <div className="p-5 rounded-2xl bg-white border border-slate-200/80 text-slate-800 text-center text-xs sm:text-sm font-medium shadow-2xs">
+          Recognised for our journey to make healthcare more accessible across communities through innovation, partnerships and impact.
         </div>
 
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal - Clean, elegant light gallery presentation */}
       {selectedImage && (
         <div 
           role="dialog"
           aria-modal="true"
           aria-label={selectedImage.title}
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+            className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/40">
-              <h4 className="text-sm sm:text-base font-semibold text-white tracking-tight">
-                {selectedImage.title}
-              </h4>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4.5 border-b border-slate-100 bg-slate-50/70">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200/80 flex items-center justify-center text-teal-700">
+                  <Trophy className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-base font-serif font-semibold text-slate-900 tracking-tight">
+                    {selectedImage.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500 font-medium">Verified Ceremony Photography</p>
+                </div>
+              </div>
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}
-                className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-200/60 transition-colors cursor-pointer"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-2 sm:p-4 bg-black/60 flex items-center justify-center">
+            {/* Modal Image Viewport */}
+            <div className="p-4 sm:p-6 bg-slate-100/60 flex items-center justify-center">
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
-                className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl"
+                className="max-h-[72vh] w-auto max-w-full object-contain rounded-2xl border border-slate-200/90 shadow-md bg-white"
               />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-3.5 bg-white border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+              <span className="flex items-center gap-1.5 text-teal-700 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
+                <span>Official Recognition Record</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => setSelectedImage(null)}
+                className="text-slate-500 hover:text-slate-800 font-medium transition-colors cursor-pointer"
+              >
+                Close (Esc)
+              </button>
             </div>
           </div>
         </div>
