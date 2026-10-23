@@ -84,10 +84,6 @@ export const AapkaWorkflow: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>The Proactive Solution</span>
-          </p>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-semibold tracking-tight text-slate-900 leading-[1.2]">
             From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-semibold">"Care Starts Faster."</span>
           </h2>

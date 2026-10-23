@@ -22,10 +22,6 @@ export const ContactPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
           
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Care Coordination &amp; Inquiries
-            </span>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
               Connect With Our Clinical Care Desk
             </h1>

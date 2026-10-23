@@ -119,10 +119,6 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
           
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Our Mission &amp; Purpose
-            </span>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
               Reimagining Healthcare Access for Rural &amp; Tribal India
             </h1>
@@ -157,9 +153,6 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-                The Healthcare Reality Gap
-              </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
                 Solving the Lost "Golden Hour" for Rural Families
               </h2>
@@ -224,9 +217,6 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Strategic Expansion Model
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
               Scaling Impact Across Tribal India
             </h2>
@@ -272,9 +262,6 @@ export const AboutPage: React.FC = () => {
       {/* 4. 4-Phase Roadmap for Tribal Healthcare Pilot (Slide 11 of Deck) */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-            Implementation Framework
-          </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
             Our Plan for a Tribal Healthcare Pilot
           </h2>
@@ -327,9 +314,6 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              National Honors &amp; Validation
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
               Endorsed by Healthcare &amp; Innovation Leaders
             </h2>

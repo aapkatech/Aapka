@@ -55,10 +55,6 @@ export const NetworkPage: React.FC<NetworkPageProps> = ({ onOpenBooking, t }) =>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
           
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Verified Hospital Network
-            </span>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
               240+ Verified Hospitals Across Bharat
             </h1>
@@ -98,9 +94,6 @@ export const NetworkPage: React.FC<NetworkPageProps> = ({ onOpenBooking, t }) =>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Quality Assurance &amp; Governance
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900">
               How Aapka Vets Every Hospital Partner
             </h2>
