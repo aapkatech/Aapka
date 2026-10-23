@@ -1,45 +1,42 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { ExecutionStrengths } from '../components/ExecutionStrengths';
-import { TribalHealthGap } from '../components/TribalHealthGap';
+import { WhyAapka } from '../components/WhyAapka';
 import { AapkaWorkflow } from '../components/AapkaWorkflow';
-import { GramMitraSection } from '../components/GramMitraSection';
 import { QuietProof } from '../components/QuietProof';
 import { ArrowRight, Building2, Users, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import type { Translations } from '../i18n/translations';
+import type { Language, Translations } from '../i18n/translations';
 
 interface HomePageProps {
   onOpenBooking: (service?: string) => void;
+  lang?: Language;
   t?: {
     hero?: Translations['hero'];
     proof?: Translations['proof'];
   };
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, t }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', t }) => {
   return (
     <div className="space-y-0">
-      {/* 1. Hero Section (LOCKED - Untouched) */}
+      {/* 1. Hero Section */}
       <Hero 
         onSearch={() => onOpenBooking('hospitalization')} 
         onOpenBooking={onOpenBooking}
         t={t?.hero}
       />
 
-      {/* 2. Real Scale Execution Metrics Strip (1,270+ Gram Mitras, 240+ Hospitals, etc.) */}
+      {/* 2. Real Scale Execution Metrics Strip (20+ Active Cities, 240+ Hospitals, etc.) */}
       <ExecutionStrengths />
 
-      {/* 3. The Tribal & Rural Healthcare Reality & The 60-75 Minute Lost Delay Gap */}
-      <TribalHealthGap />
+      {/* 3. Why AAPKA? Human, clear, reassuring healthcare access */}
+      <WhyAapka onOpenBooking={onOpenBooking} lang={lang} />
 
       {/* 4. Proactive Solution: From 'Where Should We Go?' to 'Care Starts Faster' */}
       <AapkaWorkflow />
 
-      {/* 5. Gram Mitra: Aapka's Strength on the Ground & BLS Training */}
-      <GramMitraSection />
-
-      {/* 6. Awards & National Recognition (Ceremony photos & Accolades) */}
+      {/* 5. Awards & National Recognition (Ceremony photos & Accolades) */}
       <QuietProof t={t?.proof} />
 
       {/* 7. Quick Navigation Pathways to Dedicated Pages (Refactored to Crisp Warm Canvas) */}

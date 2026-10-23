@@ -4,7 +4,6 @@ import {
   Building2, 
   FlaskConical, 
   CreditCard, 
-  ShieldCheck, 
   CheckCircle2, 
   PhoneCall, 
   ArrowRight,

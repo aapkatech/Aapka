@@ -1,12 +1,9 @@
 import React from 'react';
 import { 
-  Users, 
   CheckCircle2, 
   GraduationCap, 
   Briefcase, 
   Mail, 
-  ArrowRight,
-  ShieldCheck,
   Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';

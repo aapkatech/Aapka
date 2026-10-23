@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Building2, MapPin, Activity } from 'lucide-react';
+import { Building2, MapPin, Activity } from 'lucide-react';
 
 interface ExecutionStrengthsProps {
   t?: {
@@ -12,10 +12,10 @@ interface ExecutionStrengthsProps {
 export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => {
   const defaultMetrics = [
     {
-      value: "1,270+",
-      label: "Gram Mitras",
-      sub: "Working at the community level across rural and tribal areas.",
-      icon: Users,
+      value: "20+",
+      label: "Active Cities",
+      sub: "Currently operational and supporting families across 20+ cities.",
+      icon: MapPin,
       accent: "text-teal-700 bg-teal-50 border-teal-200/60"
     },
     {
@@ -43,7 +43,7 @@ export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => 
 
   const tag = t?.tag || "Proven Ground Execution";
   const title = t?.title || "Our Strengths for Execution";
-  const subtitle = t?.subtitle || "An established platform and a shared purpose to build healthier, stronger tribal communities.";
+  const subtitle = t?.subtitle || "An established platform and a shared purpose to build healthier, stronger communities.";
 
   return (
     <section id="network" className="py-14 sm:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100 scroll-mt-20">

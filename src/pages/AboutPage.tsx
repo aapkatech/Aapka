@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   Building2, 
   Target, 
-  Compass, 
   MapPin, 
   Users, 
   ShieldCheck, 
@@ -11,7 +10,6 @@ import {
   TrendingUp, 
   Calendar, 
   Activity, 
-  ArrowRight,
   Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';

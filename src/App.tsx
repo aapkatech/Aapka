@@ -54,6 +54,7 @@ export function App() {
             element={
               <HomePage 
                 onOpenBooking={handleOpenBooking} 
+                lang={lang}
                 t={{ hero: t.hero, proof: t.proof }} 
               />
             } 

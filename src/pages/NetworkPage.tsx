@@ -6,9 +6,7 @@ import {
   CheckCircle2, 
   Stethoscope, 
   Activity, 
-  Bed, 
-  PhoneCall,
-  Sparkles
+  Bed
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Translations } from '../i18n/translations';

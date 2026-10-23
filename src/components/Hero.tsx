@@ -18,15 +18,15 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const downloadApp = t?.downloadApp || "Download the App";
 
   return (
-    <section id="home" className="relative bg-white pt-3 pb-14 sm:pt-4 sm:pb-20 lg:pt-6 lg:pb-24 overflow-hidden scroll-mt-24">
+    <section id="home" className="relative bg-white pt-2 pb-12 sm:pt-4 sm:pb-16 lg:pt-4 lg:pb-20 overflow-hidden scroll-mt-24">
       {/* Subtle architectural ambient background glow */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Classic, High-Trust Editorial Narrative (Gracefully positioned for top/bottom balance) */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left pt-4 sm:pt-6 lg:pt-12 xl:pt-16 pb-2 lg:pb-6">
+          {/* Left Column: Classic, High-Trust Editorial Narrative */}
+          <div className="lg:col-span-6 xl:col-span-6 space-y-6 sm:space-y-7 text-left pt-2 sm:pt-3 lg:pt-3 pb-2">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             )}
 
             {/* Main Headline: Classic, prestigious professional typography */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.6rem] xl:text-[4rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.8rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.12]">
               {headline}
             </h1>
 
@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             </p>
 
             {/* Small 'Download the App' Action */}
-            <div className="pt-2">
+            <div className="pt-1">
               <a
                 href="https://play.google.com/store/apps/details?id=com.kapp.smartgram&pli=1"
                 target="_blank"
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
             </div>
 
             {/* Micro-Trust Signals */}
-            <div className="pt-3 sm:pt-5 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
+            <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{communitiesSupported}</span>
@@ -80,31 +80,29 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
           </div>
 
-          {/* Right Column: Hero Visual - Grand, prominent, seamlessly blended without heavy borders */}
-          <div className="lg:col-span-6 xl:col-span-7 relative flex items-center justify-center lg:justify-end w-full">
+          {/* Right Column: Hero Visual - Aligned UP with headline text, sleek proportions, seamlessly blended */}
+          <div className="lg:col-span-6 xl:col-span-6 relative flex items-start justify-center lg:justify-end w-full pt-1 sm:pt-2">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full h-[480px] sm:h-[540px] lg:h-[600px] xl:h-[660px] flex items-center justify-center lg:justify-end"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="relative w-full max-w-lg lg:max-w-xl flex items-start justify-center lg:justify-end"
             >
               {/* Soft, borderless atmospheric radial ambient aura that merges into page */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] h-[92%] bg-gradient-to-tr from-teal-100/35 via-amber-100/20 to-sky-100/25 rounded-full blur-3xl pointer-events-none -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-gradient-to-tr from-teal-100/35 via-amber-100/20 to-sky-100/25 rounded-full blur-3xl pointer-events-none -z-10" />
 
-              {/* Large, borderless visual seamlessly blended into the background */}
-              <div className="relative w-full h-full flex items-center justify-center lg:justify-end">
-                <picture className="w-full h-full flex items-center justify-center lg:justify-end">
+              {/* Large, borderless visual seamlessly blended into the background without harsh overlay */}
+              <div className="relative w-full flex items-start justify-center lg:justify-end">
+                <picture className="w-full flex items-start justify-center lg:justify-end">
                   <source srcSet="/hero-family-cutout.webp" type="image/webp" />
                   <img
                     src="/hero-family-cutout.png"
-                    alt="Aapka Family Healthcare - Compassionate care for rural families"
-                    className="w-full h-full max-h-[620px] xl:max-h-[660px] object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.02] drop-shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
+                    alt="Aapka Family Healthcare - Compassionate care for families"
+                    className="w-full h-auto max-h-[420px] sm:max-h-[460px] lg:max-h-[480px] object-contain drop-shadow-[0_12px_28px_rgba(15,23,42,0.07)]"
                     loading="eager"
+                    decoding="async"
                   />
                 </picture>
-
-                {/* Seamless bottom grounding gradient overlay - blends base directly into pure white page */}
-                <div className="absolute bottom-0 inset-x-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>

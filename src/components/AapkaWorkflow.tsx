@@ -16,12 +16,12 @@ export const AapkaWorkflow: React.FC = () => {
     {
       step: 1,
       title: "Patient Needs Care",
-      subtitle: "Family seeks immediate help during a medical emergency in the village.",
+      subtitle: "Family seeks immediate help during a medical emergency or illness.",
       icon: AlertCircle,
       accent: "bg-amber-50 text-amber-700 border-amber-200",
       points: [
-        "Identified by family or local Gram Mitra",
-        "Immediate triage via Aapka platform"
+        "Direct call or request by family member",
+        "Immediate support via Aapka platform"
       ]
     },
     {
@@ -92,7 +92,7 @@ export const AapkaWorkflow: React.FC = () => {
             From <span className="text-slate-600 font-normal">"Where Should We Go?"</span> to <span className="text-teal-700 font-semibold">"Care Starts Faster."</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Aapka helps rural and tribal communities find the right hospital, coordinate before arrival, and navigate care — so that critical time is never lost.
+            Aapka helps families find the right hospital, coordinate before arrival, and navigate care — so that critical time is never lost.
           </p>
         </div>
 
