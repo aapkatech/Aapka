@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
 
   const platformLinks = [
     { label: "Global Network (240+)", to: "/network" },
-    { label: "Our Co-Founders", to: "/founders" },
+    { label: "Our Founders", to: "/founders" },
     { label: "Scaling Tribal Impact", to: "/about" },
     { label: "Clinical Quality Vetting", to: "/network" },
     { label: "Tribal Healthcare Pilot", to: "/about" }

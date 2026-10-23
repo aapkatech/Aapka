@@ -5,7 +5,7 @@ export const LeadershipTeam: React.FC = () => {
   const leaders = [
     {
       name: "Prabal Pratap Singh",
-      role: "Co-Founder & CEO",
+      role: "Founder & CEO",
       image: "/founders/prabal-pratap-singh.webp",
       fallbackImage: "/founders/prabal-pratap-singh.jpg",
       bio: "Sets strategic direction, institutional partnerships, and ecosystem engagement. Decades of combined experience scaling rural access networks and social impact platforms.",
@@ -20,7 +20,7 @@ export const LeadershipTeam: React.FC = () => {
     },
     {
       name: "Shruti Thakur",
-      role: "Co-Founder & COO",
+      role: "Founder & COO",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
       bio: "Drives grassroots program execution and the rapid onboarding of the 1,270+ Gram Mitra network. Champion of rural women health facilitators and community outreach.",
@@ -35,7 +35,7 @@ export const LeadershipTeam: React.FC = () => {
     },
     {
       name: "Yudhishthir Sharma",
-      role: "Co-Founder & CTO",
+      role: "Founder & CTO",
       image: "/founders/yudhishthir-sharma.webp",
       fallbackImage: "/founders/yudhishthir-sharma.jpg",
       bio: "Architects the AI hospital-matching engine, offline-first mobile tools for Gram Mitras, and longitudinal patient tracking systems.",
@@ -57,10 +57,6 @@ export const LeadershipTeam: React.FC = () => {
         
         {/* Section Header: Explicitly Titled 'Founders' */}
         <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>Co-Founders &amp; Leadership</span>
-          </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Founders
           </h2>
@@ -69,7 +65,7 @@ export const LeadershipTeam: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Co-Founders Grid with Authentic Photos */}
+        {/* 3 Founders Grid with Authentic Photos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {leaders.map((leader, idx) => (
             <div 

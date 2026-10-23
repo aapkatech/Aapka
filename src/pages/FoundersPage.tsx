@@ -12,7 +12,7 @@ export const FoundersPage: React.FC = () => {
   const founders = [
     {
       name: "Prabal Pratap Singh",
-      role: "Co-Founder & Chief Executive Officer",
+      role: "Founder & Chief Executive Officer",
       tagline: "Visionary leadership bridging rural health vulnerability with institutional healthcare ecosystems.",
       image: "/founders/prabal-pratap-singh.webp",
       fallbackImage: "/founders/prabal-pratap-singh.jpg",
@@ -29,11 +29,11 @@ export const FoundersPage: React.FC = () => {
         { label: "Incubation", val: "Indigram Labs Foundation / DST" },
         { label: "Corporate", val: "DCM Shriram • Adda247" }
       ],
-      badge: "Co-Founder & CEO"
+      badge: "Founder & CEO"
     },
     {
       name: "Shruti Thakur",
-      role: "Co-Founder & Chief Operating Officer",
+      role: "Founder & Chief Operating Officer",
       tagline: "Empowering rural women and village youth into certified frontline health navigators.",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
@@ -50,11 +50,11 @@ export const FoundersPage: React.FC = () => {
         { label: "Operations", val: "1,270+ Field Cadres Managed" },
         { label: "Focus", val: "Maternal, Tribal & Emergency Health Protocols" }
       ],
-      badge: "Co-Founder & COO"
+      badge: "Founder & COO"
     },
     {
       name: "Yudhishthir Sharma",
-      role: "Co-Founder & Chief Technology Officer",
+      role: "Founder & Chief Technology Officer",
       tagline: "Architecting zero-connectivity, high-reliability health infrastructure for rural Bharat.",
       image: "/founders/yudhishthir-sharma.webp",
       fallbackImage: "/founders/yudhishthir-sharma.jpg",
@@ -71,7 +71,7 @@ export const FoundersPage: React.FC = () => {
         { label: "Enterprise", val: "Kundan Group" },
         { label: "Specialty", val: "Distributed Systems & Health Tech Mobility" }
       ],
-      badge: "Co-Founder & CTO"
+      badge: "Founder & CTO"
     }
   ];
 
