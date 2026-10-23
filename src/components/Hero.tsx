@@ -80,12 +80,12 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
           </div>
 
-          {/* Right Column: Hero Visual - Aligned UP with headline text, sleek proportions, seamlessly blended */}
-          <div className="lg:col-span-6 xl:col-span-6 relative flex items-start justify-center lg:justify-end w-full pt-1 sm:pt-2">
+          {/* Right Column: Hero Visual - Perfectly aligned UP with headline text and navbar level */}
+          <div className="lg:col-span-6 xl:col-span-6 relative flex items-start justify-center lg:justify-end w-full pt-0 lg:-mt-2 xl:-mt-3">
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="relative w-full max-w-lg lg:max-w-xl flex items-start justify-center lg:justify-end"
             >
               {/* Soft, borderless atmospheric radial ambient aura that merges into page */}
@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
                   <img
                     src="/hero-family-cutout.png"
                     alt="Aapka Family Healthcare - Compassionate care for families"
-                    className="w-full h-auto max-h-[420px] sm:max-h-[460px] lg:max-h-[480px] object-contain drop-shadow-[0_12px_28px_rgba(15,23,42,0.07)]"
+                    className="w-full h-auto max-h-[400px] sm:max-h-[440px] lg:max-h-[460px] object-contain drop-shadow-[0_12px_28px_rgba(15,23,42,0.07)]"
                     loading="eager"
                     decoding="async"
                   />
