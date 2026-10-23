@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const preHeadline = t?.preHeadline;
   const headline = t?.headline || "India's Trusted Healthcare Platform.";
   const subheadline = t?.subheadline || "Let us take care of you.";
-  const communitiesSupported = t?.communitiesSupported || "500+ Communities Supported";
+  const communitiesSupported = t?.communitiesSupported || "20+ Cities Covered";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
   const downloadApp = t?.downloadApp || "Download the App";
 
@@ -25,8 +25,8 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Classic, High-Trust Editorial Narrative (Gracefully positioned for top/bottom balance) */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left pt-4 sm:pt-6 lg:pt-12 xl:pt-16 pb-2 lg:pb-6">
+          {/* Left Column: Classic, High-Trust Editorial Narrative */}
+          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left pt-2 sm:pt-4 lg:pt-6 xl:pt-8 pb-2 lg:pb-6">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -93,16 +93,13 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-tr from-teal-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
 
               {/* Strict Inner Clipped Container with overflow-hidden */}
-              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/50 backdrop-blur-xs border border-white/80">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/60 backdrop-blur-xs border border-white/80">
                 <img
                   src="/hero-family-cutout.png"
                   alt="Aapka Family Healthcare - Compassionate care for rural families"
                   className="w-full h-full max-h-[580px] object-contain transition-transform duration-500 ease-out hover:scale-105 drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]"
                   loading="eager"
                 />
-
-                {/* Seamless bottom grounding gradient overlay - eliminates any cut-out leakage */}
-                <div className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-white/95 via-white/40 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Building2, MapPin, Activity } from 'lucide-react';
+import { Building2, MapPin, Activity } from 'lucide-react';
 
 interface ExecutionStrengthsProps {
   t?: {
@@ -12,10 +12,10 @@ interface ExecutionStrengthsProps {
 export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => {
   const defaultMetrics = [
     {
-      value: "1,270+",
-      label: "Gram Mitras",
-      sub: "Working at the community level across rural and tribal areas.",
-      icon: Users,
+      value: "20+",
+      label: "Active Cities",
+      sub: "Active care coordination network operating across 20+ cities in Bharat.",
+      icon: MapPin,
       accent: "text-teal-700 bg-teal-50 border-teal-200/60"
     },
     {

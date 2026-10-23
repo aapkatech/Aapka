@@ -233,40 +233,40 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
 
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal (Light Mode, Clean & Human) */}
       {selectedImage && (
         <div 
           role="dialog"
           aria-modal="true"
           aria-label={selectedImage.title}
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+            className="relative max-w-4xl w-full bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/40">
-              <h4 className="text-sm sm:text-base font-semibold text-white tracking-tight">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/80">
+              <h4 className="text-sm sm:text-base font-semibold text-slate-900 tracking-tight font-serif">
                 {selectedImage.title}
               </h4>
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}
-                className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-200/70 transition-colors cursor-pointer"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-2 sm:p-4 bg-black/60 flex items-center justify-center">
+            <div className="p-3 sm:p-6 bg-slate-50/50 flex items-center justify-center">
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt}
                 loading="lazy"
                 decoding="async"
-                className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl"
+                className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl shadow-xs border border-slate-200/60"
               />
             </div>
           </div>

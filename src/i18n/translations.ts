@@ -2,6 +2,7 @@ export type Language = 'en' | 'hi';
 
 export interface Translations {
   nav: {
+    home: string;
     services: string;
     network: string;
     about: string;
@@ -124,6 +125,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   en: {
     nav: {
+      home: "Home",
       services: "Services",
       network: "Global Network",
       about: "About",
@@ -138,7 +140,7 @@ export const translations: Record<Language, Translations> = {
       subheadline: "Let us take care of you.",
       primaryCta: "Explore Our Global Network",
       secondaryCta: "How It Works →",
-      communitiesSupported: "500+ Communities Supported",
+      communitiesSupported: "20+ Cities Covered",
       hospitalPartners: "46+ Vetted Hospital Partners",
       floatingCare: "24/7 Care Coordination",
       floatingCareSub: "Verified Swasthya-Mitras On Call",
@@ -339,6 +341,7 @@ export const translations: Record<Language, Translations> = {
 
   hi: {
     nav: {
+      home: "होम",
       services: "सेवाएं",
       network: "अस्पताल नेटवर्क",
       about: "हमारे बारे में",
@@ -353,7 +356,7 @@ export const translations: Record<Language, Translations> = {
       subheadline: "आपकी देखभाल, हमारी ज़िम्मेदारी।",
       primaryCta: "हमारा हेल्थकेयर नेटवर्क देखें",
       secondaryCta: "यह कैसे काम करता है →",
-      communitiesSupported: "500+ समुदाय जुड़े",
+      communitiesSupported: "20+ शहरों में सक्रिय",
       hospitalPartners: "46+ सत्यापित अस्पताल भागीदार",
       floatingCare: "24/7 स्वास्थ्य मार्गदर्शन",
       floatingCareSub: "सत्यापित स्वास्थ्य-मित्र सदैव उपलब्ध",
