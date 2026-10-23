@@ -6,7 +6,6 @@ import {
   ChevronRight, 
   MapPin, 
   ShieldCheck, 
-  Sparkles,
   Heart
 } from 'lucide-react';
 import type { Language } from '../data/translations';

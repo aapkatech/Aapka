@@ -17,9 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   const tagline = t?.tagline || "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.";
   const company = t?.company || "SP Rural India Services Private Limited";
   const location = t?.location || "201 Convention Centre, JNU New Delhi, 110067";
-  const phone = t?.phone || "+91 9667033044";
-  const email = t?.email || "Info@Aapka.co.in";
-  const carePathwaysTitle = t?.carePathwaysTitle || "Care Pathways";
+      const carePathwaysTitle = t?.carePathwaysTitle || "Care Pathways";
   const platformReachTitle = t?.platformReachTitle || "Platform & Reach";
   const globalSupportTitle = t?.globalSupportTitle || "Global Support";
   const privacy = t?.privacy || "Privacy & Data Safeguards";
@@ -44,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   ];
 
   return (
-    <footer id="contact" className="bg-white border-t border-zinc-100 pt-20 pb-16 text-zinc-600 text-xs font-normal">
+    <footer id="footer" className="bg-white border-t border-zinc-100 pt-20 pb-16 text-zinc-600 text-xs font-normal">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
         
         {/* Multi-Column Layout */}

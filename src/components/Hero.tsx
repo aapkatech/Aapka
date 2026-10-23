@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const downloadApp = t?.downloadApp || "Download the App";
 
   return (
-    <section className="relative bg-white pt-2 pb-14 sm:pt-3 sm:pb-20 lg:pt-3 lg:pb-24 overflow-hidden">
+    <section id="home" className="relative bg-white pt-3 pb-14 sm:pt-4 sm:pb-20 lg:pt-6 lg:pb-24 overflow-hidden scroll-mt-24">
       {/* Subtle architectural ambient background glow */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
@@ -80,29 +80,31 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
           </div>
 
-          {/* Right Column: Hero Visual (50% - 55% width, 550px - 620px height, slide-in from left, strictly clipped) */}
+          {/* Right Column: Hero Visual - Grand, prominent, seamlessly blended without heavy borders */}
           <div className="lg:col-span-6 xl:col-span-7 relative flex items-center justify-center lg:justify-end w-full">
             <motion.div
-              initial={{ x: -80, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] xl:h-[620px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-5 bg-gradient-to-tr from-amber-50/70 via-teal-50/30 to-sky-50/50 border border-slate-200/80 shadow-xl shadow-slate-200/50"
+              className="relative w-full h-[480px] sm:h-[540px] lg:h-[600px] xl:h-[660px] flex items-center justify-center lg:justify-end"
             >
-              {/* Internal Decorative Layered Aura Shapes */}
-              <div className="absolute -top-12 -right-12 w-56 h-56 bg-gradient-to-br from-amber-200/40 to-teal-200/30 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-tr from-teal-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+              {/* Soft, borderless atmospheric radial ambient aura that merges into page */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] h-[92%] bg-gradient-to-tr from-teal-100/35 via-amber-100/20 to-sky-100/25 rounded-full blur-3xl pointer-events-none -z-10" />
 
-              {/* Strict Inner Clipped Container with overflow-hidden */}
-              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/50 backdrop-blur-xs border border-white/80">
-                <img
-                  src="/hero-family-cutout.png"
-                  alt="Aapka Family Healthcare - Compassionate care for rural families"
-                  className="w-full h-full max-h-[580px] object-contain transition-transform duration-500 ease-out hover:scale-105 drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]"
-                  loading="eager"
-                />
+              {/* Large, borderless visual seamlessly blended into the background */}
+              <div className="relative w-full h-full flex items-center justify-center lg:justify-end">
+                <picture className="w-full h-full flex items-center justify-center lg:justify-end">
+                  <source srcSet="/hero-family-cutout.webp" type="image/webp" />
+                  <img
+                    src="/hero-family-cutout.png"
+                    alt="Aapka Family Healthcare - Compassionate care for rural families"
+                    className="w-full h-full max-h-[620px] xl:max-h-[660px] object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.02] drop-shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
+                    loading="eager"
+                  />
+                </picture>
 
-                {/* Seamless bottom grounding gradient overlay - eliminates any cut-out leakage */}
-                <div className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-white/95 via-white/40 to-transparent pointer-events-none" />
+                {/* Seamless bottom grounding gradient overlay - blends base directly into pure white page */}
+                <div className="absolute bottom-0 inset-x-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>

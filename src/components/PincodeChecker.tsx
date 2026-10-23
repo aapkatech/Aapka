@@ -7,8 +7,6 @@ import {
   Users, 
   PhoneCall, 
   ShieldCheck, 
-  ArrowRight,
-  AlertCircle
 } from 'lucide-react';
 import type { Language } from '../data/translations';
 import { content } from '../data/translations';
@@ -18,7 +16,7 @@ interface PincodeCheckerProps {
   onOpenBooking: (serviceType: string) => void;
 }
 
-export const PincodeChecker: React.FC<PincodeCheckerProps> = ({ lang, onOpenBooking }) => {
+export const PincodeChecker: React.FC<PincodeCheckerProps> = ({ lang, onOpenBooking: _onOpenBooking }) => {
   const t = content[lang];
   const [pincode, setPincode] = useState('');
   const [result, setResult] = useState<{

@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { Award, Trophy, Medal, X, ExternalLink, Newspaper, CheckCircle2 } from 'lucide-react';
+import { Trophy, X, ExternalLink, Newspaper, CheckCircle2 } from 'lucide-react';
 import type { Translations } from '../i18n/translations';
 
 interface QuietProofProps {
   t?: Translations['proof'];
 }
 
-export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
+export const QuietProof: React.FC<QuietProofProps> = ({ t: _t }) => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title: string } | null>(null);
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedImage) {
+        setSelectedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
 
   // Key photo awards with verified ceremony photography
   const photoAwards = [

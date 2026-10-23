@@ -2,11 +2,6 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { 
   PhoneCall, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  ShieldCheck, 
-  Building2, 
   CheckCircle2, 
   MessageSquare,
   Sparkles

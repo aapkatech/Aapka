@@ -3,12 +3,10 @@ import { GlobalNetwork } from '../components/GlobalNetwork';
 import { 
   Building2, 
   ShieldCheck, 
-  MapPin, 
   CheckCircle2, 
   Stethoscope, 
   Activity, 
   Bed, 
-  PhoneCall 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Translations } from '../i18n/translations';

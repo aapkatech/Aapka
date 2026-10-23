@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Send, 
   Phone, 
   Mail, 
   MapPin, 
@@ -8,8 +7,8 @@ import {
   Clock, 
   MessageSquare, 
   ShieldCheck, 
-  Building2, 
-  AlertCircle 
+  AlertCircle,
+  ArrowRight
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
@@ -22,7 +21,6 @@ export const ContactSection: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -33,23 +31,27 @@ export const ContactSection: React.FC = () => {
     if (error) setError('');
   };
 
+  const validateIndianMobile = (num: string): boolean => {
+    const clean = num.replace(/[\s-]/g, '');
+    return /^(?:(?:\+|0{0,2})91)?[6-9]\d{9}$/.test(clean);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim()) {
-      setError('Please provide your name.');
+    const trimmedName = formData.name.trim();
+    const trimmedPhone = formData.phone.trim();
+
+    if (!trimmedName || trimmedName.length < 2) {
+      setError('Please provide your full name (minimum 2 characters).');
       return;
     }
-    if (!formData.phone.trim() || formData.phone.length < 10) {
-      setError('Please provide a valid 10-digit contact telephone number.');
+    if (!validateIndianMobile(trimmedPhone)) {
+      setError('Please provide a valid 10-digit Indian mobile number (e.g. +91 98765 43210).');
       return;
     }
 
-    setLoading(true);
-    // Simulate swift network dispatch
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 600);
+    setError('');
+    setSubmitted(true);
   };
 
   const handleReset = () => {
@@ -64,8 +66,9 @@ export const ContactSection: React.FC = () => {
     setError('');
   };
 
+  const cleanPhone = formData.phone.replace(/[^0-9+]/g, '');
   const encodedWhatsApp = encodeURIComponent(
-    `Hello Aapka Team, my name is ${formData.name || 'Patient'}. I am contacting regarding ${formData.inquiryType} in ${formData.location || 'my area'}. Phone: ${formData.phone}. Message: ${formData.message || 'Please assist.'}`
+    `Namaste Aapka Clinical Desk, my name is ${formData.name.trim()}. I am inquiring about ${formData.inquiryType} in ${formData.location.trim() || 'my region'}. Contact: ${cleanPhone}. Please assist us.`
   );
 
   return (
@@ -82,7 +85,7 @@ export const ContactSection: React.FC = () => {
             Connect With Our Clinical Team
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Whether you need urgent emergency bed staging, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — we respond within minutes.
+            Whether you need urgent emergency bed staging, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — our team is here to assist.
           </p>
         </div>
 
@@ -147,22 +150,22 @@ export const ContactSection: React.FC = () => {
 
               <div className="pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-teal-400">
                 <Clock className="w-4 h-4 shrink-0" />
-                <span>Average coordinator response time: &lt; 15 minutes</span>
+                <span>Active 24/7 coordination desks</span>
               </div>
             </div>
 
-            {/* Micro Guarantee */}
+            {/* Privacy Safeguard Note */}
             <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-2xs">
               <ShieldCheck className="w-8 h-8 text-teal-700 shrink-0" />
               <div className="space-y-0.5">
-                <p className="text-xs font-semibold text-slate-900">100% Patient Confidentiality</p>
-                <p className="text-[11px] text-slate-500">Your health details are encrypted and shared only with verified hospital clinicians.</p>
+                <p className="text-xs font-semibold text-slate-900">Confidential Patient Data Handling</p>
+                <p className="text-[11px] text-slate-500">Data is maintained under the DPDP Act 2023 principles and shared only with attending medical providers.</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right: Working Interactive Contact Form (Item 20) */}
+          {/* Right: Working Interactive Contact Form */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl">
               
@@ -170,12 +173,15 @@ export const ContactSection: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="space-y-1">
                     <h3 className="text-xl font-bold text-slate-900 font-serif">Send a Care Coordination Request</h3>
-                    <p className="text-xs text-slate-500">Fill in the patient or case details below to activate immediate assistance.</p>
+                    <p className="text-xs text-slate-500">Enter your contact details to connect directly with an Aapka coordinator.</p>
                   </div>
 
                   {error && (
-                    <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
-                      <AlertCircle className="w-4 h-4 shrink-0" />
+                    <div 
+                      role="alert"
+                      className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2"
+                    >
+                      <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
                       <span>{error}</span>
                     </div>
                   )}
@@ -253,7 +259,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="space-y-1.5">
                     <label htmlFor="message" className="block text-xs font-semibold text-slate-700">
-                      Medical Condition or Inquiry Notes
+                      Inquiry Notes (Non-Sensitive)
                     </label>
                     <textarea
                       id="message"
@@ -261,7 +267,7 @@ export const ContactSection: React.FC = () => {
                       rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Briefly describe the symptoms, hospital preference, or assistance needed..."
+                      placeholder="Briefly state your preferred hospital, district, or query..."
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
                     />
                   </div>
@@ -269,26 +275,19 @@ export const ContactSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                      className="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      {loading ? (
-                        <span>Activating Care Coordinator...</span>
-                      ) : (
-                        <>
-                          <span>Submit Care Request</span>
-                          <Send className="w-4 h-4" />
-                        </>
-                      )}
+                      <span>Prepare Direct Care Request</span>
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
 
                   <p className="text-[11px] text-slate-400 text-center">
-                    By submitting, you agree to our confidential patient data handling under the DPDP Act 2023.
+                    By submitting, you agree to confidential patient data handling under DPDP Act 2023 principles.
                   </p>
                 </form>
               ) : (
-                /* Success State with Instant WhatsApp & Call Options */
+                /* Honest Prepared State with Instant WhatsApp & Call Options */
                 <div className="py-6 text-center space-y-6 animate-in fade-in zoom-in-95 duration-200">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-sm">
                     <CheckCircle2 className="w-8 h-8" />
@@ -296,15 +295,15 @@ export const ContactSection: React.FC = () => {
 
                   <div className="space-y-2 max-w-md mx-auto">
                     <h3 className="text-2xl font-bold font-serif text-slate-900">
-                      Request Dispatched Successfully!
+                      Inquiry Prepared for Direct Dispatch
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      Thank you, <strong>{formData.name}</strong>. An Aapka healthcare coordinator has been assigned to your case regarding <strong>{formData.inquiryType}</strong>.
+                      Thank you, <strong>{formData.name.trim()}</strong>. Your coordination details for <strong>{formData.inquiryType}</strong> have been prepared. Tap below to connect directly with the Aapka Care Desk.
                     </p>
                   </div>
 
                   <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 max-w-md mx-auto text-left space-y-3">
-                    <p className="text-xs font-semibold text-slate-700 uppercase tracking-wide">Fast-Track Options:</p>
+                    <p className="text-xs font-semibold text-slate-700 uppercase tracking-wide">Connect Directly with Coordinator:</p>
                     <div className="flex flex-col sm:flex-row gap-2">
                       <a
                         href={`https://wa.me/919716332976?text=${encodedWhatsApp}`}
@@ -313,7 +312,7 @@ export const ContactSection: React.FC = () => {
                         className="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors"
                       >
                         <MessageSquare className="w-4 h-4" />
-                        <span>Chat on WhatsApp</span>
+                        <span>Send via WhatsApp</span>
                       </a>
                       <a
                         href="tel:+919716332976"
@@ -328,9 +327,9 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+                    className="text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors cursor-pointer underline"
                   >
-                    ← Submit another request
+                    ← Edit or submit another request
                   </button>
                 </div>
               )}

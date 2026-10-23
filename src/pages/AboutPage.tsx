@@ -8,11 +8,9 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   Award, 
-  HeartHandshake, 
   TrendingUp, 
   Calendar, 
-  Activity, 
-  ArrowRight 
+  Activity
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

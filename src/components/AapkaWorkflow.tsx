@@ -8,8 +8,7 @@ import {
   Cpu, 
   Users, 
   HeartHandshake, 
-  CheckCircle2, 
-  ArrowRight 
+  CheckCircle2
 } from 'lucide-react';
 
 export const AapkaWorkflow: React.FC = () => {

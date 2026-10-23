@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Briefcase, Building2, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export const LeadershipTeam: React.FC = () => {
   const leaders = [

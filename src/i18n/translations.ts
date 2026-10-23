@@ -2,8 +2,10 @@ export type Language = 'en' | 'hi';
 
 export interface Translations {
   nav: {
+    home: string;
     services: string;
     network: string;
+    founders: string;
     about: string;
     contact: string;
     directSupport: string;
@@ -124,8 +126,10 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   en: {
     nav: {
+      home: "Home",
       services: "Services",
       network: "Global Network",
+      founders: "Founders",
       about: "About",
       contact: "Contact",
       directSupport: "Direct Support",
@@ -324,23 +328,29 @@ export const translations: Record<Language, Translations> = {
       cityPlaceholder: "e.g. Meerut, Bulandshahr, Delhi NCR",
       submitButton: "Request Care Navigation",
       submittingButton: "Initiating Coordination...",
-      successTitle: "Coordination Request Logged",
-      successDesc: "Our clinical coordination desk has received your request. A dedicated care navigator will reach you within 15 minutes.",
+      successTitle: "Direct Care Connection Prepared",
+      successDesc: "Your request is ready for coordination. Tap below to connect directly with the Aapka Care Desk via WhatsApp or Call.",
       closeButton: "Close Window",
       serviceOptions: {
         hospitalization: "Hospitalization & Surgery Coordination",
         consultation: "Doctor Teleconsultation (Instant / Scheduled)",
+        teleconsult: "Doctor Teleconsultation (Instant / Scheduled)",
         diagnostics: "Diagnostic Lab & Pathology Home Collection",
+        pathology: "Diagnostic Lab & Pathology Home Collection",
+        caretaker: "Bedside Attendants & Home Recovery Care",
         emergency: "Emergency Transport & Bed Reservation",
-        card: "Smart Health Card Inquiry"
+        card: "Smart Health Card Inquiry",
+        smartcard: "Smart Health Card Inquiry"
       }
     }
   },
 
   hi: {
     nav: {
+      home: "होम",
       services: "सेवाएं",
       network: "अस्पताल नेटवर्क",
+      founders: "संस्थापक",
       about: "हमारे बारे में",
       contact: "संपर्क",
       directSupport: "24/7 सहायता",
@@ -539,15 +549,19 @@ export const translations: Record<Language, Translations> = {
       cityPlaceholder: "उदा. मेरठ, बुलंदशहर, दिल्ली एनसीआर",
       submitButton: "सहायता अनुरोध भेजें",
       submittingButton: "अनुरोध दर्ज हो रहा है...",
-      successTitle: "अनुरोध सफलतापूर्वक प्राप्त हुआ",
-      successDesc: "हमारे स्वास्थ्य-मित्र आपके विवरण की समीक्षा कर रहे हैं और 15 मिनट के भीतर आपसे संपर्क करेंगे।",
+      successTitle: "समन्वय अनुरोध तैयार है",
+      successDesc: "आपका विवरण तैयार है। बिना किसी देरी के त्वरित सहायता के लिए नीचे दिए गए बटन से सीधे हमारे स्वास्थ्य-मित्र से व्हाट्सएप या फोन पर संपर्क करें।",
       closeButton: "विंडो बंद करें",
       serviceOptions: {
         hospitalization: "अस्पताल भर्ती व सर्जरी सहायता",
         consultation: "ऑनलाइन डॉक्टर परामर्श (Teleconsultation)",
+        teleconsult: "ऑनलाइन डॉक्टर परामर्श (Teleconsultation)",
         diagnostics: "पैथोलॉजी व डायग्नोस्टिक लैब टेस्ट",
+        pathology: "पैथोलॉजी व डायग्नोस्टिक लैब टेस्ट",
+        caretaker: "अस्पताल अटेंडेंट व होम रिकवरी केयर",
         emergency: "आपातकालीन एम्बुलेंस व आईसीयू बेड",
-        card: "स्मार्ट हेल्थ कार्ड पूछताछ"
+        card: "स्मार्ट हेल्थ कार्ड पूछताछ",
+        smartcard: "स्मार्ट हेल्थ कार्ड पूछताछ"
       }
     }
   }

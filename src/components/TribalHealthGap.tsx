@@ -9,7 +9,7 @@ interface TribalHealthGapProps {
   };
 }
 
-export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t }) => {
+export const TribalHealthGap: React.FC<TribalHealthGapProps> = ({ t: _t }) => {
   const questions = [
     {
       q: "Is a bed available?",

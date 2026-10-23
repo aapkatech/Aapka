@@ -5,8 +5,6 @@ import {
   FlaskConical, 
   CreditCard, 
   ShieldCheck, 
-  Clock, 
-  IndianRupee, 
   CheckCircle2, 
   PhoneCall, 
   ArrowRight 

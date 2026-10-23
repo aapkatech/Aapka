@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ShieldCheck, Lock, FileText, CheckCircle2 } from 'lucide-react';
 
 interface PrivacyPolicyModalProps {
@@ -12,11 +12,17 @@ export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
   onClose,
   initialTab = 'privacy'
 }) => {
-  const [tab, setTab] = React.useState<'privacy' | 'terms'>(initialTab);
+  const [tab, setTab] = useState<'privacy' | 'terms'>(initialTab);
 
-  React.useEffect(() => {
-    setTab(initialTab);
-  }, [initialTab]);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -26,6 +32,7 @@ export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="legal-modal-title"
+      onClick={onClose}
     >
       <div 
         className="relative w-full max-w-2xl rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-200 max-h-[88vh] flex flex-col justify-between"
@@ -90,42 +97,42 @@ export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
                   <span>Commitment to Patient Dignity & Confidentiality</span>
                 </p>
                 <p>
-                  Aapka (SP Rural India Services Private Limited) adheres strictly to the Digital Personal Data Protection Act (DPDP Act 2023) of India and applicable national health data principles.
+                  Aapka (SP Rural India Services Private Limited) adheres strictly to the principles of the Digital Personal Data Protection Act (DPDP Act 2023) of India and applicable national health data guidelines.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h4 className="font-semibold text-slate-900 text-sm">1. Purpose of Data Collection</h4>
                 <p>
-                  We collect patient details (name, contact, primary medical condition, village/district location, hospital admission records) solely to coordinate emergency transport, confirm hospital bed availability, pre-inform casualty doctors, and facilitate transparent billing.
+                  We collect patient and contact details (name, phone number, general care requirement, village/district location) solely to coordinate hospital discovery, emergency pre-coordination, bed availability verification, and clinical navigation assistance.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-slate-900 text-sm">2. Patient Consent & Gram Mitra Protocols</h4>
+                <h4 className="font-semibold text-slate-900 text-sm">2. Patient Consent & Ground Protocols</h4>
                 <p>
-                  Every data entry submitted via on-ground Gram Mitras is executed with explicit verbal or written consent from the patient or legal guardian. Medical case descriptions are shared only with vetted partner hospitals and attending doctors.
+                  Information shared with our coordination desk or on-ground Gram Mitras is processed with the explicit consent of the patient or legal guardian. Case details are communicated directly to authorized partner hospital admission counters and attending healthcare professionals.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h4 className="font-semibold text-slate-900 text-sm">3. Zero Third-Party Data Monetization</h4>
                 <p>
-                  Aapka guarantees that patient medical records and personal telephone numbers will never be sold, leased, or monetized to commercial third parties, ad networks, or predatory lenders.
+                  Aapka guarantees that patient contact information and care requirements will never be sold, leased, or rented to commercial third parties, ad networks, or data brokers.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-slate-900 text-sm">4. Data Security & Encryption</h4>
+                <h4 className="font-semibold text-slate-900 text-sm">4. Data Security & Direct Dispatch</h4>
                 <p>
-                  All patient transmissions are encrypted using industry-standard TLS 1.3 in transit and stored in secure Indian cloud server regions compliant with Indian data residency mandates.
+                  To prevent unauthorized data exposure, website inquiries are formatted for direct transmission to verified clinical coordination desks. We recommend patients avoid transmitting unencrypted diagnostic reports or sensitive medical history over public web forms.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-semibold text-slate-900 text-sm">5. Grievance Redressal</h4>
+                <h4 className="font-semibold text-slate-900 text-sm">5. Grievance Redressal & Contact</h4>
                 <p>
-                  For data rectification, revocation of consent, or privacy inquiries, contact our Data Grievance Officer at <strong>prabal@aapka.co.in</strong> or write to: SP Rural India Services Private Limited, 201 Convention Centre, JNU New Delhi, 110067.
+                  For data rectification, questions, or privacy concerns, contact our Grievance Officer at <strong>info@aapka.co.in</strong> or <strong>prabal@aapka.co.in</strong>, or write to: SP Rural India Services Private Limited, 201 Convention Centre, JNU New Delhi, 110067.
                 </p>
               </div>
             </>
@@ -176,7 +183,7 @@ export const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
         <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
           <span className="text-slate-500 flex items-center gap-1">
             <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
-            <span>DPDP Act 2023 Compliant</span>
+            <span>DPDP Act 2023 Principles</span>
           </span>
           <button
             onClick={onClose}
