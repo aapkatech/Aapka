@@ -7,7 +7,7 @@ interface AapkaLogoProps {
 }
 
 export const AapkaLogo: React.FC<AapkaLogoProps> = ({ 
-  className = "h-10 w-auto", 
+  className = "h-11 sm:h-12 w-auto", 
   variant = 'full',
   alt = "Aapka - The Health Hub"
 }) => {

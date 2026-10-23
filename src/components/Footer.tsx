@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center">
               <Link to="/" aria-label="Aapka Home">
-                <AapkaLogo variant="full" className="h-10 w-auto hover:opacity-90 transition-opacity" />
+                <AapkaLogo variant="full" className="h-11 sm:h-12 w-auto hover:opacity-90 transition-opacity" />
               </Link>
             </div>
 
