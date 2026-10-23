@@ -264,6 +264,8 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt}
+                loading="lazy"
+                decoding="async"
                 className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl"
               />
             </div>

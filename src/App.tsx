@@ -8,20 +8,29 @@ import { GramMitraSection } from './components/GramMitraSection';
 import { ServicesShowcase } from './components/ServicesShowcase';
 import { LeadershipTeam } from './components/LeadershipTeam';
 import { QuietProof } from './components/QuietProof';
+import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
+import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
 import { translations, type Language } from './i18n/translations';
 
 export function App() {
   const [lang, setLang] = useState<Language>('en');
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('hospitalization');
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [privacyTab, setPrivacyTab] = useState<'privacy' | 'terms'>('privacy');
 
   const t = translations[lang] || translations.en;
 
   const handleOpenBooking = (service: string = 'hospitalization') => {
     setSelectedService(service);
     setIsBookingOpen(true);
+  };
+
+  const handleOpenPrivacy = (tab: 'privacy' | 'terms' = 'privacy') => {
+    setPrivacyTab(tab);
+    setIsPrivacyOpen(true);
   };
 
   const handleSearch = (_query: string) => {
@@ -70,10 +79,13 @@ export function App() {
 
         {/* 9. Comprehensive Awards & Recognition (Page 8 of Deck) */}
         <QuietProof t={t.proof} />
+
+        {/* 10. Working Care Coordination & Contact Desk (Item 20) */}
+        <ContactSection />
       </main>
 
-      {/* 7. High-End Minimalist Multi-Column Footer */}
-      <Footer t={t.footer} />
+      {/* 11. High-End Minimalist Multi-Column Footer with Legal Linkages */}
+      <Footer t={t.footer} onOpenPrivacy={handleOpenPrivacy} />
 
       {/* Modern Clinical Coordination Modal */}
       <BookingModal
@@ -82,8 +94,16 @@ export function App() {
         initialService={selectedService}
         t={t.booking}
       />
+
+      {/* 19. Privacy & Patient Data Safeguards Modal (DPDP Act 2023) */}
+      <PrivacyPolicyModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
+        initialTab={privacyTab}
+      />
     </div>
   );
 }
 
 export default App;
+

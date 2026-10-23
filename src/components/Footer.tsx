@@ -5,9 +5,10 @@ import type { Translations } from '../i18n/translations';
 
 interface FooterProps {
   t?: Translations['footer'];
+  onOpenPrivacy?: (tab: 'privacy' | 'terms') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ t }) => {
+export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -155,9 +156,27 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           <p>{copyright}</p>
 
           <div className="flex items-center gap-6">
-            <span className="hover:text-zinc-900 transition-colors cursor-pointer">{privacy}</span>
-            <span className="hover:text-zinc-900 transition-colors cursor-pointer">{terms}</span>
-            <span className="hover:text-zinc-900 transition-colors cursor-pointer">{governance}</span>
+            <button
+              type="button"
+              onClick={() => onOpenPrivacy ? onOpenPrivacy('privacy') : null}
+              className="hover:text-zinc-900 transition-colors cursor-pointer text-left"
+            >
+              {privacy}
+            </button>
+            <button
+              type="button"
+              onClick={() => onOpenPrivacy ? onOpenPrivacy('terms') : null}
+              className="hover:text-zinc-900 transition-colors cursor-pointer text-left"
+            >
+              {terms}
+            </button>
+            <button
+              type="button"
+              onClick={() => onOpenPrivacy ? onOpenPrivacy('privacy') : null}
+              className="hover:text-zinc-900 transition-colors cursor-pointer text-left"
+            >
+              {governance}
+            </button>
 
             <button
               onClick={scrollToTop}

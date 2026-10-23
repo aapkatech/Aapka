@@ -46,7 +46,7 @@ export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => 
   const subtitle = t?.subtitle || "An established platform and a shared purpose to build healthier, stronger tribal communities.";
 
   return (
-    <section className="py-14 sm:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100">
+    <section id="network" className="py-14 sm:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
         
         {/* Header */}
