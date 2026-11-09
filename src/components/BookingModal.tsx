@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { X, Check, ArrowRight, ShieldCheck } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, Check, ArrowRight, ShieldCheck, AlertCircle, Loader2, Phone, MessageSquare } from 'lucide-react';
 import { AapkaLogo } from './AapkaLogo';
 import type { Translations } from '../i18n/translations';
+import { submitCoordinationLead, AAPKA_HELPLINE_PHONE, AAPKA_LOGISTICS_EMAIL } from '../services/leadService';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -20,18 +21,91 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [fullName, setFullName] = useState('');
   const [contact, setContact] = useState('');
   const [city, setCity] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (initialService) {
+      setService(initialService);
+    }
+  }, [initialService, isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const serviceOptions = t?.serviceOptions || {
+    hospitalization: "Hospitalization & Surgery Coordination",
+    consultation: "Doctor Teleconsultation (MD Specialist)",
+    diagnostics: "Diagnostic Pathology & Radiology Routing",
+    card: "Smart Health Card (Family Enrollment)",
+    emergency: "Emergency Patient Transfer & Bed Reservation"
+  };
+
+  const getPathwayName = (key: string): string => {
+    switch (key) {
+      case 'hospitalization':
+        return serviceOptions.hospitalization || "Hospitalization & Surgery Coordination";
+      case 'teleconsult':
+      case 'consultation':
+        return serviceOptions.consultation || "Doctor Teleconsultation (MD Specialist)";
+      case 'pathology':
+      case 'diagnostics':
+        return serviceOptions.diagnostics || "Diagnostic Pathology & Radiology Routing";
+      case 'smartcard':
+      case 'card':
+        return serviceOptions.card || "Smart Health Card (Family Enrollment)";
+      case 'caretaker':
+        return "Bedside Attendant / Post-Op Care";
+      case 'emergency':
+        return serviceOptions.emergency || "Emergency Patient Transfer & Bed Reservation";
+      default:
+        return key;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !contact) return;
-    setSubmitted(true);
+    if (isSubmitting) return;
+
+    const trimmedName = fullName.trim();
+    const cleanPhone = contact.replace(/[^0-9]/g, '');
+
+    if (!trimmedName) {
+      setError("Please provide the full name of the patient or guardian.");
+      return;
+    }
+
+    if (cleanPhone.length < 10) {
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+
+    const pathwayName = getPathwayName(service);
+
+    const result = await submitCoordinationLead({
+      fullName: trimmedName,
+      contact: contact.trim(),
+      city: city.trim(),
+      servicePathway: pathwayName,
+      source: "Aapka Web Portal (Access Clinical Coordination Modal)"
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(result.error || `Unable to submit automatically. Please call our clinical desk at ${AAPKA_HELPLINE_PHONE}.`);
+    }
   };
 
   const handleClose = () => {
     setSubmitted(false);
+    setIsSubmitting(false);
+    setError(null);
     setFullName('');
     setContact('');
     setCity('');
@@ -39,27 +113,21 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const title = t?.title || "Access Clinical Coordination";
-  const subtitle = t?.subtitle || "Connect with an accredited medical navigator within 15 minutes. No waiting rooms, no clinical confusion.";
-  const serviceLabel = t?.serviceLabel || "Service Pathway";
-  const nameLabel = t?.nameLabel || "Full Name";
-  const namePlaceholder = t?.namePlaceholder || "e.g. Eleanor Vance";
-  const contactLabel = t?.contactLabel || "Contact Number";
-  const contactPlaceholder = t?.contactPlaceholder || "+91 98765 43210";
-  const cityLabel = t?.cityLabel || "City / Location";
-  const cityPlaceholder = t?.cityPlaceholder || "e.g. New Delhi, Noida, or District";
-  const submitButton = t?.submitButton || "Confirm & Dispatch Coordinator";
-  const successTitle = t?.successTitle || "Care Request Active";
-  const successDesc = t?.successDesc || "Thank you. A personal healthcare navigator has been assigned to coordinate your care pathway.";
-  const closeButton = t?.closeButton || "Done";
+  const subtitle = t?.subtitle || "Submit your requirement. A dedicated Swasthya-Mitra coordinator will contact you within 15 minutes.";
+  const serviceLabel = t?.serviceLabel || "REQUIRED CARE PATHWAY";
+  const nameLabel = t?.nameLabel || "FULL NAME OF PATIENT / GUARDIAN";
+  const namePlaceholder = t?.namePlaceholder || "e.g. Rahul Sharma";
+  const contactLabel = t?.contactLabel || "PHONE NUMBER / WHATSAPP";
+  const contactPlaceholder = t?.contactPlaceholder || "10-digit mobile number";
+  const cityLabel = t?.cityLabel || "CITY / DISTRICT";
+  const cityPlaceholder = t?.cityPlaceholder || "e.g. Meerut, Bulandshahr, Delhi NCR";
+  const submitButton = t?.submitButton || "Request Care Navigation";
+  const successTitle = t?.successTitle || "Coordination Request Logged";
+  const successDesc = t?.successDesc || "Submit requirement recorded. Your care requirement has been sent directly to the clinical logistics desk. A personal Swasthya-Mitra coordinator will call you within 15 minutes.";
+  const closeButton = t?.closeButton || "Close Window";
 
-  const serviceOptions = t?.serviceOptions || {
-    hospitalization: "Hospitalization & Surgical Navigation",
-    teleconsult: "Doctor Teleconsultation (MD Specialist)",
-    pathology: "Diagnostic Pathology & Radiology Routing",
-    smartcard: "Smart Health Card (Family Enrollment)",
-    caretaker: "Bedside Attendant / Post-Op Care",
-    emergency: "Emergency Patient Transfer"
-  };
+  const digitsOnly = contact.replace(/[^0-9]/g, '');
+  const waLink = `https://wa.me/919667033044?text=${encodeURIComponent(`Hello Aapka Team, I submitted a clinical coordination request for ${getPathwayName(service)}. Name: ${fullName}, Phone: ${contact}, City: ${city || 'N/A'}. Please assist.`)}`;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-zinc-950/40 backdrop-blur-md flex items-center justify-center p-4">
@@ -90,6 +158,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </p>
             </div>
 
+            {error && (
+              <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-start gap-2.5 animate-in fade-in">
+                <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                <div className="flex-1 space-y-1">
+                  <p className="font-semibold">{error}</p>
+                  <p className="text-[11px] text-rose-700">
+                    Direct Helpline: <a href={`tel:${AAPKA_HELPLINE_PHONE}`} className="underline font-bold">{AAPKA_HELPLINE_PHONE}</a>
+                  </p>
+                </div>
+              </div>
+            )}
+
             <div className="space-y-4">
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-zinc-700 uppercase tracking-wider">
@@ -98,14 +178,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <select
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full py-2.5 px-3 rounded-lg bg-zinc-50 border border-zinc-200 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900"
+                  className="w-full py-2.5 px-3 rounded-lg bg-zinc-50 border border-zinc-200 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900 cursor-pointer"
                 >
                   <option value="hospitalization">{serviceOptions.hospitalization || "Hospitalization & Surgery Coordination"}</option>
-                  <option value="teleconsult">{serviceOptions.consultation || "Doctor Teleconsultation"}</option>
-                  <option value="pathology">{serviceOptions.diagnostics || "Diagnostic Pathology & Radiology"}</option>
-                  <option value="smartcard">{serviceOptions.card || "Smart Health Card Inquiry"}</option>
-                  <option value="caretaker">{serviceOptions.emergency || "Bedside Attendant / Post-Op Care"}</option>
-                  <option value="emergency">{serviceOptions.emergency || "Emergency Patient Transfer"}</option>
+                  <option value="teleconsult">{serviceOptions.consultation || "Doctor Teleconsultation (MD Specialist)"}</option>
+                  <option value="pathology">{serviceOptions.diagnostics || "Diagnostic Pathology & Radiology Routing"}</option>
+                  <option value="smartcard">{serviceOptions.card || "Smart Health Card (Family Enrollment)"}</option>
+                  <option value="caretaker">Bedside Attendant / Post-Op Care</option>
+                  <option value="emergency">{serviceOptions.emergency || "Emergency Patient Transfer & Bed Reservation"}</option>
                 </select>
               </div>
 
@@ -117,7 +197,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   type="text"
                   required
                   value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                    if (error) setError(null);
+                  }}
                   placeholder={namePlaceholder}
                   className="w-full py-2.5 px-3 rounded-lg bg-zinc-50 border border-zinc-200 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
                 />
@@ -131,7 +214,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   type="tel"
                   required
                   value={contact}
-                  onChange={(e) => setContact(e.target.value)}
+                  onChange={(e) => {
+                    setContact(e.target.value);
+                    if (error) setError(null);
+                  }}
                   placeholder={contactPlaceholder}
                   className="w-full py-2.5 px-3 rounded-lg bg-zinc-50 border border-zinc-200 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
                 />
@@ -153,10 +239,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
             <button
               type="submit"
-              className="w-full py-3 px-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-semibold tracking-tight transition-all active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
+              disabled={isSubmitting}
+              className="w-full py-3 px-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-semibold tracking-tight transition-all active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
             >
-              <span>{submitButton}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin text-zinc-400" />
+                  <span>{t?.submittingButton || "Dispatching Care Coordinator..."}</span>
+                </>
+              ) : (
+                <>
+                  <span>{submitButton}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+                </>
+              )}
             </button>
 
             <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400">
@@ -165,33 +261,71 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </div>
           </form>
         ) : (
-          <div className="py-6 text-center space-y-5 animate-in fade-in">
-            <div className="w-12 h-12 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center mx-auto text-teal-700">
-              <Check className="w-6 h-6" />
+          <div className="py-4 text-center space-y-5 animate-in fade-in">
+            <div className="w-14 h-14 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center mx-auto text-teal-700 shadow-xs">
+              <Check className="w-7 h-7" />
             </div>
 
             <div className="space-y-2">
               <h3 className="text-2xl font-medium tracking-tight text-zinc-950">
                 {successTitle}
               </h3>
-              <p className="text-sm text-zinc-500 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto leading-relaxed">
                 {successDesc}
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-100 text-xs text-zinc-600 space-y-1 text-left">
-              <p className="font-semibold text-zinc-900">Direct Helpline:</p>
+            {/* Summary Box */}
+            <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 text-xs text-left space-y-2 text-zinc-700">
+              <div className="flex justify-between border-b border-zinc-200/60 pb-1.5">
+                <span className="text-zinc-500 font-medium">Patient / Guardian:</span>
+                <span className="font-semibold text-zinc-900">{fullName}</span>
+              </div>
+              <div className="flex justify-between border-b border-zinc-200/60 pb-1.5">
+                <span className="text-zinc-500 font-medium">Contact Number:</span>
+                <span className="font-semibold text-zinc-900">{contact}</span>
+              </div>
+              <div className="flex justify-between border-b border-zinc-200/60 pb-1.5">
+                <span className="text-zinc-500 font-medium">Care Pathway:</span>
+                <span className="font-semibold text-zinc-900">{getPathwayName(service)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-zinc-500 font-medium">City / District:</span>
+                <span className="font-semibold text-zinc-900">{city || 'Location Logged'}</span>
+              </div>
+            </div>
+
+            {/* Helpline Actions */}
+            <div className="p-4 rounded-xl bg-teal-50/60 border border-teal-100 text-xs text-zinc-700 space-y-2 text-left">
               <div className="flex items-center justify-between">
-                <span>Clinical Desk: +91 9667033044</span>
-                <a href="tel:+919667033044" className="text-teal-700 font-semibold hover:underline">
-                  Call Now
-                </a>
+                <div>
+                  <p className="font-semibold text-zinc-900">Immediate Clinical Desk</p>
+                  <p className="text-[11px] text-zinc-500">24/7 Rapid Emergency Response</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={`tel:${AAPKA_HELPLINE_PHONE}`}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-teal-700 text-white font-medium hover:bg-teal-800 transition-colors"
+                  >
+                    <Phone className="w-3 h-3" />
+                    <span>Call</span>
+                  </a>
+                  <a
+                    href={waLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-colors"
+                  >
+                    <MessageSquare className="w-3 h-3" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
               </div>
             </div>
 
             <button
               onClick={handleClose}
-              className="w-full py-2.5 rounded-lg bg-zinc-950 text-white text-xs font-semibold"
+              className="w-full py-2.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-semibold cursor-pointer transition-colors"
             >
               {closeButton}
             </button>

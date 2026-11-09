@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitCoordinationLead, AAPKA_HELPLINE_PHONE } from '../services/leadService';
 import { 
   Send, 
   Phone, 
@@ -32,7 +33,7 @@ export const ContactSection: React.FC = () => {
     if (error) setError('');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim()) {
       setError('Please provide your name.');
@@ -44,11 +45,21 @@ export const ContactSection: React.FC = () => {
     }
 
     setLoading(true);
-    // Simulate swift network dispatch
-    setTimeout(() => {
-      setLoading(false);
+    const result = await submitCoordinationLead({
+      fullName: formData.name.trim(),
+      contact: formData.phone.trim(),
+      city: formData.location.trim(),
+      servicePathway: formData.inquiryType,
+      notes: formData.message.trim(),
+      source: 'Aapka Web Portal (Contact Page / Section Form)'
+    });
+    setLoading(false);
+
+    if (result.success) {
       setSubmitted(true);
-    }, 600);
+    } else {
+      setError(result.error || ('Submission failed. Please call our clinical desk at ' + AAPKA_HELPLINE_PHONE + '.'));
+    }
   };
 
   const handleReset = () => {
