@@ -90,8 +90,8 @@ Direct WhatsApp: https://wa.me/${waNumber}`;
 /**
  * Dispatches the coordination lead with multi-layered reliability:
  * 1. Caches to localStorage audit log
- * 2. Attempts serverless API route (/api/coordination)
- * 3. Falls back to direct FormSubmit endpoint (https://formsubmit.co/ajax/...)
+ * 2. Directly dispatches from user's browser to FormSubmit (residential/cellular IP)
+ * 3. Falls back to serverless gateway if browser fetch is interrupted
  */
 export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Promise<LeadSubmissionResult> {
   const payload = buildCoordinationEmailPayload(lead);
@@ -108,26 +108,7 @@ export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Pr
     // Non-fatal
   }
 
-  // 2. First try: Vercel serverless function
-  try {
-    const apiRes = await fetch('/api/coordination', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (apiRes.ok) {
-      const data = await apiRes.json();
-      return { success: true, message: data.message || 'Request successfully dispatched to logistics desk.' };
-    }
-  } catch (apiErr) {
-    console.warn('Vercel API route unavailable, executing direct FormSubmit dispatch:', apiErr);
-  }
-
-  // 3. Second try: Direct client-side POST to FormSubmit
+  // 2. Direct browser dispatch to FormSubmit
   try {
     const directRes = await fetch(`https://formsubmit.co/ajax/${AAPKA_LOGISTICS_EMAIL}`, {
       method: 'POST',
@@ -146,16 +127,32 @@ export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Pr
     if (isSuccess) {
       return { success: true, message: data.message || 'Request logged and dispatched.' };
     }
-
-    return { 
-      success: false, 
-      error: data.message || 'Could not dispatch automatically. Please call our clinical desk.' 
-    };
-  } catch (netErr: any) {
-    console.error('Direct lead dispatch error:', netErr);
-    return { 
-      success: false, 
-      error: 'Network connectivity issue. Please contact our 24/7 Helpline directly.' 
-    };
+  } catch (directErr) {
+    console.warn('Direct FormSubmit dispatch encountered an issue, trying server relay:', directErr);
   }
+
+  // 3. Fallback: Vercel serverless function
+  try {
+    const apiRes = await fetch('/api/coordination', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (apiRes.ok) {
+      const data = await apiRes.json();
+      return { success: true, message: data.message || 'Request successfully dispatched to logistics desk.' };
+    }
+  } catch (apiErr) {
+    console.error('Serverless lead dispatch fallback error:', apiErr);
+  }
+
+  // If both failed or direct threw
+  return { 
+    success: false, 
+    error: 'Network connectivity issue. Please contact our 24/7 Helpline directly at +91 9667033044.' 
+  };
 }
