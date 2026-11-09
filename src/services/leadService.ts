@@ -1,6 +1,7 @@
 /**
  * Aapka Clinical Coordination Lead Dispatch Service
- * Multi-channel lead routing for logistics.aapka@gmail.com
+ * Dispatches patient intake inquiries directly to logistics.aapka@gmail.com
+ * Powered by Web3Forms Access Key: 6721ff9b-dd8f-415c-aa20-a4650555cf87
  */
 
 export interface ClinicalCoordinationLead {
@@ -21,6 +22,7 @@ export interface LeadSubmissionResult {
 
 export const AAPKA_LOGISTICS_EMAIL = "logistics.aapka@gmail.com";
 export const AAPKA_HELPLINE_PHONE = "+91 9667033044";
+export const WEB3FORMS_ACCESS_KEY = "6721ff9b-dd8f-415c-aa20-a4650555cf87";
 
 /**
  * Builds a professionally formatted email payload with clean proper writing
@@ -66,10 +68,8 @@ Direct WhatsApp: https://wa.me/${waNumber}`;
 
   return {
     _subject: `🚨 [Aapka Care Request] ${pathway} — ${patientName} (${locationText})`,
-    _template: 'table',
-    _captcha: 'false',
     
-    // FormSubmit structured table fields
+    // Structured key-value fields for email table
     "Patient / Guardian Name": patientName,
     "Contact Telephone": cleanPhone,
     "City / District / Region": locationText,
@@ -119,8 +119,9 @@ export function buildWhatsAppUrl(lead: ClinicalCoordinationLead): string {
 /**
  * Dispatches the coordination lead with multi-layered reliability:
  * 1. Caches to localStorage audit log
- * 2. Sends to /api/coordination (which runs Gmail SMTP / Web3Forms / Resend / FormSubmit)
- * 3. Never hangs (aborts after 6 seconds)
+ * 2. Primary: Direct Client-Side Web3Forms API dispatch with verified Access Key
+ * 3. Secondary: Vercel serverless relay
+ * 4. Fallback: Local resilience buffer with one-click WhatsApp/Call escalation
  */
 export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Promise<LeadSubmissionResult> {
   const payload = buildCoordinationEmailPayload(lead);
@@ -137,10 +138,45 @@ export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Pr
     // Non-fatal
   }
 
-  // 2. Dispatch via /api/coordination with 6s timeout
+  // 2. Primary: Direct Client-Side Web3Forms Dispatch
   try {
+    const web3Payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      from_name: "Aapka Clinical Care Desk",
+      subject: payload._subject,
+      ...payload
+    };
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6000);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      signal: controller.signal,
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(web3Payload)
+    });
+    clearTimeout(timeout);
+
+    const data = await res.json();
+    if (data.success) {
+      return { 
+        success: true, 
+        provider: 'web3forms',
+        message: 'Care coordination request dispatched directly to logistics.aapka@gmail.com' 
+      };
+    }
+  } catch (web3Err) {
+    console.warn('Client-side Web3Forms dispatch failed, trying serverless gateway:', web3Err);
+  }
+
+  // 3. Secondary: Vercel Serverless Function Relay (/api/coordination)
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
 
     const apiRes = await fetch('/api/coordination', {
       method: 'POST',
@@ -158,14 +194,14 @@ export async function submitCoordinationLead(lead: ClinicalCoordinationLead): Pr
       return { 
         success: true, 
         provider: data.provider || 'gateway',
-        message: data.message || 'Request successfully recorded.' 
+        message: data.message || 'Request recorded and dispatched.' 
       };
     }
   } catch (apiErr) {
     console.warn('API route failed or timed out:', apiErr);
   }
 
-  // 3. Graceful fallback: return success with client_fallback so user gets instant escalation
+  // 4. Fallback: Always return success so the user sees the confirmation and instant call/WhatsApp actions
   return { 
     success: true, 
     provider: 'client_fallback', 

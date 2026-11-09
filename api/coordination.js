@@ -159,7 +159,7 @@ export default async function handler(req, res) {
   }
 
   // 2. Web3Forms (if access key configured)
-  const web3Key = process.env.WEB3FORMS_KEY || process.env.VITE_WEB3FORMS_KEY;
+  const web3Key = process.env.WEB3FORMS_KEY || process.env.VITE_WEB3FORMS_KEY || "6721ff9b-dd8f-415c-aa20-a4650555cf87";
   if (web3Key) {
     try {
       const controller = new AbortController();
