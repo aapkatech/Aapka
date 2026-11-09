@@ -30,13 +30,21 @@ export default async function handler(req, res) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Origin': 'https://aapka.co.in',
         'Referer': 'https://aapka.co.in/'
       },
       body: JSON.stringify(payload)
     });
 
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { message: text };
+    }
+
     return res.status(200).json({ success: true, data });
   } catch (error) {
     console.error('Serverless lead dispatch error:', error);
