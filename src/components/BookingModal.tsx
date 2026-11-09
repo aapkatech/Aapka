@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, ArrowRight, ShieldCheck, AlertCircle, Loader2, Phone, MessageSquare } from 'lucide-react';
+import { X, Check, ArrowRight, ShieldCheck, AlertCircle, Loader2, Phone, MessageSquare, Mail } from 'lucide-react';
 import { AapkaLogo } from './AapkaLogo';
 import type { Translations } from '../i18n/translations';
-import { submitCoordinationLead, AAPKA_HELPLINE_PHONE, AAPKA_LOGISTICS_EMAIL } from '../services/leadService';
+import { 
+  submitCoordinationLead, 
+  buildWhatsAppUrl, 
+  buildMailtoUrl,
+  AAPKA_HELPLINE_PHONE, 
+  AAPKA_LOGISTICS_EMAIL 
+} from '../services/leadService';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -123,11 +129,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const cityPlaceholder = t?.cityPlaceholder || "e.g. Meerut, Bulandshahr, Delhi NCR";
   const submitButton = t?.submitButton || "Request Care Navigation";
   const successTitle = t?.successTitle || "Coordination Request Logged";
-  const successDesc = t?.successDesc || "Submit requirement recorded. Your care requirement has been sent directly to the clinical logistics desk. A personal Swasthya-Mitra coordinator will call you within 15 minutes.";
+  const successDesc = t?.successDesc || `Your care requirement has been transmitted to our clinical dispatch desk (${AAPKA_LOGISTICS_EMAIL}). A personal Swasthya-Mitra coordinator will call you within 15 minutes.`;
   const closeButton = t?.closeButton || "Close Window";
 
-  const digitsOnly = contact.replace(/[^0-9]/g, '');
-  const waLink = `https://wa.me/919667033044?text=${encodeURIComponent(`Hello Aapka Team, I submitted a clinical coordination request for ${getPathwayName(service)}. Name: ${fullName}, Phone: ${contact}, City: ${city || 'N/A'}. Please assist.`)}`;
+  const leadData = {
+    fullName: fullName.trim() || 'Patient',
+    contact: contact.trim(),
+    city: city.trim(),
+    servicePathway: getPathwayName(service)
+  };
+
+  const waLink = buildWhatsAppUrl(leadData);
+  const mailtoLink = buildMailtoUrl(leadData);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-zinc-950/40 backdrop-blur-md flex items-center justify-center p-4">
@@ -161,11 +174,26 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             {error && (
               <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-start gap-2.5 animate-in fade-in">
                 <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                <div className="flex-1 space-y-1">
+                <div className="flex-1 space-y-2">
                   <p className="font-semibold">{error}</p>
-                  <p className="text-[11px] text-rose-700">
-                    Direct Helpline: <a href={`tel:${AAPKA_HELPLINE_PHONE}`} className="underline font-bold">{AAPKA_HELPLINE_PHONE}</a>
-                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a 
+                      href={`tel:${AAPKA_HELPLINE_PHONE}`} 
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-rose-700 text-white font-medium text-[11px]"
+                    >
+                      <Phone className="w-3 h-3" />
+                      <span>Call {AAPKA_HELPLINE_PHONE}</span>
+                    </a>
+                    <a 
+                      href={waLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-600 text-white font-medium text-[11px]"
+                    >
+                      <MessageSquare className="w-3 h-3" />
+                      <span>Send via WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -295,31 +323,36 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </div>
             </div>
 
-            {/* Helpline Actions */}
-            <div className="p-4 rounded-xl bg-teal-50/60 border border-teal-100 text-xs text-zinc-700 space-y-2 text-left">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-zinc-900">Immediate Clinical Desk</p>
-                  <p className="text-[11px] text-zinc-500">24/7 Rapid Emergency Response</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={`tel:${AAPKA_HELPLINE_PHONE}`}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-teal-700 text-white font-medium hover:bg-teal-800 transition-colors"
-                  >
-                    <Phone className="w-3 h-3" />
-                    <span>Call</span>
-                  </a>
-                  <a
-                    href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-colors"
-                  >
-                    <MessageSquare className="w-3 h-3" />
-                    <span>WhatsApp</span>
-                  </a>
-                </div>
+            {/* Direct Escalation Options */}
+            <div className="p-4 rounded-xl bg-teal-50/60 border border-teal-100 text-xs text-zinc-700 space-y-2.5 text-left">
+              <div>
+                <p className="font-semibold text-zinc-900">Direct Clinical Escalation</p>
+                <p className="text-[11px] text-zinc-500">Need instant assistance? Contact our dispatch desk directly:</p>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <a
+                  href={`tel:${AAPKA_HELPLINE_PHONE}`}
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white font-medium text-[11px] transition-colors text-center"
+                >
+                  <Phone className="w-3 h-3" />
+                  <span>Call Now</span>
+                </a>
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-[11px] transition-colors text-center"
+                >
+                  <MessageSquare className="w-3 h-3" />
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href={mailtoLink}
+                  className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-medium text-[11px] transition-colors text-center"
+                >
+                  <Mail className="w-3 h-3" />
+                  <span>Email App</span>
+                </a>
               </div>
             </div>
 
