@@ -1,11 +1,12 @@
 import React from 'react';
-import { Award, Briefcase, Building2, CheckCircle2 } from 'lucide-react';
+import { Award, Briefcase, Building2, CheckCircle2, ExternalLink } from 'lucide-react';
 
 export const LeadershipTeam: React.FC = () => {
   const leaders = [
     {
       name: "Prabal Pratap Singh",
       role: "Founder & CEO",
+      linkedin: "https://www.linkedin.com/in/aapkaprabal/",
       image: "/founders/prabal-pratap-singh.webp",
       fallbackImage: "/founders/prabal-pratap-singh.jpg",
       bio: "Sets strategic direction, institutional partnerships, and ecosystem engagement. Decades of combined experience scaling rural access networks and social impact platforms.",
@@ -21,6 +22,7 @@ export const LeadershipTeam: React.FC = () => {
     {
       name: "Shruti Thakur",
       role: "Founder & COO",
+      linkedin: "https://www.linkedin.com/in/shruti-thakur-aapka/",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
       bio: "Drives grassroots program execution and the rapid onboarding of the 1,270+ Gram Mitra network. Champion of rural women health facilitators and community outreach.",
@@ -36,6 +38,7 @@ export const LeadershipTeam: React.FC = () => {
     {
       name: "Yudhishthir Sharma",
       role: "Founder & CTO",
+      linkedin: "https://www.linkedin.com/in/yudhishthir-sharma/",
       image: "/founders/yudhishthir-sharma.webp",
       fallbackImage: "/founders/yudhishthir-sharma.jpg",
       bio: "Architects the AI hospital-matching engine, offline-first mobile tools for Gram Mitras, and longitudinal patient tracking systems.",
@@ -125,7 +128,21 @@ export const LeadershipTeam: React.FC = () => {
 
               {/* Pedigree & Affiliations Badges */}
               <div className="pt-6 mt-6 border-t border-slate-100 space-y-2">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Experience &amp; Affiliations</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Experience &amp; Affiliations</p>
+                  {leader.linkedin && (
+                    <a
+                      href={leader.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-teal-700 hover:text-teal-900 transition-colors"
+                      aria-label={`${leader.name} on LinkedIn`}
+                    >
+                      <span>LinkedIn</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
                 <div className="flex flex-wrap gap-1.5">
                   {leader.affiliations.map((aff, aIdx) => (
                     <span 

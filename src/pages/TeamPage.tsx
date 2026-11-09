@@ -24,7 +24,7 @@ export const TeamPage: React.FC = () => {
     tagline: "Bridging the rural emergency delay gap with dignified, transparent healthcare access for every family in Bharat.",
     image: "/founders/prabal-pratap-singh.webp",
     fallbackImage: "/founders/prabal-pratap-singh.jpg",
-    linkedin: "https://www.linkedin.com/in/prabal-pratap-singh/",
+    linkedin: "https://www.linkedin.com/in/aapkaprabal/",
     email: "prabal@aapka.co.in",
     bio: [
       "Prabal Pratap Singh is the Founder and Chief Executive Officer of Aapka (SP Rural India Services Private Limited). Driven by a first-hand understanding of rural health vulnerability in India's heartland, he conceived Aapka to solve the tragic 60–75 minute delay gap that often turns treatable medical emergencies into catastrophic loss of life.",
