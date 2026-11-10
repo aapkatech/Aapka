@@ -54,7 +54,7 @@ export const TeamPage: React.FC = () => {
       tagline: "Empowering rural women and village youth into certified frontline health navigators.",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
-      linkedin: "https://www.linkedin.com/in/shruti-thakur-aapka/",
+      linkedin: "https://www.linkedin.com/in/shruti-thakur-604a8422/",
       email: "shruti@aapka.co.in",
       bio: "Shruti commands Aapka's day-to-day operations and grassroots human infrastructure. She has spearheaded the recruitment, credentialing, and field supervision of over 1,270+ Gram Mitras across 1,050+ villages, turning community health advocacy into a dignified local livelihood. Bringing extensive experience from the Aim Foundation and Indradhanusha Social Impact Initiatives, she champions women-led healthcare facilitation, maternal care protocols, and patient escort support.",
       responsibilities: [

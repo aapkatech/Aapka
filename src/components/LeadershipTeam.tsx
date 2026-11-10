@@ -22,7 +22,7 @@ export const LeadershipTeam: React.FC = () => {
     {
       name: "Shruti Thakur",
       role: "Founder & COO",
-      linkedin: "https://www.linkedin.com/in/shruti-thakur-aapka/",
+      linkedin: "https://www.linkedin.com/in/shruti-thakur-604a8422/",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
       bio: "Drives grassroots program execution and the rapid onboarding of the 1,270+ Gram Mitra network. Champion of rural women health facilitators and community outreach.",
