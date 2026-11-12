@@ -142,42 +142,50 @@ export const TeamPage: React.FC = () => {
     {
       name: "Safalta",
       role: "Founder's Office",
-      image: "" // Space reserved for photo
+      image: "/team/safalta.jpeg",
+      position: "center 15%"
     },
     {
       name: "Bulbul",
       role: "Patient Counsellor",
-      image: ""
+      image: "/team/bulbul.jpeg",
+      position: "center 20%"
     },
     {
       name: "Vishal Mishra",
       role: "AVP – Strategic Growth & Partnership",
-      image: ""
+      image: "/team/vishal.jpeg",
+      position: "center 20%"
     },
     {
       name: "Osama",
       role: "Business Development Executive (BDE)",
-      image: ""
+      image: "/team/osama.jpeg",
+      position: "center 15%"
     },
     {
       name: "Deepak",
       role: "Business Manager",
-      image: ""
+      image: "/team/deepak.jpeg",
+      position: "center 20%"
     },
     {
       name: "Himanshu Sharma",
       role: "Business Development Executive (BDE)",
-      image: ""
+      image: "/team/himanshu.jpeg",
+      position: "center 20%"
     },
     {
       name: "Upadhyay",
       role: "Patient Acquisition",
-      image: ""
+      image: "", // Space reserved for photo
+      position: "center top"
     },
     {
       name: "Tushar",
       role: "Patient Dealing",
-      image: ""
+      image: "", // Space reserved for photo
+      position: "center top"
     }
   ];
 
@@ -257,20 +265,28 @@ export const TeamPage: React.FC = () => {
               key={idx} 
               className="flex flex-col items-center text-center w-36 sm:w-44 group"
             >
-              {/* Circular Portrait Frame (Space reserved for pic) */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-slate-100 border-2 border-slate-200/90 shadow-2xs mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-teal-600/40 group-hover:shadow-md">
+              {/* Circular Portrait Frame */}
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-slate-100 border-2 border-slate-200/90 shadow-2xs mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-teal-600/40 group-hover:shadow-md">
                 {member.image ? (
                   <img 
                     src={member.image} 
                     alt={member.name}
+                    style={{ objectPosition: member.position || 'center top' }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.parentElement?.querySelector('.fallback-avatar');
+                      if (fallback) (fallback as HTMLElement).style.display = 'flex';
+                    }}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-200/80 text-slate-400">
-                    <User className="w-10 h-10 sm:w-11 sm:h-11 stroke-[1.25] text-slate-400/80 transition-colors group-hover:text-teal-700/80" />
-                  </div>
-                )}
+                ) : null}
+                <div 
+                  className={`fallback-avatar w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-200/80 text-slate-400 ${member.image ? 'hidden' : 'flex'}`}
+                >
+                  <User className="w-10 h-10 sm:w-11 sm:h-11 stroke-[1.25] text-slate-400/80 transition-colors group-hover:text-teal-700/80" />
+                </div>
               </div>
 
               {/* Name */}
