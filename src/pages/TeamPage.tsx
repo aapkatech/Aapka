@@ -195,10 +195,6 @@ export const TeamPage: React.FC = () => {
       {/* Page Header (Clean, Editorial) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="max-w-3xl mx-auto space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center justify-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>Leadership &amp; Execution</span>
-          </p>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Our Team
           </h1>
@@ -303,56 +299,6 @@ export const TeamPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Advisory & Institutional Incubation Recognition */}
-      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-10">
-          <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-              Institutional Ecosystem
-            </p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              Incubated, Recognized &amp; Supported By India's Best
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Our team is guided by seasoned academic advisors, national incubation hubs, and social health innovators across the country.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs space-y-3">
-              <span className="text-xs font-bold text-teal-700 uppercase">Academic Incubation</span>
-              <h3 className="text-base font-bold text-slate-900 font-serif">IIM Kashipur FIED</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Selected among top healthcare innovators under the Uttishtha Social Enterprise accelerator program.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs space-y-3">
-              <span className="text-xs font-bold text-teal-700 uppercase">National Healthcare</span>
-              <h3 className="text-base font-bold text-slate-900 font-serif">FICCI Healthcare</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Recognized at the Federation of Indian Chambers of Commerce &amp; Industry healthcare excellence summit.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs space-y-3">
-              <span className="text-xs font-bold text-teal-700 uppercase">Agri &amp; Rural Access</span>
-              <h3 className="text-base font-bold text-slate-900 font-serif">Indigram Labs</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Supported by the DST-recognized Indigram Labs Foundation for rural technology scaling and livelihood creation.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs space-y-3">
-              <span className="text-xs font-bold text-teal-700 uppercase">University Hub</span>
-              <h3 className="text-base font-bold text-slate-900 font-serif">JNU Convention Centre</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Operating corporate and research facilities from Jawaharlal Nehru University Convention Centre, New Delhi.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Connect with Team Banner */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
