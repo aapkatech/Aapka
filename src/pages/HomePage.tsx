@@ -25,8 +25,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', 
         t={t?.hero}
       />
 
-      {/* 2. Patient Financial Protection: How Much Money Families Have Saved */}
-      <PatientSavings onOpenBooking={onOpenBooking} />
+      {/* 2. Real-Time Patient Savings Telemetry: 3 Chronograph Dials */}
+      <PatientSavings lang={lang} />
 
       {/* 3. Human Ground Healthcare Guidance: Why AAPKA? */}
       <WhyAapka 
