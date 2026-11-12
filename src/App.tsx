@@ -56,7 +56,7 @@ export function App() {
               <HomePage 
                 onOpenBooking={handleOpenBooking} 
                 lang={lang}
-                t={{ hero: t.hero, proof: t.proof }} 
+                t={{ hero: t.hero, proof: t.proof, testimonials: t.testimonials }} 
               />
             } 
           />
