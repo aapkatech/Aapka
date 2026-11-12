@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, PhoneCall, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
+import { PhoneCall, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export const WhatsAppIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg 
@@ -45,10 +45,6 @@ export const WhatsAppContactSection: React.FC = () => {
 
               {/* Trust Badges */}
               <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-300">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Response in under 15 minutes</span>
-                </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>100% Free Patient Guidance</span>
