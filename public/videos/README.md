@@ -2,103 +2,105 @@
 
 This directory stores directly hosted, self-contained `.mp4` video files for the **Video Testimonials** section of the Aapka website.
 
-We use **native HTML5 `<video>` players** rather than third-party embeds (like YouTube or Vimeo) to guarantee:
-- ⚡ **Zero Third-Party Tracking / Ad-Free Experience**: Respects rural patient privacy (DPDP Act 2023 compliance).
-- 🚀 **Fast Progressive Streaming**: Immediate playback on rural 3G/4G/5G mobile networks without slow external iframe loading.
-- 🎨 **Unified Design System**: Cohesive design matching Aapka's brand standards.
+We use **native HTML5 `<video>` players** rather than third-party embeds (such as YouTube or Vimeo) to:
+- Serve videos directly from website storage without third-party advertising cookies or trackers.
+- Provide progressive playback on mobile networks using preloaded metadata and `faststart` MP4 headers.
+- Allow integrated multi-language captions via WebVTT (`.vtt`) files.
 
 ---
 
-## 📁 Related Directories
+## ⚠️ Compliance & Verification Policy
+
+1. **No Fictional Testimonials**: Never publish fictional, fabricated, or unverified patient cases or savings claims as authentic testimonials.
+2. **Consent & Verification**: Every published video must have verified patient/guardian informed consent, clinical accuracy sign-off, and administrative approval from the AAPKA leadership team.
+3. **Verification Status**: In `src/components/testimonials/testimonialsData.ts`, each record contains a `verified: boolean` field. It must remain `false` until source documentation, consent forms, and video assets are reviewed and confirmed by the AAPKA team.
+
+---
+
+## 📁 Directory Roles
 
 | Directory | Purpose | Supported Formats |
 | :--- | :--- | :--- |
-| `public/videos/` | High-quality compressed video files | `.mp4` (H.264 + AAC) |
-| `public/video-posters/` | Still preview poster / thumbnail image | `.webp`, `.jpg`, `.png` (16:9 recommended) |
+| `public/videos/` | Approved, compressed `.mp4` video files | `.mp4` (H.264 + AAC) |
+| `public/video-posters/` | Poster / preview images shown before playback | `.webp`, `.jpg`, `.png` (16:9 recommended) |
 | `public/captions/` | Subtitles / closed captions for accessibility | `.vtt` (WebVTT standard) |
 
 ---
 
-## 🎥 Video Encoding Best Practices
+## 🎥 Video Encoding Guidelines
 
 To ensure smooth playback on mobile devices with limited bandwidth:
 
-1. **Format**: MP4 container (`.mp4`)
-2. **Video Codec**: H.264 / AVC (High or Main profile)
-3. **Audio Codec**: AAC-LC (128 kbps stereo)
+1. **Container**: MP4 (`.mp4`)
+2. **Video Codec**: H.264 / AVC (Baseline or Main profile)
+3. **Audio Codec**: AAC-LC (stereo, 128 kbps)
 4. **Resolution**: 1080p (1920×1080) or 720p (1280×720)
-5. **Target Bitrate**:
-   - 720p: 1.2 Mbps – 2.0 Mbps
-   - 1080p: 2.5 Mbps – 3.5 Mbps
-6. **Web Optimization (`faststart`)**: Place the `moov` atom at the beginning of the MP4 file so playback begins instantly before the entire video downloads.
+5. **Bitrate**: 1.5 Mbps – 3.0 Mbps
+6. **Web Optimization (`faststart`)**: Place the `moov` atom at the front of the file so streaming begins immediately without waiting for the full download.
 
-### Recommended FFmpeg Command
-
-You can optimize any raw camera or mobile recording using FFmpeg:
+### Example FFmpeg Commands
 
 ```bash
-# 1. Compress and web-optimize video:
-ffmpeg -i raw_input.mp4 \
+# Compress and optimize MP4 with faststart:
+ffmpeg -i input_source.mp4 \
   -c:v libx264 -preset slow -crf 23 -maxrate 2.5M -bufsize 5M \
   -vf "scale='min(1280,iw)':-2" \
   -c:a aac -b:a 128k \
   -movflags +faststart \
-  public/videos/ramesh-kumar-cataract.mp4
+  public/videos/example-story.mp4
 
-# 2. Extract a poster thumbnail at 2 seconds into the video:
-ffmpeg -ss 00:00:02 -i public/videos/ramesh-kumar-cataract.mp4 \
+# Extract a poster thumbnail at 2 seconds into the video:
+ffmpeg -ss 00:00:02 -i public/videos/example-story.mp4 \
   -vframes 1 -q:v 2 \
-  public/video-posters/ramesh-kumar-cataract.webp
+  public/video-posters/example-story.webp
 ```
 
 ---
 
-## 📝 Step-by-Step: Adding a New Testimonial
+## 📝 How to Register an Approved Testimonial
 
-### Step 1: Copy your video file
-Place the optimized `.mp4` file into `public/videos/`:
-```text
-public/videos/ramesh-kumar-cataract.mp4
-```
-
-### Step 2: Add poster image & optional captions
-- Place your poster image into `public/video-posters/ramesh-kumar-cataract.webp`.
-- (Optional) Place WebVTT subtitles into `public/captions/ramesh-kumar-cataract.hi.vtt`.
-
-### Step 3: Register in `src/components/testimonials/testimonialsData.ts`
-Open `src/components/testimonials/testimonialsData.ts` and append an entry to the `videoTestimonials` array:
+Once the video file, poster, consent, and verified details are confirmed, add an entry to the `videoTestimonialsData` array in `src/components/testimonials/testimonialsData.ts`:
 
 ```typescript
 {
-  id: "ramesh-kumar-cataract",
-  name: "Ramesh Kumar",
-  location: "Gaya, Bihar",
-  districtState: "Bihar",
-  treatment: "Cataract Surgery",
-  treatmentHi: "मोतियाबिंद सर्जरी",
-  saving: "Saved ₹18,500",
-  savingHi: "₹18,500 की बचत",
-  quoteEn: "Aapka's Gram Mitra stayed with me throughout my eye surgery at the hospital. I didn't have to run from desk to desk.",
-  quoteHi: "अस्पताल में मेरी मोतियाबिंद की सर्जरी के दौरान आपका के ग्राम मित्र हर कदम पर साथ रहे। मुझे इधर-उधर भटकना नहीं पड़ा।",
-  videoSrc: "/videos/ramesh-kumar-cataract.mp4",
-  posterSrc: "/video-posters/ramesh-kumar-cataract.webp",
-  duration: "1:45",
-  verified: true,
-  caregiverOrMitra: "Assisted by Gram Mitra Manoj (Gaya Cluster)",
+  id: "case-reference-id",
+  name: "Approved Patient / Case Name",
+  roleEn: "Community Member / Patient",
+  roleHi: "मरीज / परिजन",
+  village: "Village Name",
+  district: "District Name",
+  state: "State Name",
+  treatmentEn: "Approved Service Category",
+  treatmentHi: "चिकित्सा श्रेणी",
+  savingEn: "Approved Verified Saving (Optional)",
+  savingHi: "सत्यापित बचत विवरण (वैकल्पिक)",
+  quoteEn: "Approved patient or guardian statement in English.",
+  quoteHi: "मरीज या परिजन का स्वीकृत कथन (हिन्दी)।",
+  storyEn: "Clinical navigation and support summary verified by the team.",
+  storyHi: "अस्पताल सहायता एवं उपचार का संक्षिप्त विवरण।",
+  mitraName: "Assisting Gram Mitra Name (if applicable)",
+  hospitalName: "Empanelled Network Hospital (if applicable)",
+  videoSrc: "/videos/example-story.mp4",
+  posterSrc: "/video-posters/example-story.webp",
+  duration: "1:30",
+  verified: false, // Set to true only after AAPKA verification sign-off
+  category: "surgery", // 'surgery' | 'maternity' | 'cardiac' | 'emergency'
+  tags: {
+    en: ["Eye Care", "Hospital Navigation"],
+    hi: ["नेत्र चिकित्सा", "अस्पताल सहायता"]
+  },
   captions: [
     {
-      src: "/captions/ramesh-kumar-cataract.en.vtt",
+      src: "/captions/example-story.en.vtt",
       srclang: "en",
-      label: "English Subtitles"
+      label: "English"
     },
     {
-      src: "/captions/ramesh-kumar-cataract.hi.vtt",
+      src: "/captions/example-story.hi.vtt",
       srclang: "hi",
-      label: "हिन्दी सबटाइटल्स",
+      label: "हिन्दी",
       default: true
     }
   ]
 }
 ```
-
-The video will automatically appear on the website with native HTML5 playback, thumbnail poster, verified patient badge, and bilingual descriptions.

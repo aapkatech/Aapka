@@ -40,10 +40,14 @@
 Aapka uses a self-contained, native HTML5 video pipeline for real patient and Gram Mitra case recordings without relying on external third-party embeds (YouTube, Vimeo, etc.).
 
 ### Why Native Hosting?
-- **Ad-Free & Respectful**: Rural patient families are not subjected to distracting third-party advertisements or trackers.
-- **Data Privacy (DPDP Act 2023)**: Complete confidentiality without external video platform profiling.
-- **Fast Progressive Streaming**: Immediate playback on rural 3G/4G connections with preloaded metadata and `faststart` MP4 headers.
+- **Ad-Free**: Video assets are served without third-party advertising cookies or embedded external advertising scripts.
+- **Direct Hosting**: Progressive streaming from project static storage using preloaded metadata and `faststart` MP4 headers.
 - **Bilingual Subtitles**: Direct WebVTT (`.vtt`) subtitle integration for multi-dialect accessibility (Hindi & English).
+
+### Verification & Ethical Standards
+- **Zero Fictional Stories**: Unverified, fictional, or placeholder stories are never displayed as real patient testimonials.
+- **Informed Consent & Approval**: Every published testimonial requires verified patient/guardian consent, medical accuracy review, and administrative sign-off by the AAPKA team.
+- **Verification Flag**: All records in `src/components/testimonials/testimonialsData.ts` default to `verified: false` until formal verification is complete.
 
 ### Directory & File Structure
 ```text
