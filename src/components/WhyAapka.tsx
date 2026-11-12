@@ -196,13 +196,17 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           })}
         </div>
 
-        {/* Reassuring Care Desk Strip */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-teal-950 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6 shadow-md">
-          <div className="space-y-2 max-w-2xl">
-            <h4 className="font-serif text-lg sm:text-xl font-semibold text-white">
+        {/* Reassuring Care Desk Strip (Human, Glorifying & Editorial Clean Theme) */}
+        <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-teal-50/90 via-emerald-50/60 to-sky-50/80 border border-teal-200/90 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-1.5 max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-800">
+              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span>{isHi ? "24/7 क्लिनिकल केयर डेस्क" : "24/7 Clinical Care Desk"}</span>
+            </div>
+            <h4 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
               {content.calloutTitle}
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               {content.calloutDesc}
             </p>
           </div>
@@ -210,19 +214,19 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href="tel:+918860880044"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-medium text-xs sm:text-sm transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-teal-200" />
               <span>+91 8860880044</span>
             </a>
             {onOpenBooking && (
               <button
                 type="button"
                 onClick={() => onOpenBooking('hospitalization')}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium text-xs sm:text-sm transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-2xs cursor-pointer"
               >
                 <span>{content.calloutCta2}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-slate-500" />
               </button>
             )}
           </div>
