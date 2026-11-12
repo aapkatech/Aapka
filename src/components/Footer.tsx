@@ -36,11 +36,11 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   ];
 
   const platformLinks = [
-    { label: "Global Network (240+)", to: "/network" },
     { label: "Our Team", to: "/team" },
     { label: "Scaling Tribal Impact", to: "/about" },
-    { label: "Clinical Quality Vetting", to: "/network" },
-    { label: "Tribal Healthcare Pilot", to: "/about" }
+    { label: "Hospital Care Guidance", to: "/services" },
+    { label: "Tribal Healthcare Pilot", to: "/about" },
+    { label: "Contact & Support", to: "/contact" }
   ];
 
   return (

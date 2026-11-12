@@ -27,7 +27,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
   const navLinks = [
     { to: "/", label: t?.home || (lang === 'hi' ? 'होम' : 'Home') },
     { to: "/services", label: t?.services || "Services" },
-    { to: "/network", label: t?.network || "Global Network" },
     { to: "/team", label: lang === 'hi' ? 'टीम' : 'Team' },
     { to: "/about", label: t?.about || "About" },
     { to: "/contact", label: t?.contact || "Contact" }
@@ -47,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           <AapkaLogo variant="full" className="h-10 sm:h-11 lg:h-12 w-auto transition-transform group-hover:scale-[1.02]" />
         </Link>
 
-        {/* Center / Navigation Links: Services, Global Network, Team, About, Contact */}
+        {/* Center / Navigation Links: Services, Team, About, Contact */}
         <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to || (link.to === '/team' && location.pathname === '/founders');

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { ExecutionStrengths } from '../components/ExecutionStrengths';
+import { PatientSavings } from '../components/PatientSavings';
 import { WhyAapka } from '../components/WhyAapka';
-import { VideoTestimonials } from '../components/testimonials/VideoTestimonials';
+import { WhatsAppContactSection } from '../components/WhatsAppContactSection';
 import { QuietProof } from '../components/QuietProof';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -18,15 +18,15 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', t }) => {
   return (
     <div className="space-y-0">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section (Trusted platform narrative + App download) */}
       <Hero 
         onSearch={() => onOpenBooking('hospitalization')} 
         onOpenBooking={onOpenBooking}
         t={t?.hero}
       />
 
-      {/* 2. Real Scale Execution Metrics Strip */}
-      <ExecutionStrengths />
+      {/* 2. Patient Financial Protection: How Much Money Families Have Saved */}
+      <PatientSavings onOpenBooking={onOpenBooking} />
 
       {/* 3. Human Ground Healthcare Guidance: Why AAPKA? */}
       <WhyAapka 
@@ -34,11 +34,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', 
         onOpenBooking={onOpenBooking} 
       />
 
-      {/* 4. Directly Hosted Video Testimonials (Native HTML5) */}
-      <VideoTestimonials 
-        lang={lang} 
-        onOpenBooking={onOpenBooking} 
-      />
+      {/* 4. Direct WhatsApp Helpline & Support Section (9667033044) */}
+      <WhatsAppContactSection />
 
       {/* 5. Awards & National Recognition (Ceremony photos & Light Modal) */}
       <QuietProof t={t?.proof} />
