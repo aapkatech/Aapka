@@ -11,6 +11,7 @@ import { NetworkPage } from './pages/NetworkPage';
 import { TeamPage } from './pages/TeamPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { TestimonialsPage } from './pages/TestimonialsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { translations, type Language } from './i18n/translations';
 
@@ -88,6 +89,16 @@ export function App() {
           <Route 
             path="/about" 
             element={<AboutPage />} 
+          />
+          <Route 
+            path="/testimonials" 
+            element={
+              <TestimonialsPage 
+                lang={lang} 
+                t={t} 
+                onOpenBooking={handleOpenBooking} 
+              />
+            } 
           />
           <Route 
             path="/contact" 
