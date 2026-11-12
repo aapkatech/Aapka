@@ -5,7 +5,8 @@ import {
   Briefcase, 
   Mail, 
   ShieldCheck,
-  Users
+  Users,
+  User
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -92,6 +93,49 @@ export const TeamPage: React.FC = () => {
         { label: "Enterprise", val: "Kundan Group" },
         { label: "Specialty", val: "Distributed Systems & Health Tech Mobility" }
       ]
+    }
+  ];
+  // 3. Core Operational Team (Meet the Team)
+  const coreTeam = [
+    {
+      name: "Safalta",
+      role: "Founder's Office",
+      image: "" // Space reserved for photo
+    },
+    {
+      name: "Bulbul",
+      role: "Patient Counsellor",
+      image: ""
+    },
+    {
+      name: "Vishal Mishra",
+      role: "AVP – Strategic Growth & Partnership",
+      image: ""
+    },
+    {
+      name: "Osama",
+      role: "Business Development Executive (BDE)",
+      image: ""
+    },
+    {
+      name: "Deepak",
+      role: "Business Manager",
+      image: ""
+    },
+    {
+      name: "Himanshu Sharma",
+      role: "Business Development Executive (BDE)",
+      image: ""
+    },
+    {
+      name: "Upadhyay",
+      role: "Patient Acquisition",
+      image: ""
+    },
+    {
+      name: "Tushar",
+      role: "Patient Dealing",
+      image: ""
     }
   ];
 
@@ -334,6 +378,57 @@ export const TeamPage: React.FC = () => {
                 </div>
 
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3: MEET THE TEAM (CORE TEAM) */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+            Core Operations &amp; Growth
+          </p>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">
+            Meet the team
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-500 font-normal">
+            The dedicated coordinators, counsellors, and business managers driving patient care across Bharat.
+          </p>
+        </div>
+
+        {/* Circular Avatar Grid matching reference design */}
+        <div className="flex flex-wrap justify-center gap-y-12 gap-x-8 sm:gap-x-12 lg:gap-x-14 max-w-5xl mx-auto">
+          {coreTeam.map((member, idx) => (
+            <div 
+              key={idx} 
+              className="flex flex-col items-center text-center w-36 sm:w-44 group"
+            >
+              {/* Circular Portrait Frame (Space reserved for pic) */}
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-slate-100 border-2 border-slate-200/90 shadow-2xs mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-teal-600/40 group-hover:shadow-md">
+                {member.image ? (
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-200/80 text-slate-400">
+                    <User className="w-10 h-10 sm:w-11 sm:h-11 stroke-[1.25] text-slate-400/80 transition-colors group-hover:text-teal-700/80" />
+                  </div>
+                )}
+              </div>
+
+              {/* Name */}
+              <h3 className="text-sm sm:text-base font-semibold text-slate-900 tracking-tight leading-snug">
+                {member.name}
+              </h3>
+
+              {/* Role */}
+              <p className="text-xs text-slate-500 font-normal leading-relaxed mt-0.5 max-w-[155px]">
+                {member.role}
+              </p>
             </div>
           ))}
         </div>
