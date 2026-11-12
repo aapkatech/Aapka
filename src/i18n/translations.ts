@@ -18,11 +18,13 @@ export interface Translations {
     primaryCta: string;
     secondaryCta: string;
     communitiesSupported: string;
+    villagesCovered?: string;
     hospitalPartners: string;
     floatingCare: string;
     floatingCareSub: string;
     floatingVetted: string;
     downloadApp?: string;
+    connectLabel?: string;
   };
   pillars: {
     tag: string;
@@ -140,12 +142,14 @@ export const translations: Record<Language, Translations> = {
       subheadline: "Let us take care of you.",
       primaryCta: "Explore Our Global Network",
       secondaryCta: "How It Works →",
-      communitiesSupported: "20+ Cities Covered",
-      hospitalPartners: "46+ Vetted Hospital Partners",
+      communitiesSupported: "25+ Cities",
+      villagesCovered: "500+ Villages",
+      hospitalPartners: "50+ Vetted Hospital Partners",
       floatingCare: "24/7 Care Coordination",
       floatingCareSub: "Verified Swasthya-Mitras On Call",
       floatingVetted: "100% Vetted Medical Partners",
-      downloadApp: "Download the App"
+      downloadApp: "Download the App",
+      connectLabel: "Connect"
     },
     pillars: {
       tag: "Our Foundation",
@@ -356,12 +360,14 @@ export const translations: Record<Language, Translations> = {
       subheadline: "आपकी देखभाल, हमारी ज़िम्मेदारी।",
       primaryCta: "हमारा हेल्थकेयर नेटवर्क देखें",
       secondaryCta: "यह कैसे काम करता है →",
-      communitiesSupported: "20+ शहरों में सक्रिय",
-      hospitalPartners: "46+ सत्यापित अस्पताल भागीदार",
+      communitiesSupported: "25+ शहर",
+      villagesCovered: "500+ गांव",
+      hospitalPartners: "50+ सत्यापित अस्पताल भागीदार",
       floatingCare: "24/7 स्वास्थ्य मार्गदर्शन",
       floatingCareSub: "सत्यापित स्वास्थ्य-मित्र सदैव उपलब्ध",
       floatingVetted: "100% सत्यापित चिकित्सा भागीदार",
-      downloadApp: "ऐप डाउनलोड करें"
+      downloadApp: "ऐप डाउनलोड करें",
+      connectLabel: "संपर्क करें"
     },
     pillars: {
       tag: "हमारी प्रतिबद्धता",
