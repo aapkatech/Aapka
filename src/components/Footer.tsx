@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   const tagline = t?.tagline || "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.";
   const company = t?.company || "SP Rural India Services Private Limited";
   const location = t?.location || "201 Convention Centre, JNU New Delhi, 110067";
-  const phone = t?.phone || "+91 9667033044";
+  const phone = t?.phone || "+91 8860880044";
   const email = t?.email || "Info@Aapka.co.in";
   const carePathwaysTitle = t?.carePathwaysTitle || "Care Pathways";
   const platformReachTitle = t?.platformReachTitle || "Platform & Reach";
@@ -126,11 +126,11 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
                 <div className="flex flex-col text-xs">
-                  <a href="tel:+919716332976" className="hover:text-zinc-950 font-medium text-zinc-700">
-                    +91 9716332976
+                  <a href="tel:+918860880044" className="hover:text-zinc-950 font-medium text-zinc-700">
+                    Helpline: +91 8860880044
                   </a>
-                  <a href="tel:+919667033044" className="hover:text-zinc-950 text-zinc-500">
-                    +91 9667033044
+                  <a href="https://wa.me/919667033044" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 text-zinc-500">
+                    WhatsApp: +91 9667033044
                   </a>
                 </div>
               </li>

@@ -21,7 +21,8 @@ export interface LeadSubmissionResult {
 }
 
 export const AAPKA_LOGISTICS_EMAIL = "logistics.aapka@gmail.com";
-export const AAPKA_HELPLINE_PHONE = "+91 9667033044";
+export const AAPKA_HELPLINE_PHONE = "+91 8860880044";
+export const AAPKA_WHATSAPP_PHONE = "+91 9667033044";
 export const WEB3FORMS_ACCESS_KEY = "6721ff9b-dd8f-415c-aa20-a4650555cf87";
 
 /**

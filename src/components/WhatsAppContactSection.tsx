@@ -13,9 +13,11 @@ export const WhatsAppIcon = ({ className = "w-6 h-6" }: { className?: string }) 
 );
 
 export const WhatsAppContactSection: React.FC = () => {
-  const phoneNumber = "9667033044";
-  const formattedPhone = "+91 96670 33044";
-  const whatsappUrl = `https://wa.me/91${phoneNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
+  const whatsappNumber = "9667033044";
+  const formattedWhatsApp = "+91 96670 33044";
+  const callingHelpline = "8860880044";
+  const formattedHelpline = "+91 88608 80044";
+  const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
     <section className="py-16 sm:py-20 bg-white">
@@ -32,7 +34,7 @@ export const WhatsAppContactSection: React.FC = () => {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>24/7 Rapid Care Coordination</span>
+                <span>24/7 Care Coordination</span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.18]">
@@ -40,7 +42,7 @@ export const WhatsAppContactSection: React.FC = () => {
               </h2>
 
               <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-xl">
-                Connect directly with our care coordinators on WhatsApp. Whether you need an emergency bed, specialist doctor routing, or hospital tariff audit, we are here to help.
+                Connect directly with our care coordinators on WhatsApp or call our emergency helpline. Whether you need an emergency bed, specialist doctor routing, or hospital tariff audit, we are here to help.
               </p>
 
               {/* Trust Badges */}
@@ -61,10 +63,10 @@ export const WhatsAppContactSection: React.FC = () => {
               <div className="w-full sm:w-auto p-6 sm:p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center sm:text-left space-y-4 w-full">
                 <div className="space-y-1">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-300 block">
-                    Direct WhatsApp Helpline
+                    Calling Helpline Number
                   </span>
                   <div className="text-2xl sm:text-3xl font-bold font-serif text-white tracking-tight">
-                    {formattedPhone}
+                    {formattedHelpline}
                   </div>
                 </div>
 
@@ -80,18 +82,18 @@ export const WhatsAppContactSection: React.FC = () => {
                     <span>Contact on WhatsApp</span>
                   </a>
 
-                  {/* Secondary Call Direct */}
+                  {/* Secondary Call Direct to Helpline */}
                   <a
-                    href={`tel:+91${phoneNumber}`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm tracking-tight border border-white/15 transition-colors"
+                    href={`tel:+91${callingHelpline}`}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold text-xs sm:text-sm tracking-tight border border-white/20 transition-colors"
                   >
                     <PhoneCall className="w-4 h-4 text-emerald-300" />
-                    <span>Call Helpline: {formattedPhone}</span>
+                    <span>Call Helpline: {formattedHelpline}</span>
                   </a>
                 </div>
 
                 <p className="text-[11px] text-slate-400 text-center leading-snug">
-                  Clicking opens WhatsApp on your phone or computer with Aapka Care Desk.
+                  WhatsApp: {formattedWhatsApp} • Helpline: {formattedHelpline}
                 </p>
               </div>
             </div>

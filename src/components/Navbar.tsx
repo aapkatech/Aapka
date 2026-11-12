@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
           <div className="pt-4 border-t border-zinc-100 flex flex-col gap-2.5">
             <div className="flex justify-between items-center text-xs text-slate-500 pt-1">
               <span>{t?.directSupport || "Direct Support"}</span>
-              <a href="tel:+919667033044" className="font-semibold text-slate-900">+91 9667033044</a>
+              <a href="tel:+918860880044" className="font-semibold text-slate-900">+91 8860880044</a>
             </div>
           </div>
         </div>

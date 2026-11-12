@@ -113,11 +113,11 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="tel:+919667033044"
+              href="tel:+918860880044"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-medium text-xs sm:text-sm transition-colors shadow-xs"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>+91 9667033044</span>
+              <span>+91 8860880044</span>
             </a>
             {onOpenBooking && (
               <button

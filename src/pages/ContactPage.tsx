@@ -62,14 +62,14 @@ export const ContactPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="tel:+919716332976"
+              href="tel:+918860880044"
               className="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs sm:text-sm tracking-tight transition-colors flex items-center gap-2 shadow-xs"
             >
               <PhoneCall className="w-4 h-4" />
-              <span>Call +91 9716332976</span>
+              <span>Call +91 8860880044</span>
             </a>
             <a
-              href="https://wa.me/919716332976"
+              href="https://wa.me/919667033044"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium text-xs sm:text-sm tracking-tight transition-colors flex items-center gap-2 border border-slate-200"

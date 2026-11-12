@@ -124,11 +124,11 @@ export const PincodeChecker: React.FC<PincodeCheckerProps> = ({ lang, onOpenBook
                 {lang === 'hi' ? 'तुरंत सहायता या बेड आरक्षण के लिए कॉल करें:' : 'Need urgent hospitalization or home test?'}
               </span>
               <a
-                href="tel:+919667033044"
+                href="tel:+918860880044"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>Call +91 96670 33044</span>
+                <span>Call +91 8860880044</span>
               </a>
             </div>
           </div>

@@ -180,11 +180,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
               Contact Care Desk
             </Link>
             <a
-              href="tel:+919716332976"
+              href="tel:+918860880044"
               className="px-5 py-2.5 rounded-xl bg-teal-50 text-teal-800 font-medium text-xs sm:text-sm hover:bg-teal-100 transition-colors flex items-center gap-2 border border-teal-200/80"
             >
               <PhoneCall className="w-3.5 h-3.5 text-teal-700" />
-              <span>Call +91 9716332976</span>
+              <span>Call +91 8860880044</span>
             </a>
           </div>
         </div>

@@ -180,10 +180,10 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ lang, onOpenBooking 
           </div>
 
           <a
-            href="tel:+919667033044"
+            href="tel:+918860880044"
             className="text-xs font-bold text-sky-700 bg-sky-50 px-4 py-2.5 rounded-xl border border-sky-200 hover:bg-sky-100 transition-colors whitespace-nowrap"
           >
-            {lang === 'hi' ? 'मुफ्त सलाह लें: +91 9667033044' : 'Get Free Guidance: +91 96670 33044'}
+            {lang === 'hi' ? 'मुफ्त सलाह लें: +91 8860880044' : 'Get Free Guidance: +91 88608 80044'}
           </a>
         </div>
 
