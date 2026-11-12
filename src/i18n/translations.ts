@@ -3,10 +3,12 @@ export type Language = 'en' | 'hi';
 export interface Translations {
   nav: {
     home: string;
-    services: string;
-    network: string;
     about: string;
+    services: string;
+    testimonials: string;
+    team: string;
     contact: string;
+    network?: string;
     directSupport: string;
     activeLangLabel: string;
     switchTo: string;
@@ -122,16 +124,35 @@ export interface Translations {
     closeButton: string;
     serviceOptions: Record<string, string>;
   };
+  testimonials?: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    verifiedBadge: string;
+    items: Array<{
+      id: string;
+      name: string;
+      location: string;
+      rating: number;
+      treatment?: string;
+      story: string;
+      image?: string;
+      initials: string;
+      mitraHelp?: string;
+    }>;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
   en: {
     nav: {
       home: "Home",
-      services: "Services",
-      network: "Global Network",
       about: "About",
-      contact: "Contact",
+      services: "Services",
+      testimonials: "Testimonials",
+      team: "Team",
+      contact: "Contact Us",
+      network: "Global Network",
       directSupport: "Direct Support",
       activeLangLabel: "English (EN)",
       switchTo: "Switch to हिन्दी"
@@ -340,16 +361,58 @@ export const translations: Record<Language, Translations> = {
         emergency: "Emergency Transport & Bed Reservation",
         card: "Smart Health Card Inquiry"
       }
+    },
+    testimonials: {
+      tag: "Verified Patient Experiences",
+      title: "Real Stories of Healing and Financial Protection",
+      subtitle: "Authentic accounts from patients and families guided through complex treatments with verified hospitals by Aapka's Swasthya Mitras.",
+      verifiedBadge: "Verified Patient",
+      items: [
+        {
+          id: "amarpal-singh",
+          name: "Mr. AmarPal Singh",
+          location: "Village Kheda Gautam Budh Nagar",
+          rating: 5,
+          treatment: "Tumor Operation & Hospital Guidance",
+          story: "I was having a tumor in my head, I got appointment for a date after 3 years in govt hospitals for my operation, while my tumor was ready to burst in 3 months. Private Hospitals were very expensive. SmartGram helped me to check a good hospital at a price I could afford..",
+          image: "/testimonials/amarpal-singh.webp",
+          initials: "AS",
+          mitraHelp: "Hospital Guidance & Surgical Rate Audit"
+        },
+        {
+          id: "kumar-madhur",
+          name: "Mr Kumar Madhur",
+          location: "Raj Nagar Extension Ghaziabad",
+          rating: 5,
+          treatment: "Specialist Consultation & Procedure Coordination",
+          story: "I didn’t know where to go for my Hair transplant. I contacted SmartGram people and they fixed my appointment at 3 places. They provided us transport and their “Swastha Mitra” helped us in the entire procedure and they get it done at a discounted price. I am extremely satisfied with their services and recommend them to everyone.",
+          initials: "KM",
+          mitraHelp: "Multi-Center Consultation & Transport Support"
+        },
+        {
+          id: "anupam",
+          name: "Ms Anupam",
+          location: "Village Chhapraula Ghaziabad",
+          rating: 5,
+          treatment: "Kidney Stone Surgery & Paperwork Clearance",
+          story: "For my Kidney stone operation, I consulted local doctor in our village. But he was not able to operate it. We didn’t knew about many hospitals in city and didn’t know how to deal with the paperwork in hospital. SmartGram waale bhaiya (Swastha Mitra) helped for for appointment , paperwork and surgery procedure. I am very thankful for them.",
+          image: "/testimonials/anupam.webp",
+          initials: "A",
+          mitraHelp: "Paperwork Clearance & Surgery Procedure Support"
+        }
+      ]
     }
   },
 
   hi: {
     nav: {
       home: "होम",
-      services: "सेवाएं",
-      network: "अस्पताल नेटवर्क",
       about: "हमारे बारे में",
-      contact: "संपर्क",
+      services: "सेवाएं",
+      testimonials: "प्रशंसापत्र",
+      team: "टीम",
+      contact: "संपर्क करें",
+      network: "अस्पताल नेटवर्क",
       directSupport: "24/7 सहायता",
       activeLangLabel: "हिन्दी (IN)",
       switchTo: "Switch to English"
@@ -558,6 +621,46 @@ export const translations: Record<Language, Translations> = {
         emergency: "आपातकालीन एम्बुलेंस व आईसीयू बेड",
         card: "स्मार्ट हेल्थ कार्ड पूछताछ"
       }
+    },
+    testimonials: {
+      tag: "सत्यापित मरीज अनुभव",
+      title: "उपचार और आर्थिक सुरक्षा की सच्ची कहानियां",
+      subtitle: "उत्तर प्रदेश और एनसीआर के परिवारों के वास्तविक अनुभव, जिन्हें आपका और हमारे स्वास्थ्य मित्रों ने सही समय और सही खर्च पर उपचार दिलाया।",
+      verifiedBadge: "सत्यापित मरीज",
+      items: [
+        {
+          id: "amarpal-singh",
+          name: "श्री अमरपाल सिंह",
+          location: "ग्राम खेड़ा, गौतम बुद्ध नगर",
+          rating: 5,
+          treatment: "ट्यूमर ऑपरेशन एवं अस्पताल मार्गदर्शन",
+          story: "मेरे सिर में ट्यूमर था, सरकारी अस्पताल में ऑपरेशन के लिए 3 साल बाद की तारीख मिली थी, जबकि मेरा ट्यूमर 3 महीने में फटने की कगार पर था। प्राइवेट अस्पताल बहुत महंगे थे। स्मार्टग्राम (आपका) ने मेरी क्षमता के अनुसार एक बेहतरीन अस्पताल खोजने में पूरी मदद की..",
+          image: "/testimonials/amarpal-singh.webp",
+          initials: "AS",
+          mitraHelp: "अस्पताल मार्गदर्शन एवं सही खर्च पर समन्वय"
+        },
+        {
+          id: "kumar-madhur",
+          name: "श्री कुमार मधुर",
+          location: "राज नगर एक्सटेंशन, गाजियाबाद",
+          rating: 5,
+          treatment: "विशेषज्ञ परामर्श एवं उपचार व्यवस्था",
+          story: "मुझे समझ नहीं आ रहा था कि हेयर ट्रांसप्लांट के लिए कहाँ जाऊँ। मैंने स्मार्टग्राम टीम से संपर्क किया और उन्होंने 3 जगहों पर अपॉइंटमेंट तय किए। उन्होंने हमें ट्रांसपोर्ट दिया और उनके 'स्वास्थ्य मित्र' ने पूरी प्रक्रिया में मदद की और डिस्काउंटेड दर पर काम कराया। मैं उनकी सेवाओं से बेहद संतुष्ट हूँ और सबको सुझाव देता हूँ।",
+          initials: "KM",
+          mitraHelp: "मल्टी-सेंटर परामर्श एवं आवागमन सुविधा"
+        },
+        {
+          id: "anupam",
+          name: "सुश्री अनुपम",
+          location: "ग्राम छपरौला, गाजियाबाद",
+          rating: 5,
+          treatment: "किडनी स्टोन सर्जरी व कागजी कार्रवाई",
+          story: "किडनी स्टोन के ऑपरेशन के लिए हमने गाँव के डॉक्टर से संपर्क किया था, पर वे ऑपरेशन नहीं कर सके। हमें शहर के अस्पतालों और कागजी कार्रवाई की कोई जानकारी नहीं थी। स्मार्टग्राम वाले भैया (स्वास्थ्य मित्र) ने अपॉइंटमेंट, कागजी कार्रवाई और सर्जरी प्रक्रिया में हर कदम पर मदद की। मैं दिल से आभारी हूँ।",
+          image: "/testimonials/anupam.webp",
+          initials: "A",
+          mitraHelp: "कागजी कार्रवाई एवं सर्जरी प्रक्रिया सहायता"
+        }
+      ]
     }
   }
 };
