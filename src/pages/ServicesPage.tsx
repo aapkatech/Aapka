@@ -169,7 +169,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
         <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1.5 max-w-xl">
             <h3 className="text-xl sm:text-2xl font-semibold font-serif text-slate-900">Need immediate care navigation or surgery check?</h3>
-            <p className="text-xs sm:text-sm text-slate-600 font-normal">Our clinical coordinators stage beds and alert emergency doctors within 15 minutes.</p>
+            <p className="text-xs sm:text-sm text-slate-600 font-normal">Our clinical coordinators stage beds and alert emergency doctors promptly.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">

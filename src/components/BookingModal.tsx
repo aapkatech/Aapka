@@ -119,7 +119,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const title = t?.title || "Access Clinical Coordination";
-  const subtitle = t?.subtitle || "Submit your requirement. A dedicated Swasthya-Mitra coordinator will contact you within 15 minutes.";
+  const subtitle = t?.subtitle || "Submit your requirement. A dedicated Swasthya-Mitra coordinator will contact you.";
   const serviceLabel = t?.serviceLabel || "REQUIRED CARE PATHWAY";
   const nameLabel = t?.nameLabel || "FULL NAME OF PATIENT / GUARDIAN";
   const namePlaceholder = t?.namePlaceholder || "e.g. Rahul Sharma";
@@ -129,7 +129,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const cityPlaceholder = t?.cityPlaceholder || "e.g. Meerut, Bulandshahr, Delhi NCR";
   const submitButton = t?.submitButton || "Request Care Navigation";
   const successTitle = t?.successTitle || "Coordination Request Logged";
-  const successDesc = t?.successDesc || `Your care requirement has been transmitted to our clinical dispatch desk (${AAPKA_LOGISTICS_EMAIL}). A personal Swasthya-Mitra coordinator will call you within 15 minutes.`;
+  const successDesc = t?.successDesc || `Your care requirement has been transmitted to our clinical dispatch desk (${AAPKA_LOGISTICS_EMAIL}). A personal Swasthya-Mitra coordinator will call you.`;
   const closeButton = t?.closeButton || "Close Window";
 
   const leadData = {

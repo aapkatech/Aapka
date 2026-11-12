@@ -102,7 +102,7 @@ City / District  : ${lead.city || 'Not specified'}
 Required Pathway : ${lead.servicePathway}
 ${lead.notes ? `Clinical Notes   : ${lead.notes}\n` : ''}
 Sent to: ${AAPKA_LOGISTICS_EMAIL}
-Please assign a Swasthya-Mitra coordinator within 15 minutes.`
+Please assign a Swasthya-Mitra coordinator promptly.`
   );
   return `mailto:${AAPKA_LOGISTICS_EMAIL}?subject=${subject}&body=${body}`;
 }
@@ -112,7 +112,7 @@ Please assign a Swasthya-Mitra coordinator within 15 minutes.`
  */
 export function buildWhatsAppUrl(lead: ClinicalCoordinationLead): string {
   const msg = encodeURIComponent(
-    `Hello Aapka Team, I require clinical coordination for ${lead.servicePathway}. Patient: ${lead.fullName}, Phone: ${lead.contact}, Location: ${lead.city || 'N/A'}. Please dispatch a Swasthya-Mitra coordinator within 15 minutes.`
+    `Hello Aapka Team, I require clinical coordination for ${lead.servicePathway}. Patient: ${lead.fullName}, Phone: ${lead.contact}, Location: ${lead.city || 'N/A'}. Please dispatch a Swasthya-Mitra coordinator promptly.`
   );
   return `https://wa.me/919667033044?text=${msg}`;
 }

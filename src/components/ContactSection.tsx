@@ -157,7 +157,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-teal-700 font-medium">
                 <Clock className="w-4 h-4 shrink-0" />
-                <span>Average coordinator response time: &lt; 15 minutes</span>
+                <span>Fast, dedicated care coordinator response</span>
               </div>
             </div>
 

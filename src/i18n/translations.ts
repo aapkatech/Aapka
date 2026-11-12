@@ -316,7 +316,7 @@ export const translations: Record<Language, Translations> = {
     },
     booking: {
       title: "Access Clinical Coordination",
-      subtitle: "Submit your requirement. A dedicated Swasthya-Mitra coordinator will contact you within 15 minutes.",
+      subtitle: "Submit your requirement. A dedicated Swasthya-Mitra coordinator will contact you.",
       serviceLabel: "Required Care Pathway",
       nameLabel: "Full Name of Patient / Guardian",
       namePlaceholder: "e.g. Rahul Sharma",
@@ -327,7 +327,7 @@ export const translations: Record<Language, Translations> = {
       submitButton: "Request Care Navigation",
       submittingButton: "Initiating Coordination...",
       successTitle: "Coordination Request Logged",
-      successDesc: "Our clinical coordination desk has received your request. A dedicated care navigator will reach you within 15 minutes.",
+      successDesc: "Our clinical coordination desk has received your request. A dedicated care navigator will reach you.",
       closeButton: "Close Window",
       serviceOptions: {
         hospitalization: "Hospitalization & Surgery Coordination",
@@ -532,7 +532,7 @@ export const translations: Record<Language, Translations> = {
     },
     booking: {
       title: "स्वास्थ्य समन्वय सहायता",
-      subtitle: "कृपया अपनी आवश्यकता दर्ज करें। हमारे केयर-कोऑर्डिनेटर (स्वास्थ्य-मित्र) 15 मिनट में आपसे संपर्क करेंगे।",
+      subtitle: "कृपया अपनी आवश्यकता दर्ज करें। हमारे केयर-कोऑर्डिनेटर (स्वास्थ्य-मित्र) आपसे संपर्क करेंगे।",
       serviceLabel: "आवश्यक स्वास्थ्य सेवा",
       nameLabel: "मरीज या अभिभावक का नाम",
       namePlaceholder: "उदा. राहुल शर्मा",
@@ -543,7 +543,7 @@ export const translations: Record<Language, Translations> = {
       submitButton: "सहायता अनुरोध भेजें",
       submittingButton: "अनुरोध दर्ज हो रहा है...",
       successTitle: "अनुरोध सफलतापूर्वक प्राप्त हुआ",
-      successDesc: "हमारे स्वास्थ्य-मित्र आपके विवरण की समीक्षा कर रहे हैं और 15 मिनट के भीतर आपसे संपर्क करेंगे।",
+      successDesc: "हमारे स्वास्थ्य-मित्र आपके विवरण की समीक्षा कर रहे हैं और आपसे संपर्क करेंगे।",
       closeButton: "विंडो बंद करें",
       serviceOptions: {
         hospitalization: "अस्पताल भर्ती व सर्जरी सहायता",
