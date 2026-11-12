@@ -1,6 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle2, Shield } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, Shield, PhoneCall, ChevronRight, MessageSquare } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppContactSection';
 import type { Translations } from '../i18n/translations';
 
 interface HeroProps {
@@ -10,12 +11,20 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ t }) => {
+  const [connectOpen, setConnectOpen] = useState(false);
+
   const preHeadline = t?.preHeadline;
   const headline = t?.headline || "India's Trusted Healthcare Platform.";
   const subheadline = t?.subheadline || "Let us take care of you.";
   const communitiesSupported = t?.communitiesSupported || "20+ Cities Covered";
   const hospitalPartners = t?.hospitalPartners || "46+ Vetted Hospital Partners";
   const downloadApp = t?.downloadApp || "Download the App";
+
+  const whatsappNumber = "9667033044";
+  const formattedWhatsApp = "+91 96670 33044";
+  const helplineNumber = "8860880044";
+  const formattedHelpline = "+91 88608 80044";
+  const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
     <section className="relative bg-white pt-2 pb-14 sm:pt-3 sm:pb-20 lg:pt-3 lg:pb-24 overflow-hidden">
@@ -78,6 +87,89 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               </div>
             </div>
 
+            {/* Premium Connect Action (Matching Space Below 20+ Cities Covered) */}
+            <div 
+              className="pt-3 sm:pt-5 relative inline-block"
+              onMouseEnter={() => setConnectOpen(true)}
+              onMouseLeave={() => setConnectOpen(false)}
+            >
+              <div className="relative inline-flex items-center">
+                {/* Connect Button */}
+                <button
+                  type="button"
+                  onClick={() => setConnectOpen(!connectOpen)}
+                  aria-expanded={connectOpen}
+                  aria-haspopup="true"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight shadow-xs hover:shadow transition-all group/btn cursor-pointer"
+                >
+                  <MessageSquare className="w-4 h-4 text-teal-400 group-hover/btn:scale-110 transition-transform shrink-0" />
+                  <span>Connect</span>
+                  <ChevronRight className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${connectOpen ? 'rotate-90 sm:rotate-0 sm:translate-x-0.5 text-teal-400' : 'group-hover/btn:translate-x-0.5'}`} />
+                </button>
+
+                {/* Professional Right-Side Flyout Menu */}
+                <AnimatePresence>
+                  {connectOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, x: -6, scale: 0.98 }}
+                      animate={{ opacity: 1, x: 0, scale: 1 }}
+                      exit={{ opacity: 0, x: -6, scale: 0.98 }}
+                      transition={{ duration: 0.16, ease: "easeOut" }}
+                      className="absolute left-0 sm:left-full top-full sm:top-1/2 mt-2 sm:mt-0 sm:-translate-y-1/2 sm:ml-3 z-40"
+                    >
+                      {/* Invisible hover bridge to prevent premature closure */}
+                      <div className="hidden sm:block absolute -left-3 top-0 bottom-0 w-3 pointer-events-auto" />
+
+                      <div className="relative w-64 sm:w-72 bg-white rounded-2xl shadow-xl shadow-slate-900/15 border border-slate-200/90 p-2 space-y-1">
+                        
+                        {/* Caret pointing left towards the Connect button */}
+                        <div className="hidden sm:block absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-l border-b border-slate-200/90 rotate-45 transform" />
+
+                        {/* Option 1: Connect on WhatsApp */}
+                        <a
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-emerald-50/70 transition-colors group/item"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#25D366] flex items-center justify-center shrink-0 border border-emerald-200/60 group-hover/item:scale-105 transition-transform shadow-2xs">
+                            <WhatsAppIcon className="w-4 h-4 fill-current" />
+                          </div>
+                          <div className="text-left min-w-0">
+                            <span className="text-xs font-semibold text-slate-900 block group-hover/item:text-emerald-700 transition-colors">
+                              Connect on WhatsApp
+                            </span>
+                            <span className="text-[11px] text-slate-500 font-medium block">
+                              {formattedWhatsApp}
+                            </span>
+                          </div>
+                        </a>
+
+                        {/* Option 2: Call on Helpline Number */}
+                        <a
+                          href={`tel:+91${helplineNumber}`}
+                          className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-teal-50/70 transition-colors group/item"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60 group-hover/item:scale-105 transition-transform shadow-2xs">
+                            <PhoneCall className="w-4 h-4" />
+                          </div>
+                          <div className="text-left min-w-0">
+                            <span className="text-xs font-semibold text-slate-900 block group-hover/item:text-teal-700 transition-colors">
+                              Call on Helpline Number
+                            </span>
+                            <span className="text-[11px] text-slate-500 font-medium block">
+                              {formattedHelpline}
+                            </span>
+                          </div>
+                        </a>
+
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+
           </div>
 
           {/* Right Column: Hero Visual (50% - 55% width, 550px - 620px height, slide-in from left, strictly clipped) */}
@@ -109,4 +201,3 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
     </section>
   );
 };
-
