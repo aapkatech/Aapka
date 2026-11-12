@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AapkaLogo } from './AapkaLogo';
+import { StoreBadgeIcon } from './StoreBadgeIcon';
+import { getAppStoreUrl, handleAppDownloadClick, isIOSDevice } from '../utils/appDownload';
 import type { Translations } from '../i18n/translations';
 
 interface FooterProps {
@@ -71,17 +73,22 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
             </div>
 
             <div className="pt-1">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.kapp.smartgram&pli=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-medium text-slate-800 hover:text-teal-700 transition-colors"
-              >
-                <svg className="w-3.5 h-3.5 fill-current text-teal-600" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3.609 1.814L13.793 12 3.61 22.186c-.195-.195-.31-.476-.31-.786V2.6c0-.31.115-.591.31-.786zm11.238 11.24l2.585 2.586-11.45 6.47 8.865-9.056zm0-2.108L5.982 1.89l11.45 6.47-2.585 2.586zm1.485 1.054l3.52-1.987c.666-.376.666-.99 0-1.366l-3.52-1.987-2.109 2.109 2.109 2.231z"/>
-                </svg>
-                <span>Google Play • Download App</span>
-              </a>
+              {(() => {
+                const isIOS = isIOSDevice();
+                const appStoreUrl = getAppStoreUrl();
+                return (
+                  <a
+                    href={appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => handleAppDownloadClick(e, appStoreUrl)}
+                    className="inline-flex items-center gap-2 text-xs font-medium text-slate-800 hover:text-teal-700 transition-colors"
+                  >
+                    <StoreBadgeIcon isIOS={isIOS} className="w-3.5 h-3.5 fill-current text-teal-600" />
+                    <span>{isIOS ? 'App Store • Download App' : 'Google Play • Download App'}</span>
+                  </a>
+                );
+              })()}
             </div>
           </div>
 
