@@ -39,9 +39,9 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
 
   const platformLinks = [
     { label: "Our Team", to: "/team" },
+    { label: "Patient Testimonials", to: "/testimonials" },
     { label: "Scaling Tribal Impact", to: "/about" },
     { label: "Hospital Care Guidance", to: "/services" },
-    { label: "Tribal Healthcare Pilot", to: "/about" },
     { label: "Contact & Support", to: "/contact" }
   ];
 

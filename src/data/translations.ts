@@ -144,43 +144,34 @@ export const content = {
     },
     testimonials: {
       badge: "Real Stories of Hope",
-      title: "Transforming Lives Across Rural Bharat",
+      title: "Voices of Families We Stood Beside",
       subtitle: "Hear directly from patients and families who experienced seamless, affordable treatment with Aapka's Swasthya-Mitras.",
       items: [
         {
           id: 1,
-          name: "Rameshwar Sharma",
-          location: "Ghaziabad, Uttar Pradesh",
-          treatment: "Tumor Care & Surgical Assistance",
-          saving: "Saved ₹1,85,000",
-          quote: "When my mother was diagnosed with an abdominal tumor, private hospitals quoted ₹3.5 Lakhs which was impossible for us. Our Aapka Swasthya-Mitra guided us to a top partner hospital, got our Ayushman paperwork cleared in 4 hours, and supervised the surgery. We paid less than half and my mother is fully healthy today.",
+          name: "Mr. AmarPal Singh",
+          location: "Village Kheda Gautam Budh Nagar",
+          treatment: "Tumor Operation & Hospital Guidance",
+          saving: "Affordable Care Found",
+          quote: "I was having a tumor in my head, I got appointment for a date after 3 years in govt hospitals for my operation, while my tumor was ready to burst in 3 months. Private Hospitals were very expensive. SmartGram helped me to check a good hospital at a price I could afford..",
           rating: 5
         },
         {
           id: 2,
-          name: "Smt. Kamla Devi",
-          location: "Bulandshahr, Uttar Pradesh",
-          treatment: "Kidney Stone Laser Surgery",
-          saving: "Saved ₹42,000",
-          quote: "I was suffering from unbearable kidney stone pain. The local Aapka Gram Mitra arranged an ambulance within 30 minutes, took us to a verified hospital in Noida, and stayed with my family through the admission and discharge. No hidden fees, pure honesty and brotherly care.",
+          name: "Mr Kumar Madhur",
+          location: "Raj Nagar Extension Ghaziabad",
+          treatment: "Specialist Consultation & Transport Support",
+          saving: "Discounted Rate & Mitra Help",
+          quote: "I didn’t know where to go for my Hair transplant. I contacted SmartGram people and they fixed my appointment at 3 places. They provided us transport and their “Swastha Mitra” helped us in the entire procedure and they get it done at a discounted price. I am extremely satisfied with their services and recommend them to everyone.",
           rating: 5
         },
         {
           id: 3,
-          name: "Vikas Yadav",
-          location: "Noida Sector 62 / Rural Fringe",
-          treatment: "Hair Restoration & Reconstructive Care",
-          saving: "Saved ₹55,000",
-          quote: "I had scalp scarring and severe hair loss after a road accident. Most clinics offered inflated rates and confusing promises. Aapka connected me with a board-certified reconstructive surgeon through their Smart Card discount network with zero commission markup.",
-          rating: 5
-        },
-        {
-          id: 4,
-          name: "Mohd. Irfan",
-          location: "Meerut District, Uttar Pradesh",
-          treatment: "Emergency Cardiac Stenting",
-          saving: "Saved ₹95,000",
-          quote: "My father experienced chest angina late at night. The Aapka 24x7 helpline coordinated an ICU bed with a cath lab ready before we even reached. That speed and hospital coordination saved his life. I recommend every rural household to keep this card.",
+          name: "Ms Anupam",
+          location: "Village Chhapraula Ghaziabad",
+          treatment: "Kidney Stone Surgery & Paperwork",
+          saving: "Free Paperwork Assistance",
+          quote: "For my Kidney stone operation, I consulted local doctor in our village. But he was not able to operate it. We didn’t knew about many hospitals in city and didn’t know how to deal with the paperwork in hospital. SmartGram waale bhaiya (Swastha Mitra) helped for for appointment , paperwork and surgery procedure. I am very thankful for them.",
           rating: 5
         }
       ]
@@ -353,43 +344,34 @@ export const content = {
     },
     testimonials: {
       badge: "सच्ची उम्मीद की कहानियां",
-      title: "ग्रामीण भारत में बदलती जिंदगियां",
-      subtitle: "जानिए उन मरीजों और परिवारों से जिन्हें 'आपका' और स्वास्थ्य-मित्रों के साथ मिला सस्ता और सम्मानजनक इलाज।",
+      title: "मरीजों और परिवारों का अटूट भरोसा",
+      subtitle: "जानिए उन मरीजों और परिवारों से जिन्हें 'आपका' और स्वास्थ्य-मित्रों के साथ मिला सही और सम्मानजनक इलाज।",
       items: [
         {
           id: 1,
-          name: "रामेश्वर शर्मा",
-          location: "गाजियाबाद, उत्तर प्रदेश",
-          treatment: "ट्यूमर सर्जरी और भर्ती सहायता",
-          saving: "₹1,85,000 की बचत की",
-          quote: "जब मेरी मां को पेट में ट्यूमर का पता चला, तो निजी अस्पतालों ने ₹3.5 लाख का खर्च बताया जो हमारे लिए असंभव था। हमारे स्वास्थ्य-मित्र ने एक बड़े पार्टनर अस्पताल में हमारा आयुष्मान क्लेम केवल 4 घंटे में पास कराया और सफल ऑपरेशन करवाया। मेरी मां आज बिल्कुल स्वस्थ हैं।",
+          name: "श्री अमरपाल सिंह",
+          location: "ग्राम खेड़ा, गौतम बुद्ध नगर",
+          treatment: "ट्यूमर ऑपरेशन एवं अस्पताल मार्गदर्शन",
+          saving: "किफायती इलाज मिला",
+          quote: "मेरे सिर में ट्यूमर था, सरकारी अस्पताल में ऑपरेशन के लिए 3 साल बाद की तारीख मिली थी, जबकि मेरा ट्यूमर 3 महीने में फटने की कगार पर था। प्राइवेट अस्पताल बहुत महंगे थे। स्मार्टग्राम (आपका) ने मेरी क्षमता के अनुसार एक बेहतरीन अस्पताल खोजने में पूरी मदद की..",
           rating: 5
         },
         {
           id: 2,
-          name: "श्रीमती कमला देवी",
-          location: "बुलंदशहर, उत्तर प्रदेश",
-          treatment: "गुर्दे की पथरी का लेजर ऑपरेशन",
-          saving: "₹42,000 की बचत की",
-          quote: "मुझे पथरी का असहनीय दर्द हो रहा था। हमारे स्थानीय ग्राम मित्र ने 30 मिनट में एम्बुलेंस का प्रबंध किया, नोएडा के अस्पताल में भर्ती कराया और छुट्टी होने तक परिवार के साथ खड़े रहे। कोई छुपा हुआ खर्च नहीं, सिर्फ सच्चा अपनापन।",
+          name: "श्री कुमार मधुर",
+          location: "राज नगर एक्सटेंशन, गाजियाबाद",
+          treatment: "विशेषज्ञ परामर्श एवं उपचार व्यवस्था",
+          saving: "डिस्काउंटेड दर एवं मित्र सहायता",
+          quote: "मुझे समझ नहीं आ रहा था कि हेयर ट्रांसप्लांट के लिए कहाँ जाऊँ। मैंने स्मार्टग्राम टीम से संपर्क किया और उन्होंने 3 जगहों पर अपॉइंटमेंट तय किए। उन्होंने हमें ट्रांसपोर्ट दिया और उनके 'स्वास्थ्य मित्र' ने पूरी प्रक्रिया में मदद की और डिस्काउंटेड दर पर काम कराया। मैं उनकी सेवाओं से बेहद संतुष्ट हूँ और सबको सुझाव देता हूँ।",
           rating: 5
         },
         {
           id: 3,
-          name: "विकास यादव",
-          location: "नोएडा सेक्टर 62 / देहात क्षेत्र",
-          treatment: "हेयर ट्रांसप्लांट व रीकंस्ट्रक्टिव सर्जरी",
-          saving: "₹55,000 की बचत की",
-          quote: "दुर्घटना के बाद सिर में चोट और बालों की समस्या थी। कई क्लिनिकों ने भारी खर्च बताया। आपका के जरिए मुझे प्रमाणित प्लास्टिक सर्जन से बहुत कम खर्च में पारदर्शी इलाज मिला।",
-          rating: 5
-        },
-        {
-          id: 4,
-          name: "मोहम्मद इरफान",
-          location: "मेरठ जिला, उत्तर प्रदेश",
-          treatment: "इमरजेंसी दिल का दौरा व स्टेंटिंग",
-          saving: "₹95,000 की बचत की",
-          quote: "आधी रात को मेरे पिता को सीने में तेज दर्द हुआ। आपका 24x7 हेल्पलाइन ने अस्पताल पहुंचने से पहले ही आईसीयू बेड और कैथ लैब तैयार करवा दिया। उस तेजी ने मेरे पिता की जान बचा ली। हर ग्रामीण परिवार के पास यह कार्ड होना चाहिए।",
+          name: "सुश्री अनुपम",
+          location: "ग्राम छपरौला, गाजियाबाद",
+          treatment: "किडनी स्टोन सर्जरी व कागजी कार्रवाई",
+          saving: "निशुल्क कागजी कार्रवाई सहायता",
+          quote: "किडनी स्टोन के ऑपरेशन के लिए हमने गाँव के डॉक्टर से संपर्क किया था, पर वे ऑपरेशन नहीं कर सके। हमें शहर के अस्पतालों और कागजी कार्रवाई की कोई जानकारी नहीं थी। स्मार्टग्राम वाले भैया (स्वास्थ्य मित्र) ने अपॉइंटमेंट, कागजी कार्रवाई और सर्जरी प्रक्रिया में हर कदम पर मदद की। मैं दिल से आभारी हूँ।",
           rating: 5
         }
       ]
