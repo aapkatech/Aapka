@@ -1,12 +1,7 @@
 import React from 'react';
 import { 
-  CheckCircle2, 
-  GraduationCap, 
-  Briefcase, 
   Mail, 
-  ShieldCheck,
-  Users,
-  User
+  User 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -16,85 +11,132 @@ const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
+interface LeaderCardProps {
+  name: string;
+  role: string;
+  image: string;
+  fallbackImage: string;
+  linkedin: string;
+  email: string;
+  bio: string;
+  priority?: boolean;
+}
+
+const LeaderCard: React.FC<LeaderCardProps> = ({
+  name,
+  role,
+  image,
+  fallbackImage,
+  linkedin,
+  email,
+  bio,
+  priority = false
+}) => (
+  <div className="flex flex-col text-left group">
+    {/* Square Photo with Click-to-open LinkedIn Hover Interaction */}
+    <a
+      href={linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open ${name}'s LinkedIn profile`}
+      title={`Click to open ${name}'s LinkedIn profile`}
+      className="group/photo relative block w-full aspect-square rounded-2xl overflow-hidden bg-[#EAE7DF] border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 cursor-pointer"
+    >
+      <img 
+        src={image} 
+        alt={name}
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = fallbackImage;
+        }}
+        className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/photo:scale-105"
+        loading={priority ? "eager" : "lazy"}
+      />
+
+      {/* Subtle resting LinkedIn pill hint in top-right */}
+      <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-[#0077b5] flex items-center justify-center shadow-xs border border-white/60 transition-opacity duration-300 group-hover/photo:opacity-0">
+        <LinkedInIcon className="w-4 h-4" />
+      </div>
+
+      {/* Hover Overlay: Dark Tint + "Open LinkedIn" Pill */}
+      <div className="absolute inset-0 bg-slate-950/45 backdrop-blur-[2px] opacity-0 group-hover/photo:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
+        <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#0077b5] text-white text-xs font-semibold shadow-xl border border-white/20 transform translate-y-2 group-hover/photo:translate-y-0 transition-all duration-300">
+          <LinkedInIcon className="w-4 h-4 fill-white shrink-0" />
+          <span>Open LinkedIn ↗</span>
+        </div>
+      </div>
+    </a>
+
+    {/* Classic Editorial Typography matching IDEO reference */}
+    <div className="mt-4 space-y-1">
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+          {name}
+        </h3>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name}'s LinkedIn`}
+          title="Open LinkedIn"
+          className="text-slate-400 hover:text-[#0077b5] transition-colors p-1"
+        >
+          <LinkedInIcon className="w-4 h-4" />
+        </a>
+      </div>
+      <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-teal-700">
+        {role}
+      </p>
+      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1.5">
+        {bio}
+      </p>
+      <div className="pt-2">
+        <a
+          href={`mailto:${email}`}
+          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-800 transition-colors"
+        >
+          <Mail className="w-3.5 h-3.5 text-slate-400" />
+          <span>{email}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
 export const TeamPage: React.FC = () => {
-  // 1. The Founder (Only Prabal Pratap Singh)
+  // 1. The Founder (Prabal Pratap Singh)
   const founder = {
     name: "Prabal Pratap Singh",
     role: "Founder & Chief Executive Officer (CEO)",
-    badge: "Founder & CEO",
-    tagline: "Bridging the rural emergency delay gap with dignified, transparent healthcare access for every family in Bharat.",
     image: "/founders/prabal-pratap-singh.webp",
     fallbackImage: "/founders/prabal-pratap-singh.jpg",
     linkedin: "https://www.linkedin.com/in/aapkaprabal/",
     email: "prabal@aapka.co.in",
-    bio: [
-      "Prabal Pratap Singh is the Founder and Chief Executive Officer of Aapka (SP Rural India Services Private Limited). Driven by a first-hand understanding of rural health vulnerability in India's heartland, he conceived Aapka to solve the tragic 60–75 minute delay gap that often turns treatable medical emergencies into catastrophic loss of life.",
-      "An alumnus of the Goa Institute of Management (GIM), Prabal brings extensive leadership experience at the intersection of rural access platforms, grassroots distribution, and agri-fintech. Prior to founding Aapka, he spearheaded large-scale rural enablement networks at Hesa Technologies, served in key corporate leadership roles at DCM Shriram and Adda247, and incubated social innovation models supported by Indigram Labs Foundation (under the Department of Science & Technology, Government of India).",
-      "Under his leadership, Aapka has forged a verified network of 240+ partner hospitals, pioneered contractual zero-gouging patient charters, linked rural families to government health entitlements (Ayushman Bharat / PMJAY), and created dignified healthcare navigation pathways that eliminate middleman exploitation across 20+ cities."
-    ],
-    mandates: [
-      "Architects strategic vision, national healthcare roadmap & ecosystem partnerships",
-      "Leads state and national government scheme linkages (Ayushman Bharat / PMJAY)",
-      "Spearheads patient-first charter and hospital tariff pre-negotiation",
-      "Drives corporate governance, capital allocation, and social impact scale"
-    ],
-    pedigree: [
-      { label: "Education", val: "Goa Institute of Management (GIM)" },
-      { label: "Past Leadership", val: "Hesa Technologies (Rural Enablement & Access)" },
-      { label: "Incubation", val: "Indigram Labs Foundation / DST, Govt. of India" },
-      { label: "Corporate", val: "DCM Shriram • Adda247" }
-    ]
+    bio: "Alumnus of Goa Institute of Management (GIM). Built and scaled rural access networks across Hesa Technologies, DCM Shriram, and Indigram Labs Foundation (DST, Govt. of India). Conceived Aapka to eliminate the critical emergency delay gap and middleman exploitation across rural Bharat, establishing 240+ verified partner hospitals."
   };
 
-  // 2. Co-Founders & Core Leadership Team
+  // 2. Co-Founders (Shruti Thakur & Yudhishthir Sharma)
   const coFounders = [
     {
       name: "Shruti Thakur",
       role: "Co-Founder & Chief Operating Officer (COO)",
-      badge: "Co-Founder & COO",
-      tagline: "Empowering rural women and village youth into certified frontline health navigators.",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
       linkedin: "https://www.linkedin.com/in/shruti-thakur-604a8422/",
       email: "shruti@aapka.co.in",
-      bio: "Shruti commands Aapka's day-to-day operations and grassroots human infrastructure. She has spearheaded the recruitment, credentialing, and field supervision of over 1,270+ Gram Mitras across 1,050+ villages, turning community health advocacy into a dignified local livelihood. Bringing extensive experience from the Aim Foundation and Indradhanusha Social Impact Initiatives, she champions women-led healthcare facilitation, maternal care protocols, and patient escort support.",
-      responsibilities: [
-        "Manages on-ground operations across 1,270+ Gram Mitras & 1,050+ villages",
-        "Oversees Basic Life Support (BLS) training and emergency medical triage workflows",
-        "Directs clinical coordination desk and hospital patient escort teams",
-        "Champions gender inclusion and economic empowerment for village women"
-      ],
-      pedigree: [
-        { label: "Social Impact", val: "Aim Foundation (Community Development)" },
-        { label: "Grassroots", val: "Indradhanusha Social Impact Initiatives" },
-        { label: "Operations", val: "1,270+ Field Cadres Managed" },
-        { label: "Focus", val: "Maternal, Tribal & Emergency Health Protocols" }
-      ]
+      bio: "Former leader at Aim Foundation and Indradhanusha Initiatives. Commands Aapka's on-ground operations, emergency triage desk, and the recruitment and training of 1,270+ certified Gram Mitras across 1,050+ villages, championing maternal health protocols and frontline patient navigation."
     },
     {
       name: "Yudhishthir Sharma",
       role: "Co-Founder & Chief Technology Officer (CTO)",
-      badge: "Co-Founder & CTO",
-      tagline: "Architecting zero-connectivity, high-reliability health infrastructure for rural Bharat.",
       image: "/founders/yudhishthir-sharma.webp",
       fallbackImage: "/founders/yudhishthir-sharma.jpg",
       linkedin: "https://www.linkedin.com/in/yudhishthir-sharma/",
       email: "yudhishthir@aapka.co.in",
-      bio: "Yudhishthir oversees technology, product architecture, and algorithmic healthcare matching at Aapka. Bringing extensive global engineering experience from Qualcomm and HCL Technologies, and academic background from Aston University (Birmingham, UK), he designs offline-capable digital platforms that connect remote village patients with urban tertiary care centers in real time with stringent data privacy standards.",
-      responsibilities: [
-        "Architects the AI hospital-matching and casualty pre-notification engine",
-        "Develops low-bandwidth, offline-first mobile applications for Gram Mitras",
-        "Builds secure longitudinal patient health records under DPDP Act 2023 compliance",
-        "Engineers scalable diagnostic routing and telemetry data pipelines"
-      ],
-      pedigree: [
-        { label: "Education", val: "Aston University, Birmingham, United Kingdom" },
-        { label: "Global Tech", val: "Qualcomm • HCL Technologies" },
-        { label: "Enterprise", val: "Kundan Group" },
-        { label: "Specialty", val: "Distributed Systems & Health Tech Mobility" }
-      ]
+      bio: "Alumnus of Aston University (UK) with global engineering leadership at Qualcomm and HCL Technologies. Architects Aapka's low-bandwidth mobile applications, automated hospital matching engine, and DPDP-compliant longitudinal patient health records for rural Bharat."
     }
   ];
+
   // 3. Core Operational Team (Meet the Team)
   const coreTeam = [
     {
@@ -142,10 +184,10 @@ export const TeamPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 space-y-20 bg-white">
       
-      {/* Page Header (Clean, Human, No Metrics Box) */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
+      {/* Page Header (Clean, Editorial) */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div className="max-w-3xl mx-auto space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center justify-center gap-2">
             <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
             <span>Leadership &amp; Execution</span>
           </p>
@@ -158,233 +200,44 @@ export const TeamPage: React.FC = () => {
         </div>
       </div>
 
-      {/* SECTION 1: THE FOUNDER (PRABAL PRATAP SINGH) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
-        <div className="border-b border-slate-200 pb-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Vision &amp; Leadership</span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
-            The Founder
-          </h2>
+      {/* SECTION 1: LEADERSHIP (FOUNDER ON TOP, CO-FOUNDERS SIDE-BY-SIDE BELOW) */}
+      <section className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 sm:space-y-16">
+        
+        {/* Founder on Top (Centered Square Portrait) */}
+        <div className="max-w-sm mx-auto w-full">
+          <LeaderCard
+            name={founder.name}
+            role={founder.role}
+            image={founder.image}
+            fallbackImage={founder.fallbackImage}
+            linkedin={founder.linkedin}
+            email={founder.email}
+            bio={founder.bio}
+            priority={true}
+          />
         </div>
 
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Left Column: Portrait, Badges, Links & Credentials */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="relative aspect-4/5 max-w-[280px] lg:max-w-none rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 mx-auto lg:mx-0">
-              <img 
-                src={founder.image} 
-                alt={founder.name}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = founder.fallbackImage;
-                }}
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                loading="eager"
-              />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-600 px-2.5 py-0.5 rounded text-white shadow-xs">
-                  {founder.badge}
-                </span>
-              </div>
-            </div>
-
-            {/* Direct Connect Buttons: LinkedIn & Email */}
-            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 pt-1">
-              <a
-                href={founder.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0077b5] hover:bg-[#006097] text-white text-xs font-semibold transition-colors shadow-xs"
-              >
-                <LinkedInIcon className="w-4 h-4" />
-                <span>Connect on LinkedIn</span>
-              </a>
-              <a
-                href={`mailto:${founder.email}`}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200 transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-slate-500" />
-                <span>{founder.email}</span>
-              </a>
-            </div>
-
-            {/* Pedigree & Credentials */}
-            <div className="p-5 rounded-2xl bg-slate-50/70 border border-slate-200/80 space-y-3">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                <GraduationCap className="w-3.5 h-3.5 text-teal-700" />
-                <span>Credentials &amp; Pedigree</span>
-              </p>
-              <div className="space-y-2 text-xs">
-                {founder.pedigree.map((item, pIdx) => (
-                  <div key={pIdx} className="flex flex-col pb-2 border-b border-slate-200/60 last:border-b-0 last:pb-0">
-                    <span className="text-slate-400 text-[10px] uppercase font-semibold">{item.label}</span>
-                    <span className="text-slate-800 font-medium">{item.val}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Deep & Proper Biography of Prabal Sir */}
-          <div className="lg:col-span-8 space-y-6">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-50 text-teal-800 text-xs font-semibold border border-teal-200/60">
-                <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
-                <span>Aapka Founder</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-                {founder.name}
-              </h3>
-              <p className="text-sm sm:text-base font-semibold text-teal-700">
-                {founder.role}
-              </p>
-              <p className="text-xs sm:text-sm text-slate-500 italic">
-                "{founder.tagline}"
-              </p>
-            </div>
-
-            <div className="space-y-4 text-sm text-slate-600 leading-relaxed font-normal">
-              {founder.bio.map((paragraph, bIdx) => (
-                <p key={bIdx}>{paragraph}</p>
-              ))}
-            </div>
-
-            <div className="space-y-3 pt-4 border-t border-slate-200">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                <Briefcase className="w-4 h-4 text-teal-600" />
-                <span>Strategic Mandate &amp; Governance</span>
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {founder.mandates.map((resp, rIdx) => (
-                  <div key={rIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/80 border border-slate-200/80 text-xs text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
-                    <span className="leading-snug">{resp}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: CO-FOUNDERS & CORE LEADERSHIP TEAM */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8">
-        <div className="border-b border-slate-200 pb-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Operations &amp; Engineering</span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
-            Co-Founders &amp; Leadership Team
-          </h2>
-        </div>
-
-        <div className="space-y-12">
+        {/* Co-Founders Just Bottom Side-by-Side (2 Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 max-w-3xl mx-auto w-full pt-6 border-t border-slate-100">
           {coFounders.map((member, idx) => (
-            <div 
-              key={idx}
-              className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
-            >
-              {/* Left Column: Portrait & Credentials */}
-              <div className="lg:col-span-4 space-y-6">
-                <div className="relative aspect-4/5 max-w-[280px] lg:max-w-none rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 mx-auto lg:mx-0">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = member.fallbackImage;
-                    }}
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-4 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-600 px-2.5 py-0.5 rounded text-white shadow-xs">
-                      {member.badge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Direct Connect Buttons: LinkedIn & Email */}
-                <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 pt-1">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0077b5] hover:bg-[#006097] text-white text-xs font-semibold transition-colors shadow-xs"
-                  >
-                    <LinkedInIcon className="w-4 h-4" />
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200 transition-colors"
-                  >
-                    <Mail className="w-3.5 h-3.5 text-slate-500" />
-                    <span>{member.email}</span>
-                  </a>
-                </div>
-
-                {/* Pedigree & Affiliations Card */}
-                <div className="p-5 rounded-2xl bg-slate-50/70 border border-slate-200/80 space-y-3">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                    <GraduationCap className="w-3.5 h-3.5 text-teal-700" />
-                    <span>Credentials &amp; Pedigree</span>
-                  </p>
-                  <div className="space-y-2 text-xs">
-                    {member.pedigree.map((item, pIdx) => (
-                      <div key={pIdx} className="flex flex-col pb-2 border-b border-slate-200/60 last:border-b-0 last:pb-0">
-                        <span className="text-slate-400 text-[10px] uppercase font-semibold">{item.label}</span>
-                        <span className="text-slate-800 font-medium">{item.val}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Bio & Core Focus */}
-              <div className="lg:col-span-8 space-y-6">
-                <div className="space-y-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-50 text-teal-800 text-xs font-semibold border border-teal-200/60">
-                    <Users className="w-3.5 h-3.5 text-teal-600" />
-                    <span>Leadership Team</span>
-                  </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm sm:text-base font-semibold text-teal-700">
-                    {member.role}
-                  </p>
-                  <p className="text-xs sm:text-sm text-slate-500 italic">
-                    "{member.tagline}"
-                  </p>
-                </div>
-
-                <div className="text-sm text-slate-600 leading-relaxed font-normal">
-                  <p>{member.bio}</p>
-                </div>
-
-                <div className="space-y-3 pt-4 border-t border-slate-200">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-teal-600" />
-                    <span>Key Focus Areas &amp; Execution</span>
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {member.responsibilities.map((resp, rIdx) => (
-                      <div key={rIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/80 border border-slate-200/80 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{resp}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
+            <div key={idx} className="max-w-sm mx-auto w-full">
+              <LeaderCard
+                name={member.name}
+                role={member.role}
+                image={member.image}
+                fallbackImage={member.fallbackImage}
+                linkedin={member.linkedin}
+                email={member.email}
+                bio={member.bio}
+              />
             </div>
           ))}
         </div>
+
       </section>
 
-      {/* SECTION 3: MEET THE TEAM (CORE TEAM) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+      {/* SECTION 2: MEET THE TEAM (CORE OPERATIONAL TEAM) */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 pt-4">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
             Core Operations &amp; Growth
@@ -485,7 +338,7 @@ export const TeamPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Connect with Team Banner (Clean White Background) */}
+      {/* Connect with Team Banner */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="p-8 sm:p-12 rounded-3xl bg-white text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm border border-slate-200/90">
           <div className="space-y-2 max-w-xl">
