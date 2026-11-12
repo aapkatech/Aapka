@@ -3,7 +3,6 @@ import { Clock, TrendingUp, ShieldCheck, Coins } from 'lucide-react';
 import {
   getSavingsSnapshot,
   formatCrores,
-  formatINR,
   type SavingsSnapshot,
 } from '../utils/savingsTelemetry';
 import { DialRingSvg } from './savings/DialRingSvg';
@@ -71,17 +70,6 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
                 ? `हर 1 घंटे में ₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')} की बचत`
                 : `₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')} Saved Per Hour`
             }
-            description={
-              isHi
-                ? 'वार्षिक ₹4 करोड़ के आधार पर हर 1 घंटे में ₹4,566 की सीधी बचत। 60 मिनट पूरे होते ही यह राशि वार्षिक और लाइफटाइम टोटल में जुड़ती है।'
-                : 'Calculated from our ₹4 Crore annual patient savings rate. At the end of every hour, this amount rolls into the yearly and lifetime totals.'
-            }
-            footerLeft={
-              isHi
-                ? `₹${snapshot.dailyRateRounded.toLocaleString('en-IN')} / दिन`
-                : `₹${snapshot.dailyRateRounded.toLocaleString('en-IN')} / day`
-            }
-            footerRight={isHi ? 'हर 60 मिनट पर ऑटो-ऐड' : 'Auto-adds hourly'}
             dial={
               <DialRingSvg
                 gradientId="liveHourGrad"
@@ -117,13 +105,6 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
                 ? `इस वर्ष आज तक ₹${ytdCr} करोड़ सुरक्षित`
                 : `₹${ytdCr} Cr Saved This Year`
             }
-            description={
-              isHi
-                ? `1 जनवरी ${snapshot.currentYear} से आज ${snapshot.formattedDateHi} तक की कुल बचत। हर घंटे ₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')} स्वतः इसमें जुड़ते हैं।`
-                : `Cumulative patient savings recorded from Jan 1, ${snapshot.currentYear} to today (${snapshot.formattedDateEn}). Automatically updates with every hour elapsed.`
-            }
-            footerLeft={isHi ? '₹4 करोड़ / वर्ष दर' : '₹4 Cr / year pace'}
-            footerRight={`₹${formatINR(snapshot.ytdSavedRupees)}`}
             dial={
               <DialRingSvg
                 gradientId="ytdGrad"
@@ -158,13 +139,6 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
                 ? `अब तक ₹${lifetimeCr} करोड़ लाइफटाइम बचत`
                 : `₹${lifetimeCr} Cr+ Saved in Lifetime`
             }
-            description={
-              isHi
-                ? `अस्पताल भर्ती, सर्जरी छूट और आयुष्मान भारत क्लेम से अब तक ₹13 करोड़ से अधिक की कुल सुरक्षित पूंजी। हर घंटे की बचत इसमें स्वतः जुड़ती रहती है।`
-                : `Total out-of-pocket medical debt prevented across Bharat. Reaches ₹13+ Crores and automatically accumulates with every passing hour.`
-            }
-            footerLeft={isHi ? '500+ गांवों तक पहुंच' : '500+ Villages Reached'}
-            footerRight={`₹${formatINR(snapshot.lifetimeSavedRupees)}`}
             dial={
               <DialRingSvg
                 gradientId="lifetimeGrad"
