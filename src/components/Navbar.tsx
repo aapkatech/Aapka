@@ -26,10 +26,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
 
   const navLinks = [
     { to: "/", label: t?.home || (lang === 'hi' ? 'होम' : 'Home') },
-    { to: "/services", label: t?.services || "Services" },
-    { to: "/team", label: lang === 'hi' ? 'टीम' : 'Team' },
-    { to: "/about", label: t?.about || "About" },
-    { to: "/contact", label: t?.contact || "Contact" }
+    { to: "/about", label: t?.about || (lang === 'hi' ? 'हमारे बारे में' : 'About') },
+    { to: "/services", label: t?.services || (lang === 'hi' ? 'सेवाएं' : 'Services') },
+    { to: "/testimonials", label: t?.testimonials || (lang === 'hi' ? 'प्रशंसापत्र' : 'Testimonials') },
+    { to: "/team", label: t?.team || (lang === 'hi' ? 'टीम' : 'Team') },
+    { to: "/contact", label: t?.contact || (lang === 'hi' ? 'संपर्क करें' : 'Contact Us') }
   ];
 
   return (
