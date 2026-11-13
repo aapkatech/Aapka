@@ -8,7 +8,7 @@ export const content = {
       smartCard: "Smart Health Card",
       gramMitra: "Gram Mitra",
       impact: "Impact & Awards",
-      testimonials: "Patient Stories",
+      testimonials: "Why Aapka",
       contact: "Contact",
       downloadApp: "Book Service / App",
       emergencyCall: "24x7 Helpline: 96670 33044"
@@ -235,7 +235,7 @@ export const content = {
       smartCard: "स्मार्ट हेल्थ कार्ड",
       gramMitra: "ग्राम मित्र",
       impact: "उपलब्धियां व पुरस्कार",
-      testimonials: "मरीजों की कहानियां",
+      testimonials: "AAPKA ही क्यों?",
       contact: "संपर्क करें",
       downloadApp: "सेवा बुक करें / ऐप",
       emergencyCall: "24x7 हेल्पलाइन: 96670 33044"

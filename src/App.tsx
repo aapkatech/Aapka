@@ -91,6 +91,16 @@ export function App() {
             element={<AboutPage />} 
           />
           <Route 
+            path="/why-aapka" 
+            element={
+              <TestimonialsPage 
+                lang={lang} 
+                t={t} 
+                onOpenBooking={handleOpenBooking} 
+              />
+            } 
+          />
+          <Route 
             path="/testimonials" 
             element={
               <TestimonialsPage 

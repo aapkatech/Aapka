@@ -89,13 +89,13 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({
     }
   ];
 
-  const sectionTitle = t?.title || (lang === 'hi' ? 'उपचार और आर्थिक सुरक्षा की सच्ची कहानियां' : 'Real Stories of Healing and Financial Protection');
+  const sectionTitle = t?.title || (lang === 'hi' ? 'परिवार "आपका" को क्यों चुनते हैं?' : 'Why Families Choose Aapka');
   const sectionSubtitle = t?.subtitle || (lang === 'hi' 
     ? '25+ शहरों में आपका केयर समन्वयकों द्वारा सही समय और पारदर्शी खर्च पर उपचार कराने वाले परिवारों के वास्तविक अनुभव।'
     : 'Authentic accounts from patients and families guided through complex treatments with verified hospitals by Aapka across 25+ cities.');
 
   return (
-    <section id="testimonials" className="py-20 sm:py-24 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 border-b border-zinc-100 relative overflow-hidden">
+    <section id="why-aapka" className="py-20 sm:py-24 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 border-b border-zinc-100 relative overflow-hidden">
       {/* Subtle Dot Grid Background */}
       <div 
         className="absolute inset-0 opacity-[0.035] pointer-events-none" 

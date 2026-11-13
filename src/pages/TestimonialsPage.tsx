@@ -21,13 +21,13 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-semibold tracking-wide uppercase mb-5">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>{lang === 'hi' ? '100% सत्यापित मरीज अनुभव' : '100% Verified Patient Experiences'}</span>
+            <span>{lang === 'hi' ? 'AAPKA ही क्यों?' : 'Why Aapka — Verified Patient Stories'}</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-serif font-normal text-slate-950 tracking-tight leading-tight">
             {lang === 'hi'
-              ? 'मरीजों और परिवारों का अटूट भरोसा'
-              : 'Voices of Families We Stood Beside'}
+              ? 'परिवार "आपका" को क्यों चुनते हैं?'
+              : 'Why Families Choose Aapka'}
           </h1>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
