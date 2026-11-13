@@ -55,25 +55,25 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
       },
       {
         icon: HeartHandshake,
-        title: isHi ? "समर्पित ग्राम एवं केयर मित्र" : "Dedicated Care Navigators",
+        title: isHi ? "समर्पित केयर नेविगेटर" : "Dedicated Care Navigators",
         tagline: isHi ? "अस्पताल में आपका साथी" : "Ground Companionship",
         accent: "text-sky-700 bg-sky-50 border-sky-200/70",
         flow: [
-          { label: isHi ? "घर पर संपर्क" : "Doorstep Call", icon: UserCheck },
-          { label: isHi ? "अस्पताल में साथ" : "Personal Escort", icon: HeartHandshake },
+          { label: isHi ? "तत्काल संपर्क" : "Direct Request", icon: UserCheck },
+          { label: isHi ? "व्यक्तिगत साथ" : "Personal Escort", icon: HeartHandshake },
           { label: isHi ? "सम्मानजनक इलाज" : "Dignified Care", icon: CheckCircle2, highlight: true }
         ],
         points: isHi ? [
-          "अस्पताल काउंटर पर 1-ऑन-1 व्यक्तिगत मार्गदर्शक",
-          "भर्ती, फाइलिंग और कागजी औपचारिकताओं का पूरा जिम्मा",
-          "ग्रामीण परिवारों और बुजुर्गों के लिए सम्मानजनक सेवा"
+          "अस्पताल काउंटर पर 1-ऑन-1 व्यक्तिगत मार्गदर्शक साथी",
+          "भर्ती, टीपीए बीमा और कागजी औपचारिकताओं का पूरा जिम्मा",
+          "25+ शहरों में मरीजों और उनके परिवारों के लिए निरंतर सहायता"
         ] : [
-          "1-on-1 personal patient escort at the hospital desk",
-          "Complete admission paperwork, claims & triage handling",
-          "Compassionate bedside support for village families"
+          "1-on-1 personal patient escort at hospital admission desks",
+          "Complete paperwork, TPA insurance & triage clearance",
+          "Compassionate bedside coordination across 25+ cities"
         ],
         quote: isHi
-          ? "अस्पताल की भीड़ में आप अकेले नहीं हैं, परिवार की तरह हर कदम पर साथ।"
+          ? "अस्पताल की भीड़ में आप कभी अकेले नहीं हैं, हर कदम पर परिवार जैसा साथ।"
           : "You are never left alone in a crowded hospital lobby."
       },
       {
@@ -122,48 +122,52 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           </p>
         </div>
 
-        {/* 3 Crisp, Visual & Interactive Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 3 Refined & Elevated Healthcare Cards (Redesigned for High Visual Appeal) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {content.cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <div 
                 key={idx}
-                className="group p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between space-y-5"
+                className="group relative p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] hover:border-teal-400/60 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
-                {/* Header & Title */}
-                <div className="space-y-4">
+                {/* Subtle Top Accent Gradient Line */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-500/20 via-teal-500/60 to-emerald-500/20 group-hover:via-teal-500 transition-all" />
+
+                <div className="space-y-5">
+                  {/* Icon & Badge Header */}
                   <div className="flex items-center justify-between">
-                    <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${card.accent}`}>
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border shadow-2xs group-hover:scale-105 transition-transform ${card.accent}`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                    <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200/60">
                       {card.tagline}
                     </span>
                   </div>
 
+                  {/* Title */}
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-serif leading-snug">
+                    <h3 className="text-xl font-bold text-slate-900 font-serif leading-snug tracking-tight">
                       {card.title}
                     </h3>
                   </div>
 
-                  {/* Visual Pathway Mini Diagram */}
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
-                    <div className="flex items-center justify-between gap-1 text-[10px] sm:text-[11px] font-semibold">
+                  {/* Pathway Step Track (Clean & Modern) */}
+                  <div className="p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 via-slate-50 to-slate-100/60 border border-slate-200/80">
+                    <div className="flex items-center justify-between gap-1 text-[10.5px] sm:text-[11px] font-semibold">
                       {card.flow.map((step, sIdx) => {
                         const StepIcon = step.icon;
                         return (
                           <React.Fragment key={sIdx}>
                             <div 
-                              className={`flex items-center gap-1 px-2 py-1 rounded-lg border transition-transform group-hover:scale-105 ${
+                              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border transition-all ${
                                 step.highlight 
-                                  ? 'bg-teal-50 border-teal-300/80 text-teal-900 shadow-2xs font-bold' 
-                                  : 'bg-white border-slate-200 text-slate-700 shadow-2xs'
+                                  ? 'bg-teal-600 border-teal-600 text-white shadow-xs font-bold' 
+                                  : 'bg-white border-slate-200/90 text-slate-700 shadow-2xs'
                               }`}
                             >
-                              <StepIcon className="w-3 h-3 text-teal-600 shrink-0" />
-                              <span className="truncate max-w-[70px] sm:max-w-none">{step.label}</span>
+                              <StepIcon className={`w-3.5 h-3.5 shrink-0 ${step.highlight ? 'text-white' : 'text-teal-600'}`} />
+                              <span className="truncate max-w-[80px] sm:max-w-none">{step.label}</span>
                             </div>
                             {sIdx < card.flow.length - 1 && (
                               <ArrowRight className="w-3 h-3 text-slate-400 shrink-0" />
@@ -174,21 +178,21 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
                     </div>
                   </div>
 
-                  {/* Crisp Points List */}
-                  <ul className="space-y-2 pt-1 text-xs text-slate-700 font-medium">
+                  {/* Points Checklist with High-Legibility Typography */}
+                  <ul className="space-y-2.5 pt-1 text-[13px] text-slate-700 font-normal leading-relaxed">
                     {card.points.map((point, pIdx) => (
-                      <li key={pIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{point}</span>
+                      <li key={pIdx} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                        <span>{point}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Engaging Quote Chip at Bottom */}
-                <div className="p-3 rounded-xl bg-slate-50/80 border-l-2 border-teal-600 flex items-start gap-2 text-[11px] text-slate-600 italic">
-                  <Quote className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5 opacity-80" />
-                  <span>"{card.quote}"</span>
+                {/* Bottom Quote Pill */}
+                <div className="mt-6 p-3.5 rounded-2xl bg-teal-50/50 border border-teal-100/80 flex items-start gap-2.5 text-xs text-slate-700 italic">
+                  <Quote className="w-4 h-4 text-teal-700 shrink-0 mt-0.5 opacity-80" />
+                  <span className="leading-relaxed">"{card.quote}"</span>
                 </div>
 
               </div>
