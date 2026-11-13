@@ -193,30 +193,3 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({
     </section>
   );
 };
-
-        {/* Bottom Reassurance Banner */}
-        <div className="mt-12 sm:mt-14 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700">
-            <CheckCircle2 className="w-5 h-5 text-teal-600 shrink-0" />
-            <span>
-              {lang === 'hi'
-                ? 'सभी प्रशंसापत्र वास्तविक मरीजों और उनके परिजनों की लिखित सहमति के बाद प्रकाशित किए गए हैं।'
-                : 'All patient stories represent actual clinical interventions guided by Aapka care navigators with patient consent.'}
-            </span>
-          </div>
-
-          {onOpenBooking && (
-            <button
-              type="button"
-              onClick={() => onOpenBooking('hospitalization')}
-              className="shrink-0 inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-teal-600 hover:text-white transition-colors cursor-pointer"
-            >
-              {lang === 'hi' ? 'स्वास्थ्य सहायता प्राप्त करें' : 'Get Care Assistance →'}
-            </button>
-          )}
-        </div>
-
-      </div>
-    </section>
-  );
-};

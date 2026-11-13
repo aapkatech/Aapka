@@ -2,7 +2,6 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { 
   PhoneCall, 
-  CheckCircle2, 
   MessageSquare,
   Sparkles
 } from 'lucide-react';
