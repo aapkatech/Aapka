@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, HeartHandshake, PhoneCall, Award } from 'lucide-react';
+import { ShieldCheck, PhoneCall } from 'lucide-react';
 import { PatientTestimonials } from '../components/PatientTestimonials';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -30,22 +30,11 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
               : 'Voices of Families We Stood Beside'}
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
             {lang === 'hi'
-              ? 'देखें कैसे आपका के स्वास्थ्य-मित्रों ने जटिल सर्जरी, अस्पताल चयन, बिलिंग ऑडिट और आपातकालीन परिस्थितियों में ग्रामीण और टियर-2 परिवारों का हाथ थामा।'
-              : 'Discover how Aapka’s Swasthya Mitras navigated critical surgeries, protected families from hospital overbilling, and eliminated admission stress across Uttar Pradesh and NCR.'}
+              ? 'दिल्ली एनसीआर और पार्टनर अस्पतालों में ईमानदार दरों और बिना किसी भागदौड़ के उपचार कराने वाले परिवारों के वास्तविक अनुभव।'
+              : 'Real patient experiences across Delhi NCR and partner hospital networks guided with honest pricing and zero hospital stress.'}
           </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-600">
-            <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-500" />
-              <span>{lang === 'hi' ? '5.0 स्टार औसत संतुष्टि' : '5.0 Average Patient Satisfaction'}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <HeartHandshake className="w-4 h-4 text-teal-600" />
-              <span>{lang === 'hi' ? '500+ गांवों में सेवा' : '500+ Villages Supported'}</span>
-            </div>
-          </div>
         </div>
       </section>
 
