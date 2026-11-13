@@ -149,7 +149,7 @@ export const translations: Record<Language, Translations> = {
       home: "Home",
       about: "About",
       services: "Services",
-      testimonials: "Testimonials",
+      testimonials: "Why Aapka",
       team: "Team",
       contact: "Contact Us",
       network: "Global Network",
@@ -363,8 +363,8 @@ export const translations: Record<Language, Translations> = {
       }
     },
     testimonials: {
-      tag: "Verified Patient Experiences",
-      title: "Real Stories of Healing and Financial Protection",
+      tag: "Why Aapka",
+      title: "Why Families Choose Aapka",
       subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 25+ cities.",
       verifiedBadge: "Verified Patient",
       items: [
@@ -437,7 +437,7 @@ export const translations: Record<Language, Translations> = {
       home: "होम",
       about: "हमारे बारे में",
       services: "सेवाएं",
-      testimonials: "प्रशंसापत्र",
+      testimonials: "AAPKA ही क्यों?",
       team: "टीम",
       contact: "संपर्क करें",
       network: "अस्पताल नेटवर्क",
@@ -651,8 +651,8 @@ export const translations: Record<Language, Translations> = {
       }
     },
     testimonials: {
-      tag: "सत्यापित मरीज अनुभव",
-      title: "उपचार और आर्थिक सुरक्षा की सच्ची कहानियां",
+      tag: "AAPKA ही क्यों?",
+      title: "परिवार 'आपका' को क्यों चुनते हैं?",
       subtitle: "25+ शहरों में 'आपका' केयर समन्वयकों द्वारा पारदर्शी दरों और अस्पताल सहायता से उपचार कराने वाले मरीजों और परिवारों के वास्तविक अनुभव।",
       verifiedBadge: "सत्यापित मरीज",
       items: [
