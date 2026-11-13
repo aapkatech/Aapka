@@ -249,7 +249,7 @@ export const ContactSection: React.FC = () => {
                       >
                         <option value="Hospital Admission & Bed Staging">Hospital Admission &amp; Bed Staging</option>
                         <option value="Emergency Ambulance Coordination">Emergency Ambulance Coordination</option>
-                        <option value="Join as a Gram Mitra Facilitator">Join as a Gram Mitra Facilitator</option>
+                        <option value="Join as an Aapka Care Coordinator">Join as an Aapka Care Coordinator</option>
                         <option value="Hospital Empanellment & Partnership">Hospital Empanellment &amp; Partnership</option>
                         <option value="Diagnostic Lab Booking">Diagnostic Lab Booking</option>
                         <option value="General Health Scheme Inquiry">General Health Scheme Inquiry</option>

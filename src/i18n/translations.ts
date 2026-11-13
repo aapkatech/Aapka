@@ -312,7 +312,7 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.",
+      tagline: "Aapka is India's trusted healthcare access platform, connecting patients and families across 25+ cities and semi-urban communities with verified hospital networks, dedicated care navigators, and transparent pre-negotiated treatment rates.",
       company: "SP Rural India Services Private Limited",
       location: "201 Convention Centre, JNU New Delhi, 110067",
       phone: "+91 9667033044",
@@ -600,7 +600,7 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "आपका (Aapka) एक सहज ऐप और समर्पित स्थानीय प्रतिनिधियों के माध्यम से ग्रामीण भारत की स्वास्थ्य एवं स्वच्छता संबंधी चुनौतियों का एक परिवर्तनकारी समाधान प्रदान करता है। हमारा मंच ग्रामीणों को स्वास्थ्य पेशेवरों और आवश्यक उत्पादों से सीधे जोड़ता है, जिससे सुविधा, वहनीयता और गुणवत्ता में सुधार होता है।",
+      tagline: "आपका (Aapka) 25+ शहरों और उभरते कस्बों में मरीजों और परिवारों को सत्यापित अस्पताल नेटवर्क, समर्पित केयर समन्वयकों और पारदर्शी दरों से जोड़ने वाला भारत का विश्वसनीय स्वास्थ्य सेवा मंच है।",
       company: "एसपी रूरल इंडिया सर्विसेज प्राइवेट लिमिटेड",
       location: "201 कन्वेंशन सेंटर, जेएनयू, नई दिल्ली - 110067",
       phone: "+91 9667033044",

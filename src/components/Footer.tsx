@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const tagline = t?.tagline || "Aapka offers a transformative solution to rural India's healthcare and hygiene challenges through an intuitive app and dedicated local representatives. Our platform seamlessly connects villagers with healthcare professionals, essential products, enhancing convenience, affordability, and quality.";
+  const tagline = t?.tagline || "Aapka is India's trusted healthcare access platform, connecting patients and families across 25+ cities and semi-urban communities with verified hospital networks, dedicated care navigators, and transparent pre-negotiated treatment rates.";
   const company = t?.company || "SP Rural India Services Private Limited";
   const location = t?.location || "201 Convention Centre, JNU New Delhi, 110067";
   const phone = t?.phone || "+91 8860880044";
