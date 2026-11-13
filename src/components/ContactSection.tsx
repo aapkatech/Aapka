@@ -84,15 +84,11 @@ export const ContactSection: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>24/7 Care Coordination & Inquiries</span>
-          </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Connect With Our Clinical Team
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Whether you need urgent emergency bed staging, want to join as a Gram Mitra, or represent a hospital looking to empanel with Aapka — we respond within minutes.
+            Get instant hospital admission support, surgical tariff audits, or hospital network empanelment — we respond within minutes.
           </p>
         </div>
 

@@ -14,33 +14,14 @@ export const ContactPage: React.FC = () => {
       {/* Header Banner (Clean White Background, Human & Clear) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
-          <div className="relative max-w-3xl space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-              <span>24/7 Care Coordination Desk</span>
-            </p>
-            
+          <div className="relative max-w-3xl space-y-3">
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Get in Touch With Our Care Coordination Desk
             </h1>
             
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Immediate hospital admission triage, emergency ambulance coordination, Gram Mitra registration, and institutional hospital empanelment.
+              Immediate hospital admission triage, emergency ambulance coordination, care navigation, and institutional hospital empanelment across 25+ cities.
             </p>
-
-            <div className="pt-3 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-medium text-slate-700">
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> Response Time &lt; 15 Minutes
-              </span>
-              <span className="text-slate-300">•</span>
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 24/7 Doctor &amp; Bed Staging
-              </span>
-              <span className="text-slate-300">•</span>
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> DPDP Act 2023 Compliant
-              </span>
-            </div>
           </div>
         </div>
       </div>
