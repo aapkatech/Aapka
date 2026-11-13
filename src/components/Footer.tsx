@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
 
   const platformLinks = [
     { label: "Our Team", to: "/team" },
-    { label: "Patient Testimonials", to: "/testimonials" },
+    { label: "Why Aapka", to: "/why-aapka" },
     { label: "Scaling Tribal Impact", to: "/about" },
     { label: "Hospital Care Guidance", to: "/services" },
     { label: "Contact & Support", to: "/contact" }

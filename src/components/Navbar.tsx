@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
     { to: "/", label: t?.home || (lang === 'hi' ? 'होम' : 'Home') },
     { to: "/about", label: t?.about || (lang === 'hi' ? 'हमारे बारे में' : 'About') },
     { to: "/services", label: t?.services || (lang === 'hi' ? 'सेवाएं' : 'Services') },
-    { to: "/testimonials", label: t?.testimonials || (lang === 'hi' ? 'प्रशंसापत्र' : 'Testimonials') },
+    { to: "/why-aapka", label: t?.testimonials || (lang === 'hi' ? 'AAPKA ही क्यों?' : 'Why Aapka') },
     { to: "/team", label: t?.team || (lang === 'hi' ? 'टीम' : 'Team') },
     { to: "/contact", label: t?.contact || (lang === 'hi' ? 'संपर्क करें' : 'Contact Us') }
   ];
@@ -50,7 +50,9 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
         {/* Center / Navigation Links: Services, Team, About, Contact */}
         <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.to || (link.to === '/team' && location.pathname === '/founders');
+            const isActive = location.pathname === link.to || 
+              (link.to === '/why-aapka' && location.pathname === '/testimonials') ||
+              (link.to === '/team' && location.pathname === '/founders');
             return (
               <Link 
                 key={link.to} 
@@ -147,7 +149,9 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
 
           <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-700">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.to || (link.to === '/team' && location.pathname === '/founders');
+              const isActive = location.pathname === link.to || 
+                (link.to === '/why-aapka' && location.pathname === '/testimonials') ||
+                (link.to === '/team' && location.pathname === '/founders');
               return (
                 <Link 
                   key={link.to} 
