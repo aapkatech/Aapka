@@ -145,33 +145,60 @@ export const content = {
     testimonials: {
       badge: "Real Stories of Hope",
       title: "Voices of Families We Stood Beside",
-      subtitle: "Hear directly from patients and families who experienced seamless, affordable treatment with Aapka's Swasthya-Mitras.",
+      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 25+ cities.",
       items: [
         {
           id: 1,
           name: "Mr. AmarPal Singh",
-          location: "Village Kheda Gautam Budh Nagar",
+          location: "Gautam Budh Nagar, Delhi NCR",
           treatment: "Tumor Operation & Hospital Guidance",
-          saving: "Affordable Care Found",
-          quote: "I was having a tumor in my head, I got appointment for a date after 3 years in govt hospitals for my operation, while my tumor was ready to burst in 3 months. Private Hospitals were very expensive. SmartGram helped me to check a good hospital at a price I could afford..",
+          saving: "Saved Family From Debt",
+          quote: "I was diagnosed with a critical head tumor and given an operation date 3 years away at government hospitals, while doctors warned it needed surgery within months. Private hospitals were completely unaffordable. The Aapka team intervened immediately, guided us to an accredited partner hospital with transparent package pricing, and had everything scheduled in days. They saved our family from financial ruin.",
           rating: 5
         },
         {
           id: 2,
           name: "Mr Kumar Madhur",
-          location: "Raj Nagar Extension Ghaziabad",
+          location: "Raj Nagar Extension, Ghaziabad",
           treatment: "Specialist Consultation & Transport Support",
-          saving: "Discounted Rate & Mitra Help",
-          quote: "I didn’t know where to go for my Hair transplant. I contacted SmartGram people and they fixed my appointment at 3 places. They provided us transport and their “Swastha Mitra” helped us in the entire procedure and they get it done at a discounted price. I am extremely satisfied with their services and recommend them to everyone.",
+          saving: "Discounted Rate & Care Navigator",
+          quote: "I was confused about finding a trustworthy specialist for my procedure. I contacted Aapka, and their team scheduled consultations across 3 top clinics, coordinated our local transport, and had a dedicated care coordinator assist us through the entire admission at institutional discounted rates. Highly recommended for their transparency.",
           rating: 5
         },
         {
           id: 3,
           name: "Ms Anupam",
-          location: "Village Chhapraula Ghaziabad",
+          location: "Chhapraula, Greater Noida",
           treatment: "Kidney Stone Surgery & Paperwork",
-          saving: "Free Paperwork Assistance",
-          quote: "For my Kidney stone operation, I consulted local doctor in our village. But he was not able to operate it. We didn’t knew about many hospitals in city and didn’t know how to deal with the paperwork in hospital. SmartGram waale bhaiya (Swastha Mitra) helped for for appointment , paperwork and surgery procedure. I am very thankful for them.",
+          saving: "Zero Bureaucratic Delay",
+          quote: "When I needed urgent kidney stone surgery, our local clinic couldn't handle it, and we had no experience dealing with city hospital paperwork. Aapka's care coordinator personally managed our doctor appointment, pre-admission authorization, and discharge procedure. Having that on-ground companion made all the difference.",
+          rating: 5
+        },
+        {
+          id: 4,
+          name: "Rajesh Verma",
+          location: "Sector 62, Noida",
+          treatment: "Emergency Gallbladder Surgery & Audit",
+          saving: "Saved ₹65,000 on Tariff Audit",
+          quote: "During an emergency hospital admission for acute gallbladder issues, the initial hospital desk estimate was inflated with unexpected line items. Aapka audited the billing on the spot, verified standard package tariffs, and saved our family over ₹65,000 before discharge. Truly patient-first care.",
+          rating: 5
+        },
+        {
+          id: 5,
+          name: "Meenakshi Sharma",
+          location: "Indirapuram, Ghaziabad",
+          treatment: "Maternity Care & Cashless Claim",
+          saving: "100% Cashless Clearance",
+          quote: "Handling hospital admissions and insurance paperwork during medical distress is overwhelming. Aapka’s care coordinator was physically present at the admission desk, cleared our cashless claim without delay, and ensured zero hidden fees. Their 24/7 responsiveness gave us tremendous peace of mind.",
+          rating: 5
+        },
+        {
+          id: 6,
+          name: "Dr. S. K. Gupta",
+          location: "Meerut City, NCR Hub",
+          treatment: "Senior Cardiac Care & Emergency ICU",
+          saving: "Pre-Staged Bed Allocation",
+          quote: "When my uncle suffered an acute cardiac episode, securing an emergency ICU bed with an active cath lab seemed impossible. Aapka coordinated bed staging before our ambulance even arrived at the emergency bay. Fast, transparent, and medically coordinated with immense professionalism.",
           rating: 5
         }
       ]

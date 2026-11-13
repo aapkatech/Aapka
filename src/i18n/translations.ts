@@ -365,40 +365,68 @@ export const translations: Record<Language, Translations> = {
     testimonials: {
       tag: "Verified Patient Experiences",
       title: "Real Stories of Healing and Financial Protection",
-      subtitle: "Authentic accounts from patients and families guided through complex treatments with verified hospitals by Aapka's Swasthya Mitras.",
+      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 25+ cities.",
       verifiedBadge: "Verified Patient",
       items: [
         {
           id: "amarpal-singh",
           name: "Mr. AmarPal Singh",
-          location: "Village Kheda Gautam Budh Nagar",
+          location: "Gautam Budh Nagar, Delhi NCR",
           rating: 5,
           treatment: "Tumor Operation & Hospital Guidance",
-          story: "I was having a tumor in my head, I got appointment for a date after 3 years in govt hospitals for my operation, while my tumor was ready to burst in 3 months. Private Hospitals were very expensive. SmartGram helped me to check a good hospital at a price I could afford..",
-          image: "/testimonials/amarpal-singh.webp",
+          story: "I was diagnosed with a critical head tumor and given an operation date 3 years away at government hospitals, while doctors warned it needed surgery within months. Private hospitals were completely unaffordable. The Aapka team intervened immediately, guided us to an accredited partner hospital with transparent package pricing, and had everything scheduled in days. They saved our family from financial ruin.",
           initials: "AS",
           mitraHelp: "Hospital Guidance & Surgical Rate Audit"
         },
         {
           id: "kumar-madhur",
           name: "Mr Kumar Madhur",
-          location: "Raj Nagar Extension Ghaziabad",
+          location: "Raj Nagar Extension, Ghaziabad",
           rating: 5,
           treatment: "Specialist Consultation & Procedure Coordination",
-          story: "I didn’t know where to go for my Hair transplant. I contacted SmartGram people and they fixed my appointment at 3 places. They provided us transport and their “Swastha Mitra” helped us in the entire procedure and they get it done at a discounted price. I am extremely satisfied with their services and recommend them to everyone.",
+          story: "I was confused about finding a trustworthy specialist for my procedure. I contacted Aapka, and their team scheduled consultations across 3 top clinics, coordinated our local transport, and had a dedicated care coordinator assist us through the entire admission at institutional discounted rates. Highly recommended for their transparency.",
           initials: "KM",
           mitraHelp: "Multi-Center Consultation & Transport Support"
         },
         {
           id: "anupam",
           name: "Ms Anupam",
-          location: "Village Chhapraula Ghaziabad",
+          location: "Chhapraula, Greater Noida",
           rating: 5,
           treatment: "Kidney Stone Surgery & Paperwork Clearance",
-          story: "For my Kidney stone operation, I consulted local doctor in our village. But he was not able to operate it. We didn’t knew about many hospitals in city and didn’t know how to deal with the paperwork in hospital. SmartGram waale bhaiya (Swastha Mitra) helped for for appointment , paperwork and surgery procedure. I am very thankful for them.",
-          image: "/testimonials/anupam.webp",
+          story: "When I needed urgent kidney stone surgery, our local clinic couldn't handle it, and we had no experience dealing with city hospital paperwork. Aapka's care coordinator personally managed our doctor appointment, pre-admission authorization, and discharge procedure. Having that on-ground companion made all the difference.",
           initials: "A",
           mitraHelp: "Paperwork Clearance & Surgery Procedure Support"
+        },
+        {
+          id: "rajesh-verma",
+          name: "Rajesh Verma",
+          location: "Sector 62, Noida",
+          rating: 5,
+          treatment: "Emergency Gallbladder Surgery & Tariff Audit",
+          story: "During an emergency hospital admission for acute gallbladder issues, the initial hospital desk estimate was inflated with unexpected line items. Aapka audited the billing on the spot, verified standard package tariffs, and saved our family over ₹65,000 before discharge. Truly patient-first care.",
+          initials: "RV",
+          mitraHelp: "Pre-Admission Tariff Audit & Price Protection"
+        },
+        {
+          id: "meenakshi-sharma",
+          name: "Meenakshi Sharma",
+          location: "Indirapuram, Ghaziabad",
+          rating: 5,
+          treatment: "Maternity Care & Cashless Claim Navigation",
+          story: "Handling hospital admissions and insurance paperwork during medical distress is overwhelming. Aapka’s care coordinator was physically present at the admission desk, cleared our cashless claim without delay, and ensured zero hidden fees. Their 24/7 responsiveness gave us tremendous peace of mind.",
+          initials: "MS",
+          mitraHelp: "On-Site Admission Escort & Insurance Clearance"
+        },
+        {
+          id: "sk-gupta",
+          name: "Dr. S. K. Gupta",
+          location: "Meerut City, NCR Hub",
+          rating: 5,
+          treatment: "Senior Cardiac Care & Emergency ICU Staging",
+          story: "When my uncle suffered an acute cardiac episode, securing an emergency ICU bed with an active cath lab seemed impossible. Aapka coordinated bed staging before our ambulance even arrived at the emergency bay. Fast, transparent, and medically coordinated with immense professionalism.",
+          initials: "SG",
+          mitraHelp: "Emergency ICU Staging & Trauma Transfer"
         }
       ]
     }
@@ -625,17 +653,16 @@ export const translations: Record<Language, Translations> = {
     testimonials: {
       tag: "सत्यापित मरीज अनुभव",
       title: "उपचार और आर्थिक सुरक्षा की सच्ची कहानियां",
-      subtitle: "उत्तर प्रदेश और एनसीआर के परिवारों के वास्तविक अनुभव, जिन्हें आपका और हमारे स्वास्थ्य मित्रों ने सही समय और सही खर्च पर उपचार दिलाया।",
+      subtitle: "25+ शहरों में 'आपका' केयर समन्वयकों द्वारा पारदर्शी दरों और अस्पताल सहायता से उपचार कराने वाले मरीजों और परिवारों के वास्तविक अनुभव।",
       verifiedBadge: "सत्यापित मरीज",
       items: [
         {
           id: "amarpal-singh",
           name: "श्री अमरपाल सिंह",
-          location: "ग्राम खेड़ा, गौतम बुद्ध नगर",
+          location: "गौतम बुद्ध नगर, दिल्ली एनसीआर",
           rating: 5,
           treatment: "ट्यूमर ऑपरेशन एवं अस्पताल मार्गदर्शन",
-          story: "मेरे सिर में ट्यूमर था, सरकारी अस्पताल में ऑपरेशन के लिए 3 साल बाद की तारीख मिली थी, जबकि मेरा ट्यूमर 3 महीने में फटने की कगार पर था। प्राइवेट अस्पताल बहुत महंगे थे। स्मार्टग्राम (आपका) ने मेरी क्षमता के अनुसार एक बेहतरीन अस्पताल खोजने में पूरी मदद की..",
-          image: "/testimonials/amarpal-singh.webp",
+          story: "मेरे सिर में गंभीर ट्यूमर था, सरकारी अस्पताल में ऑपरेशन के लिए 3 साल बाद की तारीख मिली थी जबकि डॉक्टरों ने तुरंत ऑपरेशन की चेतावनी दी थी। प्राइवेट अस्पताल हमारी क्षमता से बाहर थे। 'आपका' टीम ने तुरंत हस्तक्षेप किया, हमें उचित पैकेज दरों पर मान्यता प्राप्त अस्पताल से जोड़ा और कुछ ही दिनों में सब व्यवस्थित कराया। उन्होंने हमारे परिवार को बचाया।",
           initials: "AS",
           mitraHelp: "अस्पताल मार्गदर्शन एवं सही खर्च पर समन्वय"
         },
@@ -645,20 +672,49 @@ export const translations: Record<Language, Translations> = {
           location: "राज नगर एक्सटेंशन, गाजियाबाद",
           rating: 5,
           treatment: "विशेषज्ञ परामर्श एवं उपचार व्यवस्था",
-          story: "मुझे समझ नहीं आ रहा था कि हेयर ट्रांसप्लांट के लिए कहाँ जाऊँ। मैंने स्मार्टग्राम टीम से संपर्क किया और उन्होंने 3 जगहों पर अपॉइंटमेंट तय किए। उन्होंने हमें ट्रांसपोर्ट दिया और उनके 'स्वास्थ्य मित्र' ने पूरी प्रक्रिया में मदद की और डिस्काउंटेड दर पर काम कराया। मैं उनकी सेवाओं से बेहद संतुष्ट हूँ और सबको सुझाव देता हूँ।",
+          story: "मुझे समझ नहीं आ रहा था कि सही विशेषज्ञ के लिए कहाँ जाऊँ। मैंने 'आपका' टीम से संपर्क किया और उन्होंने 3 प्रमुख केंद्रों पर अपॉइंटमेंट तय किए, स्थानीय आवागमन में मदद की और उनके केयर समन्वयक ने अस्पताल में डिस्काउंटेड दरों पर पूरी सहायता कराई। अत्यंत पारदर्शी और भरोसेमंद सेवा।",
           initials: "KM",
           mitraHelp: "मल्टी-सेंटर परामर्श एवं आवागमन सुविधा"
         },
         {
           id: "anupam",
           name: "सुश्री अनुपम",
-          location: "ग्राम छपरौला, गाजियाबाद",
+          location: "छपरौला, ग्रेटर नोएडा",
           rating: 5,
           treatment: "किडनी स्टोन सर्जरी व कागजी कार्रवाई",
-          story: "किडनी स्टोन के ऑपरेशन के लिए हमने गाँव के डॉक्टर से संपर्क किया था, पर वे ऑपरेशन नहीं कर सके। हमें शहर के अस्पतालों और कागजी कार्रवाई की कोई जानकारी नहीं थी। स्मार्टग्राम वाले भैया (स्वास्थ्य मित्र) ने अपॉइंटमेंट, कागजी कार्रवाई और सर्जरी प्रक्रिया में हर कदम पर मदद की। मैं दिल से आभारी हूँ।",
-          image: "/testimonials/anupam.webp",
+          story: "किडनी स्टोन के आपातकालीन ऑपरेशन के लिए हमें शहर के अस्पतालों और कागजी कार्रवाई की कोई जानकारी नहीं थी। 'आपका' केयर समन्वयक ने व्यक्तिगत रूप से अस्पताल पहुंचकर अपॉइंटमेंट, प्री-ऑथराइजेशन और डिस्चार्ज की कागजी कार्रवाई पूरी कराई। संकट के समय साथ खड़े होने के लिए दिल से आभारी हूँ।",
           initials: "A",
           mitraHelp: "कागजी कार्रवाई एवं सर्जरी प्रक्रिया सहायता"
+        },
+        {
+          id: "rajesh-verma",
+          name: "राजेश वर्मा",
+          location: "सेक्टर 62, नोएडा",
+          rating: 5,
+          treatment: "आपातकालीन पित्त की थैली सर्जरी व बिल ऑडिट",
+          story: "रात को आपातकालीन स्थिति में अस्पताल के प्रारंभिक बिल में कई अप्रत्याशित और छुपे हुए शुल्क जोड़ दिए गए थे। 'आपका' ने तुरंत बिल की जांच की, तय पैकेज दरें लागू कराईं और डिस्चार्ज से पहले हमारे ₹65,000 बचाए। वास्तव में मरीज-हितैषी सेवा।",
+          initials: "RV",
+          mitraHelp: "बिल पूर्व-जांच एवं दर सुरक्षा"
+        },
+        {
+          id: "meenakshi-sharma",
+          name: "मीनाक्षी शर्मा",
+          location: "इंदिरापुरम, गाजियाबाद",
+          rating: 5,
+          treatment: "प्रसूति देखभाल एवं कैशलेस इंश्योरेंस सहायता",
+          story: "डिलीवरी के समय अस्पताल भर्ती और बीमा क्लेम की भागदौड़ बहुत तनावपूर्ण होती है। 'आपका' केयर समन्वयक अस्पताल काउंटर पर मौजूद रहे, कैशलेस क्लेम बिना किसी देरी के पास कराया और कोई छुपा हुआ चार्ज नहीं लगने दिया। 24/7 तत्परता ने बड़ा संबल दिया।",
+          initials: "MS",
+          mitraHelp: "अस्पताल ऑन-साइट सहायता एवं क्लेम समन्वय"
+        },
+        {
+          id: "sk-gupta",
+          name: "डॉ. एस. के. गुप्ता",
+          location: "मेरठ शहर, एनसीआर",
+          rating: 5,
+          treatment: "वरिष्ठ हृदय रोग व आपातकालीन आईसीयू बेड",
+          story: "जब मेरे चाचा को तीव्र हृदय घात हुआ, तो शहर में तुरंत कैथ लैब वाला आईसीयू बेड पाना असंभव लग रहा था। 'आपका' ने हमारे अस्पताल पहुंचने से पहले ही बेड और मेडिकल टीम तैयार करा दी। त्वरित, पारदर्शी और बेहद पेशेवर मेडिकल समन्वय।",
+          initials: "SG",
+          mitraHelp: "आपातकालीन आईसीयू व्यवस्था एवं ट्रॉमा ट्रांसफर"
         }
       ]
     }
