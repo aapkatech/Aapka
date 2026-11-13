@@ -26,6 +26,15 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ t }) => {
     emergency: Ambulance
   };
 
+  const serviceImages: Record<string, string> = {
+    hospitalization: '/services/hospitalization.webp',
+    teleconsult: '/services/teleconsult.webp',
+    pathology: '/services/pathology.webp',
+    smartcard: '/services/smartcard.webp',
+    caretaker: '/services/caretaker.webp',
+    emergency: '/services/emergency.webp'
+  };
+
   const defaultServices = [
     {
       id: "hospitalization",
@@ -136,17 +145,30 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ t }) => {
           </div>
         </div>
 
-        {/* Crisp Clean Grid (One-Sentence Focus) */}
+        {/* Crisp Clean Grid (One-Sentence Focus with Contextual Background Imagery) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredServices.map((service) => {
             const Icon = iconMap[service.id] || Building2;
+            const bgImg = serviceImages[service.id] || '/services/hospitalization.webp';
             return (
               <div
                 key={service.id}
-                className="group relative p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all duration-200 flex flex-col justify-between"
+                className="group relative p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-xs hover:border-teal-500/50 hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-default"
               >
-                <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700">
+                {/* Background Patient-Connect Image with Gentle Gradient Overlay */}
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                  <img
+                    src={bgImg}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center opacity-15 group-hover:opacity-25 group-hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/94 to-white/75" />
+                </div>
+
+                <div className="relative z-10 space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-teal-50/90 backdrop-blur-xs border border-teal-200/60 flex items-center justify-center text-teal-700 shadow-2xs">
                     <Icon className="w-5 h-5" />
                   </div>
 
@@ -154,7 +176,7 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ t }) => {
                     <h3 className="text-lg font-semibold text-slate-900 tracking-tight font-serif">
                       {service.title}
                     </h3>
-                    <p className="text-xs font-medium text-teal-700">
+                    <p className="text-xs font-semibold text-teal-700">
                       {service.tagline}
                     </p>
                   </div>
