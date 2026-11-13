@@ -40,6 +40,12 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
   // Full Institutional Accolades from Page 8 of Deck
   const institutionalAccolades = [
     {
+      title: "Ministry of Commerce & Industry and MeitY",
+      recognition: "NATIONAL PARTNER",
+      subtitle: "Partnered with Ministry of Commerce and Ministry of Electronic and Information Technology",
+      tag: "Govt of India"
+    },
+    {
       title: "AMBA & BGA Business Excellence Award, UK",
       recognition: "FIRST RUNNER-UP",
       subtitle: "Only startup from the entire Asian continent",

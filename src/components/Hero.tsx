@@ -163,7 +163,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               </div>
             </div>
 
-            {/* Micro-Trust Signals: 25+ Cities, 500+ Villages, 50+ Vetted Hospital Partners */}
+            {/* Micro-Trust Signals: 25+ Cities, 500+ Villages/Towns, 50+ Vetted Hospital Partners */}
             <div className="pt-2 sm:pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs sm:text-sm font-medium text-slate-600">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
@@ -178,6 +178,14 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               <div className="flex items-center gap-1.5">
                 <Shield className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>{hospitalPartners}</span>
+              </div>
+            </div>
+
+            {/* Official Government Partnership Trust Badge */}
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/90 text-slate-700 text-[11px] sm:text-xs font-medium shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0 animate-pulse" />
+                <span>Partnered with Ministry of Commerce and Ministry of Electronic and Information Technology</span>
               </div>
             </div>
 
