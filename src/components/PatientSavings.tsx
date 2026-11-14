@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, TrendingUp, ShieldCheck, Coins } from 'lucide-react';
+import { Clock, TrendingUp, ShieldCheck } from 'lucide-react';
 import {
   getSavingsSnapshot,
   formatCrores,
@@ -38,14 +38,6 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-            <Coins className="w-4 h-4 text-teal-600" />
-            <span>
-              {isHi
-                ? 'रियल-टाइम मरीज बचत और प्रभाव'
-                : 'Real-Time Patient Savings Telemetry'}
-            </span>
-          </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             {isHi
               ? 'हर घंटा कीमती है, हर रुपया सुरक्षित है।'
