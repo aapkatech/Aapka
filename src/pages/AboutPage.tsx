@@ -1,252 +1,246 @@
 import React from 'react';
 import { 
   Building2, 
-  Target, 
-  MapPin, 
-  Users, 
   ShieldCheck, 
+  HeartHandshake, 
   CheckCircle2, 
-  Award, 
-  TrendingUp, 
-  Calendar, 
-  Activity 
+  PhoneCall, 
+  ArrowRight,
+  Sparkles,
+  Award,
+  Users2,
+  FileCheck,
+  Stethoscope,
+  Clock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const AboutPage: React.FC = () => {
-  const pillars = [
+  const patientGuarantees = [
     {
-      title: "Scale With Precision",
-      desc: "Expanding across underserved tribal districts across Madhya Pradesh, Odisha, Jharkhand, and Chhattisgarh where tertiary healthcare access is critically absent.",
-      icon: TrendingUp,
-      tag: "Geographic Expansion"
+      title: "Written Price Protection",
+      tagline: "Zero Bill Shocks",
+      description: "Before you step into a partner hospital, our care auditors pre-audit surgical package tariffs line-by-line. What is quoted before admission is what you pay — no surprise fees at discharge.",
+      icon: FileCheck,
+      accent: "text-teal-700 bg-teal-50 border-teal-200/80"
     },
     {
-      title: "Reach Tribal Communities",
-      desc: "Mobilizing local tribal youth and women as certified Gram Mitras to eliminate cultural, linguistic, and systemic distrust in modern clinical systems.",
-      icon: Users,
-      tag: "Community-Led Delivery"
+      title: "Dedicated On-Ground Companion",
+      tagline: "Never Alone in a Hospital",
+      description: "A trained, compassionate care coordinator meets your family at the hospital admission desk, handles paperwork and TPA insurance, and stands beside you through admission and discharge.",
+      icon: HeartHandshake,
+      accent: "text-sky-700 bg-sky-50 border-sky-200/80"
     },
     {
-      title: "Replicate Proven Model",
-      desc: "Deploying our standardized, technology-enabled playbook that unifies offline triage, emergency transport, and cashless hospital bed pre-staging.",
-      icon: Target,
-      tag: "Institutional Blueprint"
+      title: "Verified Doctors & Staged Beds",
+      tagline: "Vetted Clinical Excellence",
+      description: "Direct routing to experienced surgeons, senior specialists, and accredited hospitals with live bed and ICU pre-allocation, eliminating chaotic waiting rooms during critical hours.",
+      icon: Building2,
+      accent: "text-indigo-700 bg-indigo-50 border-indigo-200/80"
+    },
+    {
+      title: "100% Free Patient Guidance",
+      tagline: "Unbiased Family Advocacy",
+      description: "Families never pay a single rupee for our guidance, care desk coordination, or on-ground assistance. We work strictly in the patient's interest with absolute transparency.",
+      icon: ShieldCheck,
+      accent: "text-emerald-700 bg-emerald-50 border-emerald-200/80"
     }
   ];
 
-  const roadmapPhases = [
+  const journeySteps = [
     {
-      phase: "Phase 01",
-      timing: "Months 1 - 2",
-      title: "Community Mapping & Baseline Assessment",
-      desc: "Comprehensive demographic and epidemiological surveys to identify acute disease burdens, infant/maternal mortality clusters, and transport bottlenecks.",
-      deliverables: [
-        "Village-level healthcare vulnerability index mapping",
-        "Engagement with tribal village councils (Gram Sabhas)",
-        "Baseline survey of out-of-pocket medical expenditure"
-      ]
+      number: "01",
+      title: "Direct Connect (24/7)",
+      desc: "Call our helpline (+91 88608 80044) or message on WhatsApp. Share your medical reports, doctor prescriptions, or surgery requirement.",
+      icon: PhoneCall
     },
     {
-      phase: "Phase 02",
-      timing: "Months 2 - 4",
-      title: "Gram Mitra Recruitment & BLS Certification",
-      desc: "Identifying trusted village candidates, with priority given to women champions, followed by intensive Basic Life Support (BLS) and digital app training.",
-      deliverables: [
-        "Rigorous 4-week medical triage & emergency protocol training",
-        "Deployment of offline-first Aapka Gram Mitra mobile application",
-        "Diagnostic screening kit handover (BP, SpO2, blood sugar, temp)"
-      ]
+      number: "02",
+      title: "Package & Hospital Comparison",
+      desc: "Receive clear, pre-negotiated package options across top accredited partner hospitals with verified doctor credentials and upfront quotes.",
+      icon: Stethoscope
     },
     {
-      phase: "Phase 03",
-      timing: "Months 4 - 6",
-      title: "Hospital Network & Emergency Integration",
-      desc: "Empanelling regional district hospitals, mission hospitals, and private tertiary care centers under our binding zero-gouging patient charter.",
-      deliverables: [
-        "Binding MOUs with 240+ regional hospital network nodes",
-        "Digital casualty pre-notification integration with hospital ICUs",
-        "Dedicated hospital-based Aapka Patient Facilitator desks"
-      ]
+      number: "03",
+      title: "On-Ground Admission Escort",
+      desc: "An Aapka care coordinator meets you at the hospital reception to fast-track admissions, Ayushman Bharat (PM-JAY), and cashless insurance clearance.",
+      icon: Users2
     },
     {
-      phase: "Phase 04",
-      timing: "Months 6 - 12",
-      title: "Full Pilot Rollout & Impact Measurement",
-      desc: "Live clinical facilitation across pilot districts, measuring survival rate increases, Golden Hour delay reductions, and financial protection for families.",
-      deliverables: [
-        "Real-time monitoring of clinical turnaround time",
-        "Longitudinal health records under DPDP Act 2023 compliance",
-        "Independent third-party impact assessment report"
-      ]
+      number: "04",
+      title: "Discharge & Bill Verification",
+      desc: "Our team audits the final hospital invoice line-by-line before payment to eliminate duplicate or inflated charges, saving families 30% to 50%.",
+      icon: Clock
     }
   ];
 
-  const recognitionList = [
+  const institutionalRecognitions = [
     {
-      title: "FICCI Healthcare Excellence Summit",
-      badge: "Healthcare Innovation",
-      org: "Federation of Indian Chambers of Commerce & Industry",
-      summary: "Honored for pioneering rural emergency staging protocols and tech-enabled hospital linkage."
+      name: "AMBA & BGA Excellence Awards (London, UK)",
+      badge: "First Runner-Up",
+      highlight: "Start-Up of the Year — Prabal Pratap Singh (Goa Institute of Management), only Asian finalist"
     },
     {
-      title: "IIM Kashipur FIED Uttishtha",
-      badge: "National Accelerator",
-      org: "Foundation for Innovation & Entrepreneurship Development",
-      summary: "Selected among India's top social enterprise scaleups driving sustainable healthcare equity."
+      name: "FICCI Healthcare Excellence Awards",
+      badge: "Top 3 Finalist",
+      highlight: "Recognized nationally for excellence in patient service delivery and care innovation"
     },
     {
-      title: "Swati Rai Sankalp Stree Samman",
-      badge: "Women Leadership",
-      org: "Sankalp Foundation",
-      summary: "Recognized for empowering 1,270+ rural women as certified primary healthcare facilitators."
+      name: "Ministry of Commerce & Industry and MeitY",
+      badge: "National Partner",
+      highlight: "Partnered and recognized under flagship national enterprise and digital health initiatives"
+    },
+    {
+      name: "Swati Rai Award for Entrepreneurship",
+      badge: "Winner (₹10 Lakh)",
+      highlight: "1st prize at Sankalp Bharat Summit 2024 for pioneering accessible healthcare navigation"
     }
   ];
 
   return (
     <div className="py-12 sm:py-16 space-y-20 bg-white">
       
-      {/* Page Header (Clean White Background, Human & Clear) */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
-          <div className="relative max-w-3xl space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-              <span>Our Mission &amp; Healthcare Roadmap</span>
-            </p>
-            
+      {/* 1. Page Header (Clean, Human & Reassuring) */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-teal-50/50 via-white to-sky-50/40 border border-slate-200/90 shadow-xs relative overflow-hidden">
+          <div className="max-w-3xl space-y-4">
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-              Reimagining Rural &amp; Tribal Healthcare in India
+              Healthcare Guidance Built on Trust, Dignity, and Honest Costs.
             </h1>
             
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              SP Rural India Services Private Limited (operating as Aapka) is building India's most dependable grassroots-to-tertiary healthcare navigation ecosystem.
+              Aapka is India's dedicated patient navigation and price protection platform. We stand beside families from the first doctor consultation to hospital discharge — ensuring you never face medical distress alone.
             </p>
 
-            <div className="pt-3 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-medium text-slate-700">
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 1,270+ Village Gram Mitras
+            <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-slate-700">
+              <span className="flex items-center gap-1.5 text-teal-800">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                ₹13+ Crores Patient Debt Prevented
               </span>
-              <span className="text-slate-300">•</span>
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 1,050+ Villages Covered
+              <span className="text-slate-300 hidden sm:inline">•</span>
+              <span className="flex items-center gap-1.5 text-teal-800">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                50+ Accredited Network Hospitals
               </span>
-              <span className="text-slate-300">•</span>
-              <span className="flex items-center gap-1.5 text-teal-700">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" /> 240+ Vetted Hospitals
+              <span className="text-slate-300 hidden sm:inline">•</span>
+              <span className="flex items-center gap-1.5 text-teal-800">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                25+ Cities Across North India
               </span>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Corporate Origin & Mission Statement */}
+      {/* 2. Our Origin & Story (Why We Built Aapka) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-7 space-y-5">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-                Our Purpose &amp; Genesis
-              </p>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-                Solving the "Lost Golden Hour" for Rural Families
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                Our Genesis &amp; Purpose
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 leading-snug">
+                Why We Built Aapka
               </h2>
             </div>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              In deep rural and tribal belts across India, medical emergencies don't just threaten health; they threaten family survival. Families routinely spend 60 to 75 vital minutes asking neighbors where to go, negotiating with predatory informal drivers, and arriving at hospitals only to find zero ICU beds or specialists on duty.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              When a family member falls critically ill, the medical system can feel cold, fragmented, and terrifying. Families spend vital hours asking neighbors which hospital to visit, dealing with aggressive touts at hospital gates, and receiving surprise billing estimates that wipe out years of savings.
             </p>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Aapka changes this equation permanently. By stationing trained, certified <strong>Gram Mitras</strong> in villages and linking them digitally to our <strong>240+ vetted hospital network</strong>, we ensure immediate basic life support, transparent ambulance routing, and guaranteed bed pre-staging.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              Aapka was founded by <strong>Prabal Pratap Singh</strong> (MBA, Goa Institute of Management) to fundamentally transform this reality. We believe healthcare is not merely a transaction — it is about dignity, transparency, and human companionship.
             </p>
 
-            <div className="p-6 rounded-2xl bg-teal-50/70 border border-teal-200/60 space-y-2">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-900">Our Core Philosophy</p>
-              <p className="text-sm text-teal-900 font-serif font-medium italic">
-                "People. Partnerships. Possibilities: Building healthier, resilient, and financially protected tribal communities across Bharat."
+            <div className="p-6 rounded-2xl bg-teal-50/60 border border-teal-200/70 space-y-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-900 block">Our Founding Promise</span>
+              <p className="text-sm sm:text-base text-teal-950 font-serif italic leading-relaxed">
+                "No family should ever be left alone in a hospital lobby, and no patient should face financial ruin for simply seeking medical care."
               </p>
             </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
-            <div className="p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
+          <div className="lg:col-span-5">
+            <div className="p-7 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono text-teal-400 uppercase tracking-widest">Entity Information</span>
-                <h3 className="text-lg font-bold font-serif text-white">SP Rural India Services Pvt. Ltd.</h3>
+                <span className="text-[11px] font-mono text-teal-400 uppercase tracking-widest">
+                  Leadership Spotlight
+                </span>
+                <h3 className="text-xl font-bold font-serif text-white">
+                  Prabal Pratap Singh
+                </h3>
+                <p className="text-xs text-slate-400">
+                  Founder &amp; Chief Executive Officer
+                </p>
               </div>
 
-              <div className="space-y-3 text-xs text-slate-300">
-                <div className="flex items-start gap-2.5">
-                  <Building2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-white font-semibold">Brand Identity:</span> Aapka
-                  </div>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-white font-semibold">Registered Office:</span> 201 Convention Centre, Jawaharlal Nehru University (JNU), New Delhi - 110067
-                  </div>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <Activity className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-white font-semibold">Field Command:</span> Madhya Pradesh Regional Operations Hub &amp; Tribal Districts
-                  </div>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-white font-semibold">Compliance:</span> DPDP Act 2023 Patient Privacy Safeguards &amp; ISO Quality Benchmarks
-                  </div>
-                </div>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Alumnus of the Goa Institute of Management (MBA) and computer science engineer. Recognized globally as Start-Up of the Year finalist at the AMBA &amp; BGA Business Excellence Awards in London, Prabal has spent years building institutional care navigation solutions that safeguard families across Bharat.
+              </p>
+
+              <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+                <Link
+                  to="/team"
+                  className="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Meet Our Leadership Team</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <a
+                  href="https://www.linkedin.com/in/aapkaprabal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  LinkedIn Profile ↗
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Scaling Impact in Tribal India (Page 9 of Deck) */}
+      {/* 3. The 4 Patient Promises (Our Core Values) */}
       <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-              Scaling Impact in Tribal India (Deck Slide 9)
-            </p>
+            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+              Our Patient Charter
+            </span>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              Three Strategic Pillars for Nationwide Reach
+              The Four Guarantees Every Family Receives
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              How Aapka bridges the systemic divide between remote tribal habitations and urban medical infrastructure.
+              Every clinical intervention, surgery package, and bed booking is governed by our strict patient-first principles.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pillars.map((p, idx) => {
-              const Icon = p.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {patientGuarantees.map((item, idx) => {
+              const Icon = item.icon;
               return (
                 <div 
                   key={idx}
-                  className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-5 flex flex-col justify-between"
+                  className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-lg hover:border-teal-300/80 transition-all flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-200/60">
-                        {p.tag}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700">
+                      <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border shadow-2xs ${item.accent}`}>
                         <Icon className="w-5 h-5" />
                       </div>
+                      <span className="text-[10.5px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                        {item.tagline}
+                      </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 font-serif">
-                      {p.title}
+                    <h3 className="text-lg font-bold text-slate-900 font-serif leading-snug">
+                      {item.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      {p.desc}
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
                 </div>
@@ -257,91 +251,86 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4-Phase Roadmap for Tribal Healthcare Pilot (Page 11 of Deck) */}
+      {/* 4. How It Works for Families (4 Simple Steps) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
         <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-            Implementation Framework (Deck Slide 11)
-          </p>
+          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+            Simple &amp; Transparent
+          </span>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-            Our Plan for a Tribal Healthcare Pilot
+            How Aapka Protects Families in 4 Steps
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            A battle-tested 4-phase execution framework designed to stand up robust, measurable health outcomes across 100+ tribal villages in 12 months.
+            From the moment you contact our care desk to your safe discharge home, our team manages every operational detail.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {roadmapPhases.map((phase, idx) => (
-            <div 
-              key={idx}
-              className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:border-teal-500/60 hover:shadow-md transition-all space-y-5"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-teal-700">{phase.phase}</span>
-                <span className="text-xs font-medium text-slate-500 flex items-center gap-1 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                  <Calendar className="w-3 h-3 text-slate-400" />
-                  <span>{phase.timing}</span>
-                </span>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {journeySteps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div 
+                key={idx}
+                className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-5"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-serif font-bold text-teal-700">
+                      {step.number}
+                    </span>
+                    <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                  </div>
 
-              <div className="space-y-1.5">
-                <h3 className="text-lg font-bold text-slate-900 font-serif">
-                  {phase.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {phase.desc}
-                </p>
-              </div>
+                  <h3 className="text-base font-bold text-slate-900 font-serif">
+                    {step.title}
+                  </h3>
 
-              <div className="pt-3 border-t border-slate-100 space-y-2">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Key Deliverables</p>
-                <ul className="space-y-1.5 text-xs text-slate-700">
-                  {phase.deliverables.map((d, dIdx) => (
-                    <li key={dIdx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
-      {/* Recognition & Accolades */}
-      {/* Recognition & Accolades (Clean Light Background) */}
-      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80 text-slate-900">
+      {/* 5. Institutional Recognitions & Credentials */}
+      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-              National Honors &amp; Validation
-            </p>
+            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+              National &amp; Global Validation
+            </span>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              Endorsed by Healthcare &amp; Innovation Leaders
+              Backed by Prestigious Institutions
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Recognized at prestigious national forums for our measurable impact on rural healthcare accessibility.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Recognized by prominent business leadership bodies, government ministries, and national accelerators.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {recognitionList.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {institutionalRecognitions.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4 hover:shadow-md transition-shadow"
+                className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-shadow space-y-3"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 px-2.5 py-1 rounded border border-teal-200/70">
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider bg-teal-50 text-teal-800 px-3 py-1 rounded-full border border-teal-200/70">
                     {item.badge}
                   </span>
                   <Award className="w-5 h-5 text-amber-500" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 font-serif">{item.title}</h3>
-                <p className="text-xs text-teal-700 font-medium">{item.org}</p>
-                <p className="text-xs text-slate-600 leading-relaxed">{item.summary}</p>
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
+                  {item.name}
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  {item.highlight}
+                </p>
               </div>
             ))}
           </div>
@@ -349,32 +338,35 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Bottom CTA to Founders / Contact */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm">
-          <div className="space-y-1.5 max-w-xl">
-            <h3 className="text-xl sm:text-2xl font-bold font-serif text-slate-900">Want to partner with us or explore our pilot?</h3>
+      {/* 6. Reassuring Patient CTA */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm">
+          <div className="space-y-2 max-w-xl">
+            <h3 className="text-xl sm:text-2xl font-bold font-serif text-slate-900">
+              Have questions about a surgery package or need hospital advice?
+            </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We collaborate with state health departments, CSR foundations, and hospital networks to scale healthcare dignity across India.
+              Our 24/7 care coordination desk provides free hospital verification, pre-admission tariff audits, and bedside support.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              to="/team"
-              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-tight transition-colors shadow-sm"
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href="tel:+918860880044"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
             >
-              Meet the Team
-            </Link>
+              <PhoneCall className="w-4 h-4 text-teal-200" />
+              <span>Call Helpline: +91 88608 80044</span>
+            </a>
             <Link
-              to="/contact"
-              className="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs tracking-tight transition-colors shadow-sm"
+              to="/services"
+              className="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-xs sm:text-sm tracking-tight transition-colors"
             >
-              Contact Our Team
+              Explore All Services →
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
     </div>
   );
