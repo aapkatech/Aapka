@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, PhoneCall } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 import { WhyAapka } from '../components/WhyAapka';
 import { PatientTestimonials } from '../components/PatientTestimonials';
 import type { Language, Translations } from '../i18n/translations';
@@ -20,11 +20,6 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
       {/* Editorial Header */}
       <section className="pt-16 sm:pt-20 pb-12 sm:pb-16 bg-gradient-to-b from-slate-50 via-white to-white border-b border-zinc-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-semibold tracking-wide uppercase mb-5">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>{lang === 'hi' ? 'AAPKA ही क्यों?' : 'Why Aapka — Verified Patient Stories'}</span>
-          </div>
-
           <h1 className="text-3xl sm:text-5xl font-serif font-normal text-slate-950 tracking-tight leading-tight">
             {lang === 'hi'
               ? 'परिवार "आपका" को क्यों चुनते हैं?'
