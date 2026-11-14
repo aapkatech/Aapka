@@ -3,7 +3,7 @@ import { ServicesShowcase } from '../components/ServicesShowcase';
 import { 
   Building2, 
   FlaskConical, 
-  CreditCard, 
+  ShieldCheck, 
   CheckCircle2, 
   PhoneCall, 
   ArrowRight 
@@ -17,41 +17,47 @@ interface ServicesPageProps {
 }
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }) => {
-  const revenueStreams = [
+  const patientPillars = [
     {
       step: "01",
-      title: "Hospitalisation Assistance",
-      subtitle: "Commission earned for facilitating patient access, hospital admissions and surgical clearances.",
+      title: "Pre-Negotiated Hospital Tariffs",
+      subtitle: "Written price protection with pre-negotiated package discounts across 50+ network hospitals.",
+      image: "/services/hospitalization.webp",
+      badge: "Surgical Protection",
       icon: Building2,
       points: [
-        "Bed & ICU pre-allocation",
-        "Empanelled institutional pricing",
-        "Discharge and insurance navigation",
+        "Up to 50% savings on major surgeries",
+        "Bed & ICU pre-allocation before arrival",
+        "Line-by-line hospital bill pre-audit",
         "Dedicated on-site patient facilitator"
       ]
     },
     {
       step: "02",
-      title: "Diagnostic Services",
-      subtitle: "Commission from booked pathology and diagnostic tests through accredited partner laboratories.",
+      title: "Accredited Diagnostic Routing",
+      subtitle: "Doorstep pathology sample collection and high-precision diagnostics delivered digitally.",
+      image: "/services/pathology.webp",
+      badge: "Lab & Pathology",
       icon: FlaskConical,
       points: [
-        "NABL-accredited diagnostic centers",
-        "Doorstep blood & sample collection",
-        "Digital reports delivered within 24 hours",
-        "Subsidized rates for rural families"
+        "NABL-accredited diagnostic partner labs",
+        "Doorstep blood & sample pickup",
+        "Verified digital reports under 24 hours",
+        "Subsidized institutional tariff pricing"
       ]
     },
     {
       step: "03",
-      title: "Additional Healthcare & Health Cards",
-      subtitle: "Sustainable revenue from insurance facilitation, health-card subscriptions, and institutional partnerships.",
-      icon: CreditCard,
+      title: "Cashless Insurance & Ayushman Desk",
+      subtitle: "End-to-end guidance for Ayushman Bharat (PM-JAY) and corporate/private TPA health insurance.",
+      image: "/services/insurance.webp",
+      badge: "100% Cashless",
+      icon: ShieldCheck,
       points: [
-        "Aapka Smart Health Card benefits",
-        "Annual preventive health checkups",
-        "Government scheme linkage (Ayushman Bharat)",
-        "Pharmacy and medical equipment discounts"
+        "On-ground TPA pre-authorization support",
+        "Ayushman Bharat (PM-JAY) eligibility check",
+        "Zero hidden fees or discharge surprises",
+        "Elimination of tout and middleman markups"
       ]
     }
   ];
@@ -64,7 +70,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
         <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
           <div className="relative max-w-3xl space-y-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-700" />
               <span>Compassionate Care Services</span>
             </p>
             
@@ -93,68 +99,83 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
         </div>
       </div>
 
-      {/* Interactive Core Services Showcase */}
+      {/* Interactive Core Services Showcase (9 Services with Clear Visible Photos) */}
       <ServicesShowcase onSelectService={onSelectService} t={t} />
 
-      {/* Sustainable Business Model Section (Page 7 of Deck) */}
+      {/* Patient Care Principles Section (Clear, Visible Photos in Every Box) */}
       <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
           
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
-              Our Business &amp; Care Delivery Model
+              Our Patient Charter
             </p>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              Sustainable Revenue for Greater Social Impact
+              How Aapka Protects Patients Across Every Pathway
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Multiple revenue streams built directly around patient needs allow Aapka to remain financially sustainable while expanding healthcare access into underserved tribal districts.
+              Every procedure, diagnostic test, and insurance claim is executed with institutional diligence and zero commission to middlemen.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {revenueStreams.map((item, idx) => {
+            {patientPillars.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div 
                   key={idx}
-                  className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+                  className="group rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-teal-400/80 transition-all duration-300 flex flex-col justify-between overflow-hidden"
                 >
-                  <div className="space-y-5">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold text-slate-400">Pathway {item.step}</span>
-                      <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700">
-                        <Icon className="w-5 h-5" />
-                      </div>
+                  {/* High-Visibility Photo Banner in Every Box */}
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent" />
+                    
+                    {/* Top Badge */}
+                    <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10.5px] font-bold text-slate-900 tracking-wider uppercase shadow-xs">
+                      {item.badge}
                     </div>
 
-                    <div className="space-y-1.5">
-                      <h3 className="text-lg font-bold text-slate-900 font-serif">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        {item.subtitle}
-                      </p>
+                    {/* Floating Icon */}
+                    <div className="absolute -bottom-5 left-6 w-11 h-11 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-teal-700 group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                      <Icon className="w-5 h-5" />
                     </div>
-
-                    <ul className="space-y-2 pt-2 border-t border-slate-100">
-                      {item.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-2 text-xs text-slate-600">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-slate-100">
-                    <Link
-                      to="/contact"
-                      className="text-xs font-semibold text-teal-700 hover:text-teal-900 flex items-center gap-1 cursor-pointer transition-colors"
-                    >
-                      <span>Inquire about this pathway</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                  {/* Card Body */}
+                  <div className="pt-8 px-6 sm:px-7 pb-6 sm:pb-7 flex flex-col justify-between flex-grow space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-bold text-slate-950 font-serif leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                        {item.subtitle}
+                      </p>
+
+                      <ul className="space-y-2 pt-3 border-t border-slate-100">
+                        {item.points.map((pt, pIdx) => (
+                          <li key={pIdx} className="flex items-start gap-2 text-xs text-slate-700">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-100">
+                      <Link
+                        to="/contact"
+                        className="text-xs font-semibold text-teal-700 hover:text-teal-900 flex items-center gap-1.5 cursor-pointer transition-colors"
+                      >
+                        <span>Request this service</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
