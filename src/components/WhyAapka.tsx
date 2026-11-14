@@ -6,12 +6,6 @@ import {
   PhoneCall, 
   ArrowRight,
   CheckCircle2,
-  Stethoscope,
-  Bed,
-  UserCheck,
-  FileCheck,
-  CreditCard,
-  TrendingDown,
   Quote
 } from 'lucide-react';
 import type { Language } from '../i18n/translations';
@@ -35,11 +29,6 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         title: isHi ? "सत्यापित अस्पताल और डॉक्टर" : "Verified Hospital & Doctor Access",
         tagline: isHi ? "सीधा सही अस्पताल" : "Zero Confusion",
         accent: "text-teal-700 bg-teal-50 border-teal-200/70",
-        flow: [
-          { label: isHi ? "मरीज की जरूरत" : "Patient Need", icon: Stethoscope },
-          { label: isHi ? "लाइव बेड व डॉक्टर" : "Live Bed Match", icon: Bed },
-          { label: isHi ? "त्वरित भर्ती" : "Direct Admission", icon: CheckCircle2, highlight: true }
-        ],
         points: isHi ? [
           "50+ सत्यापित अस्पतालों में रियल-टाइम बेड उपलब्धता",
           "वरिष्ठ सर्जनों और विशेषज्ञ डॉक्टरों से सीधा संपर्क",
@@ -58,11 +47,6 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         title: isHi ? "समर्पित केयर नेविगेटर" : "Dedicated Care Navigators",
         tagline: isHi ? "अस्पताल में आपका साथी" : "Ground Companionship",
         accent: "text-sky-700 bg-sky-50 border-sky-200/70",
-        flow: [
-          { label: isHi ? "तत्काल संपर्क" : "Direct Request", icon: UserCheck },
-          { label: isHi ? "व्यक्तिगत साथ" : "Personal Escort", icon: HeartHandshake },
-          { label: isHi ? "सम्मानजनक इलाज" : "Dignified Care", icon: CheckCircle2, highlight: true }
-        ],
         points: isHi ? [
           "अस्पताल काउंटर पर 1-ऑन-1 व्यक्तिगत मार्गदर्शक साथी",
           "भर्ती, टीपीए बीमा और कागजी औपचारिकताओं का पूरा जिम्मा",
@@ -81,11 +65,6 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         title: isHi ? "पारदर्शी दरें एवं योजना लाभ" : "Transparent Tariffs & Scheme Access",
         tagline: isHi ? "जीरो कमीशन, निष्पक्ष बिल" : "Price Protection",
         accent: "text-amber-700 bg-amber-50 border-amber-200/70",
-        flow: [
-          { label: isHi ? "बिल पूर्व-जांच" : "Pre-Audit Bill", icon: FileCheck },
-          { label: isHi ? "आयुष्मान लाभ" : "Ayushman Link", icon: CreditCard },
-          { label: isHi ? "35%-50% बचत" : "Zero Hidden Fee", icon: TrendingDown, highlight: true }
-        ],
         points: isHi ? [
           "पहले से तय रियायती पैकेज — डिस्चार्ज पर कोई सरप्राइज चार्ज नहीं",
           "आयुष्मान भारत (PM-JAY) कैशलेस क्लेम में शत-प्रतिशत सहायता",
@@ -152,47 +131,21 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
                     </h3>
                   </div>
 
-                  {/* Pathway Step Track (Clean & Modern) */}
-                  <div className="p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 via-slate-50 to-slate-100/60 border border-slate-200/80">
-                    <div className="flex items-center justify-between gap-1 text-[10.5px] sm:text-[11px] font-semibold">
-                      {card.flow.map((step, sIdx) => {
-                        const StepIcon = step.icon;
-                        return (
-                          <React.Fragment key={sIdx}>
-                            <div 
-                              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border transition-all ${
-                                step.highlight 
-                                  ? 'bg-teal-600 border-teal-600 text-white shadow-xs font-bold' 
-                                  : 'bg-white border-slate-200/90 text-slate-700 shadow-2xs'
-                              }`}
-                            >
-                              <StepIcon className={`w-3.5 h-3.5 shrink-0 ${step.highlight ? 'text-white' : 'text-teal-600'}`} />
-                              <span className="truncate max-w-[80px] sm:max-w-none">{step.label}</span>
-                            </div>
-                            {sIdx < card.flow.length - 1 && (
-                              <ArrowRight className="w-3 h-3 text-slate-400 shrink-0" />
-                            )}
-                          </React.Fragment>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Points Checklist with High-Legibility Typography */}
-                  <ul className="space-y-2.5 pt-1 text-[13px] text-slate-700 font-normal leading-relaxed">
+                  {/* Points Checklist with Clean & High-Legibility Typography */}
+                  <ul className="space-y-3 pt-2 text-[13.5px] text-slate-700 font-normal leading-relaxed">
                     {card.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-2.5">
                         <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
-                        <span>{point}</span>
+                        <span className="break-words">{point}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Bottom Quote Pill */}
-                <div className="mt-6 p-3.5 rounded-2xl bg-teal-50/50 border border-teal-100/80 flex items-start gap-2.5 text-xs text-slate-700 italic">
-                  <Quote className="w-4 h-4 text-teal-700 shrink-0 mt-0.5 opacity-80" />
-                  <span className="leading-relaxed">"{card.quote}"</span>
+                {/* Bottom Patient Assurance Quote */}
+                <div className="mt-6 p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-2.5 text-xs text-slate-700 italic leading-relaxed">
+                  <Quote className="w-3.5 h-3.5 text-teal-700 shrink-0 mt-0.5 opacity-80" />
+                  <span className="leading-relaxed break-words">"{card.quote}"</span>
                 </div>
 
               </div>
@@ -204,7 +157,7 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-teal-50/90 via-emerald-50/60 to-sky-50/80 border border-teal-200/90 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-1.5 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-800">
-              <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-700" />
               <span>{isHi ? "24/7 क्लिनिकल केयर डेस्क" : "24/7 Clinical Care Desk"}</span>
             </div>
             <h4 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
