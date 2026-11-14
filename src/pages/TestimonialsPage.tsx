@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, PhoneCall } from 'lucide-react';
+import { WhyAapka } from '../components/WhyAapka';
 import { PatientTestimonials } from '../components/PatientTestimonials';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -38,7 +39,13 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
         </div>
       </section>
 
-      {/* Verified Patient Testimonials Showcase */}
+      {/* 1. Why AAPKA Core Pillars (Hospital Access, Care Navigators, Price Protection) */}
+      <WhyAapka
+        lang={lang}
+        onOpenBooking={onOpenBooking}
+      />
+
+      {/* 2. Verified Patient Testimonials Showcase */}
       <PatientTestimonials
         lang={lang}
         t={t?.testimonials}
