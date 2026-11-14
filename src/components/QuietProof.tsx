@@ -37,7 +37,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
     }
   ];
 
-  // Full Institutional Accolades from Page 8 of Deck
+  // Full Institutional Accolades & Founder Honors
   const institutionalAccolades = [
     {
       title: "Ministry of Commerce & Industry and MeitY",
@@ -46,10 +46,16 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
       tag: "Govt of India"
     },
     {
-      title: "AMBA & BGA Business Excellence Award, UK",
+      title: "AMBA & BGA Business Excellence Awards, London UK",
       recognition: "FIRST RUNNER-UP",
-      subtitle: "Only startup from the entire Asian continent",
+      subtitle: "Start-Up of the Year — Prabal Pratap Singh (Goa Institute of Management), only Asian finalist",
       tag: "Global Accolade"
+    },
+    {
+      title: "IIM Udaipur Incubation Centre (IIMUIC)",
+      recognition: "INCUBATED STARTUP",
+      subtitle: "Incubated and mentored under premier national enterprise acceleration framework",
+      tag: "National Incubation"
     },
     {
       title: "Techpreneur 2.0 by HDFC ERGO, Google & BCG",
@@ -58,9 +64,9 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
       tag: "Technology & AI"
     },
     {
-      title: "HDFC Parivartan Grant Winner",
+      title: "HDFC Parivartan Grant",
       recognition: "GRANT WINNER",
-      subtitle: "Institutional grant supporting our tribal health access mission",
+      subtitle: "Institutional grant supporting patient financial protection and emergency care access",
       tag: "Social Impact"
     },
     {
@@ -70,15 +76,15 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
       tag: "Leadership"
     },
     {
-      title: "Janhit Jagran Business Award 2025",
-      recognition: "WINNER 2025",
-      subtitle: "Honored by Dainik Jagran for grassroots community empowerment",
+      title: "Janhit Jagran Business Award",
+      recognition: "WINNER",
+      subtitle: "Honored by Dainik Jagran for grassroots patient empowerment and price transparency",
       tag: "National Media"
     },
     {
-      title: "Strategic Leadership Impact Award 2026",
-      recognition: "WINNER 2026",
-      subtitle: "Awarded under 35–45 Yr Category by GoPhD Foundation",
+      title: "Strategic Leadership Impact Award",
+      recognition: "WINNER",
+      subtitle: "Awarded to Prabal Pratap Singh for disruptive healthcare access in tier-2/3 India",
       tag: "Leadership"
     }
   ];
@@ -97,15 +103,11 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-            <span>Validation of Our Impact & Commitment</span>
-          </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-            Awards & Recognition
+            Awards &amp; Recognition
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Recognized by India's and the world's leading healthcare bodies, academic institutions, and global corporations for driving accessible, timely healthcare to tribal communities.
+            Recognized by premier healthcare bodies, national incubation centres, and global business forums for pioneering transparent, dignified patient care and zero-debt healthcare navigation.
           </p>
         </div>
 
@@ -230,11 +232,6 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="p-5 rounded-2xl bg-slate-900 text-white text-center text-xs sm:text-sm font-medium">
-          Recognised for our journey to make healthcare more accessible in tribal communities through innovation, partnerships and impact.
         </div>
 
       </div>
