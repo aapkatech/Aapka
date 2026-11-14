@@ -181,12 +181,12 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               </div>
             </div>
 
-            {/* Official Government Partnership Trust Badge */}
+            {/* Official Government Partnership */}
             <div className="pt-1">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/90 text-slate-700 text-[11px] sm:text-xs font-medium shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0 animate-pulse" />
+              <p className="text-xs sm:text-[13px] text-slate-600 font-medium flex items-center gap-2">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-700 shrink-0" />
                 <span>Partnered with Ministry of Commerce and Ministry of Electronic and Information Technology</span>
-              </div>
+              </p>
             </div>
 
           </div>
