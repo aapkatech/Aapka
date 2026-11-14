@@ -219,7 +219,7 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                 className="group relative rounded-3xl bg-white border border-slate-200/90 hover:border-teal-400/80 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
               >
                 {/* 1. High-Impact Visual Photo Banner (100% visible, emotional patient connect) */}
-                <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100">
                   <img
                     src={imgSrc}
                     alt={service.title}
