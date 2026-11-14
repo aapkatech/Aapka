@@ -53,6 +53,9 @@ export interface Translations {
       title: string;
       tagline: string;
       description: string;
+      badge?: string;
+      features?: string[];
+      image?: string;
     }>;
   };
   network: {
@@ -211,42 +214,90 @@ export const translations: Record<Language, Translations> = {
           category: "hospital",
           title: "Hospitalization Assistance",
           tagline: "End-to-end surgical coordination and paperwork clearance.",
-          description: "Dedicated clinical facilitators accompany you during admissions, eliminate bureaucratic delay, and guarantee institutional rates."
+          description: "Dedicated clinical facilitators accompany you during admissions, eliminate bureaucratic delay, and guarantee institutional rates.",
+          badge: "Surgery & Admission",
+          features: ["Pre-Negotiated Tariffs", "Bed & ICU Staging", "Admission Escort"],
+          image: "/services/hospitalization.webp"
         },
         {
           id: "teleconsult",
           category: "home",
           title: "Teleconsultation",
           tagline: "Instant video consultations with verified medical specialists.",
-          description: "Direct access to top cardiologists, oncologists, pediatricians, and general practitioners from anywhere in the world."
+          description: "Direct access to top cardiologists, oncologists, pediatricians, and general practitioners from anywhere in the world.",
+          badge: "Instant Video Consult",
+          features: ["Senior Specialists", "Prescription & Follow-up", "No Hospital Travel"],
+          image: "/services/teleconsult.webp"
         },
         {
           id: "pathology",
           category: "home",
           title: "Diagnostic Lab Routing",
           tagline: "High-precision pathology with doorstep sample collection.",
-          description: "Seamless scheduling with accredited diagnostic centers with verified digital results delivered within 24 hours."
+          description: "Seamless scheduling with accredited diagnostic centers with verified digital results delivered within 24 hours.",
+          badge: "Lab & Blood Tests",
+          features: ["Doorstep Sample Pickup", "NABL Accredited Labs", "Digital Reports < 24h"],
+          image: "/services/pathology.webp"
         },
         {
           id: "smartcard",
           category: "hospital",
           title: "Smart Health Card",
           tagline: "Unified preventative care and pre-negotiated family coverage.",
-          description: "One digital instrument granting subsidized surgeries, complimentary annual health panels, and pharmacy discounts."
+          description: "One digital instrument granting subsidized surgeries, complimentary annual health panels, and pharmacy discounts.",
+          badge: "Family Health Card",
+          features: ["Up to 50% Subsidies", "Annual Health Checkup", "Pharmacy Discounts"],
+          image: "/services/smartcard.webp"
         },
         {
           id: "caretaker",
           category: "home",
           title: "Bedside Attendants & Home Care",
           tagline: "Vetted medical caregivers for post-surgical and elderly recovery.",
-          description: "Compassionate, certified nursing professionals providing continuous vital monitoring in hospital wards or at home."
+          description: "Compassionate, certified nursing professionals providing continuous vital monitoring in hospital wards or at home.",
+          badge: "Bedside & Elder Care",
+          features: ["Certified Nursing Staff", "Post-Surgical Care", "Vital Monitoring"],
+          image: "/services/caretaker.webp"
         },
         {
           id: "emergency",
           category: "hospital",
           title: "Emergency Transport Network",
           tagline: "Rapid, GPS-coordinated rural and urban critical care transfer.",
-          description: "Advance-life-support vehicles connected to regional hub trauma centers with pre-reserved ICU bed staging."
+          description: "Advance-life-support vehicles connected to regional hub trauma centers with pre-reserved ICU bed staging.",
+          badge: "24/7 Rapid Ambulance",
+          features: ["ALS / BLS Transport", "Pre-Reserved ICU Bay", "Emergency Hotline"],
+          image: "/services/emergency.webp"
+        },
+        {
+          id: "insurance",
+          category: "hospital",
+          title: "Ayushman & Cashless Insurance Desk",
+          tagline: "100% cashless claims and government scheme navigation.",
+          description: "Dedicated insurance desk managers verify policy eligibility, handle pre-authorization with insurers, and eliminate out-of-pocket surprise expenses.",
+          badge: "Cashless & Ayushman",
+          features: ["Ayushman Bharat (PM-JAY)", "Hassle-Free Pre-Auth", "Zero Tout Commissions"],
+          image: "/services/insurance.webp"
+        },
+        {
+          id: "opinion",
+          category: "home",
+          title: "Super-Specialist Second Opinion",
+          tagline: "Independent clinical review from premier super-specialists.",
+          description: "Connect with board-certified surgeons and oncologists from premier national institutions to review scans, confirm surgical necessity, and validate line of treatment.",
+          badge: "Clinical Opinion",
+          features: ["AIIMS & Top Specialists", "Scan & MRI Verification", "Unbiased Treatment Plan"],
+          image: "/services/opinion.webp"
+        },
+        {
+          id: "audit",
+          category: "hospital",
+          title: "Surgical Package Tariff Audit",
+          tagline: "Written price protection before you step inside the hospital.",
+          description: "Our medical auditors review hospital billing estimates line-by-line, eliminate predatory markups, and lock pre-negotiated package discounts.",
+          badge: "Price Protection",
+          features: ["30-50% Expense Savings", "Line-by-Line Bill Audit", "Written Quote Guarantee"],
+          image: "/services/audit.webp"
         }
       ]
     },
@@ -499,42 +550,90 @@ export const translations: Record<Language, Translations> = {
           category: "hospital",
           title: "अस्पताल भर्ती सहायता",
           tagline: "सर्जरी और अस्पताल भर्ती में संपूर्ण कागजी व प्रशासनिक सहायता।",
-          description: "हमारे स्वास्थ्य-मित्र आपके साथ अस्पताल में उपस्थित रहकर त्वरित भर्ती, बेड आरक्षण और रियायती दरों की गारंटी देते हैं।"
+          description: "हमारे केयर समन्वयक आपके साथ अस्पताल में उपस्थित रहकर त्वरित भर्ती, बेड आरक्षण और रियायती दरों की गारंटी देते हैं।",
+          badge: "सर्जरी व भर्ती",
+          features: ["पूर्व-निर्धारित दरें", "आईसीयू व बेड व्यवस्था", "अस्पताल व्यक्तिगत साथ"],
+          image: "/services/hospitalization.webp"
         },
         {
           id: "teleconsult",
           category: "home",
           title: "ऑनलाइन डॉक्टर परामर्श",
           tagline: "शीर्ष विशेषज्ञ डॉक्टरों के साथ तुरंत वीडियो परामर्श।",
-          description: "देश के प्रमुख कार्डियोलॉजिस्ट, ऑन्कोलॉजिस्ट, पीडियाट्रिशियन और सामान्य चिकित्सकों से घर बैठे परामर्श प्राप्त करें।"
+          description: "देश के प्रमुख कार्डियोलॉजिस्ट, ऑन्कोलॉजिस्ट, पीडियाट्रिशियन और सामान्य चिकित्सकों से घर बैठे परामर्श प्राप्त करें।",
+          badge: "तुरंत वीडियो परामर्श",
+          features: ["वरिष्ठ विशेषज्ञ डॉक्टर", "ई-प्रिस्क्रिप्शन व फॉलो-अप", "यात्रा से मुक्ति"],
+          image: "/services/teleconsult.webp"
         },
         {
           id: "pathology",
           category: "home",
           title: "पैथोलॉजी व डायग्नोस्टिक टेस्ट",
           tagline: "सटीक पैथोलॉजी जांच, घर बैठे सैंपल कलेक्शन के साथ।",
-          description: "एनएबीएल (NABL) मान्यता प्राप्त प्रयोगशालाओं से जांच और 24 घंटे के भीतर डिजिटल रिपोर्ट की सुविधा।"
+          description: "एनएबीएल (NABL) मान्यता प्राप्त प्रयोगशालाओं से जांच और 24 घंटे के भीतर डिजिटल रिपोर्ट की सुविधा।",
+          badge: "लैब व खून जांच",
+          features: ["घर से सैंपल पिकअप", "NABL प्रमाणित लैब्स", "24 घंटे में डिजिटल रिपोर्ट"],
+          image: "/services/pathology.webp"
         },
         {
           id: "smartcard",
           category: "hospital",
           title: "आपका स्मार्ट हेल्थ कार्ड",
           tagline: "परिवार के लिए रियायती उपचार और संपूर्ण स्वास्थ्य सुरक्षा।",
-          description: "एक डिजिटल हेल्थ कार्ड जिसके माध्यम से सर्जरी पर विशेष छूट, निःशुल्क वार्षिक जांच और दवाइयों पर रियायत मिलती है।"
+          description: "एक डिजिटल हेल्थ कार्ड जिसके माध्यम से सर्जरी पर विशेष छूट, निःशुल्क वार्षिक जांच और दवाइयों पर रियायत मिलती है।",
+          badge: "फैमिली हेल्थ कार्ड",
+          features: ["सर्जरी पर 50% तक छूट", "वार्षिक हेल्थ चेकअप", "दवाइयों पर बचत"],
+          image: "/services/smartcard.webp"
         },
         {
           id: "caretaker",
           category: "home",
           title: "होम केयर व नर्सिंग अटेंडेंट",
           tagline: "बुजुर्गों और सर्जरी के बाद देखभाल हेतु प्रशिक्षित स्वास्थ्यकर्मी।",
-          description: "घर या अस्पताल में निरंतर स्वास्थ्य निगरानी और देखभाल के लिए संवेदनशील एवं प्रमाणित नर्सिंग स्टाफ।"
+          description: "घर या अस्पताल में निरंतर स्वास्थ्य निगरानी और देखभाल के लिए संवेदनशील एवं प्रमाणित नर्सिंग स्टाफ।",
+          badge: "नर्सिंग व देखभाल",
+          features: ["प्रमाणित नर्सिंग कर्मी", "सर्जरी उपरांत देखभाल", "वाइटल मॉनिटरिंग"],
+          image: "/services/caretaker.webp"
         },
         {
           id: "emergency",
           category: "hospital",
           title: "आपातकालीन एम्बुलेंस नेटवर्क",
           tagline: "जीपीएस-सक्षम त्वरित क्रिटिकल केयर एम्बुलेंस सेवा।",
-          description: "उन्नत लाइफ-सपोर्ट (ALS) एम्बुलेंस और नजदीकी ट्रॉमा सेंटर में पूर्व-आरक्षित आईसीयू बेड की त्वरित व्यवस्था।"
+          description: "उन्नत लाइफ-सपोर्ट (ALS) एम्बुलेंस और नजदीकी ट्रॉमा सेंटर में पूर्व-आरक्षित आईसीयू बेड की त्वरित व्यवस्था।",
+          badge: "24/7 एम्बुलेंस",
+          features: ["ALS / BLS सुविधा", "पूर्व-आरक्षित आईसीयू", "24/7 आपात हेल्पलाइन"],
+          image: "/services/emergency.webp"
+        },
+        {
+          id: "insurance",
+          category: "hospital",
+          title: "आयुष्मान एवं कैशलेस बीमा डेस्क",
+          tagline: "100% कैशलेस क्लेम और सरकारी स्वास्थ्य योजना सहायता।",
+          description: "समर्पित बीमा डेस्क प्रबंधक आपकी पॉलिसी और आयुष्मान कार्ड की पात्रता जांचते हैं, टीपीए अप्रूवल कराते हैं और अनपेक्षित खर्चों से बचाते हैं।",
+          badge: "कैशलेस योजनाएं",
+          features: ["आयुष्मान भारत (PM-JAY)", "कैशलेस प्री-ऑथराइजेशन", "जीरो कमीशन"],
+          image: "/services/insurance.webp"
+        },
+        {
+          id: "opinion",
+          category: "home",
+          title: "वरिष्ठ डॉक्टरों से सेकंड ओपिनियन",
+          tagline: "शीर्ष सुपर-स्पेशलिस्ट पैनल द्वारा जांच रिपोर्ट की निष्पक्ष समीक्षा।",
+          description: "एम्स और प्रतिष्ठित अस्पतालों के वरिष्ठ सर्जनों व विशेषज्ञों से सर्जरी की आवश्यकता, एमआरआई/सीटी स्कैन रिपोर्ट की पुष्टि और सही इलाज का मार्गदर्शन पाएं।",
+          badge: "विशेषज्ञ राय",
+          features: ["एम्स व शीर्ष विशेषज्ञ", "एमआरआई/सीटी स्कैन जांच", "निष्पक्ष उपचार योजना"],
+          image: "/services/opinion.webp"
+        },
+        {
+          id: "audit",
+          category: "hospital",
+          title: "अस्पताल बिल व पैकेज प्री-ऑडिट",
+          tagline: "अस्पताल में भर्ती होने से पहले लिखित दर सुरक्षा।",
+          description: "हमारे मेडिकल ऑडिटर अस्पताल के अनुमानित बिल की एक-एक मद की जांच करते हैं, छुपे हुए शुल्कों को हटाते हैं और तय रियायती पैकेज सुनिश्चित करते हैं।",
+          badge: "दर सुरक्षा",
+          features: ["30-50% तक की बचत", "बिल की मद-दर-मद जांच", "लिखित दर गारंटी"],
+          image: "/services/audit.webp"
         }
       ]
     },
