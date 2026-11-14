@@ -3,7 +3,6 @@ import { Hero } from '../components/Hero';
 import { PatientSavings } from '../components/PatientSavings';
 import { WhyAapka } from '../components/WhyAapka';
 import { WhatsAppContactSection } from '../components/WhatsAppContactSection';
-import { PatientTestimonials } from '../components/PatientTestimonials';
 import { QuietProof } from '../components/QuietProof';
 import type { Language, Translations } from '../i18n/translations';
 
@@ -39,14 +38,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking, lang = 'en', 
       {/* 4. Direct WhatsApp Helpline & Support Section (9667033044) */}
       <WhatsAppContactSection />
 
-      {/* 5. Verified Patient Testimonials (Authentic Stories from Real Families) */}
-      <PatientTestimonials
-        lang={lang}
-        t={t?.testimonials}
-        onOpenBooking={onOpenBooking}
-      />
-
-      {/* 6. Awards & National Recognition (Ceremony photos & Light Modal) */}
+      {/* 5. Awards & National Recognition (Ceremony photos & Light Modal) */}
       <QuietProof t={t?.proof} />
     </div>
   );
