@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 
 export const WhatsAppIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg 
@@ -32,11 +32,6 @@ export const WhatsAppContactSection: React.FC = () => {
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300/80 text-xs font-semibold">
-                <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                <span>24/7 Human Care Coordination</span>
-              </div>
-
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
                 Need Immediate Healthcare Guidance?
               </h2>
@@ -44,18 +39,6 @@ export const WhatsAppContactSection: React.FC = () => {
               <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
                 Connect directly with our care coordinators on WhatsApp or call our emergency helpline. Whether you need an emergency bed, specialist doctor routing, or hospital tariff audit, our team is right beside you.
               </p>
-
-              {/* Trust Badges */}
-              <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-slate-700">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>100% Free Patient Guidance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>50+ Vetted Partner Hospitals</span>
-                </div>
-              </div>
             </div>
 
             {/* Right Action Box: High-Trust White Consultation Card */}
