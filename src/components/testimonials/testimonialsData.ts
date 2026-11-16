@@ -117,5 +117,32 @@ export const videoTestimonialsData: VideoTestimonial[] = [
     },
     mitraName: "Assisted by On-Ground Care Navigator",
     hospitalName: "Partner Hospital Network, Ghaziabad / NCR"
+  },
+  {
+    id: "video-rajesh-verma",
+    name: "Rajesh Verma",
+    roleEn: "Patient",
+    roleHi: "मरीज",
+    village: "Sector 62",
+    district: "Noida",
+    state: "Delhi NCR",
+    treatmentEn: "Emergency Surgery & Hospital Bill Pre-Audit",
+    treatmentHi: "आपातकालीन सर्जरी व अस्पताल बिल प्री-ऑडिट",
+    savingEn: "Saved ₹65,000 Through Bill Pre-Audit",
+    savingHi: "बिल प्री-ऑडिट से ₹65,000 की सीधी बचत",
+    quoteEn: "Aapka audited our emergency hospital bill on the spot, verified standard package tariffs, and saved our family over ₹65,000 before discharge.",
+    quoteHi: "अस्पताल भर्ती के समय आपका ने बिल की मौके पर जांच की, तय पैकेज दरें लागू कराईं और डिस्चार्ज से पहले हमारे ₹65,000 बचाए।",
+    storyEn: "Detailed account of urgent surgical admission, eliminating inflated hidden line-items, and securing written tariff protection.",
+    storyHi: "आपातकालीन अस्पताल भर्ती में छुपे हुए शुल्कों से मुक्ति और डिस्चार्ज से पहले लिखित दर सुरक्षा का वास्तविक वीडियो अनुभव।",
+    videoSrc: "/videos/aapka4.mp4",
+    duration: "2:13",
+    verified: false,
+    category: "surgery",
+    tags: {
+      en: ["Emergency Surgery", "Tariff Pre-Audit", "Noida"],
+      hi: ["इमरजेंसी सर्जरी", "बिल ऑडिट", "नोएडा"]
+    },
+    mitraName: "Assisted by On-Ground Care Navigator",
+    hospitalName: "Partner Hospital Network, Noida / NCR"
   }
 ];
