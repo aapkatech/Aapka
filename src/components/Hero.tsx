@@ -18,9 +18,9 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const preHeadline = t?.preHeadline;
   const headline = t?.headline || "India's Trusted Healthcare Platform.";
   const subheadline = t?.subheadline || "Let us take care of you.";
-  const communitiesSupported = t?.communitiesSupported || "25+ Cities";
-  const villagesCovered = t?.villagesCovered || "500+ Villages";
-  const hospitalPartners = t?.hospitalPartners || "50+ Vetted Hospital Partners";
+  const communitiesSupported = t?.communitiesSupported || "15+ Cities";
+  const villagesCovered = t?.villagesCovered || "1,000+ Gram Mitras";
+  const hospitalPartners = t?.hospitalPartners || "250+ Vetted Hospital Partners";
   const downloadApp = t?.downloadApp || "Download the App";
   const connectLabel = t?.connectLabel || "Connect";
 
@@ -163,7 +163,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               </div>
             </div>
 
-            {/* Micro-Trust Signals: 25+ Cities, 500+ Villages/Towns, 50+ Vetted Hospital Partners */}
+            {/* Micro-Trust Signals: 15+ Cities, 1,000+ Gram Mitras, 250+ Vetted Hospital Partners */}
             <div className="pt-2 sm:pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs sm:text-sm font-medium text-slate-600">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />

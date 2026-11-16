@@ -30,11 +30,11 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         tagline: isHi ? "सीधा सही अस्पताल" : "Zero Confusion",
         accent: "text-teal-700 bg-teal-50 border-teal-200/70",
         points: isHi ? [
-          "50+ सत्यापित अस्पतालों में रियल-टाइम बेड उपलब्धता",
+          "250+ सत्यापित अस्पतालों में रियल-टाइम बेड उपलब्धता",
           "वरिष्ठ सर्जनों और विशेषज्ञ डॉक्टरों से सीधा संपर्क",
           "इमरजेंसी में बिना देरी के त्वरित दाखिला"
         ] : [
-          "Real-time bed availability across 50+ network hospitals",
+          "Real-time bed availability across 250+ network hospitals",
           "Direct referral to vetted surgeons & senior specialists",
           "Zero waitlist delays during emergency admissions"
         ],
@@ -50,11 +50,11 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         points: isHi ? [
           "अस्पताल काउंटर पर 1-ऑन-1 व्यक्तिगत मार्गदर्शक साथी",
           "भर्ती, टीपीए बीमा और कागजी औपचारिकताओं का पूरा जिम्मा",
-          "25+ शहरों में मरीजों और उनके परिवारों के लिए निरंतर सहायता"
+          "15+ शहरों में मरीजों और उनके परिवारों के लिए निरंतर सहायता"
         ] : [
           "1-on-1 personal patient escort at hospital admission desks",
           "Complete paperwork, TPA insurance & triage clearance",
-          "Compassionate bedside coordination across 25+ cities"
+          "Compassionate bedside coordination across 15+ cities"
         ],
         quote: isHi
           ? "अस्पताल की भीड़ में आप कभी अकेले नहीं हैं, हर कदम पर परिवार जैसा साथ।"

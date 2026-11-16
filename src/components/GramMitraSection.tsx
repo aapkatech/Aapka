@@ -120,7 +120,7 @@ export const GramMitraSection: React.FC = () => {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-slate-200/50 flex items-center gap-1.5 text-xs font-medium text-teal-800">
-                  <span>1,270+ active village facilitators</span>
+                  <span>1,000+ active village facilitators</span>
                 </div>
               </div>
             );

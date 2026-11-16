@@ -123,41 +123,47 @@ export const ImpactRibbon: React.FC<ImpactRibbonProps> = ({ lang }) => {
             <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-slate-700/60 pb-6 sm:pb-0 sm:pr-6">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-emerald-400">
                 <MapPin className="w-5 h-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Rural Outreach</span>
+                <span className="text-xs font-bold uppercase tracking-wider">{lang === 'hi' ? 'सक्रिय शहर' : 'Network Reach'}</span>
               </div>
-              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">500+</p>
-              <p className="text-sm font-medium text-slate-300">{t.impact.metricVillagesLabel}</p>
+              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">15+ Cities</p>
+              <p className="text-sm font-medium text-slate-300">
+                {lang === 'hi' ? '1,000+ ग्राम मित्र' : '1,000+ On-Ground Gram Mitras'}
+              </p>
             </div>
 
             {/* Metric 2 */}
             <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-slate-700/60 pb-6 sm:pb-0 sm:pr-6">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-sky-400">
                 <Building2 className="w-5 h-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Healthcare Infra</span>
+                <span className="text-xs font-bold uppercase tracking-wider">{lang === 'hi' ? 'अस्पताल नेटवर्क' : 'Healthcare Infra'}</span>
               </div>
-              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">46+</p>
-              <p className="text-sm font-medium text-slate-300">{t.impact.metricHospitalsLabel}</p>
+              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">250+</p>
+              <p className="text-sm font-medium text-slate-300">
+                {lang === 'hi' ? 'सत्यापित अस्पताल भागीदार' : 'Accredited Partner Hospitals'}
+              </p>
             </div>
 
             {/* Metric 3 */}
             <div className="space-y-2 border-b sm:border-b-0 sm:border-r border-slate-700/60 pb-6 sm:pb-0 sm:pr-6">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-amber-400">
                 <Users2 className="w-5 h-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Trusted Coverage</span>
+                <span className="text-xs font-bold uppercase tracking-wider">{lang === 'hi' ? 'परामर्श' : 'Clinical Guidance'}</span>
               </div>
-              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">40,000+</p>
-              <p className="text-sm font-medium text-slate-300">{t.impact.metricPincodesLabel}</p>
+              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">15,000+</p>
+              <p className="text-sm font-medium text-slate-300">
+                {lang === 'hi' ? 'मरीजों को परामर्श एवं सहायता' : 'Patients Consulted'}
+              </p>
             </div>
 
             {/* Metric 4 */}
             <div className="space-y-2">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-emerald-400">
                 <IndianRupee className="w-5 h-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Financial Relief</span>
+                <span className="text-xs font-bold uppercase tracking-wider">{lang === 'hi' ? 'वित्तीय सुरक्षा' : 'Financial Relief'}</span>
               </div>
-              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">₹4.2 Cr+</p>
+              <p className="text-4xl sm:text-5xl font-black text-white tracking-tight">₹4.1 Cr+</p>
               <p className="text-sm font-medium text-slate-300">
-                {lang === 'hi' ? 'मरीजों के चिकित्सा खर्च में बचत' : 'Saved for Patient Households'}
+                {lang === 'hi' ? '1,270+ मरीजों के इलाज में कुल बचत' : 'Saved for 1,270+ Patients'}
               </p>
             </div>
           </div>

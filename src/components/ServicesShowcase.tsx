@@ -274,7 +274,7 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <span className="text-[11px] font-semibold text-slate-400">
-                      25+ Cities
+                      15+ Cities
                     </span>
                   </div>
                 </div>

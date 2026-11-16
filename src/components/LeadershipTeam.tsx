@@ -25,10 +25,10 @@ export const LeadershipTeam: React.FC = () => {
       linkedin: "https://www.linkedin.com/in/shruti-thakur-604a8422/",
       image: "/founders/shruti-thakur.webp",
       fallbackImage: "/founders/shruti-thakur.jpg",
-      bio: "Drives grassroots program execution and the rapid onboarding of the 1,270+ Gram Mitra network. Champion of rural women health facilitators and community outreach.",
+      bio: "Drives grassroots program execution and the rapid onboarding of the 1,000+ Gram Mitra network. Champion of rural women health facilitators and community outreach.",
       responsibilities: [
         "Leads day-to-day operations & clinical linkages",
-        "Builds and manages the 1,270+ Gram Mitra network",
+        "Builds and manages the 1,000+ Gram Mitra network",
         "Drives program execution & community engagement"
       ],
       affiliations: ["Aim Foundation", "Indradhanusha Social Impact"],

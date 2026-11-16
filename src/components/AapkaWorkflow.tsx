@@ -146,7 +146,7 @@ export const AapkaWorkflow: React.FC = () => {
               The Healthcare Access Equation
             </h3>
             <p className="text-xs sm:text-sm text-slate-600">
-              Technology alone cannot navigate tribal terrain. People alone cannot track 240+ hospital bed availability. Aapka fuses both.
+              Technology alone cannot navigate tribal terrain. People alone cannot track 250+ hospital bed availability. Aapka fuses both.
             </p>
           </div>
 
@@ -173,7 +173,7 @@ export const AapkaWorkflow: React.FC = () => {
               </div>
               <div className="space-y-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-800">Enabled by Gram Mitras</p>
-                <h4 className="text-base font-semibold text-slate-900">1,270+ On-Ground Facilitators</h4>
+                <h4 className="text-base font-semibold text-slate-900">1,000+ On-Ground Facilitators</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Trusted community members who arrange transport, overcome paperwork anxiety, and guide patients.
                 </p>

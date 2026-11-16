@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, MapPin, Activity } from 'lucide-react';
+import { Building2, MapPin, Activity, Users2 } from 'lucide-react';
 
 interface ExecutionStrengthsProps {
   t?: {
@@ -12,30 +12,30 @@ interface ExecutionStrengthsProps {
 export const ExecutionStrengths: React.FC<ExecutionStrengthsProps> = ({ t }) => {
   const defaultMetrics = [
     {
-      value: "20+",
+      value: "15+",
       label: "Active Cities",
-      sub: "Active care coordination network operating across 20+ cities in Bharat.",
+      sub: "Active care coordination network operating across 15+ cities in Bharat.",
       icon: MapPin,
       accent: "text-teal-700 bg-teal-50 border-teal-200/60"
     },
     {
-      value: "240+",
+      value: "250+",
       label: "Hospitals",
       sub: "Across government, empanelled, and private healthcare facilities.",
       icon: Building2,
       accent: "text-sky-700 bg-sky-50 border-sky-200/60"
     },
     {
-      value: "1,050+",
-      label: "Villages Reached",
-      sub: "Active ground-level penetration through our facilitator network.",
-      icon: MapPin,
+      value: "1,000+",
+      label: "Gram Mitras",
+      sub: "Active on-ground facilitators empowering local patient access.",
+      icon: Users2,
       accent: "text-amber-700 bg-amber-50 border-amber-200/60"
     },
     {
-      value: "1,040+",
-      label: "Surgeries Assisted",
-      sub: "Guiding and supporting critical patients to reach care on time.",
+      value: "15,000+",
+      label: "Patients Consulted",
+      sub: "Over ₹4.1 Cr saved for 1,270+ patients through transparent care guidance.",
       icon: Activity,
       accent: "text-emerald-700 bg-emerald-50 border-emerald-200/60"
     }
