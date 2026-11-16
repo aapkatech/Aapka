@@ -90,5 +90,32 @@ export const videoTestimonialsData: VideoTestimonial[] = [
     },
     mitraName: "Assisted by On-Ground Care Navigator",
     hospitalName: "Partner Hospital Network, Greater Noida"
+  },
+  {
+    id: "video-kumar-madhur",
+    name: "Mr. Kumar Madhur",
+    roleEn: "Patient",
+    roleHi: "मरीज",
+    village: "Raj Nagar Extension",
+    district: "Ghaziabad",
+    state: "Delhi NCR",
+    treatmentEn: "Specialist Consultation & Procedure Support",
+    treatmentHi: "विशेषज्ञ परामर्श एवं उपचार व्यवस्था",
+    savingEn: "Discounted Institutional Tariffs & Transport",
+    savingHi: "रियायती संस्थागत दरें एवं आवागमन",
+    quoteEn: "Aapka fixed our appointments across 3 top hospitals and their care coordinator helped us through the entire procedure at a discounted price.",
+    quoteHi: "टीम ने 3 प्रमुख अस्पतालों में अपॉइंटमेंट तय किए, स्थानीय आवागमन में मदद की और डिस्काउंटेड दरों पर पूरी सहायता कराई।",
+    storyEn: "Personal account of navigating specialist healthcare options, hospital appointment routing, and bedside coordination across Delhi NCR.",
+    storyHi: "गाजियाबाद एवं दिल्ली एनसीआर के अस्पतालों में विशेषज्ञ डॉक्टर परामर्श और पारदर्शी दरों पर उपचार का वास्तविक अनुभव।",
+    videoSrc: "/videos/aapka3.mp4",
+    duration: "1:20",
+    verified: false,
+    category: "surgery",
+    tags: {
+      en: ["Specialist Routing", "Procedure Support", "Ghaziabad"],
+      hi: ["विशेषज्ञ परामर्श", "अस्पताल भर्ती", "गाजियाबाद"]
+    },
+    mitraName: "Assisted by On-Ground Care Navigator",
+    hospitalName: "Partner Hospital Network, Ghaziabad / NCR"
   }
 ];
