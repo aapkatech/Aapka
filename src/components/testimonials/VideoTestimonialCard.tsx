@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { 
   Play, 
   MapPin, 
-  Clock, 
   UserCheck, 
   Building2, 
   AlertCircle
@@ -128,20 +127,6 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
               }
             }}
           >
-            {/* Top Bar inside Video Thumbnail */}
-            <div className="flex items-center justify-between gap-2">
-              {testimonial.duration && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-semibold text-slate-100 border border-white/10">
-                  <Clock className="w-3.5 h-3.5 text-teal-400" />
-                  <span>{testimonial.duration}</span>
-                </span>
-              )}
-
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-teal-500/20 text-[11px] font-semibold text-teal-200 backdrop-blur-md border border-teal-400/30">
-                <span>{lang === 'hi' ? 'मरीज वीडियो' : 'Patient Video'}</span>
-              </span>
-            </div>
-
             {/* Centered Large Play Button */}
             <div className="flex items-center justify-center my-auto">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-teal-600/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-teal-500 transition-all duration-300 border-2 border-white/80 ring-4 ring-teal-500/20">
