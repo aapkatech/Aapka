@@ -1,6 +1,5 @@
 import React from 'react';
 import { PhoneCall } from 'lucide-react';
-import { WhyAapka } from '../components/WhyAapka';
 import { VideoTestimonials } from '../components/testimonials/VideoTestimonials';
 import { PatientTestimonials } from '../components/PatientTestimonials';
 import type { Language, Translations } from '../i18n/translations';
@@ -35,19 +34,13 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
         </div>
       </section>
 
-      {/* 1. Why AAPKA Core Pillars (Hospital Access, Care Navigators, Price Protection) */}
-      <WhyAapka
-        lang={lang}
-        onOpenBooking={onOpenBooking}
-      />
-
-      {/* 2. Patient Video Testimonials (Playable Directly on the Website) */}
+      {/* 1. Patient Video Testimonials (Playable Directly on the Website) */}
       <VideoTestimonials
         lang={lang}
         onOpenBooking={onOpenBooking}
       />
 
-      {/* 3. Verified Patient Testimonials Showcase */}
+      {/* 2. Verified Patient Testimonials Showcase */}
       <PatientTestimonials
         lang={lang}
         t={t?.testimonials}
