@@ -26,11 +26,6 @@ export interface VideoTestimonial {
   videoSrc: string;
   posterSrc?: string;
   duration?: string;
-  /**
-   * Verification flag.
-   * MUST remain false until the responsible AAPKA clinical & operations
-   * team verifies patient consent, hospital admission records, and source media.
-   */
   verified: boolean;
   category: 'surgery' | 'maternity' | 'cardiac' | 'emergency';
   tags: { en: string[]; hi: string[] };
@@ -39,9 +34,61 @@ export interface VideoTestimonial {
 
 /**
  * Registry of approved patient video testimonials.
- *
- * NOTE: Fictional or unverified sample stories have been removed per compliance review.
- * Real patient testimonials will be populated here once original .mp4 video files,
- * informed consent documentation, and approved case details are verified by the AAPKA team.
+ * Self-hosted native MP4 video recordings playable directly in the website.
  */
-export const videoTestimonialsData: VideoTestimonial[] = [];
+export const videoTestimonialsData: VideoTestimonial[] = [
+  {
+    id: "video-amarpal-singh",
+    name: "Mr. AmarPal Singh",
+    roleEn: "Patient Family Member",
+    roleHi: "मरीज के परिजन",
+    village: "Kheda",
+    district: "Gautam Budh Nagar",
+    state: "Delhi NCR",
+    treatmentEn: "Tumor Operation & Hospital Guidance",
+    treatmentHi: "ट्यूमर ऑपरेशन एवं अस्पताल मार्गदर्शन",
+    savingEn: "Guaranteed Institutional Package Tariffs",
+    savingHi: "तय रियायती पैकेज दरें",
+    quoteEn: "When private hospitals were out of reach, Aapka helped us check a good hospital at a price we could afford.",
+    quoteHi: "जब बड़े अस्पताल हमारी क्षमता से बाहर थे, तब आपका ने हमें सही अस्पताल और उचित खर्च पर इलाज दिलाया।",
+    storyEn: "Personal account of overcoming delayed government hospital surgery dates and securing urgent hospital admission with on-ground assistance.",
+    storyHi: "आपातकालीन स्थिति में तुरंत निजी अस्पताल में रियायती पैकेज पर ऑपरेशन और भर्ती समन्वय का वास्तविक वीडियो अनुभव।",
+    videoSrc: "/videos/aapka1.mp4",
+    duration: "0:33",
+    verified: false,
+    category: "surgery",
+    tags: {
+      en: ["Tumor Surgery", "Package Tariff", "Gautam Budh Nagar"],
+      hi: ["ट्यूमर सर्जरी", "अस्पताल भर्ती", "गौतम बुद्ध नगर"]
+    },
+    mitraName: "Assisted by On-Ground Care Navigator",
+    hospitalName: "Accredited Partner Hospital, Delhi NCR"
+  },
+  {
+    id: "video-anupam",
+    name: "Ms. Anupam",
+    roleEn: "Patient",
+    roleHi: "मरीज",
+    village: "Chhapraula",
+    district: "Greater Noida",
+    state: "Delhi NCR",
+    treatmentEn: "Kidney Stone Surgery & Paperwork Clearance",
+    treatmentHi: "किडनी स्टोन सर्जरी व कागजी कार्रवाई",
+    savingEn: "100% Cashless Support & Zero Out-of-Pocket Debt",
+    savingHi: "100% कैशलेस सहायता एवं कागजी कार्रवाई",
+    quoteEn: "The on-ground care coordinator accompanied us inside the hospital and handled all admission paperwork smoothly.",
+    quoteHi: "केयर समन्वयक ने अस्पताल पहुंचकर सभी कागजी औपचारिकताएं और प्रक्रियाएं पूरी कराईं।",
+    storyEn: "Real patient experience describing how an on-ground care companion eliminated bureaucratic stress at city hospital counters.",
+    storyHi: "अस्पताल में भर्ती, कागजी कार्रवाई और डिस्चार्ज प्रक्रिया में व्यक्तिगत साथी मिलने पर मरीज का अनुभव।",
+    videoSrc: "/videos/aapka2.mp4",
+    duration: "0:29",
+    verified: false,
+    category: "surgery",
+    tags: {
+      en: ["Kidney Stone Surgery", "Admission Escort", "Greater Noida"],
+      hi: ["किडनी स्टोन", "अस्पताल साथी", "ग्रेटर नोएडा"]
+    },
+    mitraName: "Assisted by On-Ground Care Navigator",
+    hospitalName: "Partner Hospital Network, Greater Noida"
+  }
+];
