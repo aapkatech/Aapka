@@ -45,8 +45,8 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {isHi
-              ? `वार्षिक ₹4 करोड़ (₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')}/घंटा) की निरंतर गति से मरीजों की बचत। जैसे ही हर 1 घंटा पूरा होता है, वह राशि इस वर्ष और लाइफटाइम कुल बचत में स्वतः जुड़ जाती है।`
-              : `Aapka saves patients ₹4 Crores per year (~₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')}/hour). With every completed hour, savings automatically accumulate into the current year and the ₹13+ Crore lifetime total.`}
+              ? `वार्षिक ₹1.64 करोड़ (₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')}/घंटा) की निरंतर गति से बचत। अब तक 1,270+ मरीजों के ₹4.1 करोड़ से अधिक के चिकित्सा खर्च सुरक्षित।`
+              : `Aapka saves patients ₹1.64 Crores per year (~₹${snapshot.hourlyRateRounded.toLocaleString('en-IN')}/hour). Over ₹4.1 Crores in cumulative medical expenses saved across 1,270+ patients.`}
           </p>
         </div>
 
@@ -121,15 +121,15 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
             }
           />
 
-          {/* DIAL 3: Cumulative Lifetime Savings (₹13+ Crores) */}
+          {/* DIAL 3: Cumulative Lifetime Savings (₹4.1+ Crores from 1,270+ Patients) */}
           <SavingsDialCard
             badgeIcon={ShieldCheck}
             badgeText={isHi ? 'लाइफटाइम संचयी बचत' : 'Lifetime Total Impact'}
             badgeTone="text-emerald-800 bg-emerald-50 border-emerald-200/80"
             title={
               isHi
-                ? `अब तक ₹${lifetimeCr} करोड़ लाइफटाइम बचत`
-                : `₹${lifetimeCr} Cr+ Saved in Lifetime`
+                ? `अब तक ₹4.1 करोड़ लाइफटाइम बचत`
+                : `₹4.1 Cr+ Saved in Lifetime`
             }
             dial={
               <DialRingSvg
@@ -147,10 +147,10 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
                   {isHi ? 'लाइफटाइम कुल बचत' : 'Saved in Lifetime'}
                 </span>
                 <span className="text-2xl sm:text-[1.75rem] font-bold font-serif text-slate-950 tracking-tight leading-tight mt-0.5 tabular-nums">
-                  ₹{lifetimeCr} Cr
+                  ₹4.1 Cr
                 </span>
                 <span className="mt-1 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[10px] font-semibold text-emerald-800">
-                  {isHi ? '₹13+ करोड़ मील का पत्थर' : '₹13+ Crore Milestone'}
+                  {isHi ? '1,270+ मरीज लाभान्वित' : '1,270+ Patients Protected'}
                 </span>
               </DialRingSvg>
             }

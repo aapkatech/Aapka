@@ -1,6 +1,7 @@
-export const ANNUAL_SAVINGS_RUPEES = 40_000_000; // ₹4 Crores per year
-export const LIFETIME_BASE_AT_2026_START = 100_000_000; // ₹10 Crores cumulative baseline prior to 2026
-export const LIFETIME_ANCHOR_DATE = new Date(2026, 0, 1, 0, 0, 0, 0);
+export const ANNUAL_SAVINGS_RUPEES = 16_400_000; // ₹1.64 Crores per year (derived from ₹4.1 Cr lifetime over 2.5 yrs)
+export const TOTAL_LIFETIME_SAVINGS_RUPEES = 41_000_000; // ₹4.1 Crores cumulative total saved
+export const TOTAL_PATIENTS_SAVED = 1_270; // 1,270 patients saved from debt
+export const TOTAL_PATIENTS_CONSULTED = 15_000; // 15,000+ total patient consultations
 
 const MS_PER_HOUR = 3_600_000;
 
@@ -32,9 +33,9 @@ export function getHoursInYear(year: number): number {
 export function getSavingsSnapshot(now: Date = new Date()): SavingsSnapshot {
   const currentYear = now.getFullYear();
   const hoursInYear = getHoursInYear(currentYear);
-  const hourlyRate = ANNUAL_SAVINGS_RUPEES / hoursInYear;
+  const hourlyRate = ANNUAL_SAVINGS_RUPEES / hoursInYear; // ~₹1,872/hour
   const hourlyRateRounded = Math.round(hourlyRate);
-  const dailyRateRounded = Math.round(hourlyRate * 24);
+  const dailyRateRounded = Math.round(hourlyRate * 24); // ~₹44,932/day
 
   const minutesIntoHour = now.getMinutes();
   const secondsIntoMinute = now.getSeconds();
@@ -47,13 +48,8 @@ export function getSavingsSnapshot(now: Date = new Date()): SavingsSnapshot {
   const yearProgress = Math.min(1, completedHoursThisYear / hoursInYear);
   const ytdSavedRupees = Math.round(completedHoursThisYear * hourlyRate);
 
-  const completedHoursSinceAnchor = Math.max(
-    0,
-    Math.floor((now.getTime() - LIFETIME_ANCHOR_DATE.getTime()) / MS_PER_HOUR)
-  );
-  const lifetimeSavedRupees = Math.round(
-    LIFETIME_BASE_AT_2026_START + completedHoursSinceAnchor * hourlyRate
-  );
+  // Lifetime cumulative savings anchored at ₹4.1 Cr baseline with live hourly progression
+  const lifetimeSavedRupees = TOTAL_LIFETIME_SAVINGS_RUPEES + currentHourAccumulated;
 
   const formattedDateEn = now.toLocaleDateString('en-IN', {
     day: 'numeric',
@@ -84,12 +80,12 @@ export function getSavingsSnapshot(now: Date = new Date()): SavingsSnapshot {
   };
 }
 
-/** Formats a rupee value in Crores with 2 decimal precision (e.g. 13.46). */
+/** Formats a rupee value in Crores with 2 decimal precision (e.g. 1.64 or 4.10). */
 export function formatCrores(rupees: number): string {
   return (rupees / 10_000_000).toFixed(2);
 }
 
-/** Formats an integer rupee figure using the Indian numbering system (e.g. 13,46,21,005). */
+/** Formats an integer rupee figure using the Indian numbering system (e.g. 4,10,00,000). */
 export function formatINR(rupees: number): string {
   return new Intl.NumberFormat('en-IN').format(rupees);
 }
