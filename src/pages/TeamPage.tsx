@@ -124,7 +124,7 @@ export const TeamPage: React.FC = () => {
       fallbackImage: "/founders/shruti-thakur.jpg",
       linkedin: "https://www.linkedin.com/in/shruti-thakur-604a8422/",
       email: "shruti@aapka.co.in",
-      bio: "Former leader at Aim Foundation and Indradhanusha Initiatives. Commands Aapka's on-ground operations, emergency triage desk, and the recruitment and training of 1,270+ certified Gram Mitras across 1,050+ villages, championing maternal health protocols and frontline patient navigation."
+      bio: "Former leader at Aim Foundation and Indradhanusha Initiatives. Commands Aapka's on-ground operations, emergency triage desk, and the recruitment and training of 1,000+ certified Gram Mitras across 1,050+ villages, championing maternal health protocols and frontline patient navigation."
     },
     {
       name: "Yudhishthir Sharma",

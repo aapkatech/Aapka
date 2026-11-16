@@ -19,7 +19,7 @@ export const ContactPage: React.FC = () => {
             </h1>
             
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Immediate hospital admission triage, emergency ambulance coordination, care navigation, and institutional hospital empanelment across 25+ cities.
+              Immediate hospital admission triage, emergency ambulance coordination, care navigation, and institutional hospital empanelment across 15+ cities.
             </p>
           </div>
         </div>

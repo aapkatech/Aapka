@@ -115,17 +115,22 @@ export const AboutPage: React.FC = () => {
             <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-slate-700">
               <span className="flex items-center gap-1.5 text-teal-800">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-                ₹13+ Crores Patient Debt Prevented
+                ₹4.1 Cr+ Patient Debt Prevented (1,270+ Patients)
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5 text-teal-800">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-                50+ Accredited Network Hospitals
+                250+ Accredited Network Hospitals
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5 text-teal-800">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-                25+ Cities Across North India
+                15+ Cities Across Bharat
+              </span>
+              <span className="text-slate-300 hidden sm:inline">•</span>
+              <span className="flex items-center gap-1.5 text-teal-800">
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                15,000+ Consultations Guided
               </span>
             </div>
           </div>

@@ -166,9 +166,9 @@ export const translations: Record<Language, Translations> = {
       subheadline: "Let us take care of you.",
       primaryCta: "Explore Our Global Network",
       secondaryCta: "How It Works →",
-      communitiesSupported: "25+ Cities",
-      villagesCovered: "500+ Villages",
-      hospitalPartners: "50+ Vetted Hospital Partners",
+      communitiesSupported: "15+ Cities",
+      villagesCovered: "1,000+ Gram Mitras",
+      hospitalPartners: "250+ Vetted Hospital Partners",
       floatingCare: "24/7 Care Coordination",
       floatingCareSub: "Verified Swasthya-Mitras On Call",
       floatingVetted: "100% Vetted Medical Partners",
@@ -363,7 +363,7 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "Aapka is India's trusted healthcare access platform, connecting patients and families across 25+ cities and semi-urban communities with verified hospital networks, dedicated care navigators, and transparent pre-negotiated treatment rates.",
+      tagline: "Aapka is India's trusted healthcare access platform, connecting patients and families across 15+ cities and semi-urban communities with verified hospital networks, dedicated care navigators, and transparent pre-negotiated treatment rates.",
       company: "SP Rural India Services Private Limited",
       location: "201 Convention Centre, JNU New Delhi, 110067",
       phone: "+91 9667033044",
@@ -416,7 +416,7 @@ export const translations: Record<Language, Translations> = {
     testimonials: {
       tag: "Why Aapka",
       title: "Why Families Choose Aapka",
-      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 25+ cities.",
+      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 15+ cities.",
       verifiedBadge: "Verified Patient",
       items: [
         {
@@ -502,9 +502,9 @@ export const translations: Record<Language, Translations> = {
       subheadline: "आपकी देखभाल, हमारी ज़िम्मेदारी।",
       primaryCta: "हमारा हेल्थकेयर नेटवर्क देखें",
       secondaryCta: "यह कैसे काम करता है →",
-      communitiesSupported: "25+ शहर",
-      villagesCovered: "500+ गांव",
-      hospitalPartners: "50+ सत्यापित अस्पताल भागीदार",
+      communitiesSupported: "15+ शहर",
+      villagesCovered: "1,000+ ग्राम मित्र",
+      hospitalPartners: "250+ सत्यापित अस्पताल भागीदार",
       floatingCare: "24/7 स्वास्थ्य मार्गदर्शन",
       floatingCareSub: "सत्यापित स्वास्थ्य-मित्र सदैव उपलब्ध",
       floatingVetted: "100% सत्यापित चिकित्सा भागीदार",
@@ -699,7 +699,7 @@ export const translations: Record<Language, Translations> = {
       ]
     },
     footer: {
-      tagline: "आपका (Aapka) 25+ शहरों और उभरते कस्बों में मरीजों और परिवारों को सत्यापित अस्पताल नेटवर्क, समर्पित केयर समन्वयकों और पारदर्शी दरों से जोड़ने वाला भारत का विश्वसनीय स्वास्थ्य सेवा मंच है।",
+      tagline: "आपका (Aapka) 15+ शहरों और उभरते कस्बों में मरीजों और परिवारों को सत्यापित अस्पताल नेटवर्क, समर्पित केयर समन्वयकों और पारदर्शी दरों से जोड़ने वाला भारत का विश्वसनीय स्वास्थ्य सेवा मंच है।",
       company: "एसपी रूरल इंडिया सर्विसेज प्राइवेट लिमिटेड",
       location: "201 कन्वेंशन सेंटर, जेएनयू, नई दिल्ली - 110067",
       phone: "+91 9667033044",
@@ -752,7 +752,7 @@ export const translations: Record<Language, Translations> = {
     testimonials: {
       tag: "AAPKA ही क्यों?",
       title: "परिवार 'आपका' को क्यों चुनते हैं?",
-      subtitle: "25+ शहरों में 'आपका' केयर समन्वयकों द्वारा पारदर्शी दरों और अस्पताल सहायता से उपचार कराने वाले मरीजों और परिवारों के वास्तविक अनुभव।",
+      subtitle: "15+ शहरों में 'आपका' केयर समन्वयकों द्वारा पारदर्शी दरों और अस्पताल सहायता से उपचार कराने वाले मरीजों और परिवारों के वास्तविक अनुभव।",
       verifiedBadge: "सत्यापित मरीज",
       items: [
         {

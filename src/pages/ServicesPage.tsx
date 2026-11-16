@@ -21,7 +21,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onSelectService, t }
     {
       step: "01",
       title: "Pre-Negotiated Hospital Tariffs",
-      subtitle: "Written price protection with pre-negotiated package discounts across 50+ network hospitals.",
+      subtitle: "Written price protection with pre-negotiated package discounts across 250+ network hospitals.",
       image: "/services/hospitalization.webp",
       badge: "Surgical Protection",
       icon: Building2,

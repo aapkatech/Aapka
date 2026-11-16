@@ -42,14 +42,14 @@ export const content = {
     impact: {
       title: "Recognized Nationwide for Transforming Grassroots Healthcare",
       subtitle: "Backing from India's premier healthcare and entrepreneurship institutions",
-      metricVillages: "500+",
-      metricVillagesLabel: "Villages Empowered",
-      metricHospitals: "46+",
+      metricVillages: "1,000+",
+      metricVillagesLabel: "On-Ground Gram Mitras",
+      metricHospitals: "250+",
       metricHospitalsLabel: "Verified Partner Hospitals",
-      metricPincodes: "40,000+",
-      metricPincodesLabel: "Pincodes Supported",
+      metricPincodes: "15+ Cities",
+      metricPincodesLabel: "Network Coverage",
       metricLives: "15,000+",
-      metricLivesLabel: "Patients Treated with Dignity"
+      metricLivesLabel: "Patients Consulted"
     },
     services: {
       badge: "Comprehensive Care Network",
@@ -145,7 +145,7 @@ export const content = {
     testimonials: {
       badge: "Real Stories of Hope",
       title: "Voices of Families We Stood Beside",
-      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 25+ cities.",
+      subtitle: "Authentic accounts from patients and families who received transparent pricing, dedicated hospital guidance, and compassionate care through Aapka across 15+ cities.",
       items: [
         {
           id: 1,
@@ -269,14 +269,14 @@ export const content = {
     impact: {
       title: "जमीनी स्वास्थ्य सेवा में बदलाव के लिए राष्ट्रीय स्तर पर सम्मानित",
       subtitle: "भारत के प्रतिष्ठित स्वास्थ्य और अनुसंधान संस्थानों द्वारा मान्यता प्राप्त",
-      metricVillages: "500+",
-      metricVillagesLabel: "सशक्त गांव",
-      metricHospitals: "46+",
+      metricVillages: "1,000+",
+      metricVillagesLabel: "ग्राम मित्र नेटवर्क",
+      metricHospitals: "250+",
       metricHospitalsLabel: "सत्यापित अस्पताल",
-      metricPincodes: "40,000+",
-      metricPincodesLabel: "पिनकोड में सेवा",
+      metricPincodes: "15+ शहर",
+      metricPincodesLabel: "नेटवर्क विस्तार",
       metricLives: "15,000+",
-      metricLivesLabel: "मरीजों को मिला सम्मानजनक इलाज"
+      metricLivesLabel: "मरीजों को परामर्श एवं सहायता"
     },
     services: {
       badge: "सम्पूर्ण स्वास्थ्य नेटवर्क",
