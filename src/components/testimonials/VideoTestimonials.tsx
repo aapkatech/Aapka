@@ -44,8 +44,8 @@ export const VideoTestimonials: React.FC<VideoTestimonialsProps> = ({
           </p>
         </div>
 
-        {/* 2 Native Video Cards Grid (Playable Directly on the Website) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 sm:gap-10 items-stretch">
+        {/* 3 Native Video Cards Grid (Playable Directly on the Website) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto gap-8 items-stretch">
           {videoTestimonialsData.map((item) => (
             <VideoTestimonialCard
               key={item.id}
