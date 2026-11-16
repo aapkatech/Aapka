@@ -88,11 +88,11 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+    <section className="py-8 sm:py-10 lg:py-12 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
         
         {/* Section Header (HUMAN CARE, HONEST GUIDANCE tag removed per request) */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.2]">
             {content.title}
           </h2>
@@ -102,13 +102,13 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
         </div>
 
         {/* 3 Refined & Elevated Healthcare Cards (Redesigned for High Visual Appeal) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch">
           {content.cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <div 
                 key={idx}
-                className="group relative p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] hover:border-teal-400/60 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] hover:border-teal-400/60 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Subtle Top Accent Gradient Line */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-500/20 via-teal-500/60 to-emerald-500/20 group-hover:via-teal-500 transition-all" />

@@ -98,11 +98,11 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
   ];
 
   return (
-    <section id="recognition" className="py-20 sm:py-28 bg-slate-50/70 border-t border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+    <section id="recognition" className="py-10 sm:py-12 lg:py-14 bg-slate-50/70 border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Awards &amp; Recognition
           </h2>
@@ -112,7 +112,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
         </div>
 
         {/* 3 Real Ceremony Photo Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {photoAwards.map((award) => (
             <div 
               key={award.id}

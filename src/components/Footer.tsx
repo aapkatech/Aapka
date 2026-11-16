@@ -46,8 +46,8 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   ];
 
   return (
-    <footer id="contact" className="bg-white border-t border-zinc-100 pt-20 pb-16 text-zinc-600 text-xs font-normal">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+    <footer id="contact" className="bg-white border-t border-zinc-100 pt-10 sm:pt-12 pb-8 sm:pb-10 text-zinc-600 text-xs font-normal">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
         
         {/* Multi-Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">

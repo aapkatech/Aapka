@@ -20,9 +20,9 @@ export const WhatsAppContactSection: React.FC = () => {
   const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="py-8 sm:py-10 lg:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/60 text-slate-900 p-8 sm:p-12 lg:p-16 shadow-sm border border-emerald-200/90">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/60 text-slate-900 p-6 sm:p-8 lg:p-10 shadow-sm border border-emerald-200/90">
           
           {/* Subtle Warm Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-10" />

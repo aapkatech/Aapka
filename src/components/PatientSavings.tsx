@@ -33,9 +33,9 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
   return (
     <section
       id="savings"
-      className="py-16 sm:py-22 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-slate-100 scroll-mt-20"
+      className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-slate-100 scroll-mt-20"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">

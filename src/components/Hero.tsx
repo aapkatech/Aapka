@@ -34,15 +34,15 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
-    <section className="relative bg-white pt-2 pb-14 sm:pt-3 sm:pb-20 lg:pt-3 lg:pb-24 overflow-hidden">
+    <section className="relative bg-white pt-1 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
       {/* Subtle architectural ambient background glow */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           
           {/* Left Column: Classic, High-Trust Editorial Narrative */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 text-left pt-2 sm:pt-4 lg:pt-6 xl:pt-8 pb-2 lg:pb-6 relative z-30">
+          <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-5 text-left pt-1 sm:pt-2 lg:pt-3 pb-1 lg:pb-2 relative z-30">
             
             {/* Pre-headline (Optional) */}
             {preHeadline && (
@@ -191,13 +191,13 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
           </div>
 
-          {/* Right Column: Hero Visual (50% - 55% width, 550px - 620px height, slide-in from left, strictly clipped) */}
+          {/* Right Column: Hero Visual (50% - 55% width, responsive snug height, slide-in from left, strictly clipped) */}
           <div className="lg:col-span-6 xl:col-span-7 relative flex items-center justify-center lg:justify-end w-full">
             <motion.div
               initial={{ x: -80, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] xl:h-[620px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-5 bg-gradient-to-tr from-amber-50/70 via-teal-50/30 to-sky-50/50 border border-slate-200/80 shadow-xl shadow-slate-200/50"
+              className="relative w-full h-[400px] sm:h-[460px] lg:h-[490px] xl:h-[530px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-4 bg-gradient-to-tr from-amber-50/70 via-teal-50/30 to-sky-50/50 border border-slate-200/80 shadow-xl shadow-slate-200/50"
             >
               {/* Internal Decorative Layered Aura Shapes */}
               <div className="absolute -top-12 -right-12 w-56 h-56 bg-gradient-to-br from-amber-200/40 to-teal-200/30 rounded-full blur-2xl pointer-events-none" />
@@ -208,7 +208,7 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
                 <img
                   src="/hero-family-cutout.png"
                   alt="Aapka Family Healthcare - Compassionate care for rural families"
-                  className="w-full h-full max-h-[580px] object-contain transition-transform duration-500 ease-out hover:scale-105 drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]"
+                  className="w-full h-full max-h-[500px] object-contain transition-transform duration-500 ease-out hover:scale-105 drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]"
                   loading="eager"
                 />
               </div>
