@@ -2,11 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { 
   Play, 
   MapPin, 
-  ShieldCheck, 
   Clock, 
   UserCheck, 
   Building2, 
-  Subtitles,
   AlertCircle
 } from 'lucide-react';
 import type { VideoTestimonial } from './testimonialsData';
@@ -83,10 +81,10 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
   const tags = lang === 'hi' ? testimonial.tags.hi : testimonial.tags.en;
 
   return (
-    <article className="group bg-white rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden">
+    <article className="group bg-white rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden">
       
-      {/* 1. HTML5 Video Player Container */}
-      <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
+      {/* 1. Native HTML5 Video Container (Optimized for Mobile Portrait 9:16 Video) */}
+      <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[460px] w-full bg-slate-950 overflow-hidden flex items-center justify-center">
         
         {/* Native HTML5 Video Element */}
         <video
@@ -100,7 +98,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
           onPause={handleNativePause}
           onEnded={handleVideoEnded}
           onError={() => setHasError(true)}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-black"
         >
           {testimonial.captions?.map((cap, idx) => (
             <track
@@ -119,7 +117,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
         {!hasStarted && !hasError && (
           <div 
             onClick={togglePlay}
-            className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-between p-4 sm:p-5 cursor-pointer z-10"
+            className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-slate-950/40 flex flex-col justify-between p-5 cursor-pointer z-10"
             role="button"
             tabIndex={0}
             aria-label={`Play testimonial video of ${testimonial.name}`}
@@ -132,41 +130,22 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
           >
             {/* Top Bar inside Video Thumbnail */}
             <div className="flex items-center justify-between gap-2">
-              {testimonial.verified ? (
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/80 backdrop-blur-md text-[11px] font-semibold text-teal-300 border border-teal-500/30">
-                  <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
-                  <span>{lang === 'hi' ? 'सत्यापित विवरण' : 'Verified by AAPKA'}</span>
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/80 backdrop-blur-md text-[11px] font-semibold text-amber-300 border border-amber-500/30">
-                  <Clock className="w-3.5 h-3.5 text-amber-400" />
-                  <span>{lang === 'hi' ? 'सत्यापन प्रक्रियाधीन' : 'Pending Verification'}</span>
+              {testimonial.duration && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-semibold text-slate-100 border border-white/10">
+                  <Clock className="w-3.5 h-3.5 text-teal-400" />
+                  <span>{testimonial.duration}</span>
                 </span>
               )}
 
-              <div className="flex items-center gap-2">
-                {testimonial.captions && testimonial.captions.length > 0 && (
-                  <span 
-                    title="Subtitles available"
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-900/80 text-[10px] font-bold text-slate-300 backdrop-blur-md"
-                  >
-                    <Subtitles className="w-3 h-3 text-teal-400" />
-                    <span>CC</span>
-                  </span>
-                )}
-                {testimonial.duration && (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-900/80 text-[10px] font-semibold text-slate-200 backdrop-blur-md">
-                    <Clock className="w-3 h-3 text-slate-400" />
-                    <span>{testimonial.duration}</span>
-                  </span>
-                )}
-              </div>
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-teal-500/20 text-[11px] font-semibold text-teal-200 backdrop-blur-md border border-teal-400/30">
+                <span>{lang === 'hi' ? 'मरीज वीडियो' : 'Patient Video'}</span>
+              </span>
             </div>
 
             {/* Centered Large Play Button */}
             <div className="flex items-center justify-center my-auto">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-teal-600/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-teal-500 transition-all duration-300 border-2 border-white/80 ring-4 ring-teal-500/20">
-                <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-0.5" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-teal-600/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-teal-500 transition-all duration-300 border-2 border-white/80 ring-4 ring-teal-500/20">
+                <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
               </div>
             </div>
 
@@ -186,15 +165,10 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
           <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-xs flex flex-col items-center justify-center p-6 text-center text-white z-30 space-y-2">
             <AlertCircle className="w-8 h-8 text-amber-400" />
             <p className="text-xs font-semibold text-slate-200">
-              {lang === 'hi' ? 'वीडियो फ़ाइल उपलब्ध नहीं है' : 'Video File Not Yet Mounted'}
+              {lang === 'hi' ? 'वीडियो फ़ाइल लोड नहीं हो सकी' : 'Video Loading Error'}
             </p>
             <p className="text-[11px] text-slate-400 max-w-xs leading-relaxed font-mono">
               {testimonial.videoSrc}
-            </p>
-            <p className="text-[10px] text-slate-500 max-w-xs">
-              {lang === 'hi'
-                ? 'मूल MP4 फ़ाइल जोड़े जाने के बाद ही वीडियो देखा जा सकेगा।'
-                : 'Playback requires the approved .mp4 asset to be present in /public/videos/.'}
             </p>
           </div>
         )}
@@ -202,7 +176,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
       </div>
 
       {/* 2. Text Content & Testimonial Details */}
-      <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 space-y-6">
+      <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 space-y-5">
         
         {/* Patient Profile & Condition */}
         <div className="space-y-3">
@@ -217,7 +191,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
                 <p className="text-xs text-slate-500 font-medium">{role}</p>
               </div>
 
-              <span className="shrink-0 px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 text-[11px] font-semibold border border-teal-200/80">
+              <span className="shrink-0 px-2.5 py-1 rounded-full bg-teal-50 text-teal-800 text-[11px] font-semibold border border-teal-200/80">
                 {treatment}
               </span>
             </div>
@@ -225,7 +199,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
 
           {/* Quotation */}
           {quote && (
-            <blockquote className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-normal italic border-l-2 border-teal-500 pl-3 py-0.5">
+            <blockquote className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-normal italic border-l-2 border-teal-600 pl-3 py-0.5">
               "{quote}"
             </blockquote>
           )}
@@ -254,7 +228,7 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
         </div>
 
         {/* 3. Footer: Care Coordination Metadata */}
-        <div className="pt-4 border-t border-slate-100 space-y-2 text-[11px] text-slate-500">
+        <div className="pt-4 border-t border-slate-100 space-y-1.5 text-[11px] text-slate-500">
           {testimonial.mitraName && (
             <div className="flex items-center gap-1.5 text-slate-700 font-medium">
               <UserCheck className="w-3.5 h-3.5 text-teal-600 shrink-0" />
