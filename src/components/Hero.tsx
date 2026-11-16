@@ -23,6 +23,8 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const hospitalPartners = t?.hospitalPartners || "250+ Vetted Hospital Partners";
   const downloadApp = t?.downloadApp || "Download the App";
   const connectLabel = t?.connectLabel || "Connect";
+  const govPartnerLine1 = t?.govPartnerLine1 || "Partnered with Ministry of Commerce and";
+  const govPartnerLine2 = t?.govPartnerLine2 || "Ministry of Electronic and Information Technology";
 
   const isIOS = isIOSDevice();
   const appStoreUrl = getAppStoreUrl();
@@ -39,18 +41,19 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
           
           {/* Left Column: Classic, High-Trust Editorial Narrative */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-4 sm:space-y-5 text-left pt-1 sm:pt-2 lg:pt-3 pb-1 lg:pb-2 relative z-30">
+          <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-between text-left pt-1 sm:pt-2 lg:pt-3 pb-1 lg:pb-2 relative z-30">
             
-            {/* Pre-headline (Optional) */}
-            {preHeadline && (
-              <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-900/90 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-                <span>{preHeadline}</span>
-              </p>
-            )}
+            <div className="space-y-4 sm:space-y-5">
+              {/* Pre-headline (Optional) */}
+              {preHeadline && (
+                <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-900/90 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+                  <span>{preHeadline}</span>
+                </p>
+              )}
 
             {/* Main Headline: Classic, prestigious professional typography */}
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.6rem] xl:text-[4rem] font-medium sm:font-semibold text-slate-900 tracking-[-0.02em] leading-[1.14] sm:leading-[1.12]">
@@ -181,12 +184,23 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               </div>
             </div>
 
-            {/* Official Government Partnership */}
-            <div className="pt-1">
-              <p className="text-xs sm:text-[13px] text-slate-600 font-medium flex items-center gap-2">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-700 shrink-0" />
-                <span>Partnered with Ministry of Commerce and Ministry of Electronic and Information Technology</span>
-              </p>
+            </div>
+
+            {/* Official Government Partnership (2 Lines, Spread to Anchor and Cover the Space) */}
+            <div className="pt-3 sm:pt-4 mt-auto">
+              <div className="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 via-teal-50/25 to-slate-50/80 border border-slate-200/90 shadow-2xs">
+                <div className="flex items-start gap-2.5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 shrink-0 mt-1.5 animate-pulse" />
+                  <div className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed">
+                    <span className="font-semibold text-slate-900 block">
+                      {govPartnerLine1}
+                    </span>
+                    <span className="text-slate-600 block">
+                      {govPartnerLine2}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>

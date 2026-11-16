@@ -27,6 +27,8 @@ export interface Translations {
     floatingVetted: string;
     downloadApp?: string;
     connectLabel?: string;
+    govPartnerLine1?: string;
+    govPartnerLine2?: string;
   };
   pillars: {
     tag: string;
@@ -173,7 +175,9 @@ export const translations: Record<Language, Translations> = {
       floatingCareSub: "Verified Swasthya-Mitras On Call",
       floatingVetted: "100% Vetted Medical Partners",
       downloadApp: "Download the App",
-      connectLabel: "Connect"
+      connectLabel: "Connect",
+      govPartnerLine1: "Partnered with Ministry of Commerce and",
+      govPartnerLine2: "Ministry of Electronic and Information Technology"
     },
     pillars: {
       tag: "Our Foundation",
@@ -509,7 +513,9 @@ export const translations: Record<Language, Translations> = {
       floatingCareSub: "सत्यापित स्वास्थ्य-मित्र सदैव उपलब्ध",
       floatingVetted: "100% सत्यापित चिकित्सा भागीदार",
       downloadApp: "ऐप डाउनलोड करें",
-      connectLabel: "संपर्क करें"
+      connectLabel: "संपर्क करें",
+      govPartnerLine1: "वाणिज्य मंत्रालय (Ministry of Commerce) एवं",
+      govPartnerLine2: "इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय (MeitY) के साथ भागीदार"
     },
     pillars: {
       tag: "हमारी प्रतिबद्धता",
