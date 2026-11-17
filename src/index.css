@@ -1,21 +1,126 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Lora', 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  --font-serif: 'Newsreader', 'Lora', 'Playfair Display', Georgia, Cambria, serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     letter-spacing: -0.011em;
   }
 
   body {
-    background-color: #ffffff;
-    color: #09090b;
+    background-color: #f8fafc;
+    color: #0f172a;
     overflow-x: hidden;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AURA WAVE & CLINICAL LATTICE DESIGN SYSTEM (Aapka Health Hub)
+   - Professional Clinical Palette: Azure (#0284C7), Care Cyan (#06B6D4), Midnight Navy (#0F172A)
+   - 24px Micro-Lattice Dot Matrix Background: Eliminates flat white glare while maintaining clinical hygiene
+   - Gentle Ambient Wave Ribbons: Subtle, human-centric, anti-fatigue depth
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Global Clinical Lattice Canvas */
+.clinical-lattice-canvas {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(rgba(2, 132, 199, 0.07) 1.2px, transparent 1.2px),
+    linear-gradient(180deg, #f8fafc 0%, #f0f9ff 40%, #f8fafc 100%);
+  background-size: 24px 24px, 100% 100%;
+}
+
+/* Ambient Aura Glow Blobs */
+.aura-glow-top-right {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(2, 132, 199, 0.06) 45%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.aura-glow-bottom-left {
+  position: absolute;
+  bottom: -60px;
+  left: -80px;
+  width: 550px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(65px);
+}
+
+/* Polished Card with Precision Top Rim */
+.aura-lattice-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(224, 242, 254, 0.95);
+  box-shadow: 0 10px 25px -4px rgba(2, 132, 199, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.aura-lattice-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 16px 32px -6px rgba(2, 132, 199, 0.1), 0 6px 12px -3px rgba(15, 23, 42, 0.03);
+}
+
+/* Card Top Gradient Rim */
+.aura-card-rim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #06b6d4 0%, #0284c7 50%, #1e40af 100%);
+  pointer-events: none;
+}
+
+/* Primary Action Buttons */
+.btn-aura-primary {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+  transition: all 0.2s ease;
+}
+
+.btn-aura-primary:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
+  transform: translateY(-1px);
+}
+
+/* Secondary Action Buttons */
+.btn-aura-secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-aura-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Status Pill */
+.aura-status-pill {
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  font-weight: 700;
 }
 
 /* Subtle micro-interactions */
@@ -24,12 +129,12 @@
 }
 
 .subtle-ring:hover {
-  box-shadow: 0 0 0 1px rgba(9, 9, 11, 0.08), 0 2px 8px -2px rgba(9, 9, 11, 0.05);
+  box-shadow: 0 0 0 1px rgba(2, 132, 199, 0.15), 0 4px 12px -2px rgba(2, 132, 199, 0.08);
 }
 
 /* Precision hairline borders */
 .hairline-border {
-  border: 1px solid rgba(228, 228, 231, 0.65);
+  border: 1px solid rgba(224, 242, 254, 0.8);
 }
 
 /* Pulse indicator for live clinical coordination */

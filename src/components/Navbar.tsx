@@ -35,12 +35,15 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 relative ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-xl border-b border-zinc-100 shadow-xs py-2.5' 
-          : 'bg-white/95 backdrop-blur-sm border-b border-transparent py-2.5 sm:py-3'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-sky-100 shadow-xs py-2.5' 
+          : 'bg-white/90 backdrop-blur-md border-b border-sky-100/60 py-2.5 sm:py-3'
       }`}
     >
+      {/* Precision Beveled Aura Top Rim Gradient */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Left: Official Aapka Logo Lockup */}
         <Link to="/" className="flex items-center group py-0.5" aria-label="Aapka Home">
@@ -59,13 +62,13 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
                 to={link.to} 
                 className={`transition-colors relative py-1 ${
                   isActive 
-                    ? 'text-slate-950 font-semibold' 
-                    : 'text-slate-600 hover:text-slate-950'
+                    ? 'text-sky-950 font-semibold' 
+                    : 'text-slate-600 hover:text-sky-900'
                 }`}
               >
                 <span>{link.label}</span>
                 {isActive && (
-                  <span className="absolute bottom-0 inset-x-0 h-0.5 bg-teal-600 rounded-full" />
+                  <span className="absolute bottom-0 inset-x-0 h-0.5 bg-sky-600 rounded-full" />
                 )}
               </Link>
             );

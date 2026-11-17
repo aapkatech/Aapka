@@ -88,10 +88,10 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
   };
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-white border-t border-slate-100">
+    <section className="py-8 sm:py-10 lg:py-12 bg-transparent border-t border-sky-100/80">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
         
-        {/* Section Header (HUMAN CARE, HONEST GUIDANCE tag removed per request) */}
+        {/* Section Header */}
         <div className="max-w-3xl space-y-2">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.2]">
             {content.title}
@@ -101,17 +101,17 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           </p>
         </div>
 
-        {/* 3 Refined & Elevated Healthcare Cards (Redesigned for High Visual Appeal) */}
+        {/* 3 Refined & Elevated Healthcare Cards (Aura Wave & Clinical Lattice Theme) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch">
           {content.cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <div 
                 key={idx}
-                className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] hover:border-teal-400/60 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative p-6 sm:p-7 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-[0_4px_24px_-4px_rgba(2,132,199,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(2,132,199,0.14)] hover:border-sky-400/70 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
-                {/* Subtle Top Accent Gradient Line */}
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-500/20 via-teal-500/60 to-emerald-500/20 group-hover:via-teal-500 transition-all" />
+                {/* Precision Beveled Aura Top Rim Gradient */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 transition-all" />
 
                 <div className="space-y-5">
                   {/* Icon & Badge Header */}
@@ -119,7 +119,7 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border shadow-2xs group-hover:scale-105 transition-transform ${card.accent}`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200/60">
+                    <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200/80">
                       {card.tagline}
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
                   <ul className="space-y-3 pt-2 text-[13.5px] text-slate-700 font-normal leading-relaxed">
                     {card.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                         <span className="break-words">{point}</span>
                       </li>
                     ))}
@@ -143,8 +143,8 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
                 </div>
 
                 {/* Bottom Patient Assurance Quote */}
-                <div className="mt-6 p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-2.5 text-xs text-slate-700 italic leading-relaxed">
-                  <Quote className="w-3.5 h-3.5 text-teal-700 shrink-0 mt-0.5 opacity-80" />
+                <div className="mt-6 p-4 rounded-2xl bg-sky-50/60 border border-sky-100/90 flex items-start gap-2.5 text-xs text-slate-700 italic leading-relaxed">
+                  <Quote className="w-3.5 h-3.5 text-sky-700 shrink-0 mt-0.5 opacity-80" />
                   <span className="leading-relaxed break-words">"{card.quote}"</span>
                 </div>
 
@@ -153,11 +153,12 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           })}
         </div>
 
-        {/* Reassuring Care Desk Strip (Human, Glorifying & Editorial Clean Theme) */}
-        <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-teal-50/90 via-emerald-50/60 to-sky-50/80 border border-teal-200/90 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        {/* Reassuring Care Desk Strip (Aura Lattice Clean Theme) */}
+        <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-sky-50/90 via-cyan-50/60 to-blue-50/80 border border-sky-200/90 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
           <div className="space-y-1.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-800">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-700" />
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-800">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-700" />
               <span>{isHi ? "24/7 क्लिनिकल केयर डेस्क" : "24/7 Clinical Care Desk"}</span>
             </div>
             <h4 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
@@ -171,9 +172,9 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href="tel:+918860880044"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold text-xs sm:text-sm tracking-tight transition-all shadow-md shadow-sky-600/20"
             >
-              <PhoneCall className="w-4 h-4 text-teal-200" />
+              <PhoneCall className="w-4 h-4 text-cyan-100" />
               <span>+91 8860880044</span>
             </a>
             {onOpenBooking && (

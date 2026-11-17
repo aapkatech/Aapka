@@ -30,7 +30,7 @@ export const VideoTestimonials: React.FC<VideoTestimonialsProps> = ({
     : 'Real accounts shared by patients and families assisted with hospital admissions, emergency surgery coordination, and pre-negotiated package tariffs.';
 
   return (
-    <section id="video-testimonials" className="py-16 sm:py-22 bg-white border-b border-slate-100">
+    <section id="video-testimonials" className="py-16 sm:py-22 bg-transparent border-b border-sky-100/60">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-10 sm:space-y-12">
         
         {/* Section Header */}

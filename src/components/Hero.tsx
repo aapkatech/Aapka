@@ -36,9 +36,10 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
   const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
-    <section className="relative bg-white pt-1 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
-      {/* Subtle architectural ambient background glow */}
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-teal-100/35 via-amber-100/25 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+    <section className="relative bg-transparent pt-1 pb-6 sm:pb-8 lg:pb-10 overflow-hidden">
+      {/* Subtle architectural ambient aura wave glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[550px] bg-gradient-to-bl from-cyan-200/25 via-sky-200/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-gradient-to-tr from-sky-200/25 via-cyan-100/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
@@ -188,7 +189,8 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
 
             {/* Official Government Partnership (2 Lines, Spread to Anchor and Cover the Space) */}
             <div className="pt-3 sm:pt-4 mt-auto">
-              <div className="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 via-teal-50/25 to-slate-50/80 border border-slate-200/90 shadow-2xs">
+              <div className="p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xs border border-sky-200/80 shadow-xs relative overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
                 <div className="flex items-start gap-2.5">
                   <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 shrink-0 mt-1.5 animate-pulse" />
                   <div className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed">
@@ -211,14 +213,14 @@ export const Hero: React.FC<HeroProps> = ({ t }) => {
               initial={{ x: -80, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full h-[400px] sm:h-[460px] lg:h-[490px] xl:h-[530px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-4 bg-gradient-to-tr from-amber-50/70 via-teal-50/30 to-sky-50/50 border border-slate-200/80 shadow-xl shadow-slate-200/50"
+              className="relative w-full h-[400px] sm:h-[460px] lg:h-[490px] xl:h-[530px] rounded-3xl overflow-hidden flex items-center justify-center p-3 sm:p-4 bg-gradient-to-tr from-sky-50/80 via-white to-cyan-50/70 border border-sky-200/90 shadow-xl shadow-sky-900/5"
             >
               {/* Internal Decorative Layered Aura Shapes */}
-              <div className="absolute -top-12 -right-12 w-56 h-56 bg-gradient-to-br from-amber-200/40 to-teal-200/30 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-tr from-teal-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -top-12 -right-12 w-56 h-56 bg-gradient-to-br from-cyan-200/35 to-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-tr from-sky-200/35 to-blue-200/25 rounded-full blur-2xl pointer-events-none" />
 
               {/* Strict Inner Clipped Container with overflow-hidden */}
-              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/60 backdrop-blur-xs border border-white/80">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl flex items-center justify-center bg-white/75 backdrop-blur-xs border border-white/90">
                 <img
                   src="/hero-family-cutout.png"
                   alt="Aapka Family Healthcare - Compassionate care for rural families"

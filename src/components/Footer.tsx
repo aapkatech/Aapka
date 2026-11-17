@@ -46,7 +46,10 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenPrivacy }) => {
   ];
 
   return (
-    <footer id="contact" className="bg-white border-t border-zinc-100 pt-10 sm:pt-12 pb-8 sm:pb-10 text-zinc-600 text-xs font-normal">
+    <footer id="contact" className="bg-white/90 backdrop-blur-md border-t border-sky-100/90 pt-10 sm:pt-12 pb-8 sm:pb-10 text-slate-600 text-xs font-normal relative">
+      {/* Precision Beveled Aura Top Rim Gradient */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
         
         {/* Multi-Column Layout */}

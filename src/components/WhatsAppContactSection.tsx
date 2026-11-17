@@ -20,13 +20,16 @@ export const WhatsAppContactSection: React.FC = () => {
   const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hello%20Aapka%20Team%2C%20I%20would%20like%20to%20connect%20for%20healthcare%20guidance.`;
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-white">
+    <section className="py-8 sm:py-10 lg:py-12 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/60 text-slate-900 p-6 sm:p-8 lg:p-10 shadow-sm border border-emerald-200/90">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50/80 via-white to-cyan-50/70 text-slate-900 p-6 sm:p-8 lg:p-10 shadow-sm border border-sky-200/90">
           
-          {/* Subtle Warm Ambient Glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-500" />
+
+          {/* Subtle Aura Ambient Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
@@ -43,9 +46,9 @@ export const WhatsAppContactSection: React.FC = () => {
 
             {/* Right Action Box: High-Trust White Consultation Card */}
             <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center gap-4">
-              <div className="w-full sm:w-auto p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-md text-center sm:text-left space-y-4 w-full">
+              <div className="w-full sm:w-auto p-6 sm:p-8 rounded-2xl bg-white/95 backdrop-blur-md border border-sky-200/90 shadow-md text-center sm:text-left space-y-4 w-full">
                 <div className="space-y-1">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-teal-700 block">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sky-800 block">
                     Direct Calling Helpline Number
                   </span>
                   <div className="text-2xl sm:text-3xl font-bold font-serif text-slate-950 tracking-tight">

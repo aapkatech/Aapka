@@ -98,7 +98,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
   ];
 
   return (
-    <section id="recognition" className="py-10 sm:py-12 lg:py-14 bg-slate-50/70 border-t border-slate-200/80">
+    <section id="recognition" className="py-10 sm:py-12 lg:py-14 bg-white/70 backdrop-blur-sm border-t border-sky-100/80">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
         
         {/* Section Header */}
@@ -111,13 +111,16 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* 3 Real Ceremony Photo Cards */}
+        {/* 3 Real Ceremony Photo Cards (Aura Wave & Clinical Lattice Theme) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {photoAwards.map((award) => (
             <div 
               key={award.id}
-              className="group flex flex-col justify-between bg-white rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300 overflow-hidden"
+              className="group flex flex-col justify-between bg-white/95 backdrop-blur-md rounded-3xl border border-sky-100 shadow-[0_4px_20px_-4px_rgba(2,132,199,0.06)] hover:shadow-xl hover:border-sky-300 transition-all duration-300 overflow-hidden relative"
             >
+              {/* Precision Beveled Aura Top Rim Gradient */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 z-10" />
+
               <div>
                 {/* Image Container with Zoom hint */}
                 <div 
@@ -135,7 +138,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
                   {/* Top Badge Overlay */}
                   <div className="absolute top-3.5 left-3.5">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md text-white text-[11px] font-semibold tracking-tight border border-white/10 shadow-sm">
-                      <Trophy className="w-3 h-3 text-teal-400" />
+                      <Trophy className="w-3 h-3 text-cyan-300" />
                       <span>{award.badge}</span>
                     </span>
                   </div>
@@ -149,7 +152,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
 
                 {/* Card Details */}
                 <div className="p-6 sm:p-7 space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
                     {award.organization}
                   </p>
                   <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug font-serif">
@@ -162,9 +165,9 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
               </div>
 
               <div className="p-6 pt-0 mt-2">
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-                  <span className="text-teal-800 font-semibold flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
+                <div className="pt-4 border-t border-sky-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                  <span className="text-sky-800 font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
                     <span>Verified Ceremony Event</span>
                   </span>
                   <span className="text-slate-400">Awarded on Stage</span>
@@ -183,11 +186,12 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
             {institutionalAccolades.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className="p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-sky-100/90 hover:border-sky-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4 relative overflow-hidden"
               >
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 to-sky-500" />
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-md border border-teal-200/50">
+                    <span className="text-[11px] font-semibold text-sky-800 bg-sky-50 px-2.5 py-0.5 rounded-md border border-sky-200/60">
                       {item.tag}
                     </span>
                     <span className="text-xs font-mono font-bold text-slate-400">0{idx + 1}</span>
@@ -197,7 +201,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
                     {item.title}
                   </h4>
 
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                  <p className="text-xs font-bold uppercase tracking-wider text-sky-700">
                     {item.recognition}
                   </p>
 
@@ -211,10 +215,11 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
         </div>
 
         {/* Media Coverage Strip */}
-        <div className="p-8 rounded-2xl bg-white border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xs">
+        <div className="p-8 rounded-2xl bg-white/95 backdrop-blur-md border border-sky-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 shrink-0">
-              <Newspaper className="w-5 h-5 text-teal-700" />
+            <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-slate-800 shrink-0 border border-sky-200/60">
+              <Newspaper className="w-5 h-5 text-sky-700" />
             </div>
             <div>
               <h4 className="text-sm font-bold text-slate-900 font-serif">Featured in Leading National Media</h4>
@@ -226,7 +231,7 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
             {mediaOutlets.map((outlet, mIdx) => (
               <span 
                 key={mIdx}
-                className="px-3 py-1.5 rounded-lg bg-slate-50 text-slate-700 text-xs font-medium border border-slate-200/80"
+                className="px-3 py-1.5 rounded-lg bg-sky-50/70 text-slate-700 text-xs font-medium border border-sky-200/70"
               >
                 {outlet}
               </span>

@@ -80,7 +80,9 @@ export const VideoTestimonialCard: React.FC<VideoTestimonialCardProps> = ({
   const tags = lang === 'hi' ? testimonial.tags.hi : testimonial.tags.en;
 
   return (
-    <article className="group bg-white rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden">
+    <article className="group bg-white/95 backdrop-blur-md rounded-3xl border border-sky-100 shadow-[0_4px_20px_-4px_rgba(2,132,199,0.06)] hover:shadow-xl hover:border-sky-300/80 transition-all duration-300 flex flex-col justify-between overflow-hidden relative">
+      {/* Precision Beveled Aura Top Rim Gradient */}
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 z-20 pointer-events-none" />
       
       {/* 1. Native HTML5 Video Container (Optimized for Mobile Portrait 9:16 Video) */}
       <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[460px] w-full bg-slate-950 overflow-hidden flex items-center justify-center">

@@ -35,7 +35,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-zinc-950 font-sans selection:bg-zinc-900 selection:text-white">
+    <div className="min-h-screen flex flex-col clinical-lattice-canvas text-slate-900 font-sans selection:bg-sky-900 selection:text-white relative overflow-x-hidden">
+      {/* Ambient Aura Wave Light Discs (Subtle, Anti-Fatigue Healthcare Depth) */}
+      <div className="aura-glow-top-right" />
+      <div className="aura-glow-bottom-left" style={{ top: '1200px' }} />
+
       {/* Scroll to top automatically on route changes */}
       <ScrollToTop />
 
