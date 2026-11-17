@@ -79,11 +79,11 @@ export const ContactSection: React.FC = () => {
   );
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+    <section id="contact" className="py-6 sm:py-8 lg:py-10 bg-transparent border-t border-sky-100/80">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
         
         {/* Header */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-2">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Connect With Our Clinical Team
           </h2>
@@ -92,21 +92,24 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* Left: Contact Info & Leadership Linkages */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-4">
             
-            <div className="p-8 rounded-3xl bg-white text-slate-900 space-y-6 shadow-sm border border-slate-200/90">
-              <div className="space-y-2">
-                <span className="text-xs uppercase font-semibold tracking-wider text-teal-700">Direct Coordination Lines</span>
+            <div className="p-6 sm:p-7 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 space-y-5 shadow-xs border border-sky-100 relative overflow-hidden">
+              {/* Precision Beveled Aura Top Rim Gradient */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+              <div className="space-y-1.5">
+                <span className="text-xs uppercase font-semibold tracking-wider text-sky-700">Direct Coordination Lines</span>
                 <h3 className="text-xl font-bold font-serif text-slate-900">Emergency &amp; Support Hub</h3>
                 <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   Our coordination desk is connected directly to hospital casualty counters and on-ground coordinators.
                 </p>
               </div>
 
-              <div className="space-y-4 pt-2">
+              <div className="space-y-3.5 pt-1">
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
                     <Phone className="w-4 h-4" />
@@ -168,9 +171,11 @@ export const ContactSection: React.FC = () => {
 
           </div>
 
-          {/* Right: Working Interactive Contact Form (Item 20) */}
+          {/* Right: Working Interactive Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xl shadow-sky-950/5 relative overflow-hidden">
+              {/* Precision Beveled Aura Top Rim Gradient */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
               
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>

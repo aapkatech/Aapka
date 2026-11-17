@@ -8,12 +8,15 @@ import {
 
 export const ContactPage: React.FC = () => {
   return (
-    <div className="py-12 sm:py-16 space-y-12 bg-white">
+    <div className="py-6 sm:py-8 space-y-6 sm:space-y-8 bg-transparent">
       
-      {/* Header Banner (Clean White Background, Human & Clear) */}
+      {/* Header Banner (Aura Wave & Clinical Lattice Theme) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 lg:p-14 rounded-3xl bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
-          <div className="relative max-w-3xl space-y-3">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden">
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+          
+          <div className="relative max-w-3xl space-y-2">
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Get in Touch With Our Care Coordination Desk
             </h1>
@@ -28,12 +31,15 @@ export const ContactPage: React.FC = () => {
       {/* Main Interactive Contact Section Component */}
       <ContactSection />
 
-      {/* Emergency Hotline Callout Strip (Clean White Background) */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-8">
-        <div className="p-8 sm:p-10 rounded-3xl bg-white text-slate-900 border border-slate-200/90 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
-          <div className="space-y-1.5 max-w-xl">
-            <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+      {/* Emergency Hotline Callout Strip */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-4">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 border border-sky-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs relative overflow-hidden">
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+          <div className="space-y-1 max-w-xl">
+            <span className="text-xs font-semibold uppercase tracking-wider text-sky-700 flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
               <span>Immediate Clinical Attention Needed?</span>
             </span>
             <h3 className="text-xl sm:text-2xl font-semibold font-serif text-slate-900">Direct Line to Emergency Dispatch</h3>
@@ -43,7 +49,7 @@ export const ContactPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="tel:+918860880044"
-              className="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs sm:text-sm tracking-tight transition-colors flex items-center gap-2 shadow-xs"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-medium text-xs sm:text-sm tracking-tight transition-all flex items-center gap-2 shadow-md shadow-sky-600/20"
             >
               <PhoneCall className="w-4 h-4" />
               <span>Call +91 8860880044</span>

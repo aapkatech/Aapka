@@ -176,8 +176,14 @@ export const TeamPage: React.FC = () => {
       position: "center 20%"
     },
     {
-      name: "Upadhyay",
-      role: "Patient Acquisition",
+      name: "Himanshu Upadhyay",
+      role: "Rural Health Leader",
+      image: "", // Space reserved for photo
+      position: "center top"
+    },
+    {
+      name: "Gautam Gupta",
+      role: "Regional Manager",
       image: "", // Space reserved for photo
       position: "center top"
     },
@@ -190,11 +196,11 @@ export const TeamPage: React.FC = () => {
   ];
 
   return (
-    <div className="py-12 sm:py-16 space-y-20 bg-white">
+    <div className="py-8 sm:py-10 space-y-12 sm:space-y-14 bg-transparent">
       
       {/* Page Header (Clean, Editorial) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="max-w-3xl mx-auto space-y-2">
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Our Team
           </h1>
@@ -205,7 +211,7 @@ export const TeamPage: React.FC = () => {
       </div>
 
       {/* SECTION 1: LEADERSHIP (FOUNDER ON TOP, CO-FOUNDERS SIDE-BY-SIDE BELOW) */}
-      <section className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 sm:space-y-16">
+      <section className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
         
         {/* Founder on Top (Centered Square Portrait) */}
         <div className="max-w-sm mx-auto w-full">
@@ -222,7 +228,7 @@ export const TeamPage: React.FC = () => {
         </div>
 
         {/* Co-Founders Just Bottom Side-by-Side (2 Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 max-w-3xl mx-auto w-full pt-6 border-t border-slate-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 max-w-3xl mx-auto w-full pt-4 border-t border-sky-100/80">
           {coFounders.map((member, idx) => (
             <div key={idx} className="max-w-sm mx-auto w-full">
               <LeaderCard
@@ -241,9 +247,9 @@ export const TeamPage: React.FC = () => {
       </section>
 
       {/* SECTION 2: MEET THE TEAM (CORE OPERATIONAL TEAM) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 pt-4">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 pt-2">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
             Core Operations &amp; Growth
           </p>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">
@@ -255,7 +261,7 @@ export const TeamPage: React.FC = () => {
         </div>
 
         {/* Circular Avatar Grid matching reference design */}
-        <div className="flex flex-wrap justify-center gap-y-12 gap-x-8 sm:gap-x-12 lg:gap-x-14 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-10 gap-x-8 sm:gap-x-12 lg:gap-x-14 max-w-5xl mx-auto">
           {coreTeam.map((member, idx) => (
             <div 
               key={idx} 
