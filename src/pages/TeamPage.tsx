@@ -137,20 +137,8 @@ export const TeamPage: React.FC = () => {
     }
   ];
 
-  // 3. Core Operational Team (Meet the Team)
+  // 3. Core Operational Team (Ordered by Seniority & Hierarchy: AVP -> Leadership -> Management -> Growth -> Patient Care)
   const coreTeam = [
-    {
-      name: "Safalta",
-      role: "Founder's Office",
-      image: "/team/safalta.jpeg",
-      position: "center 15%"
-    },
-    {
-      name: "Bulbul",
-      role: "Patient Counsellor",
-      image: "/team/bulbul.jpeg",
-      position: "center 20%"
-    },
     {
       name: "Vishal Mishra",
       role: "AVP – Strategic Growth & Partnership",
@@ -158,10 +146,22 @@ export const TeamPage: React.FC = () => {
       position: "center 20%"
     },
     {
-      name: "Osama",
-      role: "Business Development Executive (BDE)",
-      image: "/team/osama.jpeg",
+      name: "Safalta",
+      role: "Founder's Office",
+      image: "/team/safalta.jpeg",
       position: "center 15%"
+    },
+    {
+      name: "Himanshu Upadhyay",
+      role: "Rural Health Leader",
+      image: "", // Space reserved for photo
+      position: "center top"
+    },
+    {
+      name: "Gautam Gupta",
+      role: "Regional Manager",
+      image: "", // Space reserved for photo
+      position: "center top"
     },
     {
       name: "Deepak",
@@ -176,16 +176,16 @@ export const TeamPage: React.FC = () => {
       position: "center 20%"
     },
     {
-      name: "Himanshu Upadhyay",
-      role: "Rural Health Leader",
-      image: "", // Space reserved for photo
-      position: "center top"
+      name: "Osama",
+      role: "Business Development Executive (BDE)",
+      image: "/team/osama.jpeg",
+      position: "center 15%"
     },
     {
-      name: "Gautam Gupta",
-      role: "Regional Manager",
-      image: "", // Space reserved for photo
-      position: "center top"
+      name: "Bulbul",
+      role: "Patient Counsellor",
+      image: "/team/bulbul.jpeg",
+      position: "center 20%"
     },
     {
       name: "Tushar",
