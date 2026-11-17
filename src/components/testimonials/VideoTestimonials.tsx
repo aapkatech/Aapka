@@ -30,12 +30,12 @@ export const VideoTestimonials: React.FC<VideoTestimonialsProps> = ({
     : 'Real accounts shared by patients and families assisted with hospital admissions, emergency surgery coordination, and pre-negotiated package tariffs.';
 
   return (
-    <section id="video-testimonials" className="py-16 sm:py-22 bg-transparent border-b border-sky-100/60">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-10 sm:space-y-12">
+    <section id="video-testimonials" className="py-2 sm:py-4 bg-transparent border-b-0">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+        <div className="max-w-3xl space-y-1.5">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             {heading}
           </h2>
 
@@ -45,7 +45,7 @@ export const VideoTestimonials: React.FC<VideoTestimonialsProps> = ({
         </div>
 
         {/* 4 Native Video Cards Grid (Playable Directly on the Website) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-6 sm:gap-7 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-5 sm:gap-6 items-stretch">
           {videoTestimonialsData.map((item) => (
             <VideoTestimonialCard
               key={item.id}

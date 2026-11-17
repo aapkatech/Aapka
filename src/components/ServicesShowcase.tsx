@@ -155,48 +155,48 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
   });
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-14 sm:space-y-16">
+    <section id="services" className="py-2 sm:py-3 bg-transparent">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
         
         {/* Header with Minimalist Tab Filter */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-100 pb-8">
-          <div className="max-w-xl space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-sky-100 pb-3">
+          <div className="max-w-xl space-y-1.5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
               {tag}
             </p>
-            <h2 className="text-3xl sm:text-4xl font-serif font-medium tracking-tight text-zinc-950">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight text-slate-900">
               {title}
             </h2>
           </div>
 
           {/* Minimalist Switcher */}
-          <div className="flex items-center gap-1 p-1 bg-zinc-100 rounded-xl self-start md:self-auto text-xs font-medium">
+          <div className="flex items-center gap-1 p-1 bg-sky-50/70 border border-sky-200/60 rounded-xl self-start md:self-auto text-xs font-medium">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                 activeCategory === 'all' 
-                  ? 'bg-white text-zinc-950 shadow-2xs font-semibold' 
-                  : 'text-zinc-500 hover:text-zinc-800'
+                  ? 'bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-xs font-semibold' 
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               {tabs.all} ({services.length})
             </button>
             <button
               onClick={() => setActiveCategory('hospital')}
-              className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                 activeCategory === 'hospital' 
-                  ? 'bg-white text-zinc-950 shadow-2xs font-semibold' 
-                  : 'text-zinc-500 hover:text-zinc-800'
+                  ? 'bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-xs font-semibold' 
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               {tabs.hospital}
             </button>
             <button
               onClick={() => setActiveCategory('home')}
-              className={`px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
                 activeCategory === 'home' 
-                  ? 'bg-white text-zinc-950 shadow-2xs font-semibold' 
-                  : 'text-zinc-500 hover:text-zinc-800'
+                  ? 'bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-xs font-semibold' 
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               {tabs.home}
@@ -205,7 +205,7 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
         </div>
 
         {/* 9 Rich, Visible Photo Healthcare Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
           {filteredServices.map((service) => {
             const Icon = iconMap[service.id] || Building2;
             const imgSrc = service.image || serviceImages[service.id] || '/services/hospitalization.webp';
@@ -216,8 +216,11 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
               <article
                 key={service.id}
                 onClick={() => onSelectService?.(service.id)}
-                className="group relative rounded-3xl bg-white border border-slate-200/90 hover:border-teal-400/80 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.12)] transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="group relative rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 hover:border-sky-400 shadow-[0_4px_24px_-4px_rgba(2,132,199,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(2,132,199,0.14)] transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
               >
+                {/* Precision Beveled Aura Top Rim Gradient */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 z-10" />
+
                 {/* 1. High-Impact Visual Photo Banner (100% visible, emotional patient connect) */}
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100">
                   <img
@@ -235,7 +238,7 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                   </div>
 
                   {/* Overlapping Floating Icon */}
-                  <div className="absolute -bottom-5 left-6 w-11 h-11 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-teal-700 group-hover:bg-teal-700 group-hover:text-white transition-all duration-300">
+                  <div className="absolute -bottom-5 left-6 w-11 h-11 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-sky-700 group-hover:bg-gradient-to-r group-hover:from-sky-600 group-hover:to-cyan-600 group-hover:text-white transition-all duration-300">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
@@ -243,10 +246,10 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                 {/* 2. Card Content Body */}
                 <div className="pt-8 px-6 sm:px-7 pb-6 sm:pb-7 flex flex-col justify-between flex-grow space-y-4">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold font-serif text-slate-950 tracking-tight leading-snug group-hover:text-teal-800 transition-colors">
+                    <h3 className="text-xl font-bold font-serif text-slate-950 tracking-tight leading-snug group-hover:text-sky-900 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-xs font-semibold text-teal-700">
+                    <p className="text-xs font-semibold text-sky-700">
                       {service.tagline}
                     </p>
                     <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed font-normal pt-1">
@@ -258,9 +261,9 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                       {features.map((feat, fIdx) => (
                         <span
                           key={fIdx}
-                          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-slate-50 border border-slate-200/80 text-[11px] font-medium text-slate-700"
+                          className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-sky-50/70 border border-sky-200/60 text-[11px] font-medium text-slate-700"
                         >
-                          <CheckCircle2 className="w-3 h-3 text-teal-600 shrink-0" />
+                          <CheckCircle2 className="w-3 h-3 text-sky-600 shrink-0" />
                           <span>{feat}</span>
                         </span>
                       ))}
@@ -268,8 +271,8 @@ export const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({ onSelectServ
                   </div>
 
                   {/* Bottom Interactive CTA Strip */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-teal-700 group-hover:text-teal-900 flex items-center gap-1.5 transition-colors">
+                  <div className="pt-4 border-t border-sky-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-sky-700 group-hover:text-sky-900 flex items-center gap-1.5 transition-colors">
                       <span>Request Assistance</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>

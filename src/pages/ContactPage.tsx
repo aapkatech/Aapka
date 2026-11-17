@@ -8,32 +8,32 @@ import {
 
 export const ContactPage: React.FC = () => {
   return (
-    <div className="py-6 sm:py-8 space-y-6 sm:space-y-8 bg-transparent">
+    <div className="py-3 sm:py-5 space-y-3 sm:space-y-4 bg-transparent">
       
       {/* Header Banner (Aura Wave & Clinical Lattice Theme) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden">
+        <div className="p-5 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden">
           {/* Precision Beveled Aura Top Rim Gradient */}
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
           
-          <div className="relative max-w-3xl space-y-2">
+          <div className="relative max-w-3xl space-y-1.5">
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Get in Touch With Our Care Coordination Desk
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               Immediate hospital admission triage, emergency ambulance coordination, care navigation, and institutional hospital empanelment across 15+ cities.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Main Interactive Contact Section Component */}
-      <ContactSection />
+      {/* Main Interactive Contact Section Component (Seamless Negligible Gap & Aura Lattice Theme) */}
+      <ContactSection hideHeader={true} noPadding={true} />
 
       {/* Emergency Hotline Callout Strip */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-4">
-        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 border border-sky-100 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-2">
+        <div className="p-5 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 border border-sky-100 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs relative overflow-hidden">
           {/* Precision Beveled Aura Top Rim Gradient */}
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
 

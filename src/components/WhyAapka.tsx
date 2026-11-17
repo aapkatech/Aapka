@@ -88,11 +88,11 @@ export const WhyAapka: React.FC<WhyAapkaProps> = ({ lang = 'en', onOpenBooking }
   };
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-transparent border-t border-sky-100/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
+    <section className="py-5 sm:py-6 lg:py-7 bg-transparent border-t border-sky-100/80">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-2">
+        <div className="max-w-3xl space-y-1.5">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.2]">
             {content.title}
           </h2>

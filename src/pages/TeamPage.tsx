@@ -40,7 +40,7 @@ const LeaderCard: React.FC<LeaderCardProps> = ({
       rel="noopener noreferrer"
       aria-label={`Open ${name}'s LinkedIn profile`}
       title={`Click to open ${name}'s LinkedIn profile`}
-      className="group/photo relative block w-full aspect-square rounded-2xl overflow-hidden bg-[#EAE7DF] border border-slate-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 cursor-pointer"
+      className="group/photo relative block w-full aspect-square rounded-2xl overflow-hidden bg-[#EAE7DF] border border-sky-100 shadow-2xs hover:shadow-xl hover:border-sky-300 transition-all duration-300 cursor-pointer"
     >
       <img 
         src={image} 
@@ -68,7 +68,7 @@ const LeaderCard: React.FC<LeaderCardProps> = ({
     </a>
 
     {/* Classic Editorial Typography matching IDEO reference */}
-    <div className="mt-4 space-y-1">
+    <div className="mt-3.5 space-y-1">
       <div className="flex items-center justify-between gap-2">
         <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
           {name}
@@ -84,16 +84,16 @@ const LeaderCard: React.FC<LeaderCardProps> = ({
           <LinkedInIcon className="w-4 h-4" />
         </a>
       </div>
-      <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-teal-700">
+      <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-sky-700">
         {role}
       </p>
-      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1.5">
+      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-1">
         {bio}
       </p>
-      <div className="pt-2">
+      <div className="pt-1.5">
         <a
           href={`mailto:${email}`}
-          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-800 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-sky-700 transition-colors"
         >
           <Mail className="w-3.5 h-3.5 text-slate-400" />
           <span>{email}</span>
@@ -196,22 +196,27 @@ export const TeamPage: React.FC = () => {
   ];
 
   return (
-    <div className="py-8 sm:py-10 space-y-12 sm:space-y-14 bg-transparent">
+    <div className="py-4 sm:py-6 space-y-6 sm:space-y-8 bg-transparent">
       
-      {/* Page Header (Clean, Editorial) */}
+      {/* Page Header (Aura Wave & Clinical Lattice Theme) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        <div className="max-w-3xl mx-auto space-y-2">
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-            Our Team
-          </h1>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            Meet the dedicated leadership, operations, and technology team committed to transforming rural and tribal healthcare access across Bharat.
-          </p>
+        <div className="p-6 sm:p-7 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden text-center max-w-4xl mx-auto">
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+          
+          <div className="max-w-3xl mx-auto space-y-1.5">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+              Our Team
+            </h1>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              Meet the dedicated leadership, operations, and technology team committed to transforming rural and tribal healthcare access across Bharat.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* SECTION 1: LEADERSHIP (FOUNDER ON TOP, CO-FOUNDERS SIDE-BY-SIDE BELOW) */}
-      <section className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
+      <section className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-5 sm:space-y-6">
         
         {/* Founder on Top (Centered Square Portrait) */}
         <div className="max-w-sm mx-auto w-full">
@@ -228,7 +233,7 @@ export const TeamPage: React.FC = () => {
         </div>
 
         {/* Co-Founders Just Bottom Side-by-Side (2 Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 max-w-3xl mx-auto w-full pt-4 border-t border-sky-100/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto w-full pt-3 border-t border-sky-100/80">
           {coFounders.map((member, idx) => (
             <div key={idx} className="max-w-sm mx-auto w-full">
               <LeaderCard
@@ -247,8 +252,8 @@ export const TeamPage: React.FC = () => {
       </section>
 
       {/* SECTION 2: MEET THE TEAM (CORE OPERATIONAL TEAM) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 pt-2">
-        <div className="text-center max-w-2xl mx-auto space-y-1.5">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 pt-1">
+        <div className="text-center max-w-2xl mx-auto space-y-1">
           <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
             Core Operations &amp; Growth
           </p>
@@ -261,14 +266,14 @@ export const TeamPage: React.FC = () => {
         </div>
 
         {/* Circular Avatar Grid matching reference design */}
-        <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-10 gap-x-8 sm:gap-x-12 lg:gap-x-14 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-y-6 sm:gap-y-8 gap-x-6 sm:gap-x-10 lg:gap-x-12 max-w-5xl mx-auto">
           {coreTeam.map((member, idx) => (
             <div 
               key={idx} 
               className="flex flex-col items-center text-center w-36 sm:w-44 group"
             >
               {/* Circular Portrait Frame */}
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-slate-100 border-2 border-slate-200/90 shadow-2xs mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-teal-600/40 group-hover:shadow-md">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-slate-100 border-2 border-sky-100 shadow-2xs mb-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-sky-500 group-hover:shadow-md">
                 {member.image ? (
                   <img 
                     src={member.image} 
@@ -285,9 +290,9 @@ export const TeamPage: React.FC = () => {
                   />
                 ) : null}
                 <div 
-                  className={`fallback-avatar w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-200/80 text-slate-400 ${member.image ? 'hidden' : 'flex'}`}
+                  className={`fallback-avatar w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-sky-50 to-slate-200/80 text-slate-400 ${member.image ? 'hidden' : 'flex'}`}
                 >
-                  <User className="w-10 h-10 sm:w-11 sm:h-11 stroke-[1.25] text-slate-400/80 transition-colors group-hover:text-teal-700/80" />
+                  <User className="w-10 h-10 sm:w-11 sm:h-11 stroke-[1.25] text-slate-400/80 transition-colors group-hover:text-sky-700" />
                 </div>
               </div>
 
@@ -305,12 +310,13 @@ export const TeamPage: React.FC = () => {
         </div>
       </section>
 
-
       {/* Connect with Team Banner */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm border border-slate-200/90">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs uppercase font-semibold tracking-wider text-teal-700">Institutional &amp; Impact Dialogue</span>
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs border border-sky-100 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+          <div className="space-y-1.5 max-w-xl">
+            <span className="text-xs uppercase font-semibold tracking-wider text-sky-700">Institutional &amp; Impact Dialogue</span>
             <h3 className="text-xl sm:text-2xl font-semibold font-serif text-slate-900">Connect directly with our Leadership</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Interested in CSR collaboration, district-wide healthcare pilots, hospital network empanelment, or investing in rural health equity?
@@ -320,15 +326,15 @@ export const TeamPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold text-xs sm:text-sm tracking-tight transition-all shadow-md shadow-sky-600/20"
             >
               Get in Touch with Team
             </Link>
             <a
               href="mailto:prabal@aapka.co.in"
-              className="px-6 py-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-800 font-medium text-xs sm:text-sm tracking-tight transition-colors border border-slate-200 flex items-center gap-2"
+              className="px-5 py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-slate-800 font-medium text-xs sm:text-sm tracking-tight transition-colors border border-sky-200/80 flex items-center gap-2"
             >
-              <Mail className="w-3.5 h-3.5 text-slate-500" />
+              <Mail className="w-3.5 h-3.5 text-sky-700" />
               <span>prabal@aapka.co.in</span>
             </a>
           </div>

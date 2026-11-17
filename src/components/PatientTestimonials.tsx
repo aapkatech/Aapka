@@ -95,39 +95,32 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({
     : 'Authentic accounts from patients and families guided through complex treatments with verified hospitals by Aapka across 15+ cities.');
 
   return (
-    <section id="why-aapka" className="py-20 sm:py-24 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 border-b border-zinc-100 relative overflow-hidden">
-      {/* Subtle Dot Grid Background */}
-      <div 
-        className="absolute inset-0 opacity-[0.035] pointer-events-none" 
-        style={{
-          backgroundImage: 'radial-gradient(circle, #0f172a 1.2px, transparent 1.2px)',
-          backgroundSize: '24px 24px'
-        }}
-        aria-hidden="true"
-      />
-
+    <section id="why-aapka" className="py-2 sm:py-4 bg-transparent border-b-0 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header (2nd SS Tag removed per request) */}
-        <div className="max-w-3xl mb-12 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl font-serif font-normal text-slate-950 tracking-tight leading-tight">
+        <div className="max-w-3xl mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-slate-900 tracking-tight leading-tight">
             {sectionTitle}
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="mt-1.5 text-sm sm:text-base text-slate-600 leading-relaxed">
             {sectionSubtitle}
           </p>
         </div>
 
         {/* 6 Testimonials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
           {items.map((item) => (
             <article
               key={item.id}
-              className="group bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.1)] hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-[0_4px_20px_-4px_rgba(2,132,199,0.06)] hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
             >
+              {/* Precision Beveled Aura Top Rim Gradient */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
               <div>
                 {/* 5 Gold Stars Rating */}
-                <div className="flex items-center gap-1 mb-5" aria-label={`Rating: ${item.rating} out of 5 stars`}>
+                <div className="flex items-center gap-1 mb-3.5" aria-label={`Rating: ${item.rating} out of 5 stars`}>
                   {[...Array(item.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -138,18 +131,18 @@ export const PatientTestimonials: React.FC<PatientTestimonialsProps> = ({
                 </div>
 
                 {/* Patient Quote */}
-                <p className="text-sm sm:text-[14.5px] text-slate-700 leading-relaxed font-normal mb-6 sm:mb-8 text-pretty">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal mb-5 text-pretty">
                   "{item.story}"
                 </p>
               </div>
 
               {/* Patient Footer Information (Clean Name & Location Only, No Photos / Badges) */}
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+              <div className="pt-3 border-t border-sky-100 flex items-center justify-between gap-3">
                 <div className="min-w-0">
-                  <h3 className="text-sm sm:text-[15px] font-bold text-slate-950 truncate tracking-tight">
+                  <h3 className="text-sm font-bold text-slate-950 truncate tracking-tight">
                     {item.name}
                   </h3>
-                  <p className="text-xs sm:text-[13px] font-medium text-orange-600 truncate mt-0.5">
+                  <p className="text-xs font-semibold text-sky-700 truncate mt-0.5">
                     {item.location}
                   </p>
                 </div>

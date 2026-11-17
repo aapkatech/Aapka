@@ -16,23 +16,28 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
   onOpenBooking
 }) => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Editorial Header */}
-      <section className="pt-16 sm:pt-20 pb-12 sm:pb-16 bg-gradient-to-b from-slate-50 via-white to-white border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center max-w-3xl">
-          <h1 className="text-3xl sm:text-5xl font-serif font-normal text-slate-950 tracking-tight leading-tight">
-            {lang === 'hi'
-              ? 'परिवार "आपका" को क्यों चुनते हैं?'
-              : 'Why Families Choose Aapka'}
-          </h1>
+    <div className="min-h-screen bg-transparent py-4 sm:py-6 space-y-6 sm:space-y-8">
+      {/* Editorial Header (Aura Wave & Clinical Lattice Theme) */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden text-center max-w-4xl mx-auto">
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+          
+          <div className="max-w-3xl mx-auto space-y-1.5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-slate-900 tracking-tight leading-tight">
+              {lang === 'hi'
+                ? 'परिवार "आपका" को क्यों चुनते हैं?'
+                : 'Why Families Choose Aapka'}
+            </h1>
 
-          <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
-            {lang === 'hi'
-              ? 'दिल्ली एनसीआर और पार्टनर अस्पतालों में ईमानदार दरों और बिना किसी भागदौड़ के उपचार कराने वाले परिवारों के वास्तविक अनुभव।'
-              : 'Real patient experiences across Delhi NCR and partner hospital networks guided with honest pricing and zero hospital stress.'}
-          </p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
+              {lang === 'hi'
+                ? '15+ शहरों और पार्टनर अस्पतालों में ईमानदार दरों और बिना किसी भागदौड़ के उपचार कराने वाले परिवारों के वास्तविक अनुभव।'
+                : 'Real patient experiences across 15+ cities and partner hospital networks guided with honest pricing and zero hospital stress.'}
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* 1. Patient Video Testimonials (Playable Directly on the Website) */}
       <VideoTestimonials
@@ -48,34 +53,39 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
       />
 
       {/* Assistance CTA Bar */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-t border-zinc-100">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <h2 className="text-2xl sm:text-3xl font-serif text-slate-900 font-normal">
-            {lang === 'hi' ? 'क्या आपके परिवार को अस्पताल सहायता की आवश्यकता है?' : 'Does Your Family Need Immediate Hospital Support?'}
-          </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-            {lang === 'hi'
-              ? 'हमारे स्वास्थ्य-मित्र अस्पताल भर्ती, डिस्काउंटेड पैकेज और आयुष्मान भारत सहायता के लिए 24/7 तैयार हैं।'
-              : 'Our clinical care coordinators are on standby 24/7 to assist with bed bookings, pre-admission tariff audits, and surgical planning.'}
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3 sm:gap-4">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-2">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+          <div className="space-y-1.5 max-w-xl">
+            <h2 className="text-xl sm:text-2xl font-serif text-slate-900 font-semibold">
+              {lang === 'hi' ? 'क्या आपके परिवार को अस्पताल सहायता की आवश्यकता है?' : 'Does Your Family Need Immediate Hospital Support?'}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              {lang === 'hi'
+                ? 'हमारे स्वास्थ्य-मित्र अस्पताल भर्ती, डिस्काउंटेड पैकेज और आयुष्मान भारत सहायता के लिए 24/7 तैयार हैं।'
+                : 'Our clinical care coordinators are on standby 24/7 to assist with bed bookings, pre-admission tariff audits, and surgical planning.'}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
             <button
               type="button"
               onClick={() => onOpenBooking?.('hospitalization')}
-              className="px-6 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm transition-colors cursor-pointer shadow-xs"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold text-xs sm:text-sm tracking-tight transition-all shadow-md shadow-sky-600/20 cursor-pointer"
             >
               {lang === 'hi' ? 'केयर कोऑर्डिनेटर से बात करें' : 'Speak With A Care Coordinator'}
             </button>
             <a
               href="tel:+918860880044"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-sm transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 border border-sky-200/80 text-sky-800 font-medium text-xs sm:text-sm transition-colors"
             >
-              <PhoneCall className="w-4 h-4 text-teal-700" />
+              <PhoneCall className="w-3.5 h-3.5 text-sky-700" />
               <span>+91 8860880044</span>
             </a>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

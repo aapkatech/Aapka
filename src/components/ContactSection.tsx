@@ -12,7 +12,12 @@ import {
   AlertCircle 
 } from 'lucide-react';
 
-export const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  hideHeader?: boolean;
+  noPadding?: boolean;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = false, noPadding = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -79,20 +84,22 @@ export const ContactSection: React.FC = () => {
   );
 
   return (
-    <section id="contact" className="py-6 sm:py-8 lg:py-10 bg-transparent border-t border-sky-100/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
+    <section id="contact" className={`bg-transparent ${noPadding ? 'py-0 border-t-0' : 'py-5 sm:py-6 lg:py-8 border-t border-sky-100/80'}`}>
+      <div className={`max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 ${noPadding ? 'space-y-3 sm:space-y-4' : 'space-y-4 sm:space-y-5'}`}>
         
         {/* Header */}
-        <div className="max-w-3xl space-y-2">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
-            Connect With Our Clinical Team
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Get instant hospital admission support, surgical tariff audits, or hospital network empanelment — we respond within minutes.
-          </p>
-        </div>
+        {!hideHeader && (
+          <div className="max-w-3xl space-y-1.5">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
+              Connect With Our Clinical Team
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Get instant hospital admission support, surgical tariff audits, or hospital network empanelment — we respond within minutes.
+            </p>
+          </div>
+        )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
           
           {/* Left: Contact Info & Leadership Linkages */}
           <div className="lg:col-span-5 space-y-4">
@@ -109,39 +116,39 @@ export const ContactSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="space-y-3.5 pt-1">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+              <div className="space-y-3 pt-1">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 border border-sky-200/60">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
                     <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Helpline Numbers</p>
-                    <a href="tel:+918860880044" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
+                    <a href="tel:+918860880044" className="block text-sm font-semibold text-slate-900 hover:text-sky-700 transition-colors">
                       +91 8860880044
                     </a>
-                    <a href="tel:+919667033044" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
+                    <a href="tel:+919667033044" className="block text-xs text-slate-600 hover:text-sky-700 transition-colors">
                       +91 9667033044
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 border border-sky-200/60">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
                     <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Executive Inquiries</p>
-                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-slate-900 hover:text-teal-700 transition-colors">
+                    <a href="mailto:prabal@aapka.co.in" className="block text-sm font-semibold text-slate-900 hover:text-sky-700 transition-colors">
                       prabal@aapka.co.in
                     </a>
-                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-600 hover:text-teal-700 transition-colors">
+                    <a href="mailto:info@aapka.co.in" className="block text-xs text-slate-600 hover:text-sky-700 transition-colors">
                       info@aapka.co.in
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200/60">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 border border-sky-200/60">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
@@ -154,15 +161,16 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-teal-700 font-medium">
+              <div className="pt-3 border-t border-sky-100 flex items-center gap-2 text-xs text-sky-700 font-medium">
                 <Clock className="w-4 h-4 shrink-0" />
                 <span>Fast, dedicated care coordinator response</span>
               </div>
             </div>
 
             {/* Micro Guarantee */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center gap-3 shadow-2xs">
-              <ShieldCheck className="w-8 h-8 text-teal-700 shrink-0" />
+            <div className="p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-sky-100 flex items-center gap-3 shadow-2xs relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 to-sky-500" />
+              <ShieldCheck className="w-7 h-7 text-sky-700 shrink-0" />
               <div className="space-y-0.5">
                 <p className="text-xs font-semibold text-slate-900">100% Patient Confidentiality</p>
                 <p className="text-[11px] text-slate-500">Your health details are encrypted and shared only with verified hospital clinicians.</p>
@@ -204,7 +212,7 @@ export const ContactSection: React.FC = () => {
                         onChange={handleChange}
                         placeholder="e.g. Ramesh Kumar"
                         required
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-white/90 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all"
                       />
                     </div>
 
@@ -220,7 +228,7 @@ export const ContactSection: React.FC = () => {
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
                         required
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-white/90 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all"
                       />
                     </div>
                   </div>
@@ -237,7 +245,7 @@ export const ContactSection: React.FC = () => {
                         value={formData.location}
                         onChange={handleChange}
                         placeholder="e.g. Banswara, Dungarpur, or Delhi NCR"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-white/90 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all"
                       />
                     </div>
 
@@ -250,7 +258,7 @@ export const ContactSection: React.FC = () => {
                         name="inquiryType"
                         value={formData.inquiryType}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 text-sm text-slate-900 bg-white/90 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all"
                       >
                         <option value="Hospital Admission & Bed Staging">Hospital Admission &amp; Bed Staging</option>
                         <option value="Emergency Ambulance Coordination">Emergency Ambulance Coordination</option>
@@ -273,7 +281,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Briefly describe the symptoms, hospital preference, or assistance needed..."
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-sky-200 bg-white/90 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all"
                     />
                   </div>
 
@@ -281,7 +289,7 @@ export const ContactSection: React.FC = () => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                      className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold text-sm tracking-tight shadow-md shadow-sky-600/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                     >
                       {loading ? (
                         <span>Activating Care Coordinator...</span>

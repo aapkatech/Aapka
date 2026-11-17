@@ -98,12 +98,15 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="py-12 sm:py-16 space-y-20 bg-white">
+    <div className="py-4 sm:py-6 space-y-6 sm:space-y-8 bg-transparent">
       
-      {/* 1. Page Header (Clean, Human & Reassuring) */}
+      {/* 1. Page Header (Aura Wave & Clinical Lattice Theme) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-teal-50/50 via-white to-sky-50/40 border border-slate-200/90 shadow-xs relative overflow-hidden">
-          <div className="max-w-3xl space-y-4">
+        <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs relative overflow-hidden">
+          {/* Precision Beveled Aura Top Rim Gradient */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+          <div className="max-w-3xl space-y-3">
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
               Healthcare Guidance Built on Trust, Dignity, and Honest Costs.
             </h1>
@@ -112,24 +115,24 @@ export const AboutPage: React.FC = () => {
               Aapka is India's dedicated patient navigation and price protection platform. We stand beside families from the first doctor consultation to hospital discharge — ensuring you never face medical distress alone.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-slate-700">
-              <span className="flex items-center gap-1.5 text-teal-800">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+            <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs sm:text-sm font-semibold text-slate-700">
+              <span className="flex items-center gap-1.5 text-sky-800">
+                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
                 ₹4.1 Cr+ Patient Debt Prevented (1,270+ Patients)
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
-              <span className="flex items-center gap-1.5 text-teal-800">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+              <span className="flex items-center gap-1.5 text-sky-800">
+                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
                 250+ Accredited Network Hospitals
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
-              <span className="flex items-center gap-1.5 text-teal-800">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+              <span className="flex items-center gap-1.5 text-sky-800">
+                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
                 15+ Cities Across Bharat
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
-              <span className="flex items-center gap-1.5 text-teal-800">
-                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+              <span className="flex items-center gap-1.5 text-sky-800">
+                <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
                 15,000+ Consultations Guided
               </span>
             </div>
@@ -139,10 +142,10 @@ export const AboutPage: React.FC = () => {
 
       {/* 2. Our Origin & Story (Why We Built Aapka) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-7 space-y-5">
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="space-y-1.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-700">
                 Our Genesis &amp; Purpose
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 leading-snug">
@@ -158,36 +161,39 @@ export const AboutPage: React.FC = () => {
               Aapka was founded by <strong>Prabal Pratap Singh</strong> (MBA, Goa Institute of Management) to fundamentally transform this reality. We believe healthcare is not merely a transaction — it is about dignity, transparency, and human companionship.
             </p>
 
-            <div className="p-6 rounded-2xl bg-teal-50/60 border border-teal-200/70 space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-teal-900 block">Our Founding Promise</span>
-              <p className="text-sm sm:text-base text-teal-950 font-serif italic leading-relaxed">
+            <div className="p-5 rounded-2xl bg-sky-50/70 border border-sky-200/80 space-y-1.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-900 block">Our Founding Promise</span>
+              <p className="text-sm sm:text-base text-sky-950 font-serif italic leading-relaxed">
                 "No family should ever be left alone in a hospital lobby, and no patient should face financial ruin for simply seeking medical care."
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="p-7 sm:p-8 rounded-3xl bg-slate-900 text-white space-y-6 shadow-xl border border-slate-800">
+            <div className="p-6 sm:p-7 rounded-3xl bg-white/95 backdrop-blur-md text-slate-900 space-y-4 shadow-xs border border-sky-100 relative overflow-hidden">
+              {/* Precision Beveled Aura Top Rim Gradient */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
               <div className="space-y-1">
-                <span className="text-[11px] font-mono text-teal-400 uppercase tracking-widest">
+                <span className="text-[11px] font-mono text-sky-700 uppercase tracking-widest font-semibold">
                   Leadership Spotlight
                 </span>
-                <h3 className="text-xl font-bold font-serif text-white">
+                <h3 className="text-xl font-bold font-serif text-slate-900">
                   Prabal Pratap Singh
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs font-semibold text-sky-800">
                   Founder &amp; Chief Executive Officer
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Alumnus of the Goa Institute of Management (MBA) and computer science engineer. Recognized globally as Start-Up of the Year finalist at the AMBA &amp; BGA Business Excellence Awards in London, Prabal has spent years building institutional care navigation solutions that safeguard families across Bharat.
               </p>
 
-              <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+              <div className="pt-2 border-t border-sky-100 flex items-center justify-between text-xs">
                 <Link
                   to="/team"
-                  className="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
+                  className="text-sky-700 hover:text-sky-900 font-semibold inline-flex items-center gap-1.5 transition-colors"
                 >
                   <span>Meet Our Leadership Team</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -196,7 +202,7 @@ export const AboutPage: React.FC = () => {
                   href="https://www.linkedin.com/in/aapkaprabal/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors"
+                  className="text-slate-500 hover:text-slate-900 transition-colors"
                 >
                   LinkedIn Profile ↗
                 </a>
@@ -207,59 +213,58 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* 3. The 4 Patient Promises (Our Core Values) */}
-      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
-          
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              Our Patient Charter
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              The Four Guarantees Every Family Receives
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Every clinical intervention, surgery package, and bed booking is governed by our strict patient-first principles.
-            </p>
-          </div>
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
+        <div className="max-w-3xl space-y-1.5">
+          <span className="text-xs font-bold uppercase tracking-wider text-sky-700">
+            Our Patient Charter
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
+            The Four Guarantees Every Family Receives
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Every clinical intervention, surgery package, and bed booking is governed by our strict patient-first principles.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {patientGuarantees.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div 
-                  key={idx}
-                  className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-lg hover:border-teal-300/80 transition-all flex flex-col justify-between space-y-4"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border shadow-2xs ${item.accent}`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-[10.5px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
-                        {item.tagline}
-                      </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {patientGuarantees.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div 
+                key={idx}
+                className="p-6 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs hover:shadow-lg hover:border-sky-300 transition-all flex flex-col justify-between space-y-4 relative overflow-hidden group"
+              >
+                {/* Precision Beveled Aura Top Rim Gradient */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center border shadow-2xs ${item.accent}`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-
-                    <h3 className="text-lg font-bold text-slate-900 font-serif leading-snug">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
-                      {item.description}
-                    </p>
+                    <span className="text-[10.5px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200/60">
+                      {item.tagline}
+                    </span>
                   </div>
-                </div>
-              );
-            })}
-          </div>
 
+                  <h3 className="text-lg font-bold text-slate-900 font-serif leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* 4. How It Works for Families (4 Simple Steps) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
-        <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
+        <div className="max-w-3xl space-y-1.5">
+          <span className="text-xs font-bold uppercase tracking-wider text-sky-700">
             Simple &amp; Transparent
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
@@ -270,20 +275,22 @@ export const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {journeySteps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div 
                 key={idx}
-                className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-5"
+                className="p-6 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs hover:border-sky-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4 relative overflow-hidden group"
               >
-                <div className="space-y-3">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 to-sky-500" />
+
+                <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-serif font-bold text-teal-700">
+                    <span className="text-xl font-serif font-bold text-sky-700">
                       {step.number}
                     </span>
-                    <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+                    <div className="w-8 h-8 rounded-xl bg-sky-50 border border-sky-200/60 flex items-center justify-center text-sky-700">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
@@ -303,50 +310,49 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* 5. Institutional Recognitions & Credentials */}
-      <section className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
-          
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-              National &amp; Global Validation
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-              Backed by Prestigious Institutions
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Recognized by prominent business leadership bodies, government ministries, and national accelerators.
-            </p>
-          </div>
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
+        <div className="max-w-3xl space-y-1.5">
+          <span className="text-xs font-bold uppercase tracking-wider text-sky-700">
+            National &amp; Global Validation
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
+            Backed by Prestigious Institutions
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Recognized by prominent business leadership bodies, government ministries, and national accelerators.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {institutionalRecognitions.map((item, idx) => (
-              <div 
-                key={idx}
-                className="p-7 rounded-3xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-shadow space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-[10.5px] font-bold uppercase tracking-wider bg-teal-50 text-teal-800 px-3 py-1 rounded-full border border-teal-200/70">
-                    {item.badge}
-                  </span>
-                  <Award className="w-5 h-5 text-amber-500" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 font-serif">
-                  {item.name}
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
-                  {item.highlight}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {institutionalRecognitions.map((item, idx) => (
+            <div 
+              key={idx}
+              className="p-6 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 shadow-xs hover:shadow-md hover:border-sky-300 transition-all space-y-2.5 relative overflow-hidden"
+            >
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+              <div className="flex items-center justify-between">
+                <span className="text-[10.5px] font-bold uppercase tracking-wider bg-sky-50 text-sky-800 px-3 py-1 rounded-full border border-sky-200/70">
+                  {item.badge}
+                </span>
+                <Award className="w-5 h-5 text-amber-500" />
               </div>
-            ))}
-          </div>
-
+              <h3 className="text-lg font-bold text-slate-900 font-serif">
+                {item.name}
+              </h3>
+              <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                {item.highlight}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* 6. Reassuring Patient CTA */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-8 shadow-sm">
-          <div className="space-y-2 max-w-xl">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-md border border-sky-100 text-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
+
+          <div className="space-y-1.5 max-w-xl">
             <h3 className="text-xl sm:text-2xl font-bold font-serif text-slate-900">
               Have questions about a surgery package or need hospital advice?
             </h3>
@@ -358,14 +364,14 @@ export const AboutPage: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href="tel:+918860880044"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-semibold text-xs sm:text-sm tracking-tight transition-all shadow-md shadow-sky-600/20"
             >
-              <PhoneCall className="w-4 h-4 text-teal-200" />
+              <PhoneCall className="w-4 h-4 text-cyan-100" />
               <span>Call Helpline: +91 88608 80044</span>
             </a>
             <Link
               to="/services"
-              className="px-6 py-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-900 font-semibold text-xs sm:text-sm tracking-tight transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-900 font-semibold text-xs sm:text-sm tracking-tight transition-colors shadow-2xs"
             >
               Explore All Services →
             </Link>

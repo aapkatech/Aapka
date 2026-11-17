@@ -33,14 +33,14 @@ export const PatientSavings: React.FC<PatientSavingsProps> = ({ lang = 'en' }) =
   return (
     <section
       id="savings"
-      className="py-8 sm:py-10 lg:py-12 bg-white/70 backdrop-blur-sm border-t border-sky-100/80 scroll-mt-20 relative overflow-hidden"
+      className="py-5 sm:py-6 lg:py-7 bg-white/70 backdrop-blur-sm border-t border-sky-100/80 scroll-mt-20 relative overflow-hidden"
     >
       {/* Subtle Aura Wave Ambient Glow */}
       <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-16 -left-20 w-80 h-80 bg-sky-200/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6 sm:space-y-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-5">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
+        <div className="max-w-3xl space-y-1.5">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             {isHi
               ? 'हर घंटा कीमती है, हर रुपया सुरक्षित है।'

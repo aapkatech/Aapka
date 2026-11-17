@@ -98,11 +98,11 @@ export const QuietProof: React.FC<QuietProofProps> = ({ t }) => {
   ];
 
   return (
-    <section id="recognition" className="py-10 sm:py-12 lg:py-14 bg-white/70 backdrop-blur-sm border-t border-sky-100/80">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-8 sm:space-y-10">
+    <section id="recognition" className="py-6 sm:py-7 lg:py-8 bg-white/70 backdrop-blur-sm border-t border-sky-100/80">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-5 sm:space-y-6">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-2">
+        <div className="max-w-3xl space-y-1.5">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.18]">
             Awards &amp; Recognition
           </h2>
